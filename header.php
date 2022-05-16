@@ -412,8 +412,12 @@ else
 								$weather_data = json_decode($weather_api, true);
 								//echo '<pre>' . print_r($weather_data, true) . '</pre>';
 								foreach($weather_data['list'] as $day => $value) {
-									echo '<a href="weather.php" class="list-group-item"><img border="0" width="28" height="28" src="images/'.$value['weather'][0]['icon'].'.png">
-									'.$value['weather'][0]['main']." - " .$value['weather'][0]['description'].'<span class="pull-right text-muted small"><em>'.round($value['main']['temp_min'],0)."&deg; - ".round($value['main']['temp_max'],0).'&deg;</em></span></a>';
+        								echo '<a href="weather.php" class="d-flex justify-content-between list-group-item list-group-item-action">
+									<span img border="0" width="28" height="28" src="images/'.$value['weather'][0]['icon'].'.png">
+									'.$value['weather'][0]['main']." - " .$value['weather'][0]['description'].
+									'</span>
+									<span class="pull-right text-muted small"><em>'.round($value['main']['temp_min'],0)."&deg; - ".round($value['main']['temp_max'],0).'&deg;</em>
+									</span></a>';
 								}
 								?>
 							</div>

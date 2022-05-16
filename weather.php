@@ -37,8 +37,12 @@ $theme = settings($conn, 'theme');
         	<div class="col-lg-12">
                     	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
                         	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
-                            		<i class="bi bi-gear-fill"></i>   <?php echo $lang['weather_outside']; ?> <?php echo $weather['c'] ;?>&deg;
-					<div class="pull-right"> <div class="btn-group"><?php echo date("H:i"); ?></div> </div>
+					<div class="d-flex justify-content-between">
+						<div>
+		                            		<i class="bi bi-gear-fill"></i>   <?php echo $lang['weather_outside']; ?> <?php echo $weather['c'] ;?>&deg;
+						</div>
+						<div class="btn-group"><?php echo date("H:i"); ?></div>
+					</div>
                         	</div>
                         	<!-- /.card-heading -->
                         	<div class="card-body">
@@ -51,11 +55,13 @@ $theme = settings($conn, 'theme');
 							//date('H:i', $weather['sunrise'])
 
 							//echo date("D H:i", strtotime($value['dt_txt']));
-							echo '<a href="#" class="list-group-item">'
+        						echo '<a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
+							<span>'
 							.date("D H:i", strtotime($value['dt_txt'])).
 							'<img border="0" width="28" height="28" src="images/'.$value['weather'][0]['icon'].'.png">'
 							.$value['weather'][0]['main']." - " .$value['weather'][0]['description'].
-							'<span class="pull-right text-muted small"><em>'
+							'</span>
+							<span class="text-muted small"><em>'
 
 							.round($value['main']['temp_min'],0)."&deg; - ".round($value['main']['temp_max'],0).
 

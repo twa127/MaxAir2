@@ -167,7 +167,7 @@ if ($settings_id <= 3) {
 		        			$result = $conn->query($query);
         					$result = mysqli_fetch_array($result);
 		        			$system_cc = $result['payload'];
-	        			       	if ($system_cc < $max_cpu_temp - 10){$system_cc="#0bb71b"; $fan=" ";}elseif ($system_cc < $max_cpu_temp){$system_cc="#F0AD4E"; $fan="icon-pulse";}elseif ($system_cc > $max_cpu_temp){$system_cc="#ff0000"; $fan="icon-pulse";}
+	        			       	if ($system_cc < $max_cpu_temp - 10){$system_cc="#0bb71b";}elseif ($system_cc < $max_cpu_temp){$system_cc="#F0AD4E";}elseif ($system_cc > $max_cpu_temp){$system_cc="#ff0000";}
 		        	        	?>
 			        		<button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false"  data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_System">
 			               		<h3 class="buttontop"><small><?php echo $lang['system']; ?> &deg;</small></h3>
@@ -175,7 +175,7 @@ if ($settings_id <= 3) {
 						<h3 class="status">
         					<small class="statuscircle" style="color:<?php echo $system_cc;?>"><i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i></small>
 			                	<small class="statusdegree"><?php echo number_format(DispTemp($conn,$result['payload']),0);?>&deg;</small>
-				               	<small class="statuszoon"><i class="bi bi-asterisk <?php echo $fan;?>"></i></small></h3>
+				               	<small class="statuszoon"><i class="spinner-grow text-danger" role="status" style="width: 0.7rem; height: 0.7rem;"></i></small></h3>
 				                </button>
 
                 			   	<button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#big_thanks">

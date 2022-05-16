@@ -308,28 +308,32 @@ if(!isset($_GET['nid'])) {
         	<div class="col-lg-12">
 			<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>"">
 			       	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
-			        	<i class="bi bi-clock icon-fw"></i>
-                                        <?php if(isset($_GET['nid'])) {
-                                        	echo $lang['night_climate'];
-                                     	} elseif ($time_id != 0) {
-                                        	echo $lang['schedule_edit'] . ": " . $time_row['sch_name'];
-                                        } else {
-                                        	echo $lang['schedule_add'];
-                                    	} ?>
-					<div class="dropdown pull-right">
-						<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-							<i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
-						</a>
-			                        <ul class="dropdown-menu">
-							<?php if(!isset($_GET['nid'])) {
-	                					echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_scheduling'].'</a></li>
-				                                <li class="dropdown-divider"></li>
-                	        				<li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_start_time_offset'].'</a></li>';
-			                                } else {
-                        					echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_night_climate_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_guide_night_climate_scheduling'].'</a></li>';
-							} ?>
-			                        </ul>
-                        			<div class="btn-group"><?php echo '&nbsp;&nbsp;'.date("H:i"); ?></div>
+					<div class="d-flex justify-content-between">
+						<div>
+					        	<i class="bi bi-clock icon-fw"></i>
+                		                        <?php if(isset($_GET['nid'])) {
+                                	        		echo $lang['night_climate'];
+                                     			} elseif ($time_id != 0) {
+		                                        	echo $lang['schedule_edit'] . ": " . $time_row['sch_name'];
+                		                        } else {
+                                		        	echo $lang['schedule_add'];
+                                    			} ?>
+						</div>
+						<div class="dropdown">
+							<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+								<i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+							</a>
+				                        <ul class="dropdown-menu">
+								<?php if(!isset($_GET['nid'])) {
+	                						echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_scheduling'].'</a></li>
+				                	                <li class="dropdown-divider"></li>
+                	        					<li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_start_time_offset'].'</a></li>';
+				                                } else {
+        	                					echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_night_climate_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_guide_night_climate_scheduling'].'</a></li>';
+								} ?>
+				                        </ul>
+                        				<div class="btn-group"><?php echo '&nbsp;&nbsp;'.date("H:i"); ?></div>
+						</div>
 					</div>
 			        </div>
                         	<!-- /.card-header -->
@@ -625,9 +629,11 @@ if(!isset($_GET['nid'])) {
 				</div>
                         	<!-- /.card-body -->
 				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
-					<?php
-					ShowWeather($conn);
-					?>
+                                        <div class="text-start">
+						<?php
+						ShowWeather($conn);
+						?>
+					</div>
                         	</div>
 				<!-- /.card-footer -->
                     	</div>
