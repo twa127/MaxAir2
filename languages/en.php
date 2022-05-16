@@ -886,4 +886,13 @@ $lang['theme_name'] = "Theme Name";
 $lang['change_theme_settings'] = "Change Theme Settings";
 $lang['change_theme_settings_text'] = "Change to Layout and Look of MaxAir";
 $lang['button_justification'] = "Button Justification";
+$lang['theme_settings'] = "Theme Settings";
+$lang['theme_settings_text'] = "Configure the Look and Style of the Maxair screens.";
+$lang['add_theme'] = "Add Theme";
+$lang['justify'] = "Justify";
+$lang['background_color'] = "Background Color";
+$lang['text_color'] = "Text Color";
+$lang['border_color'] = "Border Color";
+$lang['footer_color'] = "Footer Color";
+$lang['button_style'] = "Button Style";
 ?>
