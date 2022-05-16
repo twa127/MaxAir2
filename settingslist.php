@@ -364,7 +364,7 @@ if ($settings_id <= 3) {
 
        				                <button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="edit_gpio.php" data-bs-toggle="modal" data-bs-target="#boost_setup">
 			        	       	<h3 class="buttontop"><small><?php echo $lang['boost']; ?></small></h3>
-       			        		<h3 class="degre" ><i class="bi bi-arrow-up-square-fill blueinfo"></i></h3>
+       			        		<h3 class="degre" ><img src="images/rocket.svg" width="25" height="25" alt=""></i></h3>
 	        		                <h3 class="status"></small></h3>
 					        </button>
 
