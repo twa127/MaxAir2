@@ -1769,5 +1769,22 @@ if($what=="set_theme"){
                 return;
         }
 }
+
+//Delete Theme
+if($what=="theme"){
+        if($opp=="delete"){
+                $query = "DELETE FROM theme WHERE id = '".$wid."';";
+                $conn->query($query);
+                if($conn->query($query)){
+                        header('Content-type: application/json');
+                        echo json_encode(array('Success'=>'Success','Query'=>$query));
+                        return;
+                }else{
+                        header('Content-type: application/json');
+                        echo json_encode(array('Message'=>'Database query failed.\r\nQuery=' . $query));
+                        return;
+                }
+        }
+}
 ?>
 <?php if(isset($conn)) { $conn->close();} ?>

@@ -1549,29 +1549,65 @@ function set_button_text(id)
 <?php
 //Add Theme
 echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
-                <h5 class="modal-title">'.$lang['change_theme_settings'].'</h5>
-            </div>
-            <div class="modal-body">
-                <p class="text-muted">'.$lang['change_theme_settings_text'].'</p>';
-                $query = "SELECT row_justification FROM theme LIMIT 1;";
-                $result = $conn->query($query);
-                $row = mysqli_fetch_array($result);
-                echo '<div class="form-group" class="control-label"><label>'.$lang['button_justification'].'</label> <small class="text-muted"> </small>
-	                <select class="form-select" type="text" id="button_justification" name="button_justification" >
-				<option value="left" ' . ($row['row_justification'] == 'left' ? 'selected' : '') . '>Left</option>
-                	        <option value="right" ' . ($row['row_justification'] == 'right' ? 'selected' : '') . '>Right</option>
-                        	<option value="center" ' . ($row['row_justification'] == 'center' ? 'selected' : '') . '>Center</option>
-	                </select>
-                        <div class="help-block with-errors"></div>
+		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
+                <h5 class="modal-title">'.$lang['theme_settings'].'</h5>
+                <div class="dropdown pull-right">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="pdf_download.php?file=humidity_sensors.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['humidity_sensors'].'</a></li>
+				<li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="pdf_download.php?file=ds18b20_temperature_sensor.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['ds18b20_temperature_sensor'].'</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="pdf_download.php?file=import_sensor_readings.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['import_sensor_readings'].'</a></li>
+                                <li class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="pdf_download.php?file=delete_zones_relays_sensors_nodes.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['delete_zones_relays_sensors_nodes'].'</a></li>
+                                <li class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_sensors.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_sensors'].'</a></li>
+                                <li class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="pdf_download.php?file=setup_sensor_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_sensor_notifications'].'</a></li>
+                    	</ul>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_theme()">
+            <div class="modal-body">
+		<p class="text-muted">'.$lang['theme_settings_text'].'</p>';
+		$query = "SELECT * FROM theme ORDER BY name ASC";
+		$results = $conn->query($query);
+		echo '<table class="table table-bordered">
+    			<tr>
+                                <th class="col-md-2"><small>'.$lang['name'].'</small></th>
+                                <th class="col-md-1"><small>'.$lang['justify'].'</small></th>
+                                <th class="col-md-1"><small>'.$lang['background_color'].'</small></th>
+                                <th class="col-md-1"><small>'.$lang['text_color'].'</small></th>
+                                <th class="col-md-1"><small>'.$lang['border_color'].'</small></th>
+                                <th class="col-md-1"><small>'.$lang['footer_color'].'</small></th>
+                                <th class="col-md-2"><small>'.$lang['button_style'].'</small></th>
+                                <th class="col-md-2"></th>
+    			</tr>';
+			while ($row = mysqli_fetch_assoc($results)) {
+                                echo '<tr>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["name"].'</small></td>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["row_justification"].'</td>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["background_color"].'</td>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["text_color"].'</td>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["border_color"].'</td>
+            				<td style="text-align:center; vertical-align:middle;">'.$row["footer_color"].'</td>
+                                        <td style="text-align:center; vertical-align:middle;">'.$row["btn_style"].'</td>
+	    				<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
+        			echo '</tr>';
+			}
+		echo '</table>
+	    </div>
+		<div class="modal-footer">
+                	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
             </div>
         </div>
     </div>
