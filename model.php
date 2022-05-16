@@ -1599,7 +1599,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         <td style="text-align:center; vertical-align:middle;">'.$row["border_color"].'</td>
             				<td style="text-align:center; vertical-align:middle;">'.$row["footer_color"].'</td>
                                         <td style="text-align:center; vertical-align:middle;">'.$row["btn_style"].'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
