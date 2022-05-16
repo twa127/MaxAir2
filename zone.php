@@ -494,7 +494,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 					<div class="d-flex justify-content-between">
 						<div>
 							<?php if ($id != 0) { echo $lang['zone_edit'] . ": " . $row['name']; }else{
-        		                                echo '<i class="bi bi-plus-square" style="font-size: 1.2rem;"></i>' .' '. $lang['zone_add'];} ?>
+        		                                echo '<i class="bi bi-plus-square" style="font-size: 1.2rem;"></i>&nbsp&nbsp'.$lang['zone_add'];} ?>
 						</div>
 						<div class="btn-group"><?php echo date("H:i"); ?></div>
 					</div>
