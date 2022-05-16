@@ -28,7 +28,7 @@ $page_refresh = page_refresh($conn);
 ?>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-rocket fa-fw"></i>  <?php echo $lang['boost']; ?>
+                            <img src="images/rocket.svg" width="25" height="25" alt="">&nbsp<?php echo $lang['boost']; ?>
 						<div class="pull-right"> <div class="btn-group" id="boost_date"><?php echo date("H:i"); ?></div> </div>
                         </div>
                         <!-- /.panel-heading -->
