@@ -25,54 +25,60 @@ require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
 
 $page_refresh = page_refresh($conn);
+$theme = settings($conn, 'theme');
+
 ?>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <img src="images/rocket.svg" width="25" height="25" alt="">&nbsp<?php echo $lang['boost']; ?>
-						<div class="pull-right"> <div class="btn-group" id="boost_date"><?php echo date("H:i"); ?></div> </div>
-                        </div>
-                        <!-- /.panel-heading -->
-<div class="panel-body">
-<ul class="chat">
-<?php
-if ((settings($conn, 'mode') & 0b1) == 0) { // Boiler Mode
-	$query = "SELECT boost.id, boost.status, boost.zone_id, zone.index_id, boost.time, boost.temperature, boost.minute FROM boost join zone on boost.zone_id = zone.id WHERE boost.`purge` = '0' order by zone.index_id, boost.temperature;";
-	$results = $conn->query($query);
-	while ($row = mysqli_fetch_assoc($results)) {
-		//query to search location device_id
-		$query = "SELECT * FROM zone_view WHERE id = {$row['zone_id']} LIMIT 1";
-		$result = $conn->query($query);
-		$pi_device = mysqli_fetch_array($result);
-		$device = $pi_device['name'];
-		$type = $pi_device['type'];
-        	$category = $pi_device['category'];
-		$zone_status = $pi_device['status'];
-		$sensor_type_id = $pi_device["sensor_type_id"];
-		if ($zone_status != 0) {
-			echo '
-			<li class="left clearfix animated fadeIn">
-			<a href="javascript:active_boost('.$row["id"].');">
-			<span class="chat-img pull-left override">';
-			if($row["status"]=="0"){ $shactive="bluesch"; $status="Off"; }else{ $shactive="redsch"; $status="On"; }
-        	        if ($category == 2) {
-                	        echo '<div class="circle '. $shactive.'"><p class="schdegree"></p></div>
-                        	</span></a>
-	                        <div class="chat-body clearfix">
-        	                <div class="header">';
-                	} else {
-				$unit = SensorUnits($conn,$row['sensor_type_id']);
-                        	echo '<div class="circle '. $shactive.'"><p class="schdegree">'.number_format(DispSensor($conn,$row["temperature"],$sensor_type_id),0).$unit.'</p></div>
-	                        </span></a>
-        	                <div class="chat-body clearfix">
-                	        <div class="header">';
-	                }
-			if($row["status"]=="0" && $type=="Heating"){ $pi_image = "radiator.png";  }
-			elseif($row["status"]=="0" && $type=="Water"){ $pi_image = "off_hot_water.png";  }
-			elseif($row["status"]=="1" && $type=="Heating"){ $pi_image = "radiator1.png";  }
-			elseif($row["status"]=="1" && $type=="Water"){ $pi_image = "hot_water.png"; }
-                	elseif($row["status"]=="0" && $category == 2){ $pi_image = "icons8-light-off-30.png";  }
-	                elseif($row["status"]=="1" && $category == 2){ $pi_image = "icons8-light-automation-30.png";  }
-			$phpdate = strtotime($row['time']);
+<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
+	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+		<div class="d-flex justify-content-between">
+			<div>
+                            	<img src="images/rocket.svg" width="25" height="25" alt="">  <?php echo $lang['boost']; ?>
+			</div>
+			<div class="btn-group" id="boost_date"><?php echo date("H:i"); ?></div>
+		</div>
+	</div>
+	<!-- /.card-header -->
+	<div class="card-body">
+		<ul class="chat">
+			<?php
+			if ((settings($conn, 'mode') & 0b1) == 0) { // Boiler Mode
+				$query = "SELECT boost.id, boost.status, boost.zone_id, zone.index_id, boost.time, boost.temperature, boost.minute FROM boost join zone on boost.zone_id = zone.id WHERE boost.`purge` = '0' order by zone.index_id, boost.temperature;";
+				$results = $conn->query($query);
+				while ($row = mysqli_fetch_assoc($results)) {
+					//query to search location device_id
+					$query = "SELECT * FROM zone_view WHERE id = {$row['zone_id']} LIMIT 1";
+					$result = $conn->query($query);
+					$pi_device = mysqli_fetch_array($result);
+					$device = $pi_device['name'];
+					$type = $pi_device['type'];
+			        	$category = $pi_device['category'];
+					$zone_status = $pi_device['status'];
+					$sensor_type_id = $pi_device["sensor_type_id"];
+					if ($zone_status != 0) {
+						echo '
+						<li class="left clearfix animated fadeIn">
+						<a href="javascript:active_boost('.$row["id"].');">
+						<span class="chat-img pull-left override">';
+						if($row["status"]=="0"){ $shactive="bluesch"; $status="Off"; }else{ $shactive="redsch"; $status="On"; }
+				        	        if ($category == 2) {
+                	        				echo '<div class="circle '. $shactive.'"><p class="schdegree"></p></div>
+				                        	</span></a>
+	                        				<div class="chat-body clearfix">
+					        	                <div class="header">';
+				                	} else {
+								$unit = SensorUnits($conn,$row['sensor_type_id']);
+				                        	echo '<div class="circle '. $shactive.'"><p class="schdegree">'.number_format(DispSensor($conn,$row["temperature"],$sensor_type_id),0).$unit.'</p></div>
+	                        				</span></a>
+				        	                <div class="chat-body clearfix">
+                	        				<div class="header">';
+					                }
+							if($row["status"]=="0" && $type=="Heating"){ $pi_image = "radiator.png";  }
+							elseif($row["status"]=="0" && $type=="Water"){ $pi_image = "off_hot_water.png";  }
+							elseif($row["status"]=="1" && $type=="Heating"){ $pi_image = "radiator1.png";  }
+							elseif($row["status"]=="1" && $type=="Water"){ $pi_image = "hot_water.png"; }
+				                	elseif($row["status"]=="0" && $category == 2){ $pi_image = "icons8-light-off-30.png";  }
+					                elseif($row["status"]=="1" && $category == 2){ $pi_image = "icons8-light-automation-30.png";  }
+							$phpdate = strtotime($row['time']);
 			$boost_time = $phpdate + ($row['minute'] * 60);
 			echo '<strong class="primary-font">&nbsp;&nbsp;'. $device.' </strong>
 			<span class="pull-right text-muted small"><em> <img src="images/'.$pi_image.'" border="0"></em></span>
@@ -133,9 +139,9 @@ if ((settings($conn, 'mode') & 0b1) == 0) { // Boiler Mode
 ?>
 </ul>
 </div>
-                        <!-- /.panel-body -->
-			<div class="panel-footer">
-		                <div class="btn-group" id="footer_weather">
+                        <!-- /.card-body -->
+			<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+		                <div class="text-start" id="footer_weather">
                 		        <?php ShowWeather($conn); ?>
                 		</div>
                         </div>
