@@ -613,7 +613,7 @@ $theme = settings($conn, 'theme');
         	<div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		           <div class="modal-dialog">
                 		<div class="modal-content" id="ajaxModalContent">
-                                	<div class="modal-header">
+                                	<div class="modal-header <?php echo theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color'); ?>">
                                         	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		                                 <h5 class="modal-title" id="ajaxModalLabel">...</h5>
                 		        </div>
