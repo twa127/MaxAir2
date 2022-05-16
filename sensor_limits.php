@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
                         	</div>
                         	<!-- /.panel-heading -->
 				<div class="panel-body">
-					<form data-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
+					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Enabled -->
 						<div class="checkbox checkbox-default checkbox-circle">
 							<input id="checkbox0" class="styled" type="checkbox" name="status" value="1" <?php $check = ($rowlimits['status'] == 1) ? 'checked' : ''; echo $check; ?>>>
@@ -102,7 +102,7 @@ if (isset($_POST['submit'])) {
 
 						<!-- Sensor Name -->
 						<div class="form-group" class="control-label" id="sensor_name_label" style="display:block"><label><?php echo $lang['sensor_name']; ?></label> <small class="text-muted"><?php echo $lang['sensor_limits_name_info'];?></small>
-							<select id="sensor_name" onchange=set_sensor(this.options[this.selectedIndex].value) name="sensor_name" class="form-control select2" data-error="<?php echo $lang['sensor_name_error']; ?>" autocomplete="off" required>
+							<select id="sensor_name" onchange=set_sensor(this.options[this.selectedIndex].value) name="sensor_name" class="form-control select2" data-bs-error="<?php echo $lang['sensor_name_error']; ?>" autocomplete="off" required>
                                                                 <?php 
 								if(isset($row['name'])) { echo '<option selected >'.$row['name'].'</option>'; }
 								$query = "SELECT id, name FROM sensors ORDER BY name ASC;";
@@ -127,13 +127,13 @@ if (isset($_POST['submit'])) {
 
                                                 <!-- Minimum Value -->
                                                 <div class="form-group" class="control-label"><label><?php echo $lang['min_val']; ?></label> <small class="text-muted"><?php echo $lang['min_val_info'];?></small>
-                                                        <input class="form-control" placeholder="Sensor Minimum Value" value="<?php if(isset($rowlimits['min'])) { echo $rowlimits['min']; } else { echo '0.00'; } ?>" id="min_val" name="min_val" data-error="<?php echo $lang['min_val_help']; ?>" autocomplete="off" required>
+                                                        <input class="form-control" placeholder="Sensor Minimum Value" value="<?php if(isset($rowlimits['min'])) { echo $rowlimits['min']; } else { echo '0.00'; } ?>" id="min_val" name="min_val" data-bs-error="<?php echo $lang['min_val_help']; ?>" autocomplete="off" required>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
 
                                                 <!-- Maximum Value -->
                                                 <div class="form-group" class="control-label"><label><?php echo $lang['max_val']; ?></label> <small class="text-muted"><?php echo $lang['max_val_info'];?></small>
-                                                        <input class="form-control" placeholder="Sensor Maximum Value" value="<?php if(isset($rowlimits['max'])) { echo $rowlimits['max']; } else { echo '0.00'; } ?>" id="max_val" name="max_val" data-error="<?php echo $lang['max_val_help']; ?>" autocomplete="off" required>
+                                                        <input class="form-control" placeholder="Sensor Maximum Value" value="<?php if(isset($rowlimits['max'])) { echo $rowlimits['max']; } else { echo '0.00'; } ?>" id="max_val" name="max_val" data-bs-error="<?php echo $lang['max_val_help']; ?>" autocomplete="off" required>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
 

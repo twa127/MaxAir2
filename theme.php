@@ -34,19 +34,17 @@ if(isset($_GET['id'])) {
 //Form submit
 if (isset($_POST['submit'])) {
 	$name = $_POST['name'];
-        $type = $_POST['type_id'];
-	$selected_relay_id = $_POST['selected_relay_id'];
-        $query = "SELECT id FROM nodes WHERE node_id = '".$selected_relay_id."' LIMIT 1;";
-        $result = $conn->query($query);
-        $row = mysqli_fetch_array($result);
-        $relay_id = $row['id'];
-	$relay_child_id = $_POST['relay_child_id'];
-	$on_trigger = $_POST['trigger'];
+        $justification = $_POST['justification'];
+	$background_color = $_POST['background_color'];
+        $text_color = $_POST['text_color'];
+        $border_color = $_POST['border_color'];
+        $footer_color = $_POST['footer_color'];
+        $btn_style = $_POST['btn_style'];
         $sync = '0';
         $purge= '0';
 
-	//Add or Edit relay record to relays Table
-	$query = "INSERT INTO `relays` (`id`, `sync`, `purge`, `relay_id`, `relay_child_id`, `name`, `type`, `on_trigger`) VALUES ('{$id}', '{$sync}', '{$purge}', '{$relay_id}', '{$relay_child_id}', '{$name}', '{$type}', '{$on_trigger}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), relay_id='{$relay_id}', relay_child_id='{$relay_child_id}', name=VALUES(name), type=VALUES(type), on_trigger=VALUES(on_trigger);";
+	//Add or Edit
+	$query = "INSERT INTO `theme` (`id`, `sync`, `justification`, `purge`, `name`, `background_color`, `text_color`, `border_color`, `footer_color`, `btn_style') VALUES ('{$id}', '{$sync}', '{$purge}', '{$name}', '{$justification}', '{$background_color}', '{$text_color}', '{$border_color}', '{$footer_color}', '{$btn_style}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), name='{$name}', justification='{$justification}', background_color='{$text_color}', name=VALUES(name), type=VALUES(type), on_trigger=VALUES(on_trigger);";
 	$result = $conn->query($query);
         $temp_id = mysqli_insert_id($conn);
 	if ($result) {
@@ -73,13 +71,9 @@ if (isset($_POST['submit'])) {
 
 <!-- If the request is to EDIT, retrieve selected items from DB   -->
 <?php if ($id != 0) {
-        $query = "SELECT * FROM `relays` WHERE `id` = {$id} limit 1;";
+        $query = "SELECT * FROM `theme` WHERE `id` = {$id} limit 1;";
 	$result = $conn->query($query);
 	$row = mysqli_fetch_assoc($result);
-
-	$query = "SELECT * FROM nodes WHERE id = '{$row['relay_id']}' LIMIT 1;";
-	$result = $conn->query($query);
-	$rownode = mysqli_fetch_assoc($result);
 }
 ?>
 
@@ -92,8 +86,8 @@ if (isset($_POST['submit'])) {
                         	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
 					<div class="d-flex justify-content-between">
 						<div>
-							<?php if ($id != 0) { echo $lang['relay_edit'] . ": " . $row['name']; }else{
-                		            		echo '<i class="bi bi-plus-square" style="font-size: 1.2rem;"></i>&nbsp&nbsp'.$lang['relay_add'];} ?>
+							<?php if ($id != 0) { echo $lang['edit_theme'] . ": " . $row['name']; }else{
+                		            		echo '<i class="bi bi-plus-square" style="font-size: 1.2rem;"></i>' .' '. $lang['add_theme'];} ?>
 						</div>
 						<div class="btn-group"><?php echo date("H:i"); ?></div>
 					</div>

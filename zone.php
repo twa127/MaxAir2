@@ -501,7 +501,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
                         	</div>
                         	<!-- /.card-header -->
 				<div class="card-body">
-					<form data-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
+					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Enable Zone -->
 						<input type="hidden" id="message_out_id" name="message_out_id" value="<?php if(isset($rowmount['id'])) { echo $rowmount['id']; } ?>"/>
 						<div class="checkbox checkbox-default checkbox-circle">
@@ -518,13 +518,13 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						$new_index_id = $found_product['index_id']+1;
 						?>
 						<div class="form-group" class="control-label"><label><?php echo $lang['zone_index_number']; ?>  </label> <small class="text-muted"><?php echo $lang['zone_index_number_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['zone_index_number']; ?>r" value="<?php if(isset($row['index_id'])) { echo $row['index_id']; }else {echo $new_index_id; }  ?>" id="index_id" name="index_id" data-error="<?php echo $lang['zone_index_number_help']; ?>" autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['zone_index_number']; ?>r" value="<?php if(isset($row['index_id'])) { echo $row['index_id']; }else {echo $new_index_id; }  ?>" id="index_id" name="index_id" data-bs-error="<?php echo $lang['zone_index_number_help']; ?>" autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
 						<!-- Zone Name -->
 						<div class="form-group" class="control-label"><label><?php echo $lang['zone_name']; ?></label> <small class="text-muted"><?php echo $lang['zone_name_info'];?></small>
-							<input class="form-control" placeholder="Zone Name" value="<?php if(isset($row['name'])) { echo $row['name']; } ?>" id="name" name="name" data-error="<?php echo $lang['zone_name_help']; ?>" autocomplete="off" required>
+							<input class="form-control" placeholder="Zone Name" value="<?php if(isset($row['name'])) { echo $row['name']; } ?>" id="name" name="name" data-bs-error="<?php echo $lang['zone_name_help']; ?>" autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -787,13 +787,13 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						<input type="hidden" id="default_h_label_text" name="default_h_label_text" value="<?php echo $lang['default_humidity']; ?>"/>
 						<input type="hidden" id="default_h_label_info" name="default_h_label_info" value="<?php echo $lang['zone_default_humidity_info']; ?>"/>
 						<div class="form-group" class="control-label" style="display:block"><label id="default_c_label_1"><?php echo $lang['default_temperature']; ?></label> <small class="text-muted" id="default_c_label_2"><?php echo $lang['zone_default_temperature_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['zone_default_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['default_c'])) { echo DispSensor($conn,$rowzonesensors['default_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'25',$rowzonesensors['sensor_type_id']);}  ?>" id="default_c" name="default_c" data-error="<?php echo $lang['zone_default_temperature_error']; ?>"  autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['zone_default_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['default_c'])) { echo DispSensor($conn,$rowzonesensors['default_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'25',$rowzonesensors['sensor_type_id']);}  ?>" id="default_c" name="default_c" data-bs-error="<?php echo $lang['zone_default_temperature_error']; ?>"  autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
 						<!-- Minimum Temperature -->
 						<div class="form-group" class="control-label" id="min_c_label" style="display:block"><label><?php echo $lang['min_temperature']; ?></label> <small class="text-muted"><?php echo $lang['zone_min_temperature_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['zone_min_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['min_c'])) { echo DispSensor($conn,$rowzonesensors['min_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'15',$rowzonesensors['sensor_type_id']);}  ?>" id="min_c" name="min_c" data-error="<?php echo $lang['zone_min_temperature_error']; ?>"  autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['zone_min_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['min_c'])) { echo DispSensor($conn,$rowzonesensors['min_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'15',$rowzonesensors['sensor_type_id']);}  ?>" id="min_c" name="min_c" data-bs-error="<?php echo $lang['zone_min_temperature_error']; ?>"  autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -803,27 +803,27 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						<input type="hidden" id="max_h_label_text" name="max_h_label_text" value="<?php echo $lang['max_humidity']; ?>"/>
 						<input type="hidden" id="max_h_label_info" name="max_h_label_info" value="<?php echo $lang['zone_max_humidity_info']; ?>"/>
 						<div class="form-group" class="control-label" style="display:block"><label id="max_c_label_1"><?php echo $lang['max_temperature']; ?></label> <small class="text-muted" id="max_c_label_2"><?php echo $lang['zone_max_temperature_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['zone_max_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['max_c'])) { echo DispSensor($conn,$rowzonesensors['max_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'25',$rowzonesensors['sensor_type_id']);}  ?>" id="max_c" name="max_c" data-error="<?php echo $lang['zone_max_temperature_error']; ?>"  autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['zone_max_temperature_help']; ?>" value="<?php if(isset($rowzonesensors['max_c'])) { echo DispSensor($conn,$rowzonesensors['max_c'],$rowzonesensors['sensor_type_id']); } else {echo DispSensor($conn,'25',$rowzonesensors['sensor_type_id']);}  ?>" id="max_c" name="max_c" data-bs-error="<?php echo $lang['zone_max_temperature_error']; ?>"  autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 						<?php // Removed 29/01/2022 by twa as these 2 parameters are never used
 						if ($no_max_op_hys == 1) { ?>
 							<!-- Maximum Operation Time -->
 							<div class="form-group" class="control-label" id="max_operation_time_label" style="display:block"><label><?php echo $lang['zone_max_operation_time']; ?></label> <small class="text-muted"><?php echo $lang['zone_max_operation_time_info'];?></small>
-								<input class="form-control" placeholder="<?php echo $lang['zone_max_operation_time_help']; ?>" value="<?php if(isset($row['max_operation_time'])) { echo $row['max_operation_time']; } else {echo '60';}  ?>" id="max_operation_time" name="max_operation_time" data-error="<?php echo $lang['zone_max_operation_time_error']; ?>"  autocomplete="off" required>
+								<input class="form-control" placeholder="<?php echo $lang['zone_max_operation_time_help']; ?>" value="<?php if(isset($row['max_operation_time'])) { echo $row['max_operation_time']; } else {echo '60';}  ?>" id="max_operation_time" name="max_operation_time" data-bs-error="<?php echo $lang['zone_max_operation_time_error']; ?>"  autocomplete="off" required>
 								<div class="help-block with-errors"></div>
 							</div>
 
 							<!-- Hysteresis Time -->
 							<div class="form-group" class="control-label" id="hysteresis_time_label" style="display:block"><label><?php echo $lang['hysteresis_time']; ?></label> <small class="text-muted"><?php echo $lang['zone_hysteresis_info'];?></small>
-								<input class="form-control" placeholder="<?php echo $lang['zone_hysteresis_time_help']; ?>" value="<?php if(isset($rowzonesensors['hysteresis_time'])) { echo $rowzonesensors['hysteresis_time']; } else {echo '3';} ?>" id="hysteresis_time" name="hysteresis_time" data-error="<?php echo $lang['zone_hysteresis_time_error']; ?>"  autocomplete="off" required>
+								<input class="form-control" placeholder="<?php echo $lang['zone_hysteresis_time_help']; ?>" value="<?php if(isset($rowzonesensors['hysteresis_time'])) { echo $rowzonesensors['hysteresis_time']; } else {echo '3';} ?>" id="hysteresis_time" name="hysteresis_time" data-bs-error="<?php echo $lang['zone_hysteresis_time_error']; ?>"  autocomplete="off" required>
 								<div class="help-block with-errors"></div>
 							</div>
 						<?php } ?>
 
 						<!-- Temperature Setpoint Deadband -->
 						<div class="form-group" class="control-label" id="sp_deadband_label" style="display:block"><label><?php echo $lang['zone_sp_deadband']; ?></label> <small class="text-muted"><?php echo $lang['zone_sp_deadband_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['zone_sp_deadband_help']; ?>" value="<?php if(isset($rowzonesensors['sp_deadband'])) { echo $rowzonesensors['sp_deadband']; } else {echo '0.5';} ?>" id="sp_deadband" name="sp_deadband" data-error="<?php echo $lang['zone_sp_deadband_error'] ; ?>"  autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['zone_sp_deadband_help']; ?>" value="<?php if(isset($rowzonesensors['sp_deadband'])) { echo $rowzonesensors['sp_deadband']; } else {echo '0.5';} ?>" id="sp_deadband" name="sp_deadband" data-bs-error="<?php echo $lang['zone_sp_deadband_error'] ; ?>"  autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -832,7 +832,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						<input type="hidden" id="sensor_h_label_text" name="sensor_h_label_text" value="<?php echo $lang['humidity_sensor']; ?>"/>
 						<input type="hidden" id="sensor_s_label_text" name="sensor_s_label_text" value="<?php echo $lang['switch_sensor']; ?>"/>
 						<div class="form-group" class="control-label" style="display:block"><label id="sensor_id_label_1"><?php echo $lang['temperature_sensor']; ?></label> <small class="text-muted" id="sensor_id_label_2"><?php echo $lang['zone_sensor_id_info'];?></small>
-							<select id="zone_sensor_id" onchange=SensorIDList(this.options[this.selectedIndex].value) name="zone_sensor_id" class="form-select" data-error="<?php echo $lang['zone_temp_sensor_id_error']; ?>" autocomplete="off" required>
+							<select id="zone_sensor_id" onchange=SensorIDList(this.options[this.selectedIndex].value) name="zone_sensor_id" class="form-select" data-bs-error="<?php echo $lang['zone_temp_sensor_id_error']; ?>" autocomplete="off" required>
 								<option></option>
 								<?php for ($i = 0; $i < count($sensorArray); $i++) {
 								        echo '<option value="'.$sensorArray[$i]['id'].'" ' . ($sensorArray[$i]['id']==$rowzonesensors['zone_sensor_id'] ? 'selected' : '') . '>'.$sensorArray[$i]['name'].'</option>';
@@ -861,7 +861,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 									<div class="form-group" class="control-label" id="controler_id_label" style="display:block"><label><?php echo $lang['zone_controller_id']; ?></label> <small class="text-muted"><?php echo $lang['zone_controler_id_info'];?></small>
 							        	        <input type="hidden" id="selected_controler_id[]" name="selected_controler_id[]" value="<?php echo $zone_controllers[$i]['controller_relay_id']?>"/>
 										<div class="entry input-group col-xs-12" id="cnt_id - <?php echo $i ?>">
-											<select id="controler_id<?php echo $i ?>" onchange="ControllerIDList(this.options[this.selectedIndex].value)" name="controler_id<?php echo $i ?>" class="form-select" data-error="<?php echo $lang['zone_controller_id_error']; ?>" autocomplete="off">
+											<select id="controler_id<?php echo $i ?>" onchange="ControllerIDList(this.options[this.selectedIndex].value)" name="controler_id<?php echo $i ?>" class="form-select" data-bs-error="<?php echo $lang['zone_controller_id_error']; ?>" autocomplete="off">
 												<?php if(isset($zone_controllers[$i]["zone_controller_name"])) { echo '<option selected >'.$zone_controllers[$i]["zone_controller_name"].'</option>'; } ?>
 												<?php  $query = "SELECT id, name, type FROM relays WHERE type = 0 OR type = 5 ORDER BY id ASC;";
 												$result = $conn->query($query);
@@ -900,7 +900,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						<!-- Boost Button ID -->
 						<?php
 						echo '<div class="form-group" class="control-label" id="boost_button_id_label" style="display:block"><label>'.$lang['zone_boost_button_id'].'</label> <small class="text-muted">'.$lang['zone_boost_info'].'</small>
-							<select id="boost_button_id" name="boost_button_id" class="form-select" data-error="'.$lang['zone_boost_id_error'].'" autocomplete="off" >';
+							<select id="boost_button_id" name="boost_button_id" class="form-select" data-bs-error="'.$lang['zone_boost_id_error'].'" autocomplete="off" >';
 								if(isset($rowboost['boost_button_id'])) {
 									echo '<option selected >'.$rowboost['boost_button_id'].'</option>';
 								} else {
@@ -920,7 +920,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 						<!-- Boost Button Child ID -->
 						<?php
 						echo '<div class="form-group" class="control-label" id="boost_button_child_id_label" style="display:block"><label>'.$lang['zone_boost_button_child_id'].'</label><small class="text-muted">'.$lang['zone_boost_button_info'].'</small>
-							<select id="boost_button_child_id" name="boost_button_child_id" class="form-select" data-error="'.$lang['zone_boost_child_id_error'].'" autocomplete="off" required>';
+							<select id="boost_button_child_id" name="boost_button_child_id" class="form-select" data-bs-error="'.$lang['zone_boost_child_id_error'].'" autocomplete="off" required>';
 								if(isset($rowboost['boost_button_child_id'])) {
 									echo '<option selected >'.$rowboost['boost_button_child_id'].'</option>';
 								}else {
@@ -934,7 +934,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 
 						<!-- System Controller -->
 						<div class="form-group" class="control-label" id="system_controller_id_label" style="display:block"><label><?php echo $lang['system_controller']; ?></label>
-							<select id="system_controller_id" name="system_controller_id" class="form-select" data-error="System Controller ID can not be empty!" autocomplete="off" required>
+							<select id="system_controller_id" name="system_controller_id" class="form-select" data-bs-error="System Controller ID can not be empty!" autocomplete="off" required>
 								<?php if(isset($rowsystem_controller['id'])) { echo '<option selected >'.$rowsystem_controller['id'].'-'.$rowsystem_controller['name'].' Controller Relay Node ID: '.$rowsystem_controller['relay_id'].'</option>'; } ?>
 								<?php  $query = "SELECT id, relay_id, name FROM relays WHERE type = 1 OR type = 2;";
 								$result = $conn->query($query);

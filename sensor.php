@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
                         	</div>
                         	<!-- /.card-header -->
 				<div class="card-body">
-					<form data-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
+					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Before or After System Controller Icon -->
 						<div class="checkbox checkbox-default checkbox-circle">
 							<input id="checkbox0" class="styled" type="checkbox" name="pre_post" value="1" <?php $check = ($row['pre_post'] == 1) ? 'checked' : ''; echo $check; ?>>>
@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
 						$new_index_id = $found_product['index_id']+1;
 						?>
 						<div class="form-group" class="control-label"><label><?php echo $lang['temp_sensor_index_number']; ?>  </label> <small class="text-muted"><?php echo $lang['temp_sensor_index_number_info'];?></small>
-							<input class="form-control" placeholder="<?php echo $lang['temp_sensor_index_number']; ?>r" value="<?php if(isset($row['index_id'])) { echo $row['index_id']; }else {echo $new_index_id; }  ?>" id="index_id" name="index_id" data-error="<?php echo $lang['temp_sensor_index_number_help']; ?>" autocomplete="off" required>
+							<input class="form-control" placeholder="<?php echo $lang['temp_sensor_index_number']; ?>r" value="<?php if(isset($row['index_id'])) { echo $row['index_id']; }else {echo $new_index_id; }  ?>" id="index_id" name="index_id" data-bs-error="<?php echo $lang['temp_sensor_index_number_help']; ?>" autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -177,13 +177,13 @@ if (isset($_POST['submit'])) {
 
 						<!-- Sensor Name -->
 						<div class="form-group" class="control-label"><label><?php echo $lang['sensor_name']; ?></label> <small class="text-muted"><?php echo $lang['sensor_name_info'];?></small>
-							<input class="form-control" placeholder="Temperature Sensor Name" value="<?php if(isset($row['name'])) { echo $row['name']; } ?>" id="name" name="name" data-error="<?php echo $lang['sensor_name_help']; ?>" autocomplete="off" required>
+							<input class="form-control" placeholder="Temperature Sensor Name" value="<?php if(isset($row['name'])) { echo $row['name']; } ?>" id="name" name="name" data-bs-error="<?php echo $lang['sensor_name_help']; ?>" autocomplete="off" required>
 							<div class="help-block with-errors"></div>
 						</div>
 
 						<!-- Temperature Sensor ID -->
 						<div class="form-group" class="control-label" id="sensor_id_label" style="display:block"><label><?php echo $lang['sensor_id']; ?></label> <small class="text-muted"><?php echo $lang['zone_sensor_id_info'];?></small>
-							<select id="sensor_id" onchange=SensorChildList(this.options[this.selectedIndex].value) name="sensor_id" class="form-control select2" data-error="<?php echo $lang['sensor_id_error']; ?>" autocomplete="off" required>
+							<select id="sensor_id" onchange=SensorChildList(this.options[this.selectedIndex].value) name="sensor_id" class="form-control select2" data-bs-error="<?php echo $lang['sensor_id_error']; ?>" autocomplete="off" required>
                                                                 <?php if(isset($rownode['node_id'])) {
                                                                         echo '<option selected >'.$rownode['node_id'].' - '.$rownode['name'].'</option>';
                                                 			$query = "SELECT node_id, name, max_child_id FROM nodes where (name LIKE '%Sensor' OR name LIKE 'Switch%')AND id <> ".$rownode['id']." ORDER BY node_id ASC;";
@@ -230,7 +230,7 @@ if (isset($_POST['submit'])) {
 
 						<!-- Temperature Sensor Child ID -->
 						<div class="form-group" class="control-label" id="sensor_child_id_label" style="display:block"><label><?php echo $lang['sensor_child_id']; ?></label> <small class="text-muted"><?php echo $lang['sensor_child_id_info'];?></small>
-							<select id="sensor_child_id" name="sensor_child_id" class="form-control select2" data-error="<?php echo $lang['sensor_child_id_error']; ?>" autocomplete="off" required>
+							<select id="sensor_child_id" name="sensor_child_id" class="form-control select2" data-bs-error="<?php echo $lang['sensor_child_id_error']; ?>" autocomplete="off" required>
 								<?php if(isset($row['sensor_child_id'])) { echo '<option selected >'.$row['sensor_child_id'].'</option>';
 								for ($x = 0; $x <= $rownode['max_child_id']; $x++) {
         								echo "<option value=".$x.">".$x."</option>";
@@ -291,7 +291,7 @@ if (isset($_POST['submit'])) {
 
                                                 <!-- Correction Factor -->
                                                 <div class="form-group" class="control-label"><label><?php echo $lang['sensor_correction_factor']; ?></label> <small class="text-muted"><?php echo $lang['sensor_correction_factor_info'];?></small>
-                                                        <input class="form-control" placeholder="Temperature Sensor Correction Factor" value="<?php if(isset($row['name'])) { echo $row['correction_factor']; } else { echo '0.00'; } ?>" id="correction_factor" name="correction_factor" data-error="<?php echo $lang['sensor_correction_factor_help']; ?>" autocomplete="off" required>
+                                                        <input class="form-control" placeholder="Temperature Sensor Correction Factor" value="<?php if(isset($row['name'])) { echo $row['correction_factor']; } else { echo '0.00'; } ?>" id="correction_factor" name="correction_factor" data-bs-error="<?php echo $lang['sensor_correction_factor_help']; ?>" autocomplete="off" required>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
 
