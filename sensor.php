@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
 	<div class="row">
         	<div class="col-lg-12">
                         <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-                                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+                                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?>&nbsp&nbsp<?php echo theme($conn, $theme, 'background_color'); ?>">
 					<div class="d-flex justify-content-between">
 						<div>
 							<?php if ($id != 0) { echo $lang['sensor_edit'] . ": " . $row['name']; }else{
