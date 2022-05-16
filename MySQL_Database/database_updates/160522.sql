@@ -1,4 +1,5 @@
 ALTER TABLE `system` ADD COLUMN IF NOT EXISTS `theme` TINYINT(4) NULL AFTER `page_refresh`;
+UPDATE `system` SET `theme`= 1;
 
 DROP TABLE IF EXISTS `theme`;
 CREATE TABLE IF NOT EXISTS `theme` (
