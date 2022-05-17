@@ -907,4 +907,7 @@ $lang['black'] = "Black";
 $lang['left'] = "Left";
 $lang['center'] = "Center";
 $lang['right'] = "Right";
+$lang['theme_record_add_success'] = "Theme Record Added Successfully.";
+$lang['theme_record_update_success'] = "Theme Record Updated Successfully.";
+$lang['theme_record_fail'] = "Theme Record Add/Update Failed:";
 ?>
