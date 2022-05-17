@@ -75,9 +75,15 @@ $theme = settings($conn, 'theme');
 		                }
 
                 		if($_SESSION['admin'] == 1) {
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`theme.php`)">
+                                        <h3 class="buttontop"><small>'.$lang['add_theme'].'</small></h3>
+                                        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill icon-2x orange"></i></h3>
+                                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
+                                        </h3></button>';
+
 					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`relay.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['relay_add'].'</small></h3>
-                		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill orange icon-2x"></i></h3>
+                		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill red icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
