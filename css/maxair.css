@@ -1108,6 +1108,20 @@ color:#2196F3 !important;
   border-top:0px solid #ff8839 !important;
 }
 
+.bg-red {
+  background-color: #F44336 !important;
+  border-color: #F44336 !important;
+}
+
+.border-red {
+  border-color: #F44336 !important;
+}
+
+.card-footer-red{
+  background-color: #FF8A80 !important;
+  border-top:0px solid #FF8A80 !important;
+}
+
 .btn-default-style{color:#333;background-color:#fdf7f4;border-color:#ff8839}
 .btn-default-style:hover,.btn-default-style:focus,.btn-default-style.focus,.btn-default-style:active,.btn-default-style.active,.open>.dropdown-toggle.btn-default-style{color:#333;background-color:#ffede2;border-color:#ff8839}
 
