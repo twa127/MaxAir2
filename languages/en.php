@@ -899,4 +899,12 @@ $lang['text_color'] = "Text Color";
 $lang['border_color'] = "Border Color";
 $lang['footer_color'] = "Footer Color";
 $lang['button_style'] = "Button Style";
+$lang['default'] = "Default";
+$lang['primary'] = "Primary";
+$lang['orange'] = "Orange";
+$lang['white'] = "White";
+$lang['black'] = "Black";
+$lang['left'] = "Left";
+$lang['center'] = "Center";
+$lang['right'] = "Right";
 ?>
