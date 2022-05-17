@@ -902,6 +902,7 @@ $lang['button_style'] = "Button Style";
 $lang['default'] = "Default";
 $lang['primary'] = "Primary";
 $lang['orange'] = "Orange";
+$lang['red'] = "Red";
 $lang['white'] = "White";
 $lang['black'] = "Black";
 $lang['left'] = "Left";
