@@ -903,6 +903,7 @@ $lang['default'] = "Default";
 $lang['primary'] = "Primary";
 $lang['orange'] = "Orange";
 $lang['red'] = "Red";
+$lang['amber'] = "Amber";
 $lang['white'] = "White";
 $lang['black'] = "Black";
 $lang['left'] = "Left";
