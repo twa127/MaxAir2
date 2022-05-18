@@ -154,9 +154,9 @@ echo '<div class="modal" id="documentation" tabindex="-1">
                 $allFiles = array_diff(scandir($path . "/"), [".", ".."]); // Use array_diff to remove both period values eg: ("." , "..")
                 foreach ($allFiles as $value) {
 			$title = substr($value, 0, -4);
-                        echo '<span class="list-group-item">
-                        <i class="bi bi-file-earmark-pdf text-white bg-dark" style="font-size: 1.5rem;"></i> '.$lang[$title].'<a href="pdf_download.php?file='.$value.'" target="_blank">
-                        <button type="button" class="pull-right btn '.theme($conn, $theme, 'btn_style').' login btn-sm" >'.$lang['open'].'</button></a></span>';
+        		echo '<a href="pdf_download.php?file='.$value.'" target="_blank" class="d-flex justify-content-between list-group-item list-group-item-action">
+          			<span class=""><i class="bi bi-file-earmark-pdf" style="font-size: 1.5rem;"></i>&nbsp&nbsp'.$lang[$title].'</span>
+			</a>';
                 }
         echo '</div>
       </div>
@@ -593,11 +593,18 @@ echo '
                                         } else {
                                                 $prompt = $lang['install'];
                                         }
-                                        echo '<span class="list-group-item">
-                                        <i class="bi bi-terminal-fill green" style="font-size: 2rem;"></i> '.$installname.'
-                                        <span class="pull-right text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
-                                        onclick="install_software(`'.$installpath.'`)">'.$prompt.'</button></span>
-                                        <p class="text-muted">Install ReWrite for Apache Web Server</p></span>';
+                                        echo '<div class="list-group-item">
+						<div class="d-flex justify-content-between">
+							<div>
+                                        			<i class="bi bi-terminal-fill green" style="font-size: 2rem;"></i> '.$installname.'
+							</div>
+							<div>
+			                                        <span class="text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
+                                        			onclick="install_software(`'.$installpath.'`)">'.$prompt.'</button></span>
+							</div>
+						</div>
+                                        	<p class="text-muted">Install ReWrite for Apache Web Server</p>
+					</div>';
                                         $path = '/var/www/add_on';
                                         $dir = new DirectoryIterator($path);
                                         foreach ($dir as $fileinfo) {
@@ -634,18 +641,24 @@ echo '
                                                                 } else {
                                                                         $instaleed = 2;
                                                                 }
-                                                                echo '<span class="list-group-item">
-                                                                <i class="bi bi-terminal-fill green" style="font-size: 2rem;"></i> '.$name;
-                                                                if ($installed == 0) {
-                                                                        echo '<span class="pull-right text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
-                                                                        onclick="install_software(`'.$installpath.'`)">'.$lang['install'].'</button></span>';
-
-                                                                } elseif ($installed == 1) {
-                                                                        echo '<span class="pull-right text"><p> '.$lang['already_installed'].'</p></span>';
-                                                                } else {
-                                                                        echo '<span class="pull-right text"><p> '.$lang['no_installer'].'</p></span>';
-                                                                }
-                                                                echo '<p class="text-muted">'.$description.'</p></span>';
+                                                                echo '<div class="list-group-item">
+									<div class="d-flex justify-content-between">
+										<div>
+                                                                			<i class="bi bi-terminal-fill green" style="font-size: 2rem;"></i> '.$name.'
+										</div>
+										<div>';
+                                             			                	if ($installed == 0) {
+                                                                		        	echo '<span class="text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
+		                                                                        	onclick="install_software(`'.$installpath.'`)">'.$lang['install'].'</button></span>';
+		                                                                	} elseif ($installed == 1) {
+                		                                                        	echo '<span class="text"><p> '.$lang['already_installed'].'</p></span>';
+                                                                			} else {
+                                                                        			echo '<span class="text"><p> '.$lang['no_installer'].'</p></span>';
+                                                                			}
+										echo '</div>
+									</div>
+                                                                	<p class="text-muted">'.$description.'</p>
+								</div>';
                                                         }
                                                 }
                                         }
@@ -1165,14 +1178,15 @@ echo '<p class="text-muted">'.$lang['email_text'].'</p>';
 echo '
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
 	<div class="form-group" class="control-label">
-	<div class="checkbox checkbox-default checkbox-circle">';
-	if ($erow['status'] == '1'){
-		echo '<input id="checkbox3" class="styled" type="checkbox" value="1" name="status" checked>';
-	}else {
-		echo '<input id="checkbox3" class="styled" type="checkbox" value="1" name="status">';
-	}
-echo '
-	<label for="checkbox3"> '.$lang['email_enable'].'</label></div></div>
+		<div class="form-check">';
+			if ($erow['status'] == '1'){
+  				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox3" name="status" checked>';
+			} else {
+        	                echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox3" name="status">';
+			}
+	  		echo '<label class="form-check-label" for="checkbox3">'.$lang['email_enable'].'</label>
+		</div>
+	</div>
 	<div class="form-group" class="control-label"><label>'.$lang['email_smtp_server'].'</label>
 	<input class="form-control" type="text" id="e_smtp" name="e_smtp" value="'.$erow['smtp'].'" placeholder="e-mail SMTP Server Address ">
 	<div class="help-block with-errors"></div></div>
@@ -1581,13 +1595,13 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-md-2"><small>'.$lang['name'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['justify'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['background_color'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['text_color'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['border_color'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['footer_color'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['button_style'].'</small></th>
+                                <th class="col-md-2" style="text-align:center;"><small>'.$lang['name'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['background_color'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['border_color'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
+                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
                                 <th class="col-md-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
@@ -1651,18 +1665,18 @@ echo '
 					echo '
 					<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
 					<div class="form-group" class="control-label">
-						<div class="checkbox checkbox-default checkbox-circle">';
+				                <div class="form-check">';
 							if ($bcount > 0) {
-								if ($bresult and $brow['status'] == '1'){
-									echo '<input id="checkbox2" class="styled" type="checkbox" value="1" name="status" checked Disabled>';
-								}else {
-									echo '<input id="checkbox2" class="styled" type="checkbox" value="1" name="status" Disabled>';
-								}
+					                        if ($bresult and $brow['status'] == '1'){
+        	                        				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="status" checked Disabled>';
+					                        } else {
+                        	        				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="status" Disabled>';
+					                        }
 							} else {
-								echo '<input id="checkbox2" class="styled" type="checkbox" value="0" name="status" Enabled>';
+								echo '<input class="form-check-input" type="checkbox" value="0" id="checkbox2" name="status" Enabled>';
 							}
-							echo '<label for="checkbox2"> '.$lang['system_controller_enable'].'</label>
-						</div>
+				                        echo '<label class="form-check-label" for="checkbox2">'.$lang['system_controller_enable'].'</label>
+				                </div>
 					</div>
 					<!-- /.form-group -->
 					<div class="form-group" class="control-label"><label>'.$lang['system_controller_name'].'</label>
@@ -2517,14 +2531,13 @@ echo '
 				echo '
 				<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
 				<div class="form-group" class="control-label">
-					<div class="checkbox checkbox-default checkbox-circle">';
-						if ($grow['status'] == '1'){
-							echo '<input id="checkbox1" class="styled" type="checkbox" value="1" name="status" checked>';
-						}else {
-							echo '<input id="checkbox1" class="styled" type="checkbox" value="1" name="status">';
-						}
-						echo '
-						<label for="checkbox1"> '.$lang['smart_home_gateway_enable'].'</label>
+                                	<div class="form-check">';
+                                        	if ($grow['status'] == '1'){
+                                                	echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="status" checked>';
+                                                } else {
+                                                	echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="status">';
+                                                }
+                                                        echo '<label class="form-check-label" for="checkbox1">'.$lang['smart_home_gateway_enable'].'</label>
 					</div>
 				</div>
                                	<!-- /.form-group -->
@@ -2771,7 +2784,7 @@ function gw_location()
 if ($model_num == 6) {
 //Relay model
 echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
@@ -2842,7 +2855,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				<td>'.$row["node_id"].'</td>
             				<td>'.$row["relay_child_id"].'</td>
                                         <td>'.$trigger.'</td>
-            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
 echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><i class="bi bi-trash-fill black"></i></button></td>';
 	    				} else {
@@ -2941,7 +2954,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
                 				<input type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
-	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
 						echo '<a href="javascript:delete_sensor('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
 	    				} else {

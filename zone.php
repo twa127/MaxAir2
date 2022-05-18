@@ -504,9 +504,9 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Enable Zone -->
 						<input type="hidden" id="message_out_id" name="message_out_id" value="<?php if(isset($rowmount['id'])) { echo $rowmount['id']; } ?>"/>
-						<div class="checkbox checkbox-default checkbox-circle">
-							<input id="checkbox0" class="styled" type="checkbox" name="zone_status" value="1" <?php $check = ($row['status'] == 1) ? 'checked' : ''; echo $check; ?>>>
-							<label for="checkbox0"> <?php echo $lang['zone_enable']; ?> </label> <small class="text-muted"><?php echo $lang['zone_enable_info'];?></small>
+				                <div class="form-check">
+                                			<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="zone_status" <?php $check = ($row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+				                        <label class="form-check-label" for="checkbox0"><?php echo $lang['zone_enable']; ?></label> <small class="text-muted"><?php echo $lang['zone_enable_info'];?></small>
 							<div class="help-block with-errors"></div>
 						</div>
 
