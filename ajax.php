@@ -1037,15 +1037,17 @@ function GetModal_Sensors($conn)
 				$unit = SensorUnits($conn,$row['sensor_type_id']);
 				if ($mcount > 0) { $mrow = mysqli_fetch_array($mresult); }
 				echo '<div class="list-group-item">
-                                        <div class="form-group row" style="height: 10px;">
-                                                <div class="col-xs-12">&nbsp&nbsp'.$nrow['node_id'].'_'.$row['sensor_child_id'].' - '.$row['name'].'</div>
+                                        <div class="form-group row">
+                                                <div class="text-start">&nbsp&nbsp'.$nrow['node_id'].'_'.$row['sensor_child_id'].' - '.$row['name'].'</div>
                                         </div>
-					<div class="form-group row" style="height: 10px;">';
-						if ($bcount > 0) { echo '<div class="col-xs-12">&nbsp&nbsp<i class="bi bi-battery-half"></i> '.round($brow ['bat_level'],0).'% - '.$brow ['bat_voltage'].'</div>'; } else { echo '<div class="col-xs-12">&nbsp&nbsp<i class="bi bi-battery-half"></i></div>'; }
+					<div class="form-group row">';
+						if ($bcount > 0) { echo '<div class="text-start">&nbsp&nbsp<i class="bi bi-battery-half"></i> '.round($brow ['bat_level'],0).'% - '.$brow ['bat_voltage'].'</div>'; } else { echo '<div class="text-start">&nbsp&nbsp<i class="bi bi-battery-half"></i></div>'; }
 					echo '</div>
-					<div class="form-group row" style="height: 10px;">';
-						if ($mcount > 0) { echo '<div class="col-xs-6" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i> - '.$mrow['payload'].$unit.'</div>'; } else { echo '<div class="col-xs-6">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i></div>'; }
-                                                echo '<div class="col-xs-6"><span class="pull-right text-muted small"><button type="button"  data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SensorsInfo&id=' . $nrow['node_id'] . '" onclick="sensors_Info(this);"><em>'.$nrow['last_seen'].'&nbsp</em></span></button>&nbsp&nbsp</div>
+					<div class="form-group row">
+						<div class="d-flex justify-content-between">';
+							if ($mcount > 0) { echo '<div class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i> - '.$mrow['payload'].$unit.'</div>'; } else { echo '<div class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i></div>'; }
+        	                                        echo '<div class="col-xs-6"><span class="text-muted small"><button type="button"  data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SensorsInfo&id=' . $row['id'] . '" onclick="sensors_Info(this);"><em>'.$nrow['last_seen'].'&nbsp</em></span></button>&nbsp&nbsp</div>
+						</div>
 					</div>
 				</div> ';
 			}
@@ -1067,16 +1069,23 @@ if($_GET['Ajax']=='GetModal_Sensors')
 function GetModal_SensorsInfo($conn)
 {
         global $lang;
-        $query = "SELECT COUNT(DISTINCT `child_id`) AS TotalRows FROM `messages_in` WHERE `node_id` = '{$_GET['id']}';";
-        $result = $conn->query($query);
-        $num_child = mysqli_fetch_assoc($result);
-        $query = "SELECT * FROM messages_in_view_24h WHERE node_id = '{$_GET['id']}'";
+	$query = "SELECT name, sensor_id, sensor_child_id FROM sensors WHERE id = {$_GET['id']}";
+	$sresult = $conn->query($query);
+	$srow = mysqli_fetch_assoc($sresult);
+	$s_name = $srow['name'];
+        $sensor_id = $srow['sensor_id'];
+        $sensor_child_id = $srow['sensor_child_id'];
+	$query = "SELECT node_id FROM nodes WHERE id = {$sensor_id}";
+        $nresult = $conn->query($query);
+        $nrow = mysqli_fetch_assoc($nresult);
+	$node_id = $nrow['node_id'];
+        $query = "SELECT * FROM messages_in_view_24h WHERE node_id = '{$node_id}' AND child_id = {$sensor_child_id};";
         $results = $conn->query($query);
         $count = mysqli_num_rows($results);
 
         echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
-                <h5 class="modal-title" id="ajaxModalLabel">'.$lang['sensor_last24h'].$_GET['id'].'&nbsp('.$num_child['TotalRows'].')</h5>
+                <h5 class="modal-title" id="ajaxModalLabel">'.$lang['sensor_last24h'].$node_id.'&nbsp('.$sensor_child_id.')</h5>
         </div>
         <div class="modal-body" id="ajaxModalBody">';
                 echo '<p class="text-muted">'.$lang['node_count_last24h'].$count.'<br>';
@@ -1085,27 +1094,15 @@ function GetModal_SensorsInfo($conn)
                 	echo '<table class="table table-fixed">
                         	<thead>
                                 	<tr>
-                                        	<th class="col-xs-6"><small>'.$lang['sensor_name'].'</small></th>
-                                        	<th style="text-align:center; vertical-align:middle;" class="col-xs-6"><small>'.$lang['last_seen'].'</small></th>
+                                        	<th class="col-6"><small>'.$lang['sensor_name'].'</small></th>
+                                        	<th style="text-align:center; vertical-align:middle;" class="col-6"><small>'.$lang['last_seen'].'</small></th>
                                 	</tr>
                         	</thead>
                         	<tbody>';
 	                		while ($row = mysqli_fetch_assoc($results)) {
-						$query = "SELECT id FROM nodes WHERE node_id = {$row['node_id']} LIMIT 1;";
-						$result = $conn->query($query);
-						$nodes_row = mysqli_fetch_assoc($result);
-                                		$query = "SELECT name FROM sensors WHERE sensor_id = {$nodes_row['id']} AND sensor_child_id = {$row['child_id']} LIMIT 1;";
-	                                	$s_result = $conn->query($query);
-						$scount=mysqli_num_rows($s_result);
-						if ($scount > 0) {
-							$sensor_row = mysqli_fetch_assoc($s_result);
-							$s_name = $sensor_row['name'];
-						} else {
-							$s_name = $lang['unallocated_sensor'].$row['child_id'];
-						}
                         	        	echo '<tr>
-                                	        	<td class="col-xs-6">'.$s_name.'</td>
-                                        		<td style="text-align:center; vertical-align:middle;" class="col-xs-6">'.$row["datetime"].'</td>
+                                	        	<td class="col-6">'.$s_name.'</td>
+                                        		<td style="text-align:center; vertical-align:middle;" class="col-6">'.$row["datetime"].'</td>
                                 		</tr>';
 					}
 			 	echo '</tbody>
