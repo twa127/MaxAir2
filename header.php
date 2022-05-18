@@ -139,8 +139,8 @@ $theme = settings($conn, 'theme');
 		<?php if ($_SESSION['admin'] == 1) { ?>
                 	<!-- /.dropdown-settings -->
                 	<li class="dropdown">
-                    		<a class="dropdown-toggle <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
-                        		<i class="bi bi-gear-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem"></i>
+                    		<a class="<?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
+                        		<i class="bi bi-gear-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem"></i><i class="bi bi-caret-down-fill"></i>
                     		</a>
                     		<ul class="dropdown-menu dropdown-user">
                         		<li><a class="dropdown-item" href="settings.php?s_id=1"><i class="bi bi-speedometer" style="font-size: 1rem; color: orange;"></i> <?php echo $lang['system_status']; ?> </a></li>
@@ -162,8 +162,8 @@ $theme = settings($conn, 'theme');
 
 		    <!-- /.dropdown-user -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
-                        <i class="bi bi-person-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
+                    <a class="<?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-person-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i><i class="bi bi-caret-down-fill"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a class="dropdown-item" href="user_accounts.php"><i class="bi bi-person-fill" style="font-size: 1.2rem;"></i> <?php echo $lang['user_change_password']; ?> </a></li>
