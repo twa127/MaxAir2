@@ -364,7 +364,7 @@ if ($settings_id <= 3) {
 
        				                <button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="edit_gpio.php" data-bs-toggle="modal" data-bs-target="#boost_setup">
 			        	       	<h3 class="buttontop"><small><?php echo $lang['boost']; ?></small></h3>
-       			        		<h3 class="degre" ><img src="images/rocket.svg" width="25" height="25" alt=""></i></h3>
+       			        		<h3 class="degre" ><img src="images/rocket.svg" width="25" height="25" alt=""></h3>
 	        		                <h3 class="status"></small></h3>
 					        </button>
 
@@ -445,7 +445,7 @@ if ($settings_id <= 3) {
   					<div class="modal-dialog">
     						<div class="modal-content" id="ajaxModalContent">
 							<div class="modal-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
-        							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								<h5 class="modal-title" id="ajaxModalLabel">...</h5>
 							</div>
       							<div class="modal-body" id="ajaxModalBody">

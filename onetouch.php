@@ -55,7 +55,7 @@ $theme = settings($conn, 'theme');
 				$result = $conn->query($query);
 				$lt_status=mysqli_num_rows($result);
 				if ($lt_status==1) {$lt_status='red';}else{$lt_status='blueinfo';}
-				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn animated fadeIn" data-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
+				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
 				<h3 class="buttontop"><small>'.$lang['live_temp'].'</small></h3>
 				<h3 class="degre" style="margin-top:5px;"><img src="images/'.$icon.'" border="0"></h3>
 				<h3 class="status"><small class="statuscircle"><i class="bi bi-circle-fill '.$lt_status.'" style="font-size: 0.55rem;"></i></small></h3>
@@ -157,8 +157,8 @@ $theme = settings($conn, 'theme');
 				echo '<div class="modal fade" id="livetemperature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+							<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+								<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
 								<h5 class="modal-title">'.$lang['live_temperature'].'</h5>
 							</div>
                 		                        <div class="modal-body">
@@ -179,7 +179,7 @@ $theme = settings($conn, 'theme');
                 		                                echo '</div>
                                 		        </div>
 		                                        <!-- /.modal-body -->
-                		                        <div class="modal-footer"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-dismiss="modal">'.$lang['cancel'].'</button>';
+                		                        <div class="modal-footer"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>';
                                 		                if ($rowcount > 0) { echo '<input type="button" name="submit" value="'.$lang['apply'].'" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" onclick="update_livetemp()">'; }
 		                                        echo '</div>
                 					<!-- /.modal-footer -->

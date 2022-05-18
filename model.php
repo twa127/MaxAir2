@@ -2104,7 +2104,7 @@ echo '
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_override.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_override'].'</a></li>
-                         </ul>
+                        </ul>
                 </div>
             </div>
             <div class="modal-body">
@@ -2136,8 +2136,14 @@ while ($row = mysqli_fetch_assoc($results)) {
 		if ($row['hvac_mode']  == 4) { $name = 'HEAT'; } else { $name = 'COOL'; };
 	}
 	echo '<a href="#" class="list-group-item">
-	<i class="bi bi-arrow-repeat blue" style="font-size: 1.2rem;"></i> ".$name." 
-    <span class="pull-right text-muted small"><em>'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'&deg; </em></span></a>';
+		<div class="d-flex justify-content-between">
+			<div>
+				<i class="bi bi-arrow-repeat blue" style="font-size: 1.2rem;"></i>&nbsp'.$name.'
+			</div>
+    			<div class="text-muted small"><em>'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'&deg; </em>
+			</div>
+		</div>
+	</a>';
 }
 echo '</div></div>
             <div class="modal-footer">
