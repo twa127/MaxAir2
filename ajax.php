@@ -1088,7 +1088,7 @@ function GetModal_SensorsInfo($conn)
                 <h5 class="modal-title" id="ajaxModalLabel">'.$lang['sensor_last24h'].$node_id.'&nbsp('.$sensor_child_id.')</h5>
         </div>
         <div class="modal-body" id="ajaxModalBody">';
-                echo '<p class="text-muted">'.$lang['node_count_last24h'].$count.'<br>';
+                echo '<p class="text-muted">'.$lang['sensor_count_last24h'].$count.'<br>';
                 echo $lang['average_count_last24h'].intval((($count/$num_child['TotalRows'])/24)).'</p>';
                 if ($count > 0) {
                 	echo '<table class="table table-fixed">
