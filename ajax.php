@@ -439,30 +439,48 @@ function GetModal_MQTT($conn)
     $query = "SELECT * FROM `mqtt` ORDER BY `name`;";
     $results = $conn->query($query);
     echo '<div class="list-group">';
-    echo '<span class="list-group-item" style="height:40px;">&nbsp;';
-    echo '<span class="pull-right text-muted small"><button type="button" class="btn btn-primary btn-sm" 
+    echo '<span class="list-group-item text-end" style="height:40px;">&nbsp;';
+    echo '<span class="text-muted small"><button type="button" class="btn btn-primary btn-sm" 
              data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTAdd" onclick="mqtt_AddEdit(this);">'.$lang['add'].'</button></span>';
     echo '</span>';
     while ($row = mysqli_fetch_assoc($results)) {
-        echo '<span class="list-group-item">';
-        echo $row['name'] . ($row['enabled'] ? '' : ' (Disabled)');
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">Username:&nbsp;' . $row['username'] . '</span>';
-        echo '<br/><span class="text-muted small">Type:&nbsp;';
-        if($row['type']==0) echo 'Default, monitor.';
-        else if($row['type']==1) echo 'Sonoff Tasmota.';
-        else if($row['type']==2) echo 'MQTT Node.';
-        else if($row['type']==3) echo 'Home Assistant.';
-        else echo 'Unknown.';
-        echo '</span>';
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">Password:&nbsp;' . dec_passwd($row['password']) . '</span>';
-        echo '<br/><span class="text-muted small">' . $row['ip'] . '&nbsp;:&nbsp;' . $row['port'] . '</span>';
-
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">';
-        echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
-            <span class="ionicons ion-edit"></span></button>&nbsp;&nbsp;
-		<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="bi bi-trash-fill"></span></button>';
-        echo '</span>';
-        echo '</span>';
+        echo '<span class="list-group-item">
+		<div class="d-flex justify-content-between">
+			<div>';
+        			echo $row['name'] . ($row['enabled'] ? '' : ' (Disabled)');
+			echo '</div>
+			<div>
+        			<span class="text-muted small" style="width:200px;text-align:right;">Username:&nbsp;' . $row['username'] . '</span>
+			</div>
+		</div>
+                <div class="d-flex justify-content-between">
+			<div>
+				<span class="text-muted small">Type:&nbsp;';
+        				if($row['type']==0) echo 'Default, monitor.';
+        				else if($row['type']==1) echo 'Sonoff Tasmota.';
+        				else if($row['type']==2) echo 'MQTT Node.';
+        				else if($row['type']==3) echo 'Home Assistant.';
+        				else echo 'Unknown.';
+        			echo '</span>
+			</div>
+			<div>
+        			<span class="text-muted small" style="width:200px;text-align:right;">Password:&nbsp;' . dec_passwd($row['password']) . '</span>
+			</div>
+		</div>
+                <div class="d-flex justify-content-between">
+                        <div>
+        			<span class="text-muted small">' . $row['ip'] . '&nbsp;:&nbsp;' . $row['port'] . '</span>
+			</div>
+			<div>
+        			<span class="text-muted small" style="width:200px;text-align:right;">
+        				<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
+            					<span class="ionicons ion-edit"></span>
+					</button>&nbsp;&nbsp;
+					<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="bi bi-trash-fill"></span></button>
+        			</span>
+        		</div>
+		</div>
+	</span>';
     }
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
@@ -1089,7 +1107,7 @@ function GetModal_SensorsInfo($conn)
         </div>
         <div class="modal-body" id="ajaxModalBody">';
                 echo '<p class="text-muted">'.$lang['sensor_count_last24h'].$count.'<br>';
-                echo $lang['average_count_last24h'].intval((($count/$num_child['TotalRows'])/24)).'</p>';
+                echo $lang['average_count_last24h'].intval($count/24).'</p>';
                 if ($count > 0) {
                 	echo '<table class="table table-fixed">
                         	<thead>
