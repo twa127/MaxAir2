@@ -522,44 +522,48 @@ echo '     </div>
 //user accounts model
 echo '
 <div class="modal fade" id="user_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
-                <h5 class="modal-title">'.$lang['user_accounts'].'</h5>
-            </div>
-            <div class="modal-body">
-                        <p class="text-muted"> '.$lang['user_accounts_text'].' </p>';
-echo '<div class="list-group">';
-$query = "SELECT * FROM user";
-$results = $conn->query($query);
-while ($row = mysqli_fetch_assoc($results)) {
-        $full_name=$row['fullname'];
-        $username=$row['username'];
-        if ($_SESSION['user_id'] == $row['id']) { $username .= " (Logged On)"; }
-        if($row['account_enable'] == 1) {
-                $content_msg="You are about to DELETE an ENABLED USER";
-        } else {
-                $content_msg="You are about to DELETE a CURRENTLY DISABLED USER";
-        }
-        echo '<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="ionicons ion-person blue"></i> '.$username.'
-                <span class="pull-right text-muted small"><em>
-		<a href="user_accounts.php?uid='.$row["id"].'><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="ionicons ion-edit"></span></button>&nbsp</a>';
-                if ($_SESSION['user_id'] != $row['id']) {
-                        echo '<a href="javascript:del_user('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title='.$lang["confirmation"].' data-bs-content="$content_msg"><span class="bi bi-trash-fill black"></span></button></a>';
-                } else {
-                        echo '<button class="btn btn-danger btn-xs disabled"><span class="bi bi-trash-fill black"></span></button>';
-                }
-                echo '</em></span>
-        </div>';
-}
-echo '</div></div>
-            <div class="modal-footer">
-                <a href="user_accounts.php?uid=0"><button class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['add_user'].'</button></a>
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+        	<div class="modal-content">
+            		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+                        	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
+                			<h5 class="modal-title">'.$lang['user_accounts'].'</h5>
+            		</div>
+            		<div class="modal-body">
+                        	<p class="text-muted"> '.$lang['user_accounts_text'].' </p>';
+				echo '<ul class="list-group">';
+					$query = "SELECT * FROM user";
+					$results = $conn->query($query);
+					while ($row = mysqli_fetch_assoc($results)) {
+					        $full_name=$row['fullname'];
+					        $username=$row['username'];
+					        if ($_SESSION['user_id'] == $row['id']) { $username .= " (Logged On)"; }
+					        if($row['account_enable'] == 1) {
+					                $content_msg="You are about to DELETE an ENABLED USER";
+				        	} else {
+				                	$content_msg="You are about to DELETE a CURRENTLY DISABLED USER";
+					        }
+						echo '<li class="list-group-item">
+							<div class="d-flex justify-content-between">
+        							<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="ionicons ion-person blue"></i> '.$username.'</div>
+                						<div class="text-muted small">
+									<a href="user_accounts.php?uid='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="ionicons ion-edit"></span></button>&nbsp</a>';
+                								if ($_SESSION['user_id'] != $row['id']) {
+                        								echo '<a href="javascript:del_user('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title='.$lang["confirmation"].' data-bs-content="$content_msg"><span class="bi bi-trash-fill black"></span></button></a>';
+                								} else {
+                        								echo '<button class="btn btn-danger btn-xs disabled"><span class="bi bi-trash-fill black"></span></button>';
+                								}
+								echo '</div>
+							</div>
+						</li>';
+					}
+				echo '</ul>
+			</div>
+            		<div class="modal-footer">
+                		<a href="user_accounts.php?uid=0"><button class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['add_user'].'</button></a>
+                		<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            		</div>
+        	</div>
+    	</div>
 </div>';
 
 //Software Install Modal
