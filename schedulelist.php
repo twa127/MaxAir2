@@ -49,23 +49,17 @@ $theme = settings($conn, 'theme');
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        	<ul class="chat">
-                <li class="left clearfix">
-                <a href="scheduling.php" style="color: #777; cursor: pointer;">
-                <span class="chat-img pull-left">
-                <div class="circle orangesch">
-                       	<i class="ionicons ion-plus"></i>
-                </div>
-                </span>
-                <div class="chat-body clearfix">
-                       	<div class="header">
-                               	<strong class="primary-font"> </strong>
-                               	<small class="pull-right text-muted">
-                                <?php echo $lang['schedule_add']; ?> <i class="bi bi-chevron-right icon-fw"></i>
-                                </small>
-                        </div>
-               	</div>
-                </a>
+        	<ul class="list-group list-group-flush">
+                	<li class="list-group-item">
+        			<a href="scheduling.php" class="d-flex justify-content-between list-group-item list-group-item-action">
+          				<span class="circle orangesch"><i class="ionicons ion-plus"></i></span> 
+                        		<span class="header">
+                                		<strong class="primary-font"> </strong>
+                                		<small class="text-muted">
+                                			<?php echo $lang['schedule_add']; ?> <i class="bi bi-chevron-right icon-fw"></i>
+                                		</small>
+                        		</span>
+        			</a>
                 </li>
                 <?php
 		//following variable set to 0 on start for array index.
@@ -132,42 +126,49 @@ $theme = settings($conn, 'theme');
 			$sch_params[] = array('time_id' =>$row['time_id']);
 			//time shchedule listing
 			echo '
-			<li class="left clearfix scheduleli animated fadeIn">
-				<a href="javascript:active_schedule(' . $row["time_id"] . ');">
-					<span class="chat-img pull-left" id="sch_status_'.$row["time_id"].'">
-                        			<div class="circle ' . $shactive . '">';
-							if ($row["tz_status"] == 1 || ($row["tz_status"] == 0 && $row["time_status"] == 1)) {
-			        	                        if($row["category"] <> 2 && $row["sensor_type_id"] <> 3) {
-									$unit = SensorUnits($conn,$row['sensor_type_id']);
-									echo '<p class="schdegree">' . DispSensor($conn, number_format($row["max_c"], 1), $row["sensor_type_id"]) . $unit . '</p>';
-								}
-							}
-                        			echo ' </div>
+			<li class="list-group-item">
+				<div class="d-flex justify-content-between">
+					<span>
+						<div class="d-flex justify-content-start">
+							<a href="javascript:active_schedule(' . $row["time_id"] . ');" style="text-decoration: none;">
+								<span class="" id="sch_status_'.$row["time_id"].'">
+                	        					<div class="circle ' . $shactive . '">';
+										if ($row["tz_status"] == 1 || ($row["tz_status"] == 0 && $row["time_status"] == 1)) {
+			        		                        		if($row["category"] <> 2 && $row["sensor_type_id"] <> 3) {
+												$unit = SensorUnits($conn,$row['sensor_type_id']);
+												echo '<p class="schdegree">' . DispSensor($conn, number_format($row["max_c"], 1), $row["sensor_type_id"]) . $unit . '</p>';
+											}
+										}
+	                        					echo ' </div>
+								</span>
+							</a>
+                        				<a style="color: #333; cursor: pointer; text-decoration: none;" data-bs-toggle="collapse" href="#collapse' . $row['tz_id'] . '">
+				                                <span class="header text-info">&nbsp;&nbsp;
+                                				        <span class="label label-info">' . $sch_name . '</span>';
+					                        	if($row["category"] == 2 && $sr_ss == 1) { echo '&nbsp;&nbsp;<img src="./images/sunset.png">'; }
+                                        				echo '<br>&nbsp;&nbsp; '. $row['start'] . ' - ' . $row['end'] . '
+								</span>
+							</a>
+						</div>
 					</span>
-				</a>
-
-			<a style="color: #333; cursor: pointer; text-decoration: none;" data-bs-toggle="collapse" href="#collapse' . $row['tz_id'] . '">
-                        <div class="chat-body clearfix">
-                                <div class="header text-info">&nbsp;&nbsp;';
-                                        echo '<span class="label label-info">' . $sch_name . '</span>';
-                                        if($row["category"] == 2 && $sr_ss == 1) { echo '&nbsp;&nbsp;<img src="./images/sunset.png">'; }
-                                        echo '<br>&nbsp;&nbsp; '. $row['start'] . ' - ' . $row['end'] . ' &nbsp;&nbsp;
-
-					<small class="pull-right pull-right-days pull-right-sch-list">
-					&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;S<br>
-					&nbsp;&nbsp;&nbsp;
-					<i class="ionicons ' . $Sunday_status_icon . ' icon-lg ' . $Sunday_status_color . '"></i>
-					<i class="ionicons ' . $Monday_status_icon . ' icon-lg ' . $Monday_status_color . '"></i>
-					<i class="ionicons ' . $Tuesday_status_icon . ' icon-lg ' . $Tuesday_status_color . '"></i>
-					<i class="ionicons ' . $Wednesday_status_icon . ' icon-lg ' . $Wednesday_status_color . '"></i>
-					<i class="ionicons ' . $Thursday_status_icon . ' icon-lg ' . $Thursday_status_color . '"></i>
-					<i class="ionicons ' . $Friday_status_icon . ' icon-lg ' . $Friday_status_color . '"></i>
-					<i class="ionicons ' . $Saturday_status_icon . ' icon-lg ' . $Saturday_status_color . '"></i>
-					</small>
+					<span>
+						<a style="color: #333; cursor: pointer; text-decoration: none;" data-bs-toggle="collapse" href="#collapse' . $row['tz_id'] . '">
+                        			        <span class="header text-info">
+								<small>
+								&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;S<br>
+								&nbsp;&nbsp;&nbsp;
+								<i class="ionicons ' . $Sunday_status_icon . ' icon-lg ' . $Sunday_status_color . '"></i>
+								<i class="ionicons ' . $Monday_status_icon . ' icon-lg ' . $Monday_status_color . '"></i>
+								<i class="ionicons ' . $Tuesday_status_icon . ' icon-lg ' . $Tuesday_status_color . '"></i>
+								<i class="ionicons ' . $Wednesday_status_icon . ' icon-lg ' . $Wednesday_status_color . '"></i>
+								<i class="ionicons ' . $Thursday_status_icon . ' icon-lg ' . $Thursday_status_color . '"></i>
+								<i class="ionicons ' . $Friday_status_icon . ' icon-lg ' . $Friday_status_color . '"></i>
+								<i class="ionicons ' . $Saturday_status_icon . ' icon-lg ' . $Saturday_status_color . '"></i>
+								</small>
+							</span>
+						</a>
+					<span>
 				</div>
-			</div>
-			</a>
-
 			<div class="collapse" id="collapse' . $row["tz_id"] . '">
 				<br>';
 
@@ -202,9 +203,8 @@ $theme = settings($conn, 'theme');
 
 				//delete and edit button for each schedule
 				echo '
-				<small class="pull-right"><br>
-				<a href="javascript:delete_schedule(' . $row["time_id"] . ');"><button class="btn btn-danger btn-sm" data-bs-toggle="confirmation" data-title="ARE YOU SURE?" data-content="You are about to DELETE this SCHEDULE"><span class="bi bi-trash-fill
-"></span></button> </a> &nbsp;&nbsp;
+				<small class="text-end"><br>
+				<a href="javascript:delete_schedule(' . $row["time_id"] . ');"><button class="btn btn-danger btn-sm" data-bs-toggle="" data-title="ARE YOU SURE?" data-content="You are about to DELETE this SCHEDULE"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
 				<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>
 				</small>
 			</div>
@@ -246,10 +246,6 @@ $theme = settings($conn, 'theme');
     $conn->close();
 } ?>
 <script>
-$('[data-bs-toggle=confirmation]').confirmation({
-  rootSelector: '[data-bs-toggle=confirmation]',
-  container: 'body'
-});
 
 // update page data every x seconds
 $(document).ready(function(){
