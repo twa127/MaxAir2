@@ -343,18 +343,18 @@ if(!isset($_GET['nid'])) {
 
                                         <div class="row">
 	                                        <!-- Enable Schedule -->
-                                                <div class="col-xs-2">
-							<div class="checkbox checkbox-default checkbox-circle">
-								<input id="checkbox0" class="styled" type="checkbox" name="sc_en" value="1" <?php $check = ($time_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
-								<label for="checkbox0"> <?php echo $lang['schedule_enable']; ?></label>
+                                                <div class="col-2">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="sc_en" <?php $check = ($time_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+								<label class="form-check-label" for="checkbox0"> <?php echo $lang['schedule_enable']; ?></label>
 							</div>
 						</div>
 
 	                                        <!-- Enable Away Schedule -->
-                                                <div class="col-xs-2">
-		                                        <div class="checkbox checkbox-default checkbox-circle">
-                				                <input id="checkbox1" class="styled" type="checkbox" name="aw_en" value="1" <?php $check = ($time_row['type'] == 1) ? 'checked' : ''; echo $check. " ".$away_disabled ; ?>>
-                                		                <label for="checkbox1"> <?php echo $lang['away_enable']; ?></label>
+                                                <div class="col-2">
+		                                        <div class="form-check">
+                				                <input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="aw_en" <?php $check = ($time_row['type'] == 1) ? 'checked' : ''; echo $check. " ".$away_disabled ; ?>>
+                                		                <label class="form-check-label" for="checkbox1"> <?php echo $lang['away_enable']; ?></label>
                                         		</div>
 						</div>
 					</div>
@@ -362,52 +362,52 @@ if(!isset($_GET['nid'])) {
 
 					<!-- Day Selector -->
 					<div class="row">
-						<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox2" class="styled" type="checkbox" name="Sunday_en" value="1" <?php $check = (($time_row['WeekDays'] & 1) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox2"> <?php echo $lang['sun']; ?></label>
+						<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="Sunday_en" <?php $check = (($time_row['WeekDays'] & 1) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox2"> <?php echo $lang['sun']; ?></label>
 							</div>
 						</div>
 
-						<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox3" class="styled" type="checkbox" name="Monday_en" value="1" <?php $check = (($time_row['WeekDays'] & 2) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox3"> <?php echo $lang['mon']; ?></label>
+						<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox3" name="Monday_en" <?php $check = (($time_row['WeekDays'] & 2) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox3"> <?php echo $lang['mon']; ?></label>
 							</div>
 						</div>
 
-        					<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox4" class="styled" type="checkbox" name="Tuesday_en" value="1" <?php $check = (($time_row['WeekDays'] & 4) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox4"> <?php echo $lang['tue']; ?></label>
+        					<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox4" name="Tuesday_en" <?php $check = (($time_row['WeekDays'] & 4) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox4"> <?php echo $lang['tue']; ?></label>
 							</div>
 						</div>
 
-						<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox5" class="styled" type="checkbox" name="Wednesday_en" value="1" <?php $check = (($time_row['WeekDays'] & 8) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox5"> <?php echo $lang['wed']; ?></label>
+						<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox5" name="Wednesday_en" <?php $check = (($time_row['WeekDays'] & 8) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox5"> <?php echo $lang['wed']; ?></label>
 							</div>
 						</div>
 
-        					<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox6" class="styled" type="checkbox" name="Thursday_en" value="1" <?php $check = (($time_row['WeekDays'] & 16) > 0) ? 'checked' : ''; echo $check; ?>>
-	    							<label for="checkbox6"> <?php echo $lang['thu']; ?></label>
+        					<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox6" name="Thursday_en" <?php $check = (($time_row['WeekDays'] & 16) > 0) ? 'checked' : ''; echo $check; ?>>
+	    							<label class="form-check-label" for="checkbox6"> <?php echo $lang['thu']; ?></label>
 							</div>
 						</div>
 
-						<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox7" class="styled" type="checkbox" name="Friday_en" value="1" <?php $check = (($time_row['WeekDays'] & 32) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox7"> <?php echo $lang['fri']; ?></label>
+						<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox7" name="Friday_en" <?php $check = (($time_row['WeekDays'] & 32) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox7"> <?php echo $lang['fri']; ?></label>
 							</div>
 						</div>
 
-						<div class="col-xs-3">
-							<div class="checkbox checkbox-default checkbox-circle">
-    								<input id="checkbox8" class="styled" type="checkbox" name="Saturday_en" value="1" <?php $check = (($time_row['WeekDays'] & 64) > 0) ? 'checked' : ''; echo $check; ?>>
-    								<label for="checkbox8"> <?php echo $lang['sat']; ?></label>
+						<div class="col-3">
+							<div class="form-check">
+    								<input class="form-check-input" type="checkbox" value="1" id="checkbox8" name="Saturday_en" <?php $check = (($time_row['WeekDays'] & 64) > 0) ? 'checked' : ''; echo $check; ?>>
+    								<label class="form-check-label" for="checkbox8"> <?php echo $lang['sat']; ?></label>
 							</div>
 						</div>
 					</div>
@@ -546,9 +546,9 @@ if(!isset($_GET['nid'])) {
 							echo '<input type="hidden" name="zoneid['.$row["tz_id"].']" value="'.$row["zone_id"].'">';
 						}?>
 						<!-- Zone Enable Checkbox -->
-						<div class="checkbox checkbox-default  checkbox-circle">
-							<input id="checkbox<?php echo $row["tz_id"];?>" class="styled" type="checkbox" name="status[<?php echo $row["tz_id"];?>]" value="1" <?php if($time_id != 0){ $check = ($row['tz_status'] == 1) ? 'checked' : ''; echo $check;} ?> onclick="$('#<?php echo $row["tz_id"];?>').toggle();">
-    							<label for="checkbox<?php echo $row["tz_id"];?>"><?php echo $row["zone_name"];?></label>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="1" id="<?php echo $row["tz_id"];?>" name="status[<?php echo $row["tz_id"];?>]" <?php if($time_id != 0){ $check = ($row['tz_status'] == 1) ? 'checked' : ''; echo $check;} ?> onclick="$('#<?php echo $row["tz_id"];?>').toggle();">
+    							<label class="form-check-label" for="checkbox<?php echo $row["tz_id"];?>"><?php echo $row["zone_name"];?></label>
 
     							<div class="help-block with-errors"></div>
 						</div>
@@ -587,9 +587,9 @@ if(!isset($_GET['nid'])) {
 										if ((settings($conn, 'mode')  & 0b1) == 0 && $row['sensor_type_id'] == 1) {
 											//<!-- Zone Coop Enable Checkbox -->
 										       	if($time_id != 0){ $check = ($row['coop'] == 1) ? 'checked' : ''; }
-										        echo '<div class="checkbox checkbox-default  checkbox-circle">
-												<input id="coop'.$row["tz_id"].'" class="styled" type="checkbox" name="coop['.$row["tz_id"].']" value="1" '.$check.'>
-											        <label for="coop'.$row["tz_id"].'">Coop Start</label> <i class="ionicons ion-leaf green"></i>
+										        echo '<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="1" id="coop'.$row["tz_id"].'" name="coop['.$row["tz_id"].']" '.$check.'>
+											        <label class="form-check-label" for="coop'.$row["tz_id"].'">Coop Start</label> <i class="ionicons ion-leaf green"></i>
 											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="'.$lang['schedule_coop_help'].'"></i>
 												<div class="help-block with-errors"></div>
 											</div>';
