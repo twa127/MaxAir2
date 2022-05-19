@@ -1064,7 +1064,7 @@ function GetModal_Sensors($conn)
 					<div class="form-group row">
 						<div class="d-flex justify-content-between">';
 							if ($mcount > 0) { echo '<div class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i> - '.$mrow['payload'].$unit.'</div>'; } else { echo '<div class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i></div>'; }
-        	                                        echo '<div class="col-xs-6"><span class="text-muted small"><button type="button"  data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SensorsInfo&id=' . $row['id'] . '" onclick="sensors_Info(this);"><em>'.$nrow['last_seen'].'&nbsp</em></span></button>&nbsp&nbsp</div>
+        	                                        echo '<div class="col-6"><span class="text-muted small"><button type="button"  data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SensorsInfo&id=' . $row['id'] . '" onclick="sensors_Info(this);"><em>'.$nrow['last_seen'].'&nbsp</em></span></button>&nbsp&nbsp</div>
 						</div>
 					</div>
 				</div> ';

@@ -43,10 +43,10 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
                 $results = $conn->query($query);
                 echo '<table class="table table-bordered">
                         <tr>
-                                <th style="text-align:center; vertical-align:middle;" class="col-xs-3"><small>'.$lang['temperature_sensor'].'</small></th>
-                                <th style="text-align:center; vertical-align:middle;" class="col-xs-3"><small>'.$lang['frost_temparature'].'</small></th>
-                                <th style="text-align:center; vertical-align:middle;" class="col-xs-3"><small>'.$lang['frost_controller'].'</small></th>
-                                <th style="text-align:center; vertical-align:middle;" class="col-xs-1"><small>'.$lang['status'].'</small></th>
+                                <th style="text-align:center; vertical-align:middle;" class="col-3"><small>'.$lang['temperature_sensor'].'</small></th>
+                                <th style="text-align:center; vertical-align:middle;" class="col-3"><small>'.$lang['frost_temparature'].'</small></th>
+                                <th style="text-align:center; vertical-align:middle;" class="col-3"><small>'.$lang['frost_controller'].'</small></th>
+                                <th style="text-align:center; vertical-align:middle;" class="col-1"><small>'.$lang['status'].'</small></th>
                         </tr>';
                         while ($row = mysqli_fetch_assoc($results)) {
                                 $query = "SELECT node_id FROM nodes WHERE id = ".$row['sensor_id']." LIMIT 1;";
@@ -237,9 +237,9 @@ echo '
                                 echo '<p class="text-muted"> '.$lang['maxair_versions_text'].' <br>'.$lang['repository'].' - https://github.com/'.$row['name'].'.git</p>
                                 <table class="table table-bordered">
                                         <tr>
-                                                <th class="col-xs-8"></th>
-                                                <th class="col-xs-2" "not_mapped_style" style="text-align:center">'.$lang['maxair_update_installed'].'</th>
-                                                <th class="col-xs-2" "not_mapped_style" style="text-align:center">'.$lang['maxair_update_github'].'</th>
+                                                <th class="col-8"></th>
+                                                <th class="col-2" "not_mapped_style" style="text-align:center">'.$lang['maxair_update_installed'].'</th>
+                                                <th class="col-2" "not_mapped_style" style="text-align:center">'.$lang['maxair_update_github'].'</th>
                                         </tr>
 
                                         <tr>
@@ -953,8 +953,8 @@ $query = "SELECT * FROM sensors WHERE sensor_type_id = 1 ORDER BY name asc";
 $results = $conn->query($query);
 echo '  <table class="table table-bordered">
     <tr>
-        <th class="col-xs-10"><small>'.$lang['sensor_name'].'</small></th>
-        <th class="col-xs-2"><small>'.$lang['graph_num'].'</small></th>
+        <th class="col-10"><small>'.$lang['sensor_name'].'</small></th>
+        <th class="col-2"><small>'.$lang['graph_num'].'</small></th>
     </tr>';
 while ($row = mysqli_fetch_assoc($results)) {
     echo '
@@ -996,11 +996,11 @@ $query = "SELECT sensor_limits.id, sensors.name, sensor_limits.min, sensor_limit
 $results = $conn->query($query);
 echo '  <table class="table table-bordered">
     <tr>
-        <th class="col-xs-4"><small>'.$lang['sensor_name'].'</small></th>
-        <th class="col-xs-1"><small>'.$lang['min_val'].'</small></th>
-        <th class="col-xs-1"><small>'.$lang['max_val'].'</small></th>
-        <th class="col-xs-1"><small>'.$lang['enabled'].'</small></th>
-        <th class="col-xs-2"><small>'.$lang['edit_delete'].'</small></th>
+        <th class="col-4"><small>'.$lang['sensor_name'].'</small></th>
+        <th class="col-1"><small>'.$lang['min_val'].'</small></th>
+        <th class="col-1"><small>'.$lang['max_val'].'</small></th>
+        <th class="col-1"><small>'.$lang['enabled'].'</small></th>
+        <th class="col-2"><small>'.$lang['edit_delete'].'</small></th>
     </tr>';
 while ($row = mysqli_fetch_assoc($results)) {
     if ($row['status'] == 1) { $enabled = $lang['yes']; } else { $enabled = $lang['no']; }
@@ -1391,12 +1391,12 @@ $query = "SELECT id, job_name, script, enabled, log_it, time FROM jobs ORDER BY 
 $results = $conn->query($query);
 echo '<br><table>
     <tr>
-        <th class="col-xs-3">'.$lang['jobs_name'].'</th>
-        <th class="col-xs-4">'.$lang['jobs_script'].'</th>
-        <th class="col-xs-1">'.$lang['enabled'].'</th>
-        <th class="col-xs-1">'.$lang['jobs_log'].'</th>
-        <th class="col-xs-2">'.$lang['jobs_time'].'</th>
-        <th class="col-xs-1"></th>
+        <th class="col-3">'.$lang['jobs_name'].'</th>
+        <th class="col-4">'.$lang['jobs_script'].'</th>
+        <th class="col-1">'.$lang['enabled'].'</th>
+        <th class="col-1">'.$lang['jobs_log'].'</th>
+        <th class="col-2">'.$lang['jobs_time'].'</th>
+        <th class="col-1"></th>
     </tr>';
 
 while ($row = mysqli_fetch_assoc($results)) {
@@ -1881,12 +1881,12 @@ if ((settings($conn, 'mode') & 0b1) == 0) {
 	$results = $conn->query($query);
 	echo '<table class="table table-bordered">
 	    <tr>
-        	<th class="col-xs-4"><small>'.$lang['zone'].'</small></th>
-        	<th class="col-xs-2"><small>'.$lang['boost_time'].'</small></th>
-        	<th class="col-xs-2"><small>'.$lang['boost_temp'].'</small></th>
-        	<th class="col-xs-2"><small>'.$lang['boost_console_id'].'</small></th>
-        	<th class="col-xs-1"><small>'.$lang['boost_button_child_id'].'</small></th>
-        	<th class="col-xs-1"></th>
+        	<th class="col-4"><small>'.$lang['zone'].'</small></th>
+        	<th class="col-2"><small>'.$lang['boost_time'].'</small></th>
+        	<th class="col-2"><small>'.$lang['boost_temp'].'</small></th>
+        	<th class="col-2"><small>'.$lang['boost_console_id'].'</small></th>
+        	<th class="col-1"><small>'.$lang['boost_button_child_id'].'</small></th>
+        	<th class="col-1"></th>
     	</tr>';
 } else {
         $query = "SELECT boost.*, ts.sensor_type_id 
@@ -1897,10 +1897,10 @@ if ((settings($conn, 'mode') & 0b1) == 0) {
         $results = $conn->query($query);
         echo '<table class="table table-bordered">
             <tr>
-                <th class="col-xs-2"><small>'.$lang['hvac_function'].'</small></th>
-                <th class="col-xs-2"><small>'.$lang['boost_time'].'</small></th>
-                <th class="col-xs-2"><small>'.$lang['boost_temp'].'</small></th>
-                <th class="col-xs-1"></th>
+                <th class="col-2"><small>'.$lang['hvac_function'].'</small></th>
+                <th class="col-2"><small>'.$lang['boost_time'].'</small></th>
+                <th class="col-2"><small>'.$lang['boost_temp'].'</small></th>
+                <th class="col-1"></th>
         </tr>';
 }
 
@@ -2175,11 +2175,11 @@ $query = "SELECT * FROM nodes;";
 $results = $conn->query($query);
 echo '<table class="table table-bordered">
     <tr>
-        <th class="col-xs-2"><small>'.$lang['type'].'</small></th>
-        <th class="col-xs-2"><small>'.$lang['node_id'].'</small></th>
-        <th class="col-xs-2"><small>'.$lang['max_child'].'</small></th>
-        <th class="col-xs-4"><small>'.$lang['name'].'</small></th>
-        <th class="col-xs-1"></th>
+        <th class="col-2"><small>'.$lang['type'].'</small></th>
+        <th class="col-2"><small>'.$lang['node_id'].'</small></th>
+        <th class="col-2"><small>'.$lang['max_child'].'</small></th>
+        <th class="col-4"><small>'.$lang['name'].'</small></th>
+        <th class="col-1"></th>
     </tr>';
 while ($row = mysqli_fetch_assoc($results)) {
     if(strpos($row["name"], 'Sensor') !== false) {
@@ -2357,9 +2357,9 @@ echo '
 
 echo '<table class="table table-bordered">
     <tr>
-        <th class="col-xs-4"><small>'.$lang['type'].'</small></th>
-        <th class="col-xs-7"><small>'.$lang['category'].'</small></th>
-        <th class="col-xs-1"></th>
+        <th class="col-4"><small>'.$lang['type'].'</small></th>
+        <th class="col-7"><small>'.$lang['category'].'</small></th>
+        <th class="col-1"></th>
     </tr>';
 
 $query = "SELECT * FROM zone_type where `purge`=0;";
@@ -2692,12 +2692,12 @@ WHERE status = 'Active' ORDER BY nodes.node_id asc;";
 $results = $conn->query($query);
 echo '<table>
     <tr>
-        <th class="col-xs-1">'.$lang['node_id'].'</th>
-        <th class="col-xs-2">'.$lang['name'].'</th>
-        <th class="col-xs-3">'.$lang['last_seen'].'</th>
-        <th class="col-xs-3">'.$lang['notice_interval'].'
+        <th class="col-1">'.$lang['node_id'].'</th>
+        <th class="col-2">'.$lang['name'].'</th>
+        <th class="col-3">'.$lang['last_seen'].'</th>
+        <th class="col-3">'.$lang['notice_interval'].'
         <span class="bi bi-info-circle-fill blue" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="'.$lang['notice_interval_info'].'"</span></th>
-        <th class="col-xs-3">'.$lang['min_battery_level'].'
+        <th class="col-3">'.$lang['min_battery_level'].'
         <span class="bi bi-info-circle-fill blue" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="'.$lang['battery_level_info'].'"</span></th>
     </tr>';
 
@@ -3005,9 +3005,9 @@ echo '
 
 echo '<table class="table table-bordered">
     <tr>
-        <th class="col-xs-8"><small>'.$lang['type'].'</small></th>
-         <th class="col-xs-3"><small>'.$lang['units_character'].'</small></th>
-       <th class="col-xs-1"></th>
+        <th class="col-8"><small>'.$lang['type'].'</small></th>
+         <th class="col-3"><small>'.$lang['units_character'].'</small></th>
+       <th class="col-1"></th>
     </tr>';
 
 $query = "SELECT * FROM sensor_type where `purge`=0;";
@@ -3101,12 +3101,12 @@ if ($zcount + $ncount > 0) {
         $results = $conn->query($query);
         echo '<table class="table table-bordered">
         <tr>
-                <th class="col-xs-2"><small>'.$lang['type'].'</small></th>
-                <th class="col-xs-3"><small>'.$lang['zone_name'].'</small></th>
-                <th class="col-xs-2"><small>'.$lang['message_type'].'</small></th>
-                <th class="col-xs-2"><small>'.$lang['command'].'</small></th>
-                <th class="col-xs-2"><small>'.$lang['parameter'].'</small></th>
-                <th class="col-xs-1"></th>
+                <th class="col-2"><small>'.$lang['type'].'</small></th>
+                <th class="col-3"><small>'.$lang['zone_name'].'</small></th>
+                <th class="col-2"><small>'.$lang['message_type'].'</small></th>
+                <th class="col-2"><small>'.$lang['command'].'</small></th>
+                <th class="col-2"><small>'.$lang['parameter'].'</small></th>
+                <th class="col-1"></th>
         </tr>';
         while ($row = mysqli_fetch_assoc($results)) {
                 echo '

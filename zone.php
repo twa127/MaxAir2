@@ -860,7 +860,7 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 									<!-- Zone Controller ID -->
 									<div class="form-group" class="control-label" id="controler_id_label" style="display:block"><label><?php echo $lang['zone_controller_id']; ?></label> <small class="text-muted"><?php echo $lang['zone_controler_id_info'];?></small>
 							        	        <input type="hidden" id="selected_controler_id[]" name="selected_controler_id[]" value="<?php echo $zone_controllers[$i]['controller_relay_id']?>"/>
-										<div class="entry input-group col-xs-12" id="cnt_id - <?php echo $i ?>">
+										<div class="entry input-group col-12" id="cnt_id - <?php echo $i ?>">
 											<select id="controler_id<?php echo $i ?>" onchange="ControllerIDList(this.options[this.selectedIndex].value)" name="controler_id<?php echo $i ?>" class="form-select" data-bs-error="<?php echo $lang['zone_controller_id_error']; ?>" autocomplete="off">
 												<?php if(isset($zone_controllers[$i]["zone_controller_name"])) { echo '<option selected >'.$zone_controllers[$i]["zone_controller_name"].'</option>'; } ?>
 												<?php  $query = "SELECT id, name, type FROM relays WHERE type = 0 OR type = 5 ORDER BY id ASC;";
