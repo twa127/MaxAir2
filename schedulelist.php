@@ -143,7 +143,7 @@ $theme = settings($conn, 'theme');
 								</a>
                         					<a style="color: #333; cursor: pointer; text-decoration: none;" data-bs-toggle="collapse" href="#collapse' . $row['tz_id'] . '">
 				        	                        <span class="header text-info">&nbsp;&nbsp;
-                                					        <span class="label label-info">' . $sch_name . '</span>';
+                                					        <span class="label bg-info text-light">' . $sch_name . '</span>';
 					                	        	if($row["category"] == 2 && $sr_ss == 1) { echo '&nbsp;&nbsp;<img src="./images/sunset.png">'; }
                                         					echo '<br>&nbsp;&nbsp; '. $row['start'] . ' - ' . $row['end'] . '
 									</span>
