@@ -387,24 +387,24 @@ else
             		</div>
             		<div class="modal-body">
 				<div class="row">
-					<div class="col-xs-10 col-sm-10 col-md-10">
+					<div class="col-10 col-md-10 col-lg-10">
 						<h5><span><img border="0" src="images/<?php echo $weather['img'];?>.png" title="<?php echo $weather['title'];?> -
 						<?php echo $weather['description'];?>"></span> <span><?php echo $weather['title'];?> -
 						<?php echo $weather['description'];?></span></h5>
 					</div>
-            				<div class="col-xs-7 col-sm-6 col-md-6 wdata">
+            				<div class="col-7 col-md-6 col-lg-6 wdata">
 			        	        <?php echo $lang['sunrise']; ?>: <?php echo date('H:i', $weather['sunrise']);?> <br>
 			                	<?php echo $lang['sunset']; ?>: <?php echo date('H:i', $weather['sunset']);?> <br>
 				                <?php echo $lang['wind']; ?>: <?php echo $weather['wind_speed'] . '&nbsp;' . $WUnit;?>
 						<?php //date_sun_info( int $weather['sunrise'], float $weather['lat'] , float $weather['lon']) ;?>
 					</div>
-				    	<div class="col-xs-5 col-sm-6 col-md-6">
+				    	<div class="col-5 col-md-6 col-lg-6">
                 				<span class="pull-right degrees"><?php echo DispSensor($conn,$weather['c'],1) . '&deg;&nbsp;' . $TUnit;?></span>
 	            			</div>
         			</div>
 				<br>
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-xl-12">
 						<?php if(filesize('weather_6days.json')>0) { ?>
 							<h4 class="text-center"><?php echo $lang['weather_six_day']; ?></h4>
 							<div class="list-group">

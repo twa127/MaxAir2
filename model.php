@@ -693,9 +693,9 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
                 <p class="text-muted">'.$lang['db_cleanup_text'].'</p>
                 <table class="table table-bordered">
                         <tr>
-                                <th class="col-md-2 text-center"><small>'.$lang['table_name'].'</small></th>
-                                <th class="col-md-1 text-center"><small>'.$lang['db_cleanup_value'].'</small></th>
-                                <th class="col-md-1 text-center"><small>'.$lang['db_cleanup_period'].'</small></th>
+                                <th class="col-lg-2 text-center"><small>'.$lang['table_name'].'</small></th>
+                                <th class="col-lg-1 text-center"><small>'.$lang['db_cleanup_value'].'</small></th>
+                                <th class="col-lg-1 text-center"><small>'.$lang['db_cleanup_period'].'</small></th>
                         </tr>';
                         $query = "SELECT * FROM db_cleanup LIMIT 1;";
                         $result = $conn->query($query);
@@ -1484,9 +1484,9 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
                 <input type="hidden" id="button_page_2" name="button_page_2" value="'.$lang['onetouch_page'].'">';
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-md-3 text-center"><small>'.$lang['button_name'].'</small></th>
-                                <th class="col-md-2 text-center"><small>'.$lang['toggle_page'].'</small></th>
-                                <th class="col-md-1 text-center"><small>'.$lang['index_number'].'</small></th>
+                                <th class="col-lg-3 text-center"><small>'.$lang['button_name'].'</small></th>
+                                <th class="col-lg-2 text-center"><small>'.$lang['toggle_page'].'</small></th>
+                                <th class="col-lg-1 text-center"><small>'.$lang['index_number'].'</small></th>
     			</tr>';
 	                $query = "SELECT * FROM button_page ORDER BY index_id ASC;";
         	        $results = $conn->query($query);
@@ -1521,8 +1521,8 @@ echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" ar
                 <p class="text-muted">'.$lang['enable_graphs_text'].'</p>
                 <table class="table table-bordered">
                         <tr>
-                                <th class="col-md-2 text-center"><small>'.$lang['graph'].'</small></th>
-                                <th class="col-md-1 text-center"><small>'.$lang['enabled'].'</small></th>
+                                <th class="col-lg-2 text-center"><small>'.$lang['graph'].'</small></th>
+                                <th class="col-lg-1 text-center"><small>'.$lang['enabled'].'</small></th>
                         </tr>';
 			$myArr = [];
 			array_push($myArr, $lang['graph_temperature'], $lang['graph_humidity'], $lang['graph_addon_usage'], $lang['graph_saving'], $lang['graph_system_controller_usage'], $lang['graph_battery_usage']);
@@ -1599,14 +1599,14 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-md-2" style="text-align:center;"><small>'.$lang['name'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['background_color'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['border_color'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
-                                <th class="col-md-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
-                                <th class="col-md-2"></th>
+                                <th class="col-lg-2" style="text-align:center;"><small>'.$lang['name'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['background_color'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['border_color'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
+                                <th class="col-lg-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
                                 echo '<tr>
@@ -2823,12 +2823,12 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-        			<th class="col-sm-3"><small>'.$lang['relay_name'].'</small></th>
-        			<th class="col-sm-1"><small>'.$lang['type'].'</small></th>
-        			<th class="col-sm-2"><small>'.$lang['node_id'].'</small></th>
-        			<th class="col-sm-2"><small>'.$lang['relay_child_id'].'</small></th>
-        			<th class="col-sm-2">'.$lang['relay_trigger'].'</th>
-                                <th class="col-sm-2"></th>
+        			<th class="col-md-3"><small>'.$lang['relay_name'].'</small></th>
+        			<th class="col-md-1"><small>'.$lang['type'].'</small></th>
+        			<th class="col-md-2"><small>'.$lang['node_id'].'</small></th>
+        			<th class="col-md-2"><small>'.$lang['relay_child_id'].'</small></th>
+        			<th class="col-md-2">'.$lang['relay_trigger'].'</th>
+                                <th class="col-md-2"></th>
     			</tr>';
 
 			while ($row = mysqli_fetch_assoc($results)) {
@@ -2917,15 +2917,15 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-md-2"><small>'.$lang['sensor_name'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['node_id'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['sensor_child_id'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['sensor_mode'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['correct_factor'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['res'].'</small></th>
-                                <th class="col-md-2"><small>'.$lang['zone_name'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['show'].'</small></th>
-                                <th class="col-md-2"></th>
+                                <th class="col-lg-2"><small>'.$lang['sensor_name'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['node_id'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['sensor_child_id'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['sensor_mode'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['correct_factor'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['res'].'</small></th>
+                                <th class="col-lg-2"><small>'.$lang['zone_name'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['show'].'</small></th>
+                                <th class="col-lg-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
     				if (!empty($row['zone_id'])) {
@@ -3238,14 +3238,14 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-md-2"><small>'.$lang['node'].'</small></th>
-                                <th class="col-md-2"><small>'.$lang['mqtt_child_id'].'</small></th>
-                                <th class="col-md-2"><small>'.$lang['mqtt_child_name'].'</small></th>
-                                <th class="col-md-2"><small>'.$lang['mqtt_topic'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['mqtt_on_payload'].'</small></th>
-                                <th class="col-md-1"><small>'.$lang['mqtt_off_payload'].'</small></th>
-                                <th class="col-md-2"><small>'.$lang['mqtt_attribute'].'</small></th>
-                                <th class="col-md-1"></th>
+                                <th class="col-lg-2"><small>'.$lang['node'].'</small></th>
+                                <th class="col-lg-2"><small>'.$lang['mqtt_child_id'].'</small></th>
+                                <th class="col-lg-2"><small>'.$lang['mqtt_child_name'].'</small></th>
+                                <th class="col-lg-2"><small>'.$lang['mqtt_topic'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['mqtt_on_payload'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['mqtt_off_payload'].'</small></th>
+                                <th class="col-lg-2"><small>'.$lang['mqtt_attribute'].'</small></th>
+                                <th class="col-lg-1"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
                                 echo '<tr>
@@ -3350,13 +3350,13 @@ echo '
 	$results = $conn->query($query);
 	echo '<table class="table table-bordered">
 	    <tr>
-        	<th class="col-md-4"><small>'.$lang['sch_name'].'</small></th>
-                <th class="col-md-1"><small>'.$lang['enabled'].'</small></th>
-        	<th class="col-md-1"><small>'.$lang['low_temp'].'</small></th>
-        	<th class="col-md-1"><small>'.$lang['high_temp'].'</small></th>
-        	<th class="col-md-1"><small>'.$lang['offset'].'</small></th>
-        	<th class="col-md-3"><small>'.$lang['control_temp'].'</small></th>
-        	<th class="col-md-1"></th>
+        	<th class="col-lg-4"><small>'.$lang['sch_name'].'</small></th>
+                <th class="col-lg-1"><small>'.$lang['enabled'].'</small></th>
+        	<th class="col-lg-1"><small>'.$lang['low_temp'].'</small></th>
+        	<th class="col-lg-1"><small>'.$lang['high_temp'].'</small></th>
+        	<th class="col-lg-1"><small>'.$lang['offset'].'</small></th>
+        	<th class="col-lg-3"><small>'.$lang['control_temp'].'</small></th>
+        	<th class="col-lg-1"></th>
     	</tr>';
 
 while ($row = mysqli_fetch_assoc($results)) {
