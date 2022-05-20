@@ -412,9 +412,10 @@ if(!isset($_GET['nid'])) {
 						</div>
                                                 <div class="col-3">
                                                         <div class="d-flex justify-content-end">
-                						<input type="button" name="submit" value="<?php echo $lang['toggle_days']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> login btn-sm" onclick="toggle_days()">
+								<input type="button" value="<?php echo $lang['toggle_days']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> login btn-sm" onclick="toggle_days()">
                                                         </div>
-						</div>
+                                                </div>
+					</div>
 					<!-- /.row -->
 
 					<!-- Schedule Name -->
@@ -466,7 +467,7 @@ if(!isset($_GET['nid'])) {
 						<?php if ($sun_enabled && !isset($_GET['nid'])) { ?>
 			                                <br>
         	                                        &nbsp;<img src="./images/sunset.png">
-							<i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['start_time_enable_info']; ?>"></i>
+							<i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="<?php echo $lang['start_time_enable_info']; ?>"></i>
 							<label class="radio-inline">
 								<input type="radio" name="radioGroup1" id="radio1" value="option1" <?php echo $start_n_check; ?>  onchange="update_start_time('00:00', '0')" > Normal
 							</label>
@@ -521,7 +522,7 @@ if(!isset($_GET['nid'])) {
 						<?php if ($sun_enabled && !isset($_GET['nid'])) { ?>
                                                 	<br>
 	                                                &nbsp;<img src="./images/sunset.png">
-							 <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['end_time_enable_info']; ?>"></i>
+							 <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="<?php echo $lang['end_time_enable_info']; ?>"></i>
                 	                                <label class="radio-inline">
                         	                                <input type="radio" name="radioGroup2" id="radio3" value="option1" <?php echo $end_n_check; ?>  onchange="update_end_time('00:00', '0')" > Normal
                                 	                </label>
@@ -594,7 +595,7 @@ if(!isset($_GET['nid'])) {
 										        echo '<div class="form-check">
 												<input class="form-check-input" type="checkbox" value="1" id="coop'.$row["tz_id"].'" name="coop['.$row["tz_id"].']" '.$check.'>
 											        <label class="form-check-label" for="coop'.$row["tz_id"].'">Coop Start</label> <i class="ionicons ion-leaf green"></i>
-											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="'.$lang['schedule_coop_help'].'"></i>
+											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="'.$lang['schedule_coop_help'].'"></i>
 												<div class="help-block with-errors"></div>
 											</div>';
 										}
@@ -705,10 +706,11 @@ function toggle_days()
 {
   for (let i = 2; i <= 8; i++) {
     if (document.getElementById("checkbox" + i).checked) {
-  	document.getElementById("checkbox" + i).checked = false;
+        document.getElementById("checkbox" + i).checked = false;
     } else {
         document.getElementById("checkbox" + i).checked = true;
     }
   }
 }
 </script>
+
