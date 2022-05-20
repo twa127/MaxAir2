@@ -410,11 +410,6 @@ if(!isset($_GET['nid'])) {
     								<label class="form-check-label" for="checkbox8"> <?php echo $lang['sat']; ?></label>
 							</div>
 						</div>
-                                                <div class="col-3">
-                                                        <div class="d-flex justify-content-end">
-								<input type="button" value="<?php echo $lang['toggle_days']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> login btn-sm" onclick="toggle_days()">
-                                                        </div>
-                                                </div>
 					</div>
 					<!-- /.row -->
 
@@ -467,7 +462,7 @@ if(!isset($_GET['nid'])) {
 						<?php if ($sun_enabled && !isset($_GET['nid'])) { ?>
 			                                <br>
         	                                        &nbsp;<img src="./images/sunset.png">
-							<i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="<?php echo $lang['start_time_enable_info']; ?>"></i>
+							<i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['start_time_enable_info']; ?>"></i>
 							<label class="radio-inline">
 								<input type="radio" name="radioGroup1" id="radio1" value="option1" <?php echo $start_n_check; ?>  onchange="update_start_time('00:00', '0')" > Normal
 							</label>
@@ -522,7 +517,7 @@ if(!isset($_GET['nid'])) {
 						<?php if ($sun_enabled && !isset($_GET['nid'])) { ?>
                                                 	<br>
 	                                                &nbsp;<img src="./images/sunset.png">
-							 <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="<?php echo $lang['end_time_enable_info']; ?>"></i>
+							 <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['end_time_enable_info']; ?>"></i>
                 	                                <label class="radio-inline">
                         	                                <input type="radio" name="radioGroup2" id="radio3" value="option1" <?php echo $end_n_check; ?>  onchange="update_end_time('00:00', '0')" > Normal
                                 	                </label>
@@ -552,7 +547,7 @@ if(!isset($_GET['nid'])) {
 						}?>
 						<!-- Zone Enable Checkbox -->
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="1" id="<?php echo $row["tz_id"];?>" name="status[<?php echo $row["tz_id"];?>]" <?php if($time_id != 0){ $check = ($row['tz_status'] == 1) ? 'checked' : ''; echo $check;} ?> onclick="$('#<?php echo $row["tz_id"];?>').toggle();">
+							<input class="form-check-input" type="checkbox" value="1" id="<?php echo $row["tz_id"];?>" name="status[<?php echo $row["tz_id"];?>]" <?php if($time_id != 0){ $check = ($row['tz_status'] == 1) ? 'checked' : ''; echo $check;} ?> onclick="$('#collapse_<?php echo $row["tz_id"];?>').collapse('toggle');">
     							<label class="form-check-label" for="checkbox<?php echo $row["tz_id"];?>"><?php echo $row["zone_name"];?></label>
 
     							<div class="help-block with-errors"></div>
@@ -563,11 +558,11 @@ if(!isset($_GET['nid'])) {
 						if (($row["category"] == 0 || $row["category"] == 1 || $row["category"] == 3|| $row["category"] == 4) && $row["sensor_type_id"] <> 3) {
 							if($row['tz_status'] == 1 AND $time_id != 0){
 								//if($time_id != 0){
-								$style_text = "";
+								$show = "show";
 							}else{
-								$style_text = "display:none !important;";
+								$show = "";
 							}
-							 echo '<div id="'.$row["tz_id"].'" style="'.$style_text.'">
+							 echo '<div class="collapse '.$show.'" id="collapse_'.$row["tz_id"].'">
 								<div class="form-group" class="control-label">';
 //                                                                        if($row["type"]=='HVAC' || $row["type"]=='HVAC-M') {
 									if(strpos($row["type"], 'HVAC') !== false) {
@@ -595,7 +590,7 @@ if(!isset($_GET['nid'])) {
 										        echo '<div class="form-check">
 												<input class="form-check-input" type="checkbox" value="1" id="coop'.$row["tz_id"].'" name="coop['.$row["tz_id"].']" '.$check.'>
 											        <label class="form-check-label" for="coop'.$row["tz_id"].'">Coop Start</label> <i class="ionicons ion-leaf green"></i>
-											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="'.$lang['schedule_coop_help'].'"></i>
+											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="'.$lang['schedule_coop_help'].'"></i>
 												<div class="help-block with-errors"></div>
 											</div>';
 										}
@@ -700,17 +695,3 @@ var EndTime = ehours + ':' + eminutes.substr(-2);
 
 }
 </script>
-
-<script>
-function toggle_days()
-{
-  for (let i = 2; i <= 8; i++) {
-    if (document.getElementById("checkbox" + i).checked) {
-        document.getElementById("checkbox" + i).checked = false;
-    } else {
-        document.getElementById("checkbox" + i).checked = true;
-    }
-  }
-}
-</script>
-
