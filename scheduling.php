@@ -344,8 +344,8 @@ if(!isset($_GET['nid'])) {
                                         <div class="row">
 	                                        <!-- Enable Schedule -->
                                                 <div class="col-2">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="sc_en" <?php $check = ($time_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+							<div class="form-check" style="form-check-input-checked-color: #ff8839;">
+								<input class="form-check-input" style="accent-color: #ff8839;" type="checkbox" value="1" id="checkbox0" name="sc_en" <?php $check = ($time_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
 								<label class="form-check-label" for="checkbox0"> <?php echo $lang['schedule_enable']; ?></label>
 							</div>
 						</div>
@@ -410,6 +410,11 @@ if(!isset($_GET['nid'])) {
     								<label class="form-check-label" for="checkbox8"> <?php echo $lang['sat']; ?></label>
 							</div>
 						</div>
+						<div class="col-3">
+                					<div class="d-flex justify-content-end">
+								<input type="button" value="<?php echo $lang['toggle_days']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> login btn-sm" onclick="toggle_days()">
+							</div>
+                                                </div>
 					</div>
 					<!-- /.row -->
 
@@ -695,3 +700,17 @@ var EndTime = ehours + ':' + eminutes.substr(-2);
 
 }
 </script>
+
+<script>
+function toggle_days()
+{
+  for (let i = 2; i <= 8; i++) {
+    if (document.getElementById("checkbox" + i).checked) {
+        document.getElementById("checkbox" + i).checked = false;
+    } else {
+        document.getElementById("checkbox" + i).checked = true;
+    }
+  }
+}
+</script>
+
