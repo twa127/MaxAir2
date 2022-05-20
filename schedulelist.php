@@ -183,7 +183,7 @@ $theme = settings($conn, 'theme');
 								$status_color = "orangefa";
 							}
 							if ($datarw["coop"] == "1") {
-								$coop = '<i class="ionicons ion-leaf green" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="' . $lang['schedule_coop_help'] . '"></i>';
+								$coop = '<i class="ionicons ion-leaf green" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="' . $lang['schedule_coop_help'] . '"></i>';
 							} else {
 								$coop = '';
 							}
@@ -210,7 +210,7 @@ $theme = settings($conn, 'theme');
 						//delete and edit button for each schedule
 						echo '<div class="row mt-2"></div>
 						<div class="d-flex justify-content-end">
-						<a href="javascript:delete_schedule(' . $row["time_id"] . ');"><button class="btn btn-danger btn-sm" data-bs-toggle="" data-title="ARE YOU SURE?" data-content="You are about to DELETE this SCHEDULE"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
+						<a href="javascript:delete_schedule(' . $row["time_id"] . ');"><button class="btn btn-danger btn-sm" data-bs-toggle="" data-title="ARE YOU SURE?" data-bs-content="You are about to DELETE this SCHEDULE"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
 						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>
 						</div>
 					</div>

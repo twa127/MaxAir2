@@ -37,7 +37,6 @@
 	<script src="js/plugins/datepicker/bootstrap-datetimepicker.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
 	<script src="js/validator.min.js"></script>
 	<script type="text/javascript" src="js/request.js"></script>
 	<!-- bootstrap waiting for JavaScript -->
@@ -202,9 +201,11 @@ if ($_SERVER['SCRIPT_NAME'] == '/scheduling.php'){
 
 <script>
 <?php if (($_SERVER['SCRIPT_NAME'] == '/scheduling.php') OR ($_SERVER['SCRIPT_NAME'] == '/schedule.php')){ ?>
-	 // popover
-	$("[data-bs-toggle=popover]")
-		.popover()
+      // popover
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl);
+    });
 <?php } ?>
 </script>
 
