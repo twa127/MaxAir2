@@ -410,7 +410,11 @@ if(!isset($_GET['nid'])) {
     								<label class="form-check-label" for="checkbox8"> <?php echo $lang['sat']; ?></label>
 							</div>
 						</div>
-					</div>
+                                                <div class="col-3">
+                                                        <div class="d-flex justify-content-end">
+                						<input type="button" name="submit" value="<?php echo $lang['toggle_days']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> login btn-sm" onclick="toggle_days()">
+                                                        </div>
+						</div>
 					<!-- /.row -->
 
 					<!-- Schedule Name -->
@@ -694,6 +698,17 @@ var EndTime = ehours + ':' + eminutes.substr(-2);
  document.getElementById('end_time_state').value = mode;
 
 }
-
 </script>
 
+<script>
+function toggle_days()
+{
+  for (let i = 2; i <= 8; i++) {
+    if (document.getElementById("checkbox" + i).checked) {
+  	document.getElementById("checkbox" + i).checked = false;
+    } else {
+        document.getElementById("checkbox" + i).checked = true;
+    }
+  }
+}
+</script>
