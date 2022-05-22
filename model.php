@@ -2458,27 +2458,44 @@ echo '
         			} else {
                 			$content_msg=$lang['confirm_dell_de_active_zone'];
         			}
-				echo '<div class="list-group-item">
-        				<i class="bi bi-columns-gap orange" style="font-size: 1rem;"></i> '.$row['name'];
+				echo '<div class="list-group-item">';
         				$query = "select * from zone_view WHERE id = '{$row['id']}'order by index_id asc";
         				$vresult = $conn->query($query);
+					$count = 0;
         				while ($vrow = mysqli_fetch_assoc($vresult)) {
 						$unit = SensorUnits($conn,$vrow['sensor_type_id']);
-                                                if ($vrow['r_type'] == 5) {
-							echo '<span class="pull-right "><em>&nbsp;&nbsp;<small> '.$lang['pump_relay'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'</small></span><br>';
-                				} elseif ($vrow['category'] == 2) {
-							echo '<span class="pull-right "><em>&nbsp;&nbsp;<small> '.$lang['controller'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'</small></span><br>';
-						} elseif ($vrow['category'] == 3) {
-							echo '<span class="pull-right "><em>&nbsp;&nbsp;<small> '.$lang['min'].' '.DispSensor($conn,$vrow['min_c'],$vrow['sensor_type_id']).$unit.' </em>, '.$lang['max'].' '.$vrow['max_c'].$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].'</small></span><br>';
-                				} else {
-                        				echo '<span class="pull-right "><em>&nbsp;&nbsp;<small> '.$lang['max'].' '.DispSensor($conn,$vrow['max_c'],$vrow['sensor_type_id']).$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].' - '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'</small></span><br>';
-                				}
+						if ($count == 0) {
+							echo '<div class="d-flex justify-content-between">
+								<span><i class="bi bi-columns-gap orange" style="font-size: 1rem;"></i> '.$row['name'].'</span>';
+		                                                if ($vrow['r_type'] == 5) {
+									echo '<span><em>&nbsp;&nbsp;<small> '.$lang['pump_relay'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+                						} elseif ($vrow['category'] == 2) {
+									echo '<span><em>&nbsp;&nbsp;<small> '.$lang['controller'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+								} elseif ($vrow['category'] == 3) {
+									echo '<span><em>&nbsp;&nbsp;<small> '.$lang['min'].' '.DispSensor($conn,$vrow['min_c'],$vrow['sensor_type_id']).$unit.' </em>, '.$lang['max'].' '.$vrow['max_c'].$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].'&nbsp</small></span>';
+                						} else {
+                        						echo '<span><em>&nbsp;&nbsp;<small> '.$lang['max'].' '.DispSensor($conn,$vrow['max_c'],$vrow['sensor_type_id']).$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].' - '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+                						}
+							echo '</div>';
+						} else {
+							echo '<div class="d-flex justify-content-end">';
+		                                                if ($vrow['r_type'] == 5) {
+                						        echo '<span><em>&nbsp;&nbsp;<small> '.$lang['pump_relay'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+		                                                } elseif ($vrow['category'] == 2) {
+                						        echo '<span><em>&nbsp;&nbsp;<small> '.$lang['controller'].': '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+		                                                } elseif ($vrow['category'] == 3) {
+						                        echo '<span><em>&nbsp;&nbsp;<small> '.$lang['min'].' '.DispSensor($conn,$vrow['min_c'],$vrow['sensor_type_id']).$unit.' </em>, '.$lang['max'].' '.$vrow['max_c'].$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].'&nbsp</small></span>';
+                                                		} else {
+					                        	echo '<span><em>&nbsp;&nbsp;<small> '.$lang['max'].' '.DispSensor($conn,$vrow['max_c'],$vrow['sensor_type_id']).$unit.' </em> - '.$lang['sensor'].': '.$vrow['sensors_id'].' - '.$vrow['relay_type'].': '.$vrow['relay_id'].'-'.$vrow['relay_child_id'].'&nbsp</small></span>';
+								}
+							echo '</div>';
+ 						}
+						$count++;
         				}
-        				echo '<span class="pull-right "><small>
+        				echo '<span class="d-flex justify-content-end"><small>
         					<a href="zone.php?id='.$row['id'].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil" style="font-size: 1rem;"</span></a>&nbsp;&nbsp;
         					<button class="btn warning btn-danger btn-xs" onclick="delete_zone('.$row['id'].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black" style="font-size: 1rem;"></span></button>
         				</small></span>
-        				<br>
         			</div>';
 			}
 		echo '</div>
