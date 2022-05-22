@@ -512,7 +512,7 @@ echo '
 echo '     </div>
             <div class="modal-footer">
                         <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <a href="javascript:backup_email_update()"><button class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-toggle="popover" data-title="'.$lang['update_email_address'].'">'.$lang['save'].'</button> </a>
+                        <button class="btn warning '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="backup_email_update()" data-confirm="'.$lang['update_email_address'].'">'.$lang['save'].'</button>
                         <a href="javascript:db_backup()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['backup_start'].'</a>
             </div>
         </div>
@@ -548,7 +548,7 @@ echo '
                 						<div class="text-muted small">
 									<a href="user_accounts.php?uid='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="ionicons ion-edit"></span></button>&nbsp</a>';
                 								if ($_SESSION['user_id'] != $row['id']) {
-                        								echo '<a href="javascript:del_user('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title='.$lang["confirmation"].' data-bs-content="$content_msg"><span class="bi bi-trash-fill black"></span></button></a>';
+                        								echo '<button class="first btn btn-danger btn-xs" onclick="del_user('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button></a>';
                 								} else {
                         								echo '<button class="btn btn-danger btn-xs disabled"><span class="bi bi-trash-fill black"></span></button>';
                 								}
@@ -1011,7 +1011,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row["max"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$enabled.'</td>
             <td><a href="sensor_limits.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp
-                <a href="javascript:delete_sensor_limits('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
+                <button class="btn warning btn-danger btn-xs" onclick="delete_sensor_limits('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
 	    </td>
         </tr>';
 }
@@ -1401,7 +1401,7 @@ echo '<br><table>
 
 while ($row = mysqli_fetch_assoc($results)) {
     if ($row["log_it"] == 0) { $log_check = ''; } else { $log_check = 'checked'; }
-    if ($row["enabled"] == 0) { $enabled_check = ''; } else { $enabled_check = 'checked'; }
+    if ($row["enabled"] == 0) { $enabled_check = ''; $content_msg = "You are about to DELETE an Disabled Job";} else { $enabled_check = 'checked'; $content_msg = "You are about to DELETE an Enabled Job"; }
     echo '
         <tr>
             <td><input id="jobs_name'.$row["id"].'" type="value" class="form-control pull-right" style="border: none" value="'.$row["job_name"].'" placeholder="Job Name"></td>
@@ -1413,7 +1413,7 @@ while ($row = mysqli_fetch_assoc($results)) {
                <input type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
             </td>
             <td><input id="jobs_time'.$row["id"].'" type="value" class="form-control pull-right" style="border: none" value="'.$row["time"].'" placeholder="Run Job Every"></td>
-            <td><a href="javascript:delete_job('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
+            <td><button class="btn warning btn-danger btn-xs" onclick="delete_job('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
         </tr>';
 
 }
@@ -1930,10 +1930,12 @@ while ($row = mysqli_fetch_assoc($results)) {
 		<input type="hidden" id="hvac_mode'.$row["id"].'" name="hvac_mode" value="'.$row["hvac_mode"].'">
                 <input type="hidden" id="sensor_type'.$row["id"].'" name="sensor_type" value="'.$row["sensor_type_id"].'">
                 <td>';
-                if ($b_count > 1) { echo '<a href="javascript:delete_boost('.$row["id"].');">'; }
-                echo '<button class="btn btn-danger btn-xs '.$disabled.'" ';
-                if ($b_count > 1) { echo 'data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="You are about to DELETE this BOOST Setting"'; }
-                echo '><span class="bi bi-trash-fill black"></span></button> </a></td>
+                if ($b_count > 1) { 
+			echo '<button class="btn warning btn-danger btn-xs '.$disabled.'" onclick="delete_boost('.$row["id"].');" data-confirm="You are about to DELETE this BOOST Setting"';
+		} else {
+	                echo '<button class="btn btn-danger btn-xs '.$disabled.'" ';
+		}
+                echo '><span class="bi bi-trash-fill black"></span></button> </td>
             </tr>';
     } else {
 	$hvac_mode = $row['hvac_mode'];
@@ -1957,10 +1959,9 @@ while ($row = mysqli_fetch_assoc($results)) {
 		<input type="hidden" id="hvac_mode'.$row["id"].'" name="hvac_mode" value="'.$row["hvac_mode"].'">
                 <input type="hidden" id="sensor_type'.$row["id"].'" name="sensor_type" value="'.$row["sensor_type_id"].'">
                 <td>';
-                if ($b_count > 1) { echo '<a href="javascript:delete_boost('.$row["id"].');">'; }
-                echo '<button class="btn btn-danger btn-xs '.$disabled.'" ';
-                if ($b_count > 1) { echo 'data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="You are about to DELETE this BOOST Setting"'; }
-                echo '><span class="bi bi-trash-fill black"></span></button> </a></td>
+                echo '<button class="btn fist btn-danger btn-xs '.$disabled.'" ';
+                if ($b_count > 1) { echo 'onclick="delete_boost('.$row["id"].');" data-dismiss="You are about to DELETE this BOOST Setting"'; }
+                echo '><span class="bi bi-trash-fill black"></span></button> </td>
             </tr>';
     }
 }
@@ -2265,9 +2266,9 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row["max_child_id"].'</td>
             <td>'.$row["name"].'</td>';
 	    if($zcount != 0) {
-		echo '<td><a href="javascript:delete_node('.$row["id"].');"><button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$content_msg_z.'"><span class="bi bi-trash-fill black"></span></button> </a></td>';
+		echo '<td><button class="btn warning btn-danger btn-xs disabled" onclick="delete_node('.$row["id"].');" data-confirm="'.$content_msg_z.'"><span class="bi bi-trash-fill black"></span></button> </td>';
 	    } else {
-		echo '<td><a href="javascript:delete_node('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>';
+		echo '<td><button class="btn warning btn-danger btn-xs" onclick="delete_node('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </td>';
 	    }
         echo '</tr>';
 }
@@ -2378,7 +2379,7 @@ while ($row = mysqli_fetch_assoc($results)) {
         <tr>
             <td>'.$row["type"].'</td>
             <td>'.$lang['zone_category'.$row["category"]].'</td>
-            <td><a href="javascript:delete_zone_type('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
+            <td><button class="btn warning btn-danger btn-xs" onclick="delete_zone_type('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </td>
         </tr>';
 }
 echo '</table></div>
@@ -2475,7 +2476,7 @@ echo '
         				}
         				echo '<span class="pull-right "><small>
         					<a href="zone.php?id='.$row['id'].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil" style="font-size: 1rem;"</span></a>&nbsp;&nbsp;
-        					<a href="javascript:delete_zone('.$row['id'].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title='.$lang['confirmation'].' data-bs-content="$content_msg"><span class="bi bi-trash-fill black" style="font-size: 1rem;"></span></button></a>
+        					<button class="btn warning btn-danger btn-xs" onclick="delete_zone('.$row['id'].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black" style="font-size: 1rem;"></span></button>
         				</small></span>
         				<br>
         			</div>';
@@ -2869,7 +2870,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				if($row['attached'] == 1 || $row['type'] == 1) {
 echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><i class="bi bi-trash-fill black"></i></button></td>';
 	    				} else {
-                				echo '<a href="javascript:delete_relay('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_relay_1'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>';
+                				echo '<button class="btn warning btn-danger btn-xs" onclick="delete_relay('.$row["id"].');" data-confirm="'.$lang['confirm_del_relay_1'].'"><span class="bi bi-trash-fill black"></span></button> </td>';
             				}
         			echo '</tr>';
 			}
@@ -2966,7 +2967,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 	    				}
 	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
-						echo '<a href="javascript:delete_sensor('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
+						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
 						echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_sensor_5'].$zone_name.'"><span class="bi bi-trash-fill black"></span></button></td>';
 	    				}
@@ -3026,7 +3027,7 @@ while ($row = mysqli_fetch_assoc($results)) {
         <tr>
             <td>'.$row["type"].'</td>
             <td>'.$row["units"].'</td>
-            <td><a href="javascript:delete_sensor_type('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
+            <td><button class="btn warning btn-danger btn-xs" onclick="delete_sensor_type('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
         </tr>';
 }
 echo '</table></div>
@@ -3116,7 +3117,7 @@ if ($zcount + $ncount > 0) {
                         <td>'.$row["message_type"].'</td>
                         <td>'.$row["command"].'</td>
                         <td>'.$row["parameter"].'</td>
-                        <td><a href="javascript:delete_http_msg('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
+                        <td><button class="btn warning btn-danger btn-xs" onclick="delete_http_msg('.$row["id"].');" data-confirm="You are about to delete on HTTP Message"><span class="bi bi-trash-fill black"></span></button> </td>
                         </tr>';
         }
 }
@@ -3257,7 +3258,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
 	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
-					<a href="javascript:delete_mqtt_device('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>
+					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
 		echo '</table>
@@ -3396,7 +3397,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 	     	<input type="hidden" id="sensors_id'.$row["id"].'" name="sensors_id" value="'.$row["sensors_id"].'">
 		<input type="hidden" id="sch_id'.$row["id"].'" name="sch_id" value="'.$row["schedule_daily_time_id"].'">
                 <input type="hidden" id="sensor_type'.$row["id"].'" name="sensor_type" value="'.$row["sensor_type_id"].'">
-            	<td><a href="javascript:delete_offset('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="You are about to DELETE this BOOST Setting"><span class="bi bi-trash-fill black"></span></button> </a></td>
+            	<td><button class="btn warning btn-danger btn-xs" onclick="delete_offset('.$row["id"].');" data-confirm="You are about to DELETE this OFFSET Setting"><span class="bi bi-trash-fill black"></span></button> </td>
             </tr>';
 }
 
@@ -3598,3 +3599,12 @@ $(document).ready(function(){
 });
 
 </script>
+
+<script>
+$(function() {
+    $('button.warning').confirmButton({
+        titletxt: "Confirmation"
+    });
+});
+</script>
+

@@ -210,7 +210,7 @@ $theme = settings($conn, 'theme');
 						//delete and edit button for each schedule
 						echo '<div class="row mt-2"></div>
 						<div class="d-flex justify-content-end">
-						<a href="javascript:delete_schedule(' . $row["time_id"] . ');"><button class="btn btn-danger btn-sm" data-bs-toggle="" data-title="ARE YOU SURE?" data-bs-content="You are about to DELETE this SCHEDULE"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
+						<button class="btn warning btn-danger btn-sm" onclick="delete_schedule(' . $row["time_id"] . ');"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
 						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>
 						</div>
 					</div>
@@ -274,5 +274,14 @@ $(document).ready(function(){
     $('#footer_all_running_time').load("ajax_fetch_data.php?id=0&type=17").fadeIn("slow");
     setTimeout(loop, delay);
   })();
+});
+</script>
+
+<script>
+$(function() {
+    $('button.warning').confirmButton({
+	titletxt: "Confirmation",
+        confirm: "Are you really sure you want to DELETE?"
+    });
 });
 </script>

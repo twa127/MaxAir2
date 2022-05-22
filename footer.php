@@ -20,7 +20,7 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
         $.ajaxSetup ({
             // Disable caching of AJAX responses
@@ -28,7 +28,8 @@
         });
     </script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
@@ -45,11 +46,15 @@
 	<!-- bootstrap slider -->
 	<script src="js/plugins/slider/bootstrap-slider.min.js"></script>
 
+        <!-- bootstrap confirmation -->
+	<script src="js/plugins/confirm_dialog_button_bootstrap/confirmbutton.js"></script>
+
         <!-- jquery knob -->
         <script src="js/plugins/knob/jquery.knob.js"></script>
 
 <script>
 $(document).ready(function() {
+    console.log('Bootstrap ' + $.fn.popover.Constructor.VERSION);
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.controler_id_wrapper'); //Input field wrapper
