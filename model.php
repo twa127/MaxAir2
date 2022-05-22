@@ -2266,7 +2266,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row["max_child_id"].'</td>
             <td>'.$row["name"].'</td>';
 	    if($zcount != 0) {
-		echo '<td><button class="btn warning btn-danger btn-xs disabled" onclick="delete_node('.$row["id"].');" data-confirm="'.$content_msg_z.'"><span class="bi bi-trash-fill black"></span></button> </td>';
+		echo '<td><button class="btn btn-danger btn-xs disabled" data-toggle="tooltip" title="'.$content_msg_z.'"><span class="bi bi-trash-fill black"></span></button> </td>';
 	    } else {
 		echo '<td><button class="btn warning btn-danger btn-xs" onclick="delete_node('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </td>';
 	    }
