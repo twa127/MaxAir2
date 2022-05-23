@@ -1170,14 +1170,20 @@ function GetModal_SystemController($conn)
 			$interval  = abs($datetime2 - $datetime1);
 			$ctr_minutes   = round($interval / 60);
 			echo '
-				<ul class="chat">
-					<li class="left clearfix">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
 						<div class="header">
-							<strong class="primary-font red">System Controller Fault!!!</strong>
-							<small class="pull-right text-muted">
-							<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
-							</small>
-							<br><br>
+							<div class="d-flex justify-content-between">
+								<span>
+									<strong class="primary-font red">System Controller Fault!!!</strong>
+								</span>
+								<span>
+									<small class="text-muted">
+										<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
+									</small>
+								</span>
+							</div>
+							<br>
 							<p>Node ID '.$system_controller_node_id.' last seen at '.$system_controller_seen.' </p>
 							<p class="text-info">Heating system will resume its normal operation once this issue is fixed. </p>
 						</div>
@@ -1194,9 +1200,23 @@ function GetModal_SystemController($conn)
 		} else {
 			echo '<p class="text-muted">'. mysqli_num_rows($bresults) .' '.$lang['system_controller_last_records'].'</p>
 			<div class=\"list-group\">' ;
-				echo '<a href="#" class="list-group-item"> <i class="ionicons ion-flame icon-1x red"></i> Start &nbsp; - &nbsp;End <span class="pull-right text-muted"><em> '.$lang['system_controller_on_minuts'].' </em></span></a>';
+                        	echo '<a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
+                                	<span>
+                                        	<i class="ionicons ion-flame icon-1x red"></i> Start &nbsp; - &nbsp;End
+                                        </span>
+                                        <span class="text-muted small">
+                                         	<em>'.$lang['system_controller_on_minuts'].'&nbsp;</em>
+                                        </span>
+                                </a>';
 				while ($brow = mysqli_fetch_assoc($bresults)) {
-					echo '<a href="#" class="list-group-item"> <i class="ionicons ion-flame icon-1x red"></i> '. $brow['start_datetime'].' - ' .$brow['stop_datetime'].' <span class="pull-right text-muted"><em> '.$brow['on_minuts'].'&nbsp;</em></span></a>';
+                                	echo '<a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
+                                        	<span>
+							<i class="ionicons ion-flame icon-1x red"></i> '. $brow['start_datetime'].' - ' .$brow['stop_datetime'].'
+                                                </span>
+                                            	<span class="text-muted small">
+							<em>'.$brow['on_minuts'].'&nbsp;</em>
+						</span>
+					</a>';
 				}
 			 echo '</div>';
 		}
@@ -1314,14 +1334,20 @@ function GetModal_Schedule_List($conn)
 			$interval  = abs($datetime2 - $datetime1);
 			$ctr_minutes   = round($interval / 60);
 			echo '
-			<ul class="chat">
-				<li class="left clearfix">
+			<ul class="list-group">
+				<li class="list-group-item">
 					<div class="header">
-						<strong class="primary-font red">System Controller Fault!!!</strong>
-						<small class="pull-right text-muted">
-						<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
-						</small>
-						<br><br>
+						<div class="d-flex justify-content-between">
+							<span>
+								<strong class="primary-font red">System Controller Fault!!!</strong>
+							</span>
+							<span>
+								<small class="text-muted">
+									<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
+								</small>
+							</span>
+						</div>
+						<br>
 						<p>Node ID '.$system_controller_node_id.' last seen at '.$system_controller_seen.' </p>
 						<p class="text-info">Heating system will resume its normal operation once this issue is fixed. </p>
 					</div>
@@ -1332,10 +1358,9 @@ function GetModal_Schedule_List($conn)
 			$date_time = date('Y-m-d H:i:s');
 			$datetime1 = strtotime("$date_time");
 			echo '
-			<ul class="chat">
-				<li class="left clearfix">
-					<div class="header">
-						<strong class="primary-font red">Controller Fault!!!</strong>';
+			<ul class="list-group">
+				<li class="list-group-item">
+					<div class="header">';
 						$cquery = "SELECT `zone_relays`.`zone_id`, `zone_relays`.`zone_relay_id`, n.`last_seen`, n.`notice_interval` FROM `zone_relays`
 						LEFT JOIN `relays` r on `zone_relays`.`zone_relay_id` = r.`id`
 						LEFT JOIN `nodes` n ON r.`relay_id` = n.`id`
@@ -1346,11 +1371,18 @@ function GetModal_Schedule_List($conn)
 							$interval  = abs($datetime2 - $datetime1);
 							$ctr_minutes   = round($interval / 60);
 							$zone_relay_id = $crow['zone_relay_id'];
-							echo '<small class="pull-right text-muted">
-								<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
-								</small>
-								<br><br>
-								<p>Controller ID '.$zone_relay_id.' last seen at '.$crow['last_seen'].' </p>';
+        	                                        echo '<div class="d-flex justify-content-between">
+	                                                        <span>
+                                                  	              <strong class="primary-font red">Controller Fault!!!</strong>
+                                                        	</span>
+                                                        	<span>
+                                                                	<small class="text-muted">
+                                                                        	<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($ctr_minutes)*60).' ago
+                                                                	</small>
+                                                        	</span>
+                                                	</div>
+                                                	<br>
+                                                	<p>Controller ID '.$zone_relay_id.' last seen at '.$crow['last_seen'].' </p>';
 						}
 						echo '<p class="text-info">Heating system will resume its normal operation once this issue is fixed. </p>
 					</div>
@@ -1364,14 +1396,20 @@ function GetModal_Schedule_List($conn)
 			$interval  = abs($datetime2 - $datetime1);
 			$sensor_minutes   = round($interval / 60);
 			echo '
-			<ul class="chat">
-				<li class="left clearfix">
+			<ul class="list-group">
+				<li class="list-group-item">
 					<div class="header">
-						<strong class="primary-font red">Sensor Fault!!!</strong>
-						<small class="pull-right text-muted">
-						<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($sensor_minutes)*60).' ago
-						</small>
-						<br><br>
+						<div class="d-flex justify-content-between">
+							<span>
+								<strong class="primary-font red">Sensor Fault!!!</strong>
+							</span>
+							<span>
+								<small class="text-muted">
+									<i class="bi bi-clock icon-fw"></i> '.secondsToWords(($sensor_minutes)*60).' ago
+								</small>
+							</span>
+						</div>
+						<br>
 						<p>Sensor ID '.$zone_node_id.' last seen at '.$sensor_seen.' <br>Last Temperature reading received at '.$temp_reading_time.' </p>
 						<p class="text-info"> Heating system will resume for this zone its normal operation once this issue is fixed. </p>
 					</div>
