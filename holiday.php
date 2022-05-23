@@ -1,17 +1,17 @@
 <?php 
 /*
-   _____    _   _    _                             
-  |  __ \  (_) | |  | |                            
-  | |__) |  _  | |__| |   ___    _ __ ___     ___  
-  |  ___/  | | |  __  |  / _ \  | |_  \_ \   / _ \ 
-  | |      | | | |  | | | (_) | | | | | | | |  __/ 
-  |_|      |_| |_|  |_|  \___/  |_| |_| |_|  \___| 
+             __  __                             _
+            |  \/  |                    /\     (_)
+            | \  / |   __ _  __  __    /  \     _   _ __
+            | |\/| |  / _` | \ \/ /   / /\ \   | | |  __|
+            | |  | | | (_| |  >  <   / ____ \  | | | |
+            |_|  |_|  \__,_| /_/\_\ /_/    \_\ |_| |_|
 
-     S M A R T   H E A T I N G   C O N T R O L 
+                   S M A R T   T H E R M O S T A T
 
 *************************************************************************"
-* PiHome is Raspberry Pi based Central Heating Control systems. It runs *"
-* from web interface and it comes with ABSOLUTELY NO WARRANTY, to the   *"
+* MaxAir is a Linux based Central Heating Control systems. It runs from *"
+* a web interface and it comes with ABSOLUTELY NO WARRANTY, to the      *"
 * extent permitted by applicable law. I take no responsibility for any  *"
 * loss or damage to you or your property.                               *"
 * DO NOT MAKE ANY CHANGES TO YOUR HEATING SYSTEM UNTILL UNLESS YOU KNOW *"
@@ -22,6 +22,9 @@ require_once(__DIR__.'/st_inc/session.php');
 confirm_logged_in();
 require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
+
+$theme = settings($conn, 'theme');
+
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
@@ -68,24 +71,31 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <!-- Title (e.g. Add or Edit Holiday) -->
-<div id="page-wrapper">
+<div class="container-fluid">
 	<br>
 	<div class="row">
 		<div class="col-lg-12">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<i class="bi bi-send-fill" style="font-size: 1.2rem; color: black"></i> <?php echo $lang['holidays_add']; ?>
-					<div class="pull-right"> <div class="btn-group"><?php echo date("H:i"); ?></div> </div>
-				</div>
-				<!-- /.panel-heading -->
-				<div class="panel-body">
+                        <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
+                                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+                                        <div class="d-flex justify-content-between">
+                                                <div>
+                                                        <i class="bi bi-send-fill" style="font-size: 1.2rem;"></i>&nbsp&nbsp<?php echo $lang['holidays_add']; ?>
+                                                </div>
+                                                <div class="btn-group"><?php echo date("H:i"); ?></div>
+                                        </div>
+                                </div>
+                                <!-- /.card-header -->
+
+				<div class="card-body">
 
 					<form data-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 
 						<!-- Enable Holiday -->
-						<div class="checkbox checkbox-default checkbox-circle">
-						<input id="checkbox0" class="styled" type="checkbox" name="holidays_enable" value="1" <?php $checked = ($holidays_row['status'] == 1) ? 'checked' : ''; echo $checked; ?>>
-						<label for="checkbox0"> <?php echo $lang['holidays_enable']; ?></label></div>
+				                <div class="form-check">
+                                			<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="holidays_enable" <?php $check = ($holidays_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+				                        <label class="form-check-label" for="checkbox0"><?php echo $lang['holidays_enable']; ?></label> </small>
+							<div class="help-block with-errors"></div>
+						</div>
 
 						<!-- Departure DateTime -->
 						<div class="form-group input-append date form_datetime" class="control-label"><label><i class="bi bi-send-fill" style="font-size: 1.2rem; color: black"></i> <?php echo $lang['holidays_departure']; ?></label>
@@ -104,8 +114,8 @@ if (isset($_POST['submit'])) {
 						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn btn-default btn-sm login">
 					</form>
 				</div>
-				<!-- /.panel-body -->
-				<div class="panel-footer">
+				<!-- /.card-body -->
+				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
 					<?php 
 					ShowWeather($conn);
 					?>
@@ -116,6 +126,6 @@ if (isset($_POST['submit'])) {
 	</div>
 	<!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#card -->
 <?php } ?>
 <?php include("footer.php"); ?>
