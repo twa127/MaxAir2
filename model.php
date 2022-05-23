@@ -1441,9 +1441,9 @@ echo '
 echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
       	<div class="form-group" class="control-label">
-             <div class="checkbox checkbox-default checkbox-circle">
-                 <input id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
-                 <label for="checkbox_enabled"> '.$lang['enabled'].'</label>
+             <div class="form-check">
+                 <input class="form-check-input" id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <label class="form-check-label" for="checkbox_enabled"> '.$lang['enabled'].'</label>
              </div>
         </div>
 	<div class="form-group" class="control-label"><label>'.$lang['jobs_name'].'</label> <small class="text-muted">'.$lang['jobs_name_info'].'</small>
@@ -1456,9 +1456,9 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
         <input class="form-control" type="text" id="job_time" name="job_time" value="" placeholder="'.$lang['jobs_time'].'">
         <div class="help-block with-errors"></div></div>
         <div class="form-group" class="control-label">
-             <div class="checkbox checkbox-default checkbox-circle">
-                 <input id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
-                 <label for="checkbox_logit"> '.$lang['jobs_log'].'</label>
+             <div class="form-check">
+                 <input class="form-check-input" id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <label class="form-check-label" for="checkbox_logit"> '.$lang['jobs_log'].'</label>
              </div>
         </div>
 </div>
@@ -2570,14 +2570,14 @@ echo '
 				</div>
                                	<!-- /.form-group -->
                                 <div class="form-group" class="control-label">
-                                        <div class="checkbox checkbox-default checkbox-circle">';
+                                        <div class="form-check">';
                                                 if ($grow['enable_outgoing'] == '1'){
-                                                        echo '<input id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
+                                                        echo '<input class="form-check-input" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
                                                 }else {
-                                                        echo '<input id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
+                                                        echo '<input class="form-check-input" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
                                                 }
                                                 echo '
-                                                <label for="checkbox4"> '.$lang['enable_outgoing'].'</label>
+                                                <label class="form-check-label" for="checkbox4"> '.$lang['enable_outgoing'].'</label>
                                         </div>
                                 </div>
                                 <!-- /.form-group -->
@@ -3462,9 +3462,9 @@ echo '
 echo '<p class="text-muted">'.$lang['offset_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
         <div class="form-group" class="control-label">
-        	<div class="checkbox checkbox-default checkbox-circle">';
-                	echo '<input id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
-                        echo '<label for="checkbox5"> '.$lang['offset_enable'].'</label>
+        	<div class="form-check">';
+                	echo '<input class="form-check-input" id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
+                        echo '<label class="form-check-label" for="checkbox5"> '.$lang['offset_enable'].'</label>
                	</div>
         </div>
         <!-- /.form-group -->
