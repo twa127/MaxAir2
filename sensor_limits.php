@@ -24,6 +24,7 @@ require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
 
 $date_time = date('Y-m-d H:i:s');
+$theme = settings($conn, 'theme');
 
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
@@ -78,25 +79,27 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!-- Title (e.g. Add or Edit Sensor Limits) -->
-<div id="page-wrapper">
+<div class="container-fluid">
 	<br>
 	<div class="row">
         	<div class="col-lg-12">
-                	<div class="panel panel-primary">
-                        	<div class="panel-heading">
-					<?php if ($id != 0) { echo $lang['edit_sensor_limits'] . ": " . $row['name']; }else{
-                            		echo "<i class=\"bi bi-plus-square-fill icon-2x\"></i>" ." ". $lang['add_sensor_limits'];} ?>
-					<div class="pull-right"> 
-						<div class="btn-group"><?php echo date("H:i"); ?></div>
-					</div>
-                        	</div>
-                        	<!-- /.panel-heading -->
-				<div class="panel-body">
+                	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
+                        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+	                                <div class="d-flex justify-content-between">
+        	                         	<div>
+                	                        	<?php if ($id != 0) { echo $lang['edit_sensor_limits'] . ": " . $row['name']; }else{
+							echo '<i class="bi bi-plus-square" style="font-size: 1.2rem;"></i>&nbsp&nbsp'.$lang['add_sensor_limits'];} ?>
+                                	        </div>
+                                		<div class="btn-group"><?php echo date("H:i"); ?></div>
+                                	</div>
+				</div>
+                        	<!-- /.card-header -->
+				<div class="card-body">
 					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Enabled -->
-						<div class="checkbox checkbox-default checkbox-circle">
-							<input id="checkbox0" class="styled" type="checkbox" name="status" value="1" <?php $check = ($rowlimits['status'] == 1) ? 'checked' : ''; echo $check; ?>>>
-							<label for="checkbox0"> <?php echo $lang['enabled']; ?> </label> <small class="text-muted"><?php echo $lang['sensor_limits_info'];?></small>
+						<div class="form-check">
+							<input class="form-check-input" id="checkbox0" class="styled" type="checkbox" name="status" value="1" <?php $check = ($rowlimits['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+							<label class="form-check-label" for="checkbox0"> <?php echo $lang['enabled']; ?> </label> <small class="text-muted"><?php echo $lang['sensor_limits_info'];?></small>
 							<div class="help-block with-errors"></div>
 						</div>
 
@@ -143,25 +146,21 @@ if (isset($_POST['submit'])) {
 						<a href="home.php"><button type="button" class="btn btn-primary btn-sm"><?php echo $lang['cancel']; ?></button></a>
 					</form>
 				</div>
-                		<!-- /.panel-body -->
-				<div class="panel-footer">
+                		<!-- /.card-body -->
+				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
 					<?php
 					ShowWeather($conn);
 					?>
-                        		<div class="pull-right">
-                        			<div class="btn-group">
-                        			</div>
-					</div>
 				</div>
-				<!-- /.panel-footer -->
+				<!-- /.card-footer -->
 			</div>
-			<!-- /.panel panel-primary -->
+			<!-- /.panel card -->
 		</div>
                 <!-- /.col-lg-4 -->
 	</div>
         <!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#container -->
 <?php }  ?>
 <?php include("footer.php");  ?>
 

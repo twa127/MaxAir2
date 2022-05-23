@@ -169,10 +169,10 @@ $theme = settings($conn, 'theme');
                 		                                                <div style="float:right;">
                                 		                                        <textarea id="load_temp" class="temperature-box" readonly="readonly" row="0" col="0" ></textarea>
                                                 		                </div>
-                                                                		<div class="checkbox checkbox-default checkbox-circle" style="'.$check_visible.'">
-		                                                                        <input id="checkbox" class="styled" type="checkbox" value="0" name="status" checked Enabled>
-                		                                                        <label for="checkbox"> '.$lang['livetemp_enable'].'</label>
-                                		                                </div>';
+			                                                        <div class="form-check" style="'.$check_visible.'">
+										     	<input class="form-check-input" type="checkbox" value="0" id="checkbox" name="status" checked Enabled>
+                                                                			<label class="form-check-label" for="checkbox"> '.$lang['livetemp_enable'].'</label>
+                                                        			</div>';
                                                 		        } else {
                                                                 		echo '<h4><br><p>'.$lang['livetemp_no_control_zone'].'</p></h4><br>';
 		                                                        }

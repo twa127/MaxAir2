@@ -353,7 +353,7 @@ if(!isset($_GET['nid'])) {
 	                                        <!-- Enable Away Schedule -->
                                                 <div class="col-2">
 		                                        <div class="form-check">
-                				                <input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="aw_en" <?php $check = ($time_row['type'] == 1) ? 'checked' : ''; echo $check. " ".$away_disabled ; ?>>
+								<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="aw_en" <?php $check = ($time_row['type'] == 1) ? 'checked' : ''; echo $check. " ".$away_disabled ; ?>>
                                 		                <label class="form-check-label" for="checkbox1"> <?php echo $lang['away_enable']; ?></label>
                                         		</div>
 						</div>
