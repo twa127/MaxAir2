@@ -468,14 +468,14 @@ if(!isset($_GET['nid'])) {
 			                                <br>
         	                                        &nbsp;<img src="./images/sunset.png">
 							<i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['start_time_enable_info']; ?>"></i>
-							<label class="radio-inline">
-								<input type="radio" name="radioGroup1" id="radio1" value="option1" <?php echo $start_n_check; ?>  onchange="update_start_time('00:00', '0')" > Normal
+							<label class="form_check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioGroup1" id="radio1" value="option1" <?php echo $start_n_check; ?>  onchange="update_start_time('00:00', '0')" > Normal
 							</label>
-							<label class="radio-inline">
-								<input type="radio" name="radioGroup1" id="radio2" value="option2" <?php echo $start_sr_check; ?> onchange="update_start_time(<?php echo $sunrise_time; ?>, '1')" > Sunrise
+							<label class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioGroup1" id="radio2" value="option2" <?php echo $start_sr_check; ?> onchange="update_start_time(<?php echo $sunrise_time; ?>, '1')" > Sunrise
 							</label>
-							<label class="radio-inline">
-								<input type="radio" name="radioGroup1" id="radio3" value="option3"  <?php echo $start_ss_check; ?>  onchange="update_start_time(<?php echo $sunset_time; ?>, '2')" > Sunset
+							<label class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioGroup1" id="radio3" value="option3"  <?php echo $start_ss_check; ?>  onchange="update_start_time(<?php echo $sunset_time; ?>, '2')" > Sunset
 							</label>
                                 	                <input class="styled" type="text" id="start_time_offset" name="start_time_offset" style="width: 40px" value="<?php echo $start_offset; ?>"/>
 						 <?php } ?>
@@ -523,14 +523,14 @@ if(!isset($_GET['nid'])) {
                                                 	<br>
 	                                                &nbsp;<img src="./images/sunset.png">
 							 <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<?php echo $lang['end_time_enable_info']; ?>"></i>
-                	                                <label class="radio-inline">
-                        	                                <input type="radio" name="radioGroup2" id="radio3" value="option1" <?php echo $end_n_check; ?>  onchange="update_end_time('00:00', '0')" > Normal
+                	                                <label class="form-check form-check-inline">
+                        	                                <input class="form-check-input" type="radio" name="radioGroup2" id="radio3" value="option1" <?php echo $end_n_check; ?>  onchange="update_end_time('00:00', '0')" > Normal
                                 	                </label>
-                                        	        <label class="radio-inline">
-								<input type="radio" name="radioGroup2" id="radio4" value="option2"  <?php echo $end_sr_check; ?>  onchange="update_end_time(<?php echo $sunrise_time; ?>, '1')" > Sunrise
+                                        	        <label class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioGroup2" id="radio4" value="option2"  <?php echo $end_sr_check; ?>  onchange="update_end_time(<?php echo $sunrise_time; ?>, '1')" > Sunrise
 	                                                </label>
-        	                                        <label class="radio-inline">
-								<input type="radio" name="radioGroup2" id="radio5" value="option3"  <?php echo $end_ss_check; ?>  onchange="update_end_time(<?php echo $sunset_time; ?>, '2')" > Sunset
+        	                                        <label class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="radioGroup2" id="radio5" value="option3"  <?php echo $end_ss_check; ?>  onchange="update_end_time(<?php echo $sunset_time; ?>, '2')" > Sunset
                         	                        </label>
                                 	                <input class="styled" type="text" id="end_time_offset" name="end_time_offset" style="width: 40px" value="<?php echo $end_offset; ?>"/>
 						<?php } ?>
