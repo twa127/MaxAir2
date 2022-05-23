@@ -440,18 +440,18 @@ html {
                                 					echo '"></div>';
                                         				if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
 										echo '<div class="field-group">
-											<div class="checkbox checkbox-dark form-check-circle">
-												<input id="checkbox1" class="styled" type="checkbox" name="remember" ';
+											<div class="form-check">
+												<input class="form-check-input" id="checkbox1" class="styled" type="checkbox" name="remember" ';
 												if(isset($_COOKIE["user_login"])) { echo 'checked >'; } else {  echo '>'; }
-													echo '<label for="checkbox1"> Remember me</label>';
+													echo '<label class="form-check-label" for="checkbox1"> Remember me</label>';
 											echo '</div>
 										</div>
 										<input type="submit" name="submit" value="'.$lang['login'].'" class="btn btn-block btn-default btn-block login"/>';
 									} else {
                                                                                 echo '<div class="field-group">
-                                                                                        <div class="checkbox checkbox-dark form-check-circle">
-                                                                                                <input id="checkbox2" class="styled" type="checkbox" name="ap_mode" >';
-                                                                                                        echo '<label for="checkbox2"> AP Mode</label>';
+                                                                                        <div class="form-check">
+                                                                                                <input class="form-check-input" id="checkbox2" class="styled" type="checkbox" name="ap_mode" >';
+                                                                                                        echo '<label class="form-check-label" for="checkbox2"> AP Mode</label>';
                                                                                         echo '</div>
                                                                                 </div>
                                                                                 <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn btn-block btn-default btn-block login"/>';
