@@ -356,15 +356,39 @@ if (isset($_POST['submit'])) {
                         echo '</div>
                         <form method="post" action="'.$_SERVER['PHP_SELF'].'" role="form">';
 			    include("notice.php");
-                            echo '<div class="p-4">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text bg-primary"><i
-                                            class="bi bi-person-plus-fill text-white"></i></span>
-                                    <input type="text" class="form-control" placeholder="Username" name="username" value="';
-				    if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; }
-				    echo '">
-                                </div>
-                                <div class="input-group mb-3">
+                            echo '<div class="p-4">';
+				if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
+                                    echo '<div class="input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
+                                        <input type="text" class="form-control" placeholder="Username" name="username" value="';
+				        if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; }
+				        echo '">
+                                    </div>';
+                                } else {
+                                    $output = array();
+                                    echo '<div class="input-group mb-3">
+                                        <select class="form-control input-sm" type="text" id="ssid" name="ssid" >';
+                                            if ($network_manager == 0) { //not using NetworkManager
+                                                $command= "sudo /sbin/iwlist wlan0 scan | grep ESSID";
+                                            } else {
+                                                $command= "cat /var/www/add_on/Autohotspot/ssid.txt";
+                                            }
+                                            exec("$command 2>&1 &", $output);
+                                            $arrayLength = count($output);
+                                            $i = 0;
+                                            while ($i < $arrayLength) {
+                                                if ($network_manager == 0) {
+                                                    preg_match('/"([^"]+)"/', trim($output[$i]), $result);
+                                                    echo '<option value="'.$result[1].'">'.$result[1].'</option>';
+                                                } else {
+                                                    echo '<option value="'.trim($output[$i]).'">'.trim($output[$i]).'</option>';
+                                                }
+                                                $i++;
+                                            }
+                                        echo '</select>
+                                    </div>';
+                                }
+                                echo '<div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-primary" id="basic-addon1"><i class="bi bi-key-fill text-white"></i></span>
                                     </div>
@@ -375,16 +399,26 @@ if (isset($_POST['submit'])) {
                                             <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
                                         </span>
                                      </div>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="remember" ';
-				    if(isset($_COOKIE["user_login"])) { echo 'checked >'; } else {  echo '>'; }
-                                    echo '<label class="form-check-label" for="remember">
-                                        Remember Me
-                                    </label>
-                                </div>
-				<input type="submit" name="submit" value="'.$lang['login'].'" class="btn btn-primary text-center mt-2"/>
-                            </div>
+                                </div>';
+                                if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
+                                    echo '<div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="1" name="remember" ';
+				        if(isset($_COOKIE["user_login"])) { echo 'checked >'; } else {  echo '>'; }
+                                        echo '<label class="form-check-label" for="remember">
+                                            Remember Me
+                                        </label>
+                                    </div>
+				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn btn-primary text-center mt-2"/>';
+                                } else {
+                                    echo '<div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="1" name="ap_mode">
+                                        <label class="form-check-label" for="ap_mode">
+                                            AP Mode
+                                        </label>
+                                    </div>
+                                    <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn btn-primary text-center mt-2"/>';
+                                }
+                            echo '</div>
                         </form>
                     </div>
                 </div>
