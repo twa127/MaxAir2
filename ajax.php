@@ -396,10 +396,14 @@ function GetModal_System($conn)
     $results = $conn->query($query);
     echo '<div class="list-group">';
     while ($row = mysqli_fetch_assoc($results)) {
-        echo '<span class="list-group-item">
-        <i class="bi bi-hdd-stack green"></i> '.$row['datetime'].'
-        <span class="pull-right text-muted small"><em>'.number_format(DispSensor($conn,$row['payload'],1),1).'&deg;</em></span>
-        </span>';
+        echo '<div class="list-group-item">
+		<div class="d-flex justify-content-between">
+			<span>
+        			<i class="bi bi-hdd-stack green"></i> '.$row['datetime'].'
+			</span>
+        		<span class="text-muted small"><em>'.number_format(DispSensor($conn,$row['payload'],1),1).'&deg;</em></span>
+        	</div>
+	</div>';
     }
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
