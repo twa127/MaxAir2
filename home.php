@@ -46,13 +46,8 @@ if(isset($_GET['page_name'])) {
                 <!-- /.col-lg-4 -->
         </div>
 	<!-- /.row -->
-	<div class="col-lg-8 offset-md-2">
-		<div class="login-panel-foother">
-        		<h6><?php echo settings($conn, 'name').' '.settings($conn, 'version')."&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;".$lang['build']." ".settings($conn, 'build'); ?></h6>
-        		<br><br>
-        		<h6><?php echo "&copy;&nbsp;".$lang['copyright']; ?></h6>
-		</div>
-	</div>
+        <div class="d-flex justify-content-center" style="margin-top:20px"><?php echo settings($conn, 'name').' '.settings($conn, 'version')."&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;".$lang['build']." ".settings($conn, 'build'); ?></div>
+        <div class="d-flex justify-content-center" style="margin-top:10px">&copy;&nbsp;<?php echo $lang['copyright']; ?></div>
 </div>
 <!--  -->
 <?php include("footer.php"); ?>
