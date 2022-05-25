@@ -23,18 +23,18 @@ require_once(__DIR__.'/st_inc/session.php');
 confirm_logged_in();
 require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
+$theme = settings($conn, 'theme');
+
 ?>
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<div class="Light"><i class="bi bi-house-fill icon-fw"></i> <?php echo $lang['home']; ?>
-			<div class="pull-right">
-				<div class="btn-group"><?php echo date("H:i"); ?>
-				</div>
-			</div>
-		</div>
+<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
+        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+        	<div class="d-flex justify-content-between">
+                	<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
+                        <div class="btn-group" id="homelist_date"><?php echo date("H:i"); ?></div>
+        	</div>
 	</div>
-	<!-- /.panel-heading -->
-	<div class="panel-body">
+	<!-- /.card-header -->
+	<div class="card-body">
 		<?php
 		//Mode 0 is EU Boiler Mode, Mode 1 is US HVAC Mode
 		$system_controller_mode = settings($conn, 'mode') & 0b1;
@@ -330,32 +330,34 @@ require_once(__DIR__.'/st_inc/functions.php');
 		} ?>
 
 	</div>
-	<!-- /.panel-body -->
-	<div class="panel-footer">
-		<?php
-		ShowWeather($conn);
-		?>
-
-		<div class="pull-right">
-			<div class="btn-group">
-				<?php
-				$query="select date(start_datetime) as date,
-				sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) as total_minuts,
-				sum(TIMESTAMPDIFF(MINUTE, start_datetime, stop_datetime)) as on_minuts,
-				(sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) - sum(TIMESTAMPDIFF(MINUTE, start_datetime, stop_datetime))) as save_minuts
-				from system_controller_logs WHERE date(start_datetime) = CURDATE() GROUP BY date(start_datetime) asc";
-				$result = $conn->query($query);
-				$system_controller_time = mysqli_fetch_array($result);
-				$system_controller_time_total = $system_controller_time['total_minuts'];
-				$system_controller_time_on = $system_controller_time['on_minuts'];
-				$system_controller_time_save = $system_controller_time['save_minuts'];
-				if($system_controller_time_on >0){	echo ' <i class="ionicons ion-ios-clock-outline"></i> '.secondsToWords(($system_controller_time_on)*60);}
-				?>
+	<!-- /.card-body -->
+	<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+        	<div class="d-flex justify-content-between">
+                	<div class="btn-group" id="footer_weather">
+                        	<?php
+                                ShowWeather($conn);
+                        ?>
                         </div>
-                 </div>
+
+                        <div class="btn-group" id="footer_running_time">
+                        	<?php
+                                $query="select date(start_datetime) as date,
+                                sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) as total_minuts,
+                                sum(TIMESTAMPDIFF(MINUTE, start_datetime, stop_datetime)) as on_minuts,
+                                (sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) - sum(TIMESTAMPDIFF(MINUTE, start_datetime, stop_datetime))) as save_minuts
+                                from controller_zone_logs WHERE date(start_datetime) = CURDATE() AND zone_id = ".$system_controller_id." GROUP BY date(start_datetime) asc";
+                                $result = $conn->query($query);
+                                $system_controller_time = mysqli_fetch_array($result);
+                                $system_controller_time_total = $system_controller_time['total_minuts'];
+                                $system_controller_time_on = $system_controller_time['on_minuts'];
+                                $system_controller_time_save = $system_controller_time['save_minuts'];
+                                if($system_controller_time_on >0){      echo ' <i class="ionicons ion-ios-clock-outline"></i> '.secondsToWords(($system_controller_time_on)*60);}
+                                ?>
+                        </div>
+        	</div>
 	</div>
-	<!-- /.panel-footer -->
+	<!-- /.card-footer -->
 </div>
-<!-- /.panel-primary -->
+<!-- /.card -->
 <?php if(isset($conn)) { $conn->close();} ?>
 
