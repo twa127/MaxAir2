@@ -501,7 +501,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	}
 	//nightclimate
 	else if($zone_mode_main == 50){
-		$shactive='fa-bed';
+		$shactive='bi-moon-fill';
 		$shcolor='';
 		$target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
 	}
