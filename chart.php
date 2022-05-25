@@ -68,46 +68,70 @@ $grow = mysqli_fetch_assoc($result);
 			<div class="row">
 				<div class="col-xl-12">
 	                        	<!-- Nav tabs -->
-		        		<ul class="nav nav-pills">
-        		    			<?php
-						if ($grow['mask'] & 0b1) { echo '<button class="btn-lg btn-default btn-circle active" href="#temperature-pills" data-toggle="tab"><i class="bi bi-graph-up red"></i></i></button>'; }
-                                	        if ($grow['mask'] & 0b10) { echo '<button class="btn-lg btn-default btn-circle" href="#humidity-pills" data-toggle="tab"><i class="bi bi-graph-up blue"></i></i></button>'; }
-						if ($grow['mask'] & 0b100) { echo '<button class="btn-lg btn-default btn-circle" href="#add-on-pills" data-toggle="tab"><img src="./images/icons8-light-automation-20.png"/></i></button>'; }
-						if ($grow['mask'] & 0b1000) { echo '<button class="btn-lg btn-default btn-circle" href="#controller-pills" data-toggle="tab"><i class="ionicons ion-leaf green"></i></button>'; }
-						if ($grow['mask'] & 0b10000) { echo '<button class="btn-lg btn-default btn-circle" href="#month-pills" data-toggle="tab"><i class="bi bi-bar-chart-line blue"></i></button>'; }
-						if ($grow['mask'] & 0b100000) { echo '<button class="btn-lg btn-default btn-circle" href="#battery-pills" data-toggle="tab"><i class="bi bi-battery-full green"></i></button>'; }
-						?>
-        				</ul>
+    					<ul class="nav nav-tabs" id="myTab">
+						<?php
+						if ($grow['mask'] & 0b1) {
+        						echo '<li class="nav-item">
+						            <a href="#temperature-pills" class="nav-link active" data-bs-toggle="tab">'.$lang['temperature'].'</a>
+        						</li>';
+						}
+						if ($grow['mask'] & 0b10) {
+        						echo '<li class="nav-item">
+            							<a href="#humidity-pills" class="nav-link" data-bs-toggle="tab">'.$lang['humidity'].'</a>
+        						</li>';
+                                                }
+						if ($grow['mask'] & 0b100) {
+        						echo '<li class="nav-item">
+            							<a href="#add-on-pills" class="nav-link" data-bs-toggle="tab">'.$lang['add_on'].'</a>
+        						</li>';
+                                                }
+                                                if ($grow['mask'] & 0b1000) {
+                                      			echo '<li class="nav-item">
+            							<a href="#controller-pills" class="nav-link" data-bs-toggle="tab">'.$lang['savings'].'</a>
+        						</li>';
+                                                }
+                                                if ($grow['mask'] & 0b1000) {
+        						echo '<li class="nav-item">
+            							<a href="#month-pills" class="nav-link" data-bs-toggle="tab">'.$lang['system_controller'].'</a>
+        						</li>';
+                                                }
+                                                if ($grow['mask'] & 0b100) {
+        						echo '<li class="nav-item">
+            							<a href="#battery-pills" class="nav-link" data-bs-toggle="tab">'.$lang['battery'].'</a>
+        					</li>';
+                                                }
+					?>
+					</ul>
 		        		<!-- Tab panes -->
         				<div class="tab-content">
             						<?php
 							if ($grow['mask'] & 0b1) {
-								echo '<div class="tab-pane fade in active" id="temperature-pills"><br>';
+								echo '<div class="tab-pane fade show active" id="temperature-pills"><br>';
 								include("chart_dailyusage.php");
 								echo '</div>';
 							}
         	                                        if ($grow['mask'] & 0b10) {
-								echo '<div class="tab-pane fade" id="humidity-pills"><br>';
+								echo '<div class="tab-pane fade active" id="humidity-pills"><br>';
 								include("chart_humidity_daily.php");
 								echo '</div>';
 							}
             	                			if ($grow['mask'] & 0b100) {
-								echo '<div class="tab-pane fade" id="add-on-pills"><br>';
+								echo '<div class="tab-pane fade active" id="add-on-pills"><br>';
 								include("chart_addonusage.php");
 								echo '</div>';
 							}
 							if ($grow['mask'] & 0b1000) {
-								echo '<div class="tab-pane fade" id="controller-pills"><br>';
+								echo '<div class="tab-pane fade active" id="controller-pills"><br>';
 								include("chart_controllerlist.php");
 								echo '</div>';
 							}
 							if ($grow['mask'] & 0b10000) {
-								echo '<div class="tab-pane fade" id="month-pills"><br>';
+								echo '<div class="tab-pane fade active" id="month-pills"><br>';
 								include("chart_monthlyusage.php");
 								echo '</div>';
 							}
 							if ($grow['mask'] & 0b100000) {
-								echo '<div class="tab-pane fade" id="battery-pills"><br>';
+								echo '<div class="tab-pane fade active" id="battery-pills"><br>';
 								include("chart_batteryusage.php");
 								echo '</div>';
 							}
@@ -130,3 +154,14 @@ $grow = mysqli_fetch_assoc($result);
 </div>
 <!-- /#container -->
 <?php include("footer.php"); ?>
+
+<script>
+// remove all but the first 'active' class from the tab-pane elements after initial loading of the graph data
+$(document).ready(function(){
+    tabpanes = document.getElementsByClassName("tab-pane");
+    for (i = 1; i < tabpanes.length; i++) {
+        tabpanes[i].className = tabpanes[i].className.replace(" active", "");
+    }
+});
+</script>
+
