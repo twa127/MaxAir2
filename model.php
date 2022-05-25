@@ -1494,7 +1494,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
 				if ($row["page"] == 1) { $button_text = $lang['home_page']; } else { $button_text = $lang['onetouch_page']; }
                                 echo '<tr>
                                         <td>'.$row["name"].'</td>
-					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn-info btn-block" onclick="set_button_text('.$row["id"].')"></td>
+					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn btn-primary d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
            		                <td><input id="index'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
 					<input type="hidden" id="page_type'.$row["id"].'" name="page_type" value="'.$row["page"].'">
         			</tr>';
