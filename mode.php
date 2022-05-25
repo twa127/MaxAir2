@@ -305,7 +305,7 @@ $theme = settings($conn, 'theme');
                 if($_SESSION['admin'] == 1) {
 			for ($x = 0; $x <=  4 + ($system_controller_mode * 3); $x++) { ?>
 	                        <a style="color: #777; cursor: pointer; text-decoration: none;" href="javascript:set_sc_mode(<?php echo $x; ?>)">
-        	                <button type="button" class="btn btn-default btn-circle btn-xxl mainbtn">
+        	                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle btn-xxl mainbtn">
                 	        <h3 class="buttontop"><small><?php echo $legend[$x]; ?></small></h3>
                         	<h3 class="buttonmode" ><i class="bi <?php echo $button[$x]; ?> icon-2x <?php echo $color[$x]; ?>"></i></h3>
 	                        <?php if ($system_controller_mode == 1) {
