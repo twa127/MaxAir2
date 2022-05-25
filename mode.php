@@ -30,7 +30,7 @@ $theme = settings($conn, 'theme');
         <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
         	<div class="d-flex justify-content-between">
                 	<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
-                        <div class="btn-group" id="homelist_date"><?php echo date("H:i"); ?></div>
+                        <div class="btn-group" id="mode_date"><?php echo date("H:i"); ?></div>
         	</div>
 	</div>
 	<!-- /.card-header -->
@@ -339,7 +339,7 @@ $theme = settings($conn, 'theme');
                         ?>
                         </div>
 
-                        <div class="btn-group" id="footer_running_time">
+                        <div class="btn-group" id="footer_all_running_time">
                         	<?php
                                 $query="select date(start_datetime) as date,
                                 sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) as total_minuts,
@@ -351,7 +351,7 @@ $theme = settings($conn, 'theme');
                                 $system_controller_time_total = $system_controller_time['total_minuts'];
                                 $system_controller_time_on = $system_controller_time['on_minuts'];
                                 $system_controller_time_save = $system_controller_time['save_minuts'];
-                                if($system_controller_time_on >0){      echo ' <i class="ionicons ion-ios-clock-outline"></i> '.secondsToWords(($system_controller_time_on)*60);}
+                                if($system_controller_time_on >0){ echo ' <i class="ionicons ion-ios-clock-outline"></i> '.secondsToWords(($system_controller_time_on)*60);}
                                 ?>
                         </div>
         	</div>
@@ -360,4 +360,21 @@ $theme = settings($conn, 'theme');
 </div>
 <!-- /.card -->
 <?php if(isset($conn)) { $conn->close();} ?>
+
+<script>
+
+// update page data every x seconds
+$(document).ready(function(){
+  var delay = '<?php echo $page_refresh ?>';
+
+  (function loop() {
+    var data = '<?php echo $js_sch_params ?>';
+
+    $('#mode_date').load("ajax_fetch_data.php?id=0&type=13").fadeIn("slow");
+    $('#footer_weather').load("ajax_fetch_data.php?id=0&type=14").fadeIn("slow");
+    $('#footer_all_running_time').load("ajax_fetch_data.php?id=0&type=17").fadeIn("slow");
+    setTimeout(loop, delay);
+  })();
+});
+</script>
 
