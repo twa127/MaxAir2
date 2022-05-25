@@ -471,7 +471,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	}
 	//fault
 	else if($zone_mode_main == 10){
-		$shactive='ion-android-cancel';
+		$shactive='bi-x-circle-fill';
 		$shcolor='red';
 		$target='';     //show no target temperature
                 $scactive='ionicons ion-android-cancel';
