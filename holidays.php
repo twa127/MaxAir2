@@ -26,7 +26,7 @@ require_once(__DIR__.'/st_inc/functions.php');
 ?>
 <?php include("header.php");  ?>
 <?php include_once("notice.php"); ?>
-<div id="page-wrapper">
+<div class="container-fluid">
 	<br>
 	<div class="row">
         	<div class="col-lg-12">
@@ -40,6 +40,6 @@ require_once(__DIR__.'/st_inc/functions.php');
 	</div>
         <!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#container-fluid -->
 <?php include("footer.php");  ?>
 

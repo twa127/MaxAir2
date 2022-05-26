@@ -27,7 +27,7 @@ include("header.php");
 include("notice.php");
 ?>
 
-<div id="page-wrapper">
+<div class="container-fluid">
         <div class="row">
         	<div class="col-lg-12">
                 	<div id="chart" >
@@ -40,6 +40,6 @@ include("notice.php");
     	</div>
        	 <!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#container-fluid -->
 <?php include("footer.php"); ?>
 

@@ -40,5 +40,5 @@ require_once(__DIR__.'/st_inc/functions.php');
 	</div>
 	<!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#container-fluid -->
 <?php include("footer.php");  ?>
