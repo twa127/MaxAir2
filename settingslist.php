@@ -78,7 +78,7 @@ if ($settings_id <= 3) {
 		<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
 			<div class="d-flex justify-content-between">
 				<div class="btn-group">
-					<i class="bi bi-gear-fill"></i>
+					<i class="bi bi-gear-fill"></i>&nbsp;
 					<?php
 					switch ($settings_id) {
   						case 1:
