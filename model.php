@@ -30,7 +30,7 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
                 <h5 class="modal-title">'.$lang['frost_protection'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=frost_protection.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_frost_protection'].'</a></li>
@@ -519,7 +519,7 @@ echo '
                 <h5 class="modal-title">'.$lang['maxair_update'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="pdf_download.php?file=software_update_technical.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['software_update_technical'].'</a></li>
@@ -547,7 +547,7 @@ echo '
                 <h5 class="modal-title">'.$lang['pihome_backup'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_database_backup.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_database_backup'].'</a></li>
@@ -631,7 +631,7 @@ echo '
                                 <h5 class="modal-title">'.$lang['software_install'].'</h5>
                                 <div class="dropdown float-right">
                                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
                                         <ul class="dropdown-menu">
                 				<li><a class="dropdown-item" href="pdf_download.php?file=software_install.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['software_install'].'</a></li>
@@ -995,7 +995,7 @@ echo '
                 <h5 class="modal-title">'.$lang['graph_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=displaying_temperature_sensors_graphs.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['displaying_temperature_sensors_graphs'].'</a></li>
@@ -1038,7 +1038,7 @@ echo '
                 <h5 class="modal-title">'.$lang['sensor_limits_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_sensor_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_sensor_notifications'].'</a></li>
@@ -1221,7 +1221,7 @@ echo '
                 <h5 class="modal-title">'.$lang['email_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                         	<li><a class="dropdown-item" href="pdf_download.php?file=setup_email_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_email_notifications'].'</a></li>
@@ -1433,7 +1433,7 @@ echo '
                 <h5 class="modal-title">'.$lang['schedule_jobs'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=task_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['task_scheduling'].'</a></li>
@@ -1629,7 +1629,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                 <h5 class="modal-title">'.$lang['theme_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
@@ -1703,7 +1703,7 @@ echo '
                 		<h5 class="modal-title">'.$lang['system_controller_settings'].'</h5>
                 		<div class="dropdown float-right">
                         		<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                		<i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                		<i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         		</a>
                         		<ul class="dropdown-menu">
                         		<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_system_controller.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_system_controller'].'</a></li>
@@ -2160,7 +2160,7 @@ echo '
                 <h5 class="modal-title">'.$lang['override_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_override.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_override'].'</a></li>
@@ -2399,7 +2399,7 @@ echo '
                 <h5 class="modal-title">'.$lang['zone_type'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=zone_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['zone_types'].'</a></li>
@@ -2489,7 +2489,7 @@ echo '
                 <h5 class="modal-title">'.$lang['zone_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_zones.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_zones'].'</a></li>
@@ -2573,7 +2573,7 @@ echo '
                			<h5 class="modal-title">'.$lang['smart_home_gateway'].'</h5>
                                 <div class="dropdown float-right">
                                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
                                         <ul class="dropdown-menu">
                                 		<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_gateway.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_gateway'].'</a></li>
@@ -2874,7 +2874,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
                 <h5 class="modal-title">'.$lang['relay_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=configure_relay_devices.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['configure_relay_devices'].'</a></li>
@@ -2965,7 +2965,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
                 <h5 class="modal-title">'.$lang['sensor_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
@@ -3066,7 +3066,7 @@ echo '
                 <h5 class="modal-title">'.$lang['sensor_type'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
@@ -3158,7 +3158,7 @@ echo '
                 }
                 echo '<div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_tasmota_lamp_zone.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_add_on_device'].'</a></li>
@@ -3296,7 +3296,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                 <h5 class="modal-title">'.$lang['mqtt_device'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_mqtt'].'</a></li>
@@ -3402,7 +3402,7 @@ echo '
                 <h5 class="modal-title">'.$lang['offset_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                                <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                                <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_start_time_offset'].'</a></li>
