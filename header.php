@@ -399,7 +399,7 @@ else
 						<?php //date_sun_info( int $weather['sunrise'], float $weather['lat'] , float $weather['lon']) ;?>
 					</div>
 				    	<div class="col-5 col-md-6 col-lg-6">
-                				<span class="pull-right degrees"><?php echo DispSensor($conn,$weather['c'],1) . '&deg;&nbsp;' . $TUnit;?></span>
+                				<span class="float-right degrees"><?php echo DispSensor($conn,$weather['c'],1) . '&deg;&nbsp;' . $TUnit;?></span>
 	            			</div>
         			</div>
 				<br>
@@ -417,7 +417,7 @@ else
 									<span img border="0" width="28" height="28" src="images/'.$value['weather'][0]['icon'].'.png">
 									'.$value['weather'][0]['main']." - " .$value['weather'][0]['description'].
 									'</span>
-									<span class="pull-right text-muted small"><em>'.round($value['main']['temp_min'],0)."&deg; - ".round($value['main']['temp_max'],0).'&deg;</em>
+									<span class="float-right text-muted small"><em>'.round($value['main']['temp_min'],0)."&deg; - ".round($value['main']['temp_max'],0).'&deg;</em>
 									</span></a>';
 								}
 								?>

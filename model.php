@@ -28,7 +28,7 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['frost_protection'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -419,15 +419,15 @@ echo '
 echo '	<div class=\"list-group\">';
 echo " 
 
-<a href=\"http://startbootstrap.com/template-overviews/sb-admin-2\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> SB Admin 2 Template <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Pretty Checkbox <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://fortawesome.github.io/Font-Awesome\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Font-Awesome <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://ionicons.com\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Ionicons <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.cssmatic.com/box-shadow\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Box Shadow CSS <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://daneden.github.io/animate.css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Animate.css <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://www.mysensors.org\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> MySensors <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.pihome.eu\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> All others if forget them... <span class=\"pull-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://pihome.harkemedia.de\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> RaspberryPi Home Automation <span class=\"pull-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://startbootstrap.com/template-overviews/sb-admin-2\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> SB Admin 2 Template <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Pretty Checkbox <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"https://fortawesome.github.io/Font-Awesome\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Font-Awesome <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://ionicons.com\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Ionicons <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://www.cssmatic.com/box-shadow\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Box Shadow CSS <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"https://daneden.github.io/animate.css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Animate.css <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"https://www.mysensors.org\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> MySensors <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://www.pihome.eu\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> All others if forget them... <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"http://pihome.harkemedia.de\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> RaspberryPi Home Automation <span class=\"float-right text-muted small\"><em>...</em></span></a>
 ";
 echo '</div></div>
             <div class="modal-footer">
@@ -512,7 +512,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['maxair_update'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -540,7 +540,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['pihome_backup'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -624,7 +624,7 @@ echo '
                         <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                                 <h5 class="modal-title">'.$lang['software_install'].'</h5>
-                                <div class="dropdown pull-right">
+                                <div class="dropdown float-right">
                                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                                         </a>
@@ -743,9 +743,9 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
                 <p class="text-muted">'.$lang['db_cleanup_text'].'</p>
                 <table class="table table-bordered">
                         <tr>
-                                <th class="col-lg-2 text-center"><small>'.$lang['table_name'].'</small></th>
-                                <th class="col-lg-1 text-center"><small>'.$lang['db_cleanup_value'].'</small></th>
-                                <th class="col-lg-1 text-center"><small>'.$lang['db_cleanup_period'].'</small></th>
+                                <th class="col-2 text-center"><small>'.$lang['table_name'].'</small></th>
+                                <th class="col-1 text-center"><small>'.$lang['db_cleanup_value'].'</small></th>
+                                <th class="col-2 text-center"><small>'.$lang['db_cleanup_period'].'</small></th>
                         </tr>';
                         $query = "SELECT * FROM db_cleanup LIMIT 1;";
                         $result = $conn->query($query);
@@ -764,7 +764,7 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
                                 $interval = $pieces[1];
                                 echo '<tr>
                                         <td>'.$row["column_name"].'</td>
-                			<td><input id="period'.$x.'" type="text" class="pull-left text" style="border: none" name="period'.$x.'"  size="3" value="'.$period.'" placeholder="Period" required></td>
+                			<td><input id="period'.$x.'" type="text" class="float-left text" style="border: none" name="period'.$x.'"  size="3" value="'.$period.'" placeholder="Period" required></td>
                                         <td><select class="form-select" type="text" id="ival'.$x.'" name="ival'.$x.'" onchange=set_interval('.$x.')>
                                                 <option value="HOUR" ' . ($interval=='HOUR' ? 'selected' : '') . '>'.$lang['HOUR'].'</option>
                                                 <option value="DAY" ' . ($interval=='DAY' ? 'selected' : '') . '>'.$lang['DAY'].'</option>
@@ -988,7 +988,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['graph_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -1010,7 +1010,7 @@ while ($row = mysqli_fetch_assoc($results)) {
     echo '
         <tr>
             <td>'.$row["name"].'</td>
-            <td><input id="graph_num'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="graph_num" size="3" value="'.$row["graph_num"].'" placeholder="Graph Number" required></td>
+            <td><input id="graph_num'.$row["id"].'" type="text" class="float-left text" style="border: none" name="graph_num" size="3" value="'.$row["graph_num"].'" placeholder="Graph Number" required></td>
         </tr>';
 }
 echo '
@@ -1031,7 +1031,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_limits_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -1214,7 +1214,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['email_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -1426,7 +1426,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['schedule_jobs'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -1454,15 +1454,15 @@ while ($row = mysqli_fetch_assoc($results)) {
     if ($row["enabled"] == 0) { $enabled_check = ''; $content_msg = "You are about to DELETE an Disabled Job";} else { $enabled_check = 'checked'; $content_msg = "You are about to DELETE an Enabled Job"; }
     echo '
         <tr>
-            <td><input id="jobs_name'.$row["id"].'" type="value" class="form-control pull-right" style="border: none" value="'.$row["job_name"].'" placeholder="Job Name"></td>
-            <td><input id="jobs_script'.$row["id"].'" type="value" class="form-control pull-right" style="border: none" value="'.$row["script"].'" placeholder="Job Script"></td>
+            <td><input id="jobs_name'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["job_name"].'" placeholder="Job Name"></td>
+            <td><input id="jobs_script'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["script"].'" placeholder="Job Script"></td>
             <td style="text-align:center; vertical-align:middle;">
                <input type="checkbox" id="checkbox_enabled'.$row["id"].'" name="enabled" value="1" '.$enabled_check.'>
             </td>
             <td style="text-align:center; vertical-align:middle;">
                <input type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
             </td>
-            <td><input id="jobs_time'.$row["id"].'" type="value" class="form-control pull-right" style="border: none" value="'.$row["time"].'" placeholder="Run Job Every"></td>
+            <td><input id="jobs_time'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["time"].'" placeholder="Run Job Every"></td>
             <td><button class="btn warning btn-danger btn-xs" onclick="delete_job('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
         </tr>';
 
@@ -1545,7 +1545,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
                                 echo '<tr>
                                         <td>'.$row["name"].'</td>
 					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn-primary d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
-           		                <td><input id="index'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
+           		                <td><input id="index'.$row["id"].'" type="text" class="float-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
 					<input type="hidden" id="page_type'.$row["id"].'" name="page_type" value="'.$row["page"].'">
         			</tr>';
 			}
@@ -1622,7 +1622,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['theme_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -1696,7 +1696,7 @@ echo '
             		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 		<h5 class="modal-title">'.$lang['system_controller_settings'].'</h5>
-                		<div class="dropdown pull-right">
+                		<div class="dropdown float-right">
                         		<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 		<i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         		</a>
@@ -1966,15 +1966,15 @@ while ($row = mysqli_fetch_assoc($results)) {
     	echo '
             <tr>
             	<th scope="row"><small>'.$row['name'].'</small></th>
-            	<td><input id="minute'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="minute" size="3" value="'.$minute.'" placeholder="Minutes" required></td>';
+            	<td><input id="minute'.$row["id"].'" type="text" class="float-left text" style="border: none" name="minute" size="3" value="'.$minute.'" placeholder="Minutes" required></td>';
 	    	if($row["category"] < 2) {
-            		echo '<td><input id="temperature'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>
-            		<td><input id="boost_button_id'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="button_id"  size="3" value="'.$boost_button_id.'" placeholder="Button ID" required></td>
-            		<td><input id="boost_button_child_id'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="button_child_id" size="3" value="'.$boost_button_child_id.'" placeholder="Child ID" required></td>';
+            		echo '<td><input id="temperature'.$row["id"].'" type="text" class="float-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>
+            		<td><input id="boost_button_id'.$row["id"].'" type="text" class="float-left text" style="border: none" name="button_id"  size="3" value="'.$boost_button_id.'" placeholder="Button ID" required></td>
+            		<td><input id="boost_button_child_id'.$row["id"].'" type="text" class="float-left text" style="border: none" name="button_child_id" size="3" value="'.$boost_button_child_id.'" placeholder="Child ID" required></td>';
 	    	} else {
-            		echo '<td><input id="temperature'.$row["id"].'" type="hidden" class="pull-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>
-            		<td><input id="boost_button_id'.$row["id"].'" type="hidden" class="pull-left text" style="border: none" name="button_id"  size="3" value="'.$boost_button_id.'" placeholder="Button ID" required></td>
-            		<td><input id="boost_button_child_id'.$row["id"].'" type="hidden" class="pull-left text" style="border: none" name="button_child_id" size="3" value="'.$boost_button_child_id.'" placeholder="Child ID" required></td>';
+            		echo '<td><input id="temperature'.$row["id"].'" type="hidden" class="float-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>
+            		<td><input id="boost_button_id'.$row["id"].'" type="hidden" class="float-left text" style="border: none" name="button_id"  size="3" value="'.$boost_button_id.'" placeholder="Button ID" required></td>
+            		<td><input id="boost_button_child_id'.$row["id"].'" type="hidden" class="float-left text" style="border: none" name="button_child_id" size="3" value="'.$boost_button_child_id.'" placeholder="Child ID" required></td>';
 	    	}
 	     	echo '<input type="hidden" id="zone_id'.$row["id"].'" name="zone_id" value="'.$row["zone_id"].'">
 		<input type="hidden" id="hvac_mode'.$row["id"].'" name="hvac_mode" value="'.$row["hvac_mode"].'">
@@ -1999,11 +1999,11 @@ while ($row = mysqli_fetch_assoc($results)) {
     	echo '
             <tr>
             	<th scope="row"><small>'.$mode.'</small></th>
-            	<td><input id="minute'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="minute" size="3" value="'.$minute.'" placeholder="Minutes" required></td>';
+            	<td><input id="minute'.$row["id"].'" type="text" class="float-left text" style="border: none" name="minute" size="3" value="'.$minute.'" placeholder="Minutes" required></td>';
 	    	if($hvac_mode > 3) {
-            		echo '<td><input id="temperature'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>';
+            		echo '<td><input id="temperature'.$row["id"].'" type="text" class="float-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>';
 	    	} else {
-            		echo '<td><input id="temperature'.$row["id"].'" type="hidden" class="pull-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>';
+            		echo '<td><input id="temperature'.$row["id"].'" type="hidden" class="float-left text" style="border: none" name="temperature" size="3" value="'.DispSensor($conn,$row["temperature"],$row["sensor_type_id"]).'" placeholder="Temperature" required></td>';
 	    	}
 	     	echo '<input type="hidden" id="zone_id'.$row["id"].'" name="zone_id" value="'.$row["zone_id"].'">
 		<input type="hidden" id="hvac_mode'.$row["id"].'" name="hvac_mode" value="'.$row["hvac_mode"].'">
@@ -2153,7 +2153,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['override_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -2392,7 +2392,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_type'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -2482,7 +2482,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -2566,7 +2566,7 @@ echo '
             		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                			<h5 class="modal-title">'.$lang['smart_home_gateway'].'</h5>
-                                <div class="dropdown pull-right">
+                                <div class="dropdown float-right">
                                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                                         </a>
@@ -2712,8 +2712,8 @@ echo '
 				<br><h4 class="info"><i class="bi bi-heart-pulse-fill red" style="font-size:1.2rem;"></i> '.$lang['smart_home_gateway_scr_info'].'</h4>
 				<div class=\"list-group\">';
 					echo "
-					<a href=\"#\" class=\"list-group-item\"> PID <span class=\"pull-right text-muted small\"><em> ".$grow['pid']."</em></span></a>
-					<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_pid'].": <span class=\"pull-right text-muted small\"><em>".$grow['pid_running_since']."</em></span></a>";
+					<a href=\"#\" class=\"list-group-item\"> PID <span class=\"float-right text-muted small\"><em> ".$grow['pid']."</em></span></a>
+					<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_pid'].": <span class=\"float-right text-muted small\"><em>".$grow['pid_running_since']."</em></span></a>";
 
 					$query = "select * FROM gateway_logs WHERE pid_datetime >= NOW() - INTERVAL 5 MINUTE;";
 					$result = $conn->query($query);
@@ -2722,7 +2722,7 @@ echo '
 					} else {
 						$gw_restarted = '0';
 					}
-					echo "<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_scr'].": <span class=\"pull-right text-muted small\"><em>".$gw_restarted."</em></span></a>";
+					echo "<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_scr'].": <span class=\"float-right text-muted small\"><em>".$gw_restarted."</em></span></a>";
 				echo '</div>
                                 <!-- /.list-group -->
 			</div>
@@ -2775,11 +2775,11 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row['node_id'].'</td>
             <td>'.$row['name'].'</td>
             <td>'.$row['last_seen'].'</td>
-            <td><input id="interval'.$row["node_id"].'" type="value" class="form-control pull-right" style="border: none" name="interval'.$row["node_id"].'" value="'.$row["notice_interval"].'" placeholder="Notice Interval" required></td>';
+            <td><input id="interval'.$row["node_id"].'" type="value" class="form-control float-right" style="border: none" name="interval'.$row["node_id"].'" value="'.$row["notice_interval"].'" placeholder="Notice Interval" required></td>';
 	    if(!isset($row['batt'])) {
-	            echo '<td><input id="min_value'.$row["node_id"].'" type="value" class="form-control pull-right" style="border: none" name="min_value'.$row["node_id"].'" value="N/A" readonly="readonly" placeholder="Min Value"></td>';
+	            echo '<td><input id="min_value'.$row["node_id"].'" type="value" class="form-control float-right" style="border: none" name="min_value'.$row["node_id"].'" value="N/A" readonly="readonly" placeholder="Min Value"></td>';
 	    } else {
-                    echo '<td><input id="min_value'.$row["node_id"].'" type="value" class="form-control pull-right" style="border: none" name="min_value'.$row["node_id"].'" value="'.$row["min_value"].'" placeholder="Min Value"></td>';
+                    echo '<td><input id="min_value'.$row["node_id"].'" type="value" class="form-control float-right" style="border: none" name="min_value'.$row["node_id"].'" value="'.$row["min_value"].'" placeholder="Min Value"></td>';
 	    }
         echo '</tr>';
 
@@ -2867,7 +2867,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['relay_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -2958,7 +2958,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -3059,7 +3059,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_type'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -3151,7 +3151,7 @@ echo '
                 } else {
                         echo '<h5 class="modal-title">'.$lang['add_on_settings'].'</h5>';
                 }
-                echo '<div class="dropdown pull-right">
+                echo '<div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -3289,7 +3289,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['mqtt_device'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -3395,7 +3395,7 @@ echo '
             <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['offset_settings'].'</h5>
-                <div class="dropdown pull-right">
+                <div class="dropdown float-right">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                         </a>
@@ -3447,9 +3447,9 @@ while ($row = mysqli_fetch_assoc($results)) {
                 <td style="text-align:center; vertical-align:middle;">
                 	<input type="checkbox" id="checkbox_offset'.$row["id"].'" name="offset_enabled" size="1" value="1" '.$offset_enabled.'>
                 </td>
-                <td><input id="low_temp'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="low_temp" size="1" value="'.DispSensor($conn,$row["low_temperature"],$row["sensor_type_id"]).'" placeholder="Low Temperature" required></td>
-            	<td><input id="high_temp'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="high_temp" size="1" value="'.DispSensor($conn,$row["high_temperature"],$row["sensor_type_id"]).'" placeholder="High Temperature" required></td>
-            	<td><input id="offset_id'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="offset_id" size="1" value="'.$row['start_time_offset'].'" placeholder="Max Time Offset" required></td>
+                <td><input id="low_temp'.$row["id"].'" type="text" class="float-left text" style="border: none" name="low_temp" size="1" value="'.DispSensor($conn,$row["low_temperature"],$row["sensor_type_id"]).'" placeholder="Low Temperature" required></td>
+            	<td><input id="high_temp'.$row["id"].'" type="text" class="float-left text" style="border: none" name="high_temp" size="1" value="'.DispSensor($conn,$row["high_temperature"],$row["sensor_type_id"]).'" placeholder="High Temperature" required></td>
+            	<td><input id="offset_id'.$row["id"].'" type="text" class="float-left text" style="border: none" name="offset_id" size="1" value="'.$row['start_time_offset'].'" placeholder="Max Time Offset" required></td>
 		<td><select class="form-select" type="text" id="sensor'.$row["id"].'" name="sensor" onchange=set_sensors_id((this.options[this.selectedIndex].value),'.$row["id"].')>';
                 if ($weather_enabled) { echo '<option value="0" '.($row['sensors_id']==0 ? 'selected' : '').'>Weather</option>'; }
                 //get list from sensors table to display

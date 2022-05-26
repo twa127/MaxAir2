@@ -428,7 +428,7 @@ function GetModal_MQTT($conn)
     echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['mqtt_connections'].'</h5>
-            <div class="dropdown pull-right">
+            <div class="dropdown float-right">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
                 </a>
@@ -635,7 +635,7 @@ function GetModal_Services($conn)
         echo '<span class="list-group-item">';
         echo $SArrVal['name'];
         $rval=my_exec("/bin/systemctl status " . $SArrVal['service']);
-        echo '<span class="pull-right text-muted small">';
+        echo '<span class="float-right text-muted small">';
         if($rval['stdout']=='') {
             echo 'Error: ' . $rval['stderr'];
         } else {
@@ -661,7 +661,7 @@ function GetModal_Services($conn)
             echo $stat;
         }
         echo '</span>';
-        echo '<br/>&nbsp;<span class="pull-right text-muted small" style="width:200px;text-align:right;">';
+        echo '<br/>&nbsp;<span class="float-right text-muted small" style="width:200px;text-align:right;">';
         echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
             <span class="ionicons ion-ios-information-outline"></span></button>';
         echo '</span>';
@@ -752,7 +752,7 @@ function GetModal_ServicesInfo($conn)
 
     if(substr($_GET['id'],0,7)=='pihome.' or substr($_GET['id'],0,7)=='pihome_' or substr($_GET['id'],0,10)=='homebridge' or substr($_GET['id'],0,11)=='autohotspot' or substr($_GET['id'],0,14)=='HA_integration') {
         echo '<span class="list-group-item" style="height:40px;">&nbsp;';
-        echo '<span class="pull-right text-muted small">
+        echo '<span class="float-right text-muted small">
               <button class="btn btn-warning btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $_GET['id'] . '&Action=start" onclick="services_Info(this);">
                 Start</button>
               <button class="btn btn-warning btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $_GET['id'] . '&Action=stop" onclick="services_Info(this);">
@@ -780,7 +780,7 @@ function GetModal_ServicesInfo($conn)
 
     if($_GET['id']=='pihome_amazon_echo.service') {
         echo '<span class="list-group-item" style="overflow:hidden;">Install Service:';
-        echo '<span class="pull-right text-muted small">Edit /lib/systemd/system/' . $_GET['id'] . '<br/>
+        echo '<span class="float-right text-muted small">Edit /lib/systemd/system/' . $_GET['id'] . '<br/>
 <code>sudo nano /lib/systemd/system/' . $_GET['id'] . '</code><br/>
 Put the following contents in the file:<br/>
 (make sure the -u is supplied to python<br/>
@@ -867,16 +867,16 @@ function GetModal_Uptime($conn)
 /*    while ($row = mysqli_fetch_assoc($results)) {
         echo '<span class="list-group-item">';
         echo $row['name'] . ($row['enabled'] ? '' : ' (Disabled)');
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">Username:&nbsp;' . $row['username'] . '</span>';
+        echo '<span class="float-right text-muted small" style="width:200px;text-align:right;">Username:&nbsp;' . $row['username'] . '</span>';
         echo '<br/><span class="text-muted small">Type:&nbsp;';
         if($row['type']==0) echo 'Default, monitor.';
         else if($row['type']==1) echo 'Sonoff Tasmota.';
         else echo 'Unknown.';
         echo '</span>';
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">Password:&nbsp;' . $row['password'] . '</span>';
+        echo '<span class="float-right text-muted small" style="width:200px;text-align:right;">Password:&nbsp;' . $row['password'] . '</span>';
         echo '<br/><span class="text-muted small">' . $row['ip'] . '&nbsp;:&nbsp;' . $row['port'] . '</span>';
 
-        echo '<span class="pull-right text-muted small" style="width:200px;text-align:right;">';
+        echo '<span class="float-right text-muted small" style="width:200px;text-align:right;">';
         echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
             <span class="ionicons ion-edit"></span></button>&nbsp;&nbsp;
 		<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="glyphicon glyphicon-trash"></span></button>';
@@ -1470,7 +1470,7 @@ function GetModal_Schedule_List($conn)
 							echo '<div id="sdtz_'.$srow['tz_id'].'"><div class="circle_list bluesch_disable"> <p class="schdegree">D</p></div></div>';
 						}
 						echo '<span class="label label-info sch_name"> '.$srow['sch_name'].'</span>
-						<span class="pull-right text-muted sch_list"><em>'. $coop. ' '.$srow['start'].' - ' .$srow['end'].'</em></span></a>';
+						<span class="float-right text-muted sch_list"><em>'. $coop. ' '.$srow['start'].' - ' .$srow['end'].'</em></span></a>';
 					}
 				echo '</div>';
 			}

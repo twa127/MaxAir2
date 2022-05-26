@@ -178,19 +178,19 @@ $theme = settings($conn, 'theme');
 		                        	if ($system_controller_mode == 1) {
                 		                	switch ($sc_mode) {
                                 		        	case 1:
-                                                			echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_heat'].'</small></h3>';
+                                                			echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_heat'].'</small></h3>';
 			                                                break;
         	        		                        case 2:
-                	                		                echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_cool'].'</small></h3>';
+                	                		                echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_cool'].'</small></h3>';
                         	                        		break;
 		                	                        case 3:
-                		        	                        echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_auto'].'</small></h3>';
+                		        	                        echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_auto'].'</small></h3>';
                                 			                break;
 		                                        	default:
-                		                                	echo '<h3 class="statuszoon pull-left text-dark"><small>&nbsp</small></h3>';
+                		                                	echo '<h3 class="statuszoon float-left text-dark"><small>&nbsp</small></h3>';
 	                                		}
 			                        } else {
-                			                echo '<h3 class="statuszoon pull-left text-dark"><small>&nbsp</small></h3>';
+                			                echo '<h3 class="statuszoon float-left text-dark"><small>&nbsp</small></h3>';
 		        	                }
                 			        echo '</button>';
 			                } else {
@@ -200,19 +200,19 @@ $theme = settings($conn, 'theme');
                 		        	if ($system_controller_mode == 1) {
                                 			switch ($sc_mode) {
 		                                        	case 1:
-                		                                	echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_heat'].'</small></h3>';
+                		                                	echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_heat'].'</small></h3>';
 	                                		                break;
 			                                        case 2:
-                			                                echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_cool'].'</small></h3>';
+                			                                echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_cool'].'</small></h3>';
                         	        		                break;
 		                	                        case 3:
-                		        	                        echo '<h3 class="statuszoon pull-left text-dark" style="margin-left:5px"><small>'.$lang['mode_auto'].'</small></h3>';
+                		        	                        echo '<h3 class="statuszoon float-left text-dark" style="margin-left:5px"><small>'.$lang['mode_auto'].'</small></h3>';
                                 			                break;
 		                                        	default:
-                		                                	echo '<h3 class="statuszoon pull-left text-dark"><small>&nbsp</small></h3>';
+                		                                	echo '<h3 class="statuszoon float-left text-dark"><small>&nbsp</small></h3>';
 	                                		}
 			                        } else {
-                			                echo '<h3 class="statuszoon pull-left text-dark"><small>&nbsp</small></h3>';
+                			                echo '<h3 class="statuszoon float-left text-dark"><small>&nbsp</small></h3>';
 		        	                }
                 			        echo '</button>';
 			                }
