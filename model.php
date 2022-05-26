@@ -29,7 +29,7 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['frost_protection'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -518,7 +518,7 @@ echo '
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['maxair_update'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -546,7 +546,7 @@ echo '
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['pihome_backup'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -630,7 +630,7 @@ echo '
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                                 <h5 class="modal-title">'.$lang['software_install'].'</h5>
                                 <div class="dropdown float-right">
-                                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                                        <a class="" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
                                         <ul class="dropdown-menu">
@@ -994,7 +994,7 @@ echo '
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['graph_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -1037,7 +1037,7 @@ echo '
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_limits_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -1220,7 +1220,7 @@ echo '
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['email_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -1432,7 +1432,7 @@ echo '
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['schedule_jobs'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -1628,7 +1628,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['theme_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -1702,7 +1702,7 @@ echo '
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 		<h5 class="modal-title">'.$lang['system_controller_settings'].'</h5>
                 		<div class="dropdown float-right">
-                        		<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        		<a class="" data-bs-toggle="dropdown" href="#">
                                 		<i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         		</a>
                         		<ul class="dropdown-menu">
@@ -2159,7 +2159,7 @@ echo '
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['override_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -2398,7 +2398,7 @@ echo '
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_type'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -2488,7 +2488,7 @@ echo '
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -2572,7 +2572,7 @@ echo '
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                			<h5 class="modal-title">'.$lang['smart_home_gateway'].'</h5>
                                 <div class="dropdown float-right">
-                                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                                        <a class="" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
                                         <ul class="dropdown-menu">
@@ -2873,7 +2873,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['relay_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -2964,7 +2964,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -3065,7 +3065,7 @@ echo '
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_type'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -3157,7 +3157,7 @@ echo '
                         echo '<h5 class="modal-title">'.$lang['add_on_settings'].'</h5>';
                 }
                 echo '<div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -3295,7 +3295,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['mqtt_device'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -3401,7 +3401,7 @@ echo '
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['offset_settings'].'</h5>
                 <div class="dropdown float-right">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
                         <ul class="dropdown-menu">
