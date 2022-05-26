@@ -105,9 +105,9 @@ $theme = settings($conn, 'theme');
 	<nav class="navbar navbar-light navbar-static-top navbar-expand-md <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
 		<a class="navbar-brand" href="home.php"><img src="images/ivory-billed-woodpecker.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
             <!-- /.navbar-header -->
-            <ul class="nav navbar-top-links ms-auto">
-               <li class="dropdown">
-                    <a href="index.php">
+            <ul class="navbar-nav ms-auto">
+               <li class="nav-item">
+                    <a class="nav-link" href="index.php">
                         <i class="bi bi-house-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
                 </li>
@@ -119,31 +119,31 @@ $theme = settings($conn, 'theme');
                 </li>
 				*/
 				?>
-                <li class="dropdown style">
-                    <a href="schedule.php">
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.php">
                         <i class="bi bi-clock <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a href="chart_open.php">
+                <li class="nav-item">
+                    <a class="nav-link" href="chart_open.php">
                         <i class="bi bi-graph-up <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
                 </li>
 
-                <li class="dropdown">
-                    <a data-bs-toggle="modal" href="#weather" data-bs-backdrop="static" data-bs-keyboard="false">
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" href="#weather" data-bs-backdrop="static" data-bs-keyboard="false">
                         <i class="bi bi-sun <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
                 </li>
 
 		<?php if ($_SESSION['admin'] == 1) { ?>
                 	<!-- /.dropdown-settings -->
-                	<li class="dropdown">
-                    		<a class="<?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
-                        		<i class="bi bi-gear-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem"></i><i class="bi bi-caret-down-fill"></i>
+                	<li class="nav-item dropdown">
+                    		<a class="nav-link dropdown-toggle <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
+                        		<i class="bi bi-gear-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem"></i>
                     		</a>
-                    		<ul class="dropdown-menu dropdown-user">
-                        		<li><a class="dropdown-item" href="settings.php?s_id=1"><i class="bi bi-speedometer" style="font-size: 1rem; color: orange;"></i> <?php echo $lang['system_status']; ?> </a></li>
+                    		<ul class="dropdown-menu dropdown-menu-end">
+                        		<li><a class="dropdown-item float-right" href="settings.php?s_id=1"><i class="bi bi-speedometer" style="font-size: 1rem; color: orange;"></i> <?php echo $lang['system_status']; ?> </a></li>
                         		<li class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="settings.php?s_id=2"><i class="bi bi-wrench" style="font-size: 1rem; color: red;"></i> <?php echo $lang['system_maintenance']; ?> </a></li>
                                         <li class="dropdown-divider"></li>
@@ -161,11 +161,11 @@ $theme = settings($conn, 'theme');
 		<?php } ?>
 
 		    <!-- /.dropdown-user -->
-                <li class="dropdown">
-                    <a class="<?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
-                        <i class="bi bi-person-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i><i class="bi bi-caret-down-fill"></i>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-person-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="user_accounts.php"><i class="bi bi-person-fill" style="font-size: 1.2rem;"></i> <?php echo $lang['user_change_password']; ?> </a></li>
                         <li class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right" style="font-size: 1.2rem;"></i> <?php echo $lang['user_logout']; ?></a></li>
@@ -174,16 +174,16 @@ $theme = settings($conn, 'theme');
                 </li>
  
                 <?php if ($_SESSION['admin'] == 1 && scan_dir('/var/www/code_updates')) { ?>
-                        <li class="dropdown">
-                            <a data-bs-toggle="modal" href="#code_update_Modal" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="modal" href="#code_update_Modal" data-bs-backdrop="static" data-bs-keyboard="false">
                                 <i class="bi bi-download <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                             </a>
                         </li>
                 <?php } ?>
 
                 <?php if ($_SESSION['admin'] == 1 && scan_dir('/var/www/database_updates')) { ?>
-                        <li class="dropdown">
-                            <a data-bs-toggle="modal" href="#database_update_Modal" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="modal" href="#database_update_Modal" data-bs-backdrop="static" data-bs-keyboard="false">
                                 <i class="bi bi-server <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                             </a>
                         </li>
