@@ -103,7 +103,6 @@ $theme = settings($conn, 'theme');
 <body>
 <div class="container-fluid pe-0 ps-0">
 	<nav class="navbar navbar-light navbar-static-top navbar-expand-md <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
-		<a class="navbar-brand" href="home.php"><img src="images/ivory-billed-woodpecker.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
             <!-- /.navbar-header -->
             <ul class="navbar-nav ms-auto">
                <li class="nav-item">
