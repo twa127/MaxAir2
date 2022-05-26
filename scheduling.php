@@ -648,7 +648,7 @@ if(!isset($_GET['nid'])) {
 	</div>
         <!-- /.row -->
 </div>
-<!-- /#page-wrapper -->
+<!-- /#container-fluid -->
 <?php }  ?>
 <?php include("footer.php"); ?>
 
