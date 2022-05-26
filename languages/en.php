@@ -915,4 +915,5 @@ $lang['theme_record_fail'] = "Theme Record Add/Update Failed:";
 $lang['toggle_days'] = "Toggle Days";
 $lang['battery'] = "Battery";
 $lang['savings'] = "Savings";
+$lang['bs_ver'] = "Bootstrap Version";
 ?>
