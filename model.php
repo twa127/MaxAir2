@@ -296,16 +296,36 @@ echo '
 			<p class="text-muted"> '.$lang['wifi_settings_text'].' </p>
 <div class="list-group">
 <a href="#" class="list-group-item">
-<i class="bi bi-reception-4 green"></i> '.$lang['status'].': '.$wifistatus.'
+	<div class="d-flex justify-content-between">
+		<span>
+			<i class="bi bi-reception-4 green"></i> '.$lang['status'].':
+		</span>
+		<span>'.$wifistatus.'</span>
+	</div>
 </a>
 <a href="#" class="list-group-item">
-<i class="bi bi-reception-4 green"></i> '.$lang['mac'].': '.$wifimac.'
+        <div class="d-flex justify-content-between">
+                <span>
+			<i class="bi bi-reception-4 green"></i> '.$lang['mac'].':
+		</span>
+		<span>'.$wifimac.'</span>
+	</div>
 </a>
 <a href="#" class="list-group-item">
-<i class="bi bi-reception-4 green"></i> '.$lang['download'].': '.number_format($rxwifidata,0).' MB 
+        <div class="d-flex justify-content-between">
+                <span>
+			<i class="bi bi-reception-4 green"></i> '.$lang['download'].':
+		</span>
+		<span>'.number_format($rxwifidata,0).' MB</span>
+	</div>
 </a>
 <a href="#" class="list-group-item">
-<i class="bi bi-reception-4 green"></i> '.$lang['upload'].': '.number_format($txwifidata,0).' MB 
+        <div class="d-flex justify-content-between">
+                <span>
+			<i class="bi bi-reception-4 green"></i> '.$lang['upload'].':
+		</span>
+		<span>'.number_format($txwifidata,0).' MB</span>
+	</div>
 </a>
 </div>
             </div>
@@ -336,16 +356,46 @@ echo '
             </div>
             <div class="modal-body">
 			   <div class="list-group">
-				<a href="#" class="list-group-item"><i class="ionicons ion-network green"></i>
-				'.$lang['status'].': '.$nicactive.'</a>
-				<a href="#" class="list-group-item"><i class="ionicons ion-network green"></i>
-				'.$lang['speed'].': '.$nicpeed.'Mb</a>
-				<a href="#" class="list-group-item"><i class="ionicons ion-network green"></i>
-				'.$lang['mac'].': '.$nicmac.'</a>
-				<a href="#" class="list-group-item"><i class="ionicons ion-network green"></i>
-				'.$lang['download'].': '.number_format($rxdata,0).' MB </a> 
-				<a href="#" class="list-group-item"><i class="ionicons ion-network green"></i>
-				'.$lang['upload'].': '.number_format($txdata,0).' MB </a>
+				<a href="#" class="list-group-item">
+				        <div class="d-flex justify-content-between">
+                				<span>
+							<i class="ionicons ion-network green"></i>'.$lang['status'].':
+						</span>
+						<span>'.$nicactive.'</span>
+					</div>
+				</a>
+				<a href="#" class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                                <span>
+							<i class="ionicons ion-network green"></i>'.$lang['speed'].':
+						</span>
+						<span>'.$nicpeed.'Mb</span>
+					</div>
+				</a>
+				<a href="#" class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                                <span>
+							<i class="ionicons ion-network green"></i>'.$lang['mac'].':
+						</span>
+						<span>'.$nicmac.'</span>
+					</div>
+				</a>
+				<a href="#" class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                                <span>
+							<i class="ionicons ion-network green"></i>'.$lang['download'].':
+						</span>
+						<span>'.number_format($rxdata,0).' MB</span>
+					</div>
+				</a> 
+				<a href="#" class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                                <span>
+							<i class="ionicons ion-network green"></i>'.$lang['upload'].':
+						</span>
+						<span>'.number_format($txdata,0).' MB</span>
+					</div>
+				</a>
 				</div>
            </div>
             <div class="modal-footer">
@@ -1494,7 +1544,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
 				if ($row["page"] == 1) { $button_text = $lang['home_page']; } else { $button_text = $lang['onetouch_page']; }
                                 echo '<tr>
                                         <td>'.$row["name"].'</td>
-					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn btn-primary d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
+					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn-primary d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
            		                <td><input id="index'.$row["id"].'" type="text" class="pull-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
 					<input type="hidden" id="page_type'.$row["id"].'" name="page_type" value="'.$row["page"].'">
         			</tr>';
