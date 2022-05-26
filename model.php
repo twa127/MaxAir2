@@ -261,6 +261,11 @@ echo '
                                                 <td style="font-weight:bold">'.$lang['maxair_update_db_b'].'</td>
                                                 <td style="text-align:center; vertical-align:middle;">'.$db_b_installed.'</td>
                                                 <td style="text-align:center; vertical-align:middle;">'.$db_b_github.'</td>
+                                        </tr>
+                                        <tr>
+                                                <td style="font-weight:bold">'.$lang['bs_ver'].'</td>
+                                                <td id="bs_local" style="text-align:center; vertical-align:middle;"></td>
+                                                <td style="text-align:center; vertical-align:middle;"></td>
                                         </tr>';
 
                                 echo '</table>
@@ -3663,6 +3668,10 @@ $(document).ready(function(){
   //load() method fetch data from fetch.php page
  }, 1000);
   $('[data-bs-toggle="popover"]').popover();
+
+  $("#maxair_versions").on('show.bs.modal', function () {
+    document.getElementById("bs_local").innerHTML=$.fn.popover.Constructor.VERSION;
+  });
 });
 
 </script>
