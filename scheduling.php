@@ -321,7 +321,7 @@ if(!isset($_GET['nid'])) {
 						</div>
 						<div class="dropdown">
 							<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-								<i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+								<i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
 							</a>
 				                        <ul class="dropdown-menu">
 								<?php if(!isset($_GET['nid'])) {
