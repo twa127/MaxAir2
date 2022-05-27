@@ -101,10 +101,10 @@ $theme = settings($conn, 'theme');
     </script>
 </head>
 <body>
-<div class="container-fluid pe-0 ps-0">
-	<nav class="navbar navbar-light navbar-static-top navbar-expand-md <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
+<nav class="navbar navbar-light navbar-static-top navbar-expand-md <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
+	<div class="container-fluid">
             <!-- /.navbar-header -->
-            <ul class="navbar-nav ms-auto">
+             <ul class="nav navbar-top-links ms-auto">
                <li class="nav-item">
                     <a class="nav-link" href="index.php">
                         <i class="bi bi-house-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
@@ -189,8 +189,8 @@ $theme = settings($conn, 'theme');
                 <?php } ?>
                 <!-- /.dropdown -->
             </ul>
-	</nav>
-</div>
+	</div>
+</nav>
 <?php
 $user_id = $_SESSION['user_id'];
 $query = "select * from user where id = '{$user_id}' LIMIT 1;";
