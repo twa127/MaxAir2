@@ -101,10 +101,10 @@ $theme = settings($conn, 'theme');
     </script>
 </head>
 <body>
-<nav class="navbar navbar-light navbar-static-top navbar-expand-md <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
+<nav class="navbar navbar-light navbar-static-top navbar-expand <?php echo theme($conn, settings($conn, 'theme'), 'background_color'); ?>" role="navigation" style="margin-bottom: 0;">
 	<div class="container-fluid">
             <!-- /.navbar-header -->
-             <ul class="nav navbar-top-links ms-auto">
+             <ul class="navbar-nav ms-auto">
                <li class="nav-item">
                     <a class="nav-link" href="index.php">
                         <i class="bi bi-house-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
