@@ -327,7 +327,11 @@ $theme = settings($conn, 'theme');
 		        	                //Middle target temp
                 			        if ($sensor_type_id != 3) { echo '<small class="statusdegree" id="zs2_'.$zone_id.'">' . $rval['target'] .'</small>'; }
 		                        	//Right icon for what/why
-	                		        echo '<small class="statuszoon" id="zs3_'.$zone_id.'"><i class="bi ' . $rval['shactive'] . ' ' . $rval['shcolor'] . ' icon-fw"></i></small>';
+						if ($zone_mode_main == 60) {
+							echo '<small class="statuszoon" id="zs3_'.$zone_id.'"><img src="images/'.$rval['shactive'].'" width="10" height="10" alt=""></small>';
+						} else {
+	                		     		echo '<small class="statuszoon" id="zs3_'.$zone_id.'"><i class="bi ' . $rval['shactive'] . ' ' . $rval['shcolor'] . ' icon-fw"></i></small>';
+						}
 			                        //Overrun Icon
                 			        if($overrun == 1) {
 		        	                    echo '<small class="statuszoon" id="zs4_'.$zone_id.'"><i class="bi ion-ios-play-outline orange icon-fw"></i></small>';
