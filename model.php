@@ -424,9 +424,8 @@ echo '
 echo '	<div class=\"list-group\">';
 echo " 
 
-<a href=\"http://startbootstrap.com/template-overviews/sb-admin-2\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> SB Admin 2 Template <span class=\"float-right text-muted small\"><em>...</em></span></a>
+<a href=\"https://blog.getbootstrap.com/\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Bootstrap <span class=\"float-right text-muted small\"><em>...</em></span></a>
 <a href=\"http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Pretty Checkbox <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://fortawesome.github.io/Font-Awesome\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Font-Awesome <span class=\"float-right text-muted small\"><em>...</em></span></a>
 <a href=\"http://ionicons.com\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Ionicons <span class=\"float-right text-muted small\"><em>...</em></span></a>
 <a href=\"http://www.cssmatic.com/box-shadow\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Box Shadow CSS <span class=\"float-right text-muted small\"><em>...</em></span></a>
 <a href=\"https://daneden.github.io/animate.css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Animate.css <span class=\"float-right text-muted small\"><em>...</em></span></a>
