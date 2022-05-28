@@ -487,7 +487,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	}
 	//overtemperature
 	else if($zone_mode_main == 30){
-		$shactive='ion-thermometer';
+		$shactive='bi-thermometer-high';
 		$shcolor='red';
 		$target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
 	}
@@ -507,7 +507,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	}
 	//boost
 	else if($zone_mode_main == 60){
-		$shactive='fa-rocket';
+		$shactive='rocket.svg';
 		$shcolor='';
                 if($zone_mode_sub == 4 || $zone_mode_sub == 7){
                         $target='';     //show no target temperature
