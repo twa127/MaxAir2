@@ -430,7 +430,7 @@ function GetModal_MQTT($conn)
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['mqtt_connections'].'</h5>
             <div class="dropdown float-right">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                        <i class="bi bi-file-earmark-pdf text-white bg-dark"></i>
+                        <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                 </a>
                 <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>'.$lang['setup_guide_mqtt'].'</a></li>
