@@ -457,7 +457,7 @@ echo '<div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labell
                 $result = $conn->query($query);
                 $row = mysqli_fetch_array($result);
                 $theme_id = $row['theme'];
-                $query = "SELECT id, name FROM theme;";
+                $query = "SELECT id, name FROM theme ORDER BY name ASC;";
                 $results = $conn->query($query);
                 echo '<div class="form-group" class="control-label"><label>'.$lang['theme_name'].'</label> <small class="text-muted"> </small>
 	                <select class="form-select" type="text" id="theme_id" name="theme_id" >';
