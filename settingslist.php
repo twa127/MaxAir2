@@ -175,7 +175,7 @@ if ($settings_id <= 3) {
 						<h3 class="status">
         					<small class="statuscircle" style="color:<?php echo $system_cc;?>"><i class="bi bi-circle-fill" style="font-size: 0.55rem;"></i></small>
 			                	<small class="statusdegree"><?php echo number_format(DispTemp($conn,$result['payload']),0);?>&deg;</small>
-                                                <?php if ($system_cc > $max_cpu_temp){
+                                                <?php if ($result['payload'] > $max_cpu_temp){
                                                 	echo '<small class="statuszoon"><i class="spinner-grow text-danger" role="status" style="width: 0.7rem; height: 0.7rem;"></i></small></h3>';
                                                 } ?>
 				                </button>
