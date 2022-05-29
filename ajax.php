@@ -1198,12 +1198,12 @@ function GetModal_SystemController($conn)
 		from controller_zone_logs WHERE zone_id = ".$system_controller_id." order by id desc limit 5";
 		$bresults = $conn->query($bquery);
 		if (mysqli_num_rows($bresults) == 0){
-			echo '<div class=\"list-group\">
+			echo '<div class="list-group">
 				<a href="#" class="list-group-item"><i class="bi bi-exclamation-triangle red"></i>&nbsp;&nbsp;'.$lang['system_controller_no_log'].'</a>
 			</div>';
 		} else {
 			echo '<p class="text-muted">'. mysqli_num_rows($bresults) .' '.$lang['system_controller_last_records'].'</p>
-			<div class=\"list-group\">' ;
+			<div class="list-group">' ;
                         	echo '<a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                                 	<span>
                                         	<i class="ionicons ion-flame icon-1x red"></i> Start &nbsp; - &nbsp;End
