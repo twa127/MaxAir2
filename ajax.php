@@ -1044,7 +1044,7 @@ function GetModal_Sensors($conn)
                 <p class="text-muted"> '.$lang['temperature_sensor_text'].' </p>';
                 $query = "SELECT * FROM sensors ORDER BY sensor_id asc;";
 		$results = $conn->query($query);
-		echo '<div class=\"list-group\">';
+		echo '<div class="list-group">';
 			while ($row = mysqli_fetch_assoc($results)) {
 				$query = "SELECT * FROM nodes where id = {$row['sensor_id']} LIMIT 1;";
 				$nresult = $conn->query($query);
