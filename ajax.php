@@ -1443,14 +1443,14 @@ function GetModal_Schedule_List($conn)
                         ORDER BY schedule_daily_time.start asc;";
 			$sresults = $conn->query($squery);
 			if (mysqli_num_rows($sresults) == 0){
-				echo '<div class=\"list-group\">
+				echo '<div class="list-group">
 					<a href="#" class="list-group-item"><i class="bi bi-exclamation-triangle red"></i>&nbsp;&nbsp;'.$lang['schedule_active_today'].' '.$zone_name.'!!! </a>
 				</div>';
 			} else {
 				//echo '<h4>'.mysqli_num_rows($sresults).' Schedule Records found.</h4>';
 				echo '<p>'.$lang['schedule_disble'].'</p>
 				<br>
-				<div class=\"list-group\">' ;
+				<div class="list-group">' ;
 					while ($srow = mysqli_fetch_assoc($sresults)) {
 						$shactive="orangesch_list";
 						$time = strtotime(date("G:i:s"));
