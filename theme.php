@@ -117,7 +117,8 @@ if (isset($_POST['submit'])) {
 						    		<?php echo'<option value="bg-red" ' . ($row['background_color']=="bg-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
                                                                 <?php echo'<option value="bg-orange" ' . ($row['background_color']=="bg-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
 		                                                <?php echo'<option value="bg-amber" ' . ($row['background_color']=="bg-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-                               					<?php echo'<option value="bg-primary" ' . ($row['background_color']=="bg-primary" ? 'selected' : '') . '>'.$lang['primary'].'</option>'; ?>
+                               					<?php echo'<option value="bg-blue" ' . ($row['background_color']=="bg-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+		                                                <?php echo'<option value="bg-violet" ' . ($row['background_color']=="bg-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
@@ -138,7 +139,8 @@ if (isset($_POST['submit'])) {
 				                         	<?php echo'<option value="border-red" ' . ($row['border_red']=="border-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
                                                                 <?php echo'<option value="border-orange" ' . ($row['border_color']=="border-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
                                                   		<?php echo'<option value="order-amber" ' . ($row['border_color']=="border-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-                                                                <?php echo'<option value="border-primary" ' . ($row['barder_color']=="border-primary" ? 'selected' : '') . '>'.$lang['primary'].'</option>'; ?>
+								<?php echo'<option value="border-blue" ' . ($row['border_color']=="border-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+								<?php echo'<option value="border-violet" ' . ($row['border_color']=="border-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
@@ -149,7 +151,8 @@ if (isset($_POST['submit'])) {
                                     				<?php echo'<option value="card-footer-red" ' . ($row['footer-red']=="card-footer-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
                                                                 <?php echo'<option value="card-footer-orange" ' . ($row['footer_color']=="card-footer-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
                                                   		<?php echo'<option value="card-footer-amber" ' . ($row['footer_color']=="card-footer-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-                                                                <?php echo'<option value="card-footer-primary" ' . ($row['footer_color']=="card-footer-primary" ? 'selected' : '') . '>'.$lang['primary'].'</option>'; ?>
+								<?php echo'<option value="card-footer-blue" ' . ($row['footer_color']=="card-footer-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+								<?php echo'<option value="card-footer-violet" ' . ($row['footer_color']=="card-footer-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
@@ -157,8 +160,11 @@ if (isset($_POST['submit'])) {
                                                 <!-- Button Style -->
                                                 <div class="form-group" class="control-label" id="btn_style_label" style="display:block"><label class="fs-6"><?php echo $lang['button_style']; ?></label> <small class="text-muted"><?php echo $lang['button_style_info'];?></small>
                                                         <select class="form-select" type="text" id="btn_style" name="btn_style" >
-                                                                <?php echo'<option value="btn-default-style" ' . ($row['btn_style']=="btn-default-style" ? 'selected' : '') . '>'.$lang['default'].'</option>'; ?>
-                                                                <?php echo'<option value="btn-primary-style" ' . ($row['btn_style']=="btn-primary-style" ? 'selected' : '') . '>'.$lang['primary'].'</option>'; ?>
+								<?php echo'<option value="btn-bm-red" ' . ($row['btn_style']=="btn-bm-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
+								<?php echo'<option value="btn-bm-orange" ' . ($row['btn_style']=="btn-bm-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
+								<?php echo'<option value="btn-bm-amber" ' . ($row['btn_style']=="btn-bm-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
+								<?php echo'<option value="btn-bm-blue" ' . ($row['btn_style']=="btn-bm-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+								<?php echo'<option value="btn-bm-violet" ' . ($row['btn_style']=="btn-bm-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>

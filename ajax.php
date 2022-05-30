@@ -429,13 +429,13 @@ function GetModal_MQTT($conn)
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['mqtt_connections'].'</h5>
             <div class="dropdown float-right">
-                <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                <a class="" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>'.$lang['setup_guide_mqtt'].'</a></li>
+                        <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_mqtt'].'</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="pdf_download.php?file=setup_zigbee2mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>'.$lang['setup_zigbee2mqtt'].'</a></li>
+                        <li><a class="dropdown-item" href="pdf_download.php?file=setup_zigbee2mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_zigbee2mqtt'].'</a></li>
                 </ul>
              </div>
         </div>
