@@ -320,16 +320,16 @@ if(!isset($_GET['nid'])) {
                                     			} ?>
 						</div>
 						<div class="dropdown">
-							<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+							<a class="" data-bs-toggle="dropdown" href="#">
 								<i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
 							</a>
 				                        <ul class="dropdown-menu">
 								<?php if(!isset($_GET['nid'])) {
-	                						echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_scheduling'].'</a></li>
+	                						echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>&nbsp'.$lang['setup_scheduling'].'</a></li>
 				                	                <li class="dropdown-divider"></li>
-                	        					<li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_start_time_offset'].'</a></li>';
+                	        					<li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>&nbsp'.$lang['setup_start_time_offset'].'</a></li>';
 				                                } else {
-        	                					echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_night_climate_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>'.$lang['setup_guide_night_climate_scheduling'].'</a></li>';
+        	                					echo '<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_night_climate_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf icon-fw"></i>&nbsp'.$lang['setup_guide_night_climate_scheduling'].'</a></li>';
 								} ?>
 				                        </ul>
                         				<div class="btn-group"><?php echo '&nbsp;&nbsp;'.date("H:i"); ?></div>
