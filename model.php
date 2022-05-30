@@ -149,7 +149,7 @@ echo '<div class="modal" id="documentation" tabindex="-1">
       </div>
       <div class="modal-body">
         <p class="text-muted">'.$lang['documentation_info'].'</p>
-        <div class=\"list-group\">';
+        <div class="list-group">';
                 $path = '/var/www/documentation/pdf_format';
                 $allFiles = array_diff(scandir($path . "/"), [".", ".."]); // Use array_diff to remove both period values eg: ("." , "..")
                 foreach ($allFiles as $value) {
@@ -421,18 +421,18 @@ echo '
             </div>
             <div class="modal-body">
 <p class="text-muted"> '.$lang['credits_text'].' </p>';
-echo '	<div class=\"list-group\">';
-echo " 
+echo '	<div class="list-group">';
+echo '
 
-<a href=\"https://blog.getbootstrap.com/\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Bootstrap <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Pretty Checkbox <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://ionicons.com\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Ionicons <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.cssmatic.com/box-shadow\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Box Shadow CSS <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://daneden.github.io/animate.css\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> Animate.css <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"https://www.mysensors.org\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> MySensors <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://www.pihome.eu\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> All others if forget them... <span class=\"float-right text-muted small\"><em>...</em></span></a>
-<a href=\"http://pihome.harkemedia.de\" class=\"list-group-item\"><i class=\"ionicons ion-help-buoy blueinfo\"></i> RaspberryPi Home Automation <span class=\"float-right text-muted small\"><em>...</em></span></a>
-";
+<a href="https://blog.getbootstrap.com/" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Bootstrap <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Pretty Checkbox <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://ionicons.com" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Ionicons <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.cssmatic.com/box-shadow" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Box Shadow CSS <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="https://daneden.github.io/animate.css" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Animate.css <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="https://www.mysensors.org" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> MySensors <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.pihome.eu" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> All others if forget them... <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://pihome.harkemedia.de" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> RaspberryPi Home Automation <span class="float-right text-muted small"><em>...</em></span></a>
+';
 echo '</div></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
@@ -2187,7 +2187,7 @@ if ((settings($conn, 'mode') & 0b1) == 0) { //boiler mode
         ORDER BY hvac_mode ASC;";
 }
 $results = $conn->query($query);
-echo '	<div class=\"list-group\">';
+echo '	<div class="list-group">';
 while ($row = mysqli_fetch_assoc($results)) {
 	if ((settings($conn, 'mode') & 0b1) == 0) {
 		$name = $row['name'];
@@ -2714,10 +2714,10 @@ echo '
 				</div>
                                 <!-- /.form-group -->
 				<br><h4 class="info"><i class="bi bi-heart-pulse-fill red" style="font-size:1.2rem;"></i> '.$lang['smart_home_gateway_scr_info'].'</h4>
-				<div class=\"list-group\">';
-					echo "
-					<a href=\"#\" class=\"list-group-item\"> PID <span class=\"float-right text-muted small\"><em> ".$grow['pid']."</em></span></a>
-					<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_pid'].": <span class=\"float-right text-muted small\"><em>".$grow['pid_running_since']."</em></span></a>";
+				<div class="list-group">';
+					echo '
+					<a href="#" class="list-group-item"> PID <span class="float-right text-muted small"><em> '.$grow['pid'].'</em></span></a>
+					<a href="#" class="list-group-item"> '.$lang['smart_home_gateway_pid'].': <span class="float-right text-muted small"><em>'.$grow['pid_running_since'].'</em></span></a>';
 
 					$query = "select * FROM gateway_logs WHERE pid_datetime >= NOW() - INTERVAL 5 MINUTE;";
 					$result = $conn->query($query);
@@ -2726,7 +2726,7 @@ echo '
 					} else {
 						$gw_restarted = '0';
 					}
-					echo "<a href=\"#\" class=\"list-group-item\"> ".$lang['smart_home_gateway_scr'].": <span class=\"float-right text-muted small\"><em>".$gw_restarted."</em></span></a>";
+					echo '<a href="#" class="list-group-item"> '.$lang['smart_home_gateway_scr'].': <span class="float-right text-muted small"><em>'.$gw_restarted.'</em></span></a>';
 				echo '</div>
                                 <!-- /.list-group -->
 			</div>
