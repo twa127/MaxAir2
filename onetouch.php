@@ -179,7 +179,7 @@ $theme = settings($conn, 'theme');
                 		                                echo '</div>
                                 		        </div>
 		                                        <!-- /.modal-body -->
-                		                        <div class="modal-footer"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>';
+                		                        <div class="modal-footer"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>';
                                 		                if ($rowcount > 0) { echo '<input type="button" name="submit" value="'.$lang['apply'].'" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" onclick="update_livetemp()">'; }
 		                                        echo '</div>
                 					<!-- /.modal-footer -->
