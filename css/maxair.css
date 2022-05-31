@@ -814,5 +814,5 @@ color:#2196F3 !important;
 }
 
 .no-shadow {
-  --bs-btn-focus-shadow-rgb: none;
+  --bs-btn-focus-box-shadow: none;
 }
