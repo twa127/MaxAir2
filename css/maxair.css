@@ -501,6 +501,11 @@ color:#2196F3 !important;
   border-color: hsl(var(--bm-purple), var(--l)) !important;
 }
 
+.text-violet {
+  --l: 85%; /*the initial lightness*/
+  color: hsl(var(--bm-purple), var(--l));
+}
+
 .border-violet {
   --l: 85%; /*the initial lightness*/
   --bs-border-opacity: 1;
@@ -553,6 +558,11 @@ color:#2196F3 !important;
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-orange), var(--l)) !important;
   border-color: hsl(var(--bm-orange), var(--l)) !important;
+}
+
+.text-orange {
+  --l: 100%; /*the initial lightness*/
+  color: hsl(var(--bm-orange), var(--l));
 }
 
 .border-orange {
@@ -609,6 +619,11 @@ color:#2196F3 !important;
   border-color: hsl(var(--bm-red), var(--l)) !important;
 }
 
+.text-red {
+  --l: 100%; /*the initial lightness*/
+  color: hsl(var(--bm-red), var(--l));
+}
+
 .border-red {
   --l: 100%; /*the initial lightness*/
   --bs-border-opacity: 1;
@@ -661,6 +676,11 @@ color:#2196F3 !important;
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-blue), var(--l)) !important;
   border-color: hsl(var(--bm-blue), var(--l)) !important;
+}
+
+.text-blue {
+  --l: 100%; /*the initial lightness*/
+  color: hsl(var(--bm-blue), var(--l));
 }
 
 .border-blue {
@@ -717,6 +737,11 @@ color:#2196F3 !important;
   border-color: hsl(var(--bm-amber), var(--l)) !important;
 }
 
+.text-amber {
+  --l: 100%; /*the initial lightness*/
+  color: hsl(var(--bm-amber), var(--l));
+}
+
 .border-amber {
   --l: 100%; /*the initial lightness*/
   --bs-border-opacity: 1;
@@ -769,6 +794,11 @@ color:#2196F3 !important;
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-teal), var(--l)) !important;
   border-color: hsl(var(--bm-teal), var(--l)) !important;
+}
+
+.text-teal {
+  --l: 100%; /*the initial lightness*/
+  color: hsl(var(--bm-teal), var(--l));
 }
 
 .border-teal {

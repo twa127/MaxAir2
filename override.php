@@ -31,10 +31,13 @@ require_once(__DIR__.'/st_inc/functions.php');
             <div class="row">
                 <div class="col-lg-12">
                    	<div id="overridelist" >
-				   <div class="text-center"><br><br><p><?php echo $lang['please_wait_text']; ?>.</p>
-				   <br><br><img src="images/loader.gif">
-				   </div>
-				   </div>
+                                <div class="d-flex justify-content-center" style="margin-top:10px"><?php echo $lang['please_wait_text']; ?></div>
+                                <div class="d-flex justify-content-center" style="margin-top:10px">
+                                        <div class="spinner-border text-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>"
+                                                role="status">
+                                        </div>
+                                </div>
+			</div>
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
