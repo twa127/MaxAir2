@@ -110,8 +110,8 @@ if (isset($_POST['submit'])) {
 						<div class="help-block with-errors"></div></div>
 
 						<!-- Buttons -->
-						<a href="holidays.php"><button type="button" class="btn btn-primary btn-sm" ><?php echo $lang['cancel']; ?></button></a>
-						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn btn-default btn-sm login">
+						<a href="holidays.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm" ><?php echo $lang['cancel']; ?></button></a>
+						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm login">
 					</form>
 				</div>
 				<!-- /.card-body -->
