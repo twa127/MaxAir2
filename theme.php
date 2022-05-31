@@ -184,7 +184,7 @@ if (isset($_POST['submit'])) {
 
 						<!-- Buttons -->
 						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm">
-						<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
+						<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
 					</form>
 					<!-- /.form -->
 				</div>
