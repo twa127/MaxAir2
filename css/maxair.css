@@ -456,6 +456,7 @@ color:#2196F3 !important;
   --bm-red: 4, 100%, 50%;
   --bm-blue: 216, 98%, 52%;
   --bm-amber: 45, 100%, 51%;
+  --bm-teal: 162, 73%, 46%;
 }
 
 .btn-bm-violet {
@@ -727,4 +728,59 @@ color:#2196F3 !important;
   background-color: hsl(var(--bm-amber),calc(var(--l) - 70%));
   border-top:0px solid hsl(var(--bm-amber), var(--l));
 }
+
+.btn-bm-teal {
+  --l: 100%; /*the initial lightness*/
+  --bs-btn-color: #333;
+  --bs-btn-bg: hsl(var(--bm-teal),calc(var(--l) - 95%));
+  --bs-btn-border-color:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-hover-color: #333;
+  --bs-btn-hover-bg:  hsl(var(--bm-teal),calc(var(--l) - 85%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-focus-shadow-rgb: 32, 201, 151;
+  --bs-btn-active-color: #333;
+  --bs-btn-active-bg:  hsl(var(--bm-teal),calc(var(--l) - 85%));
+  --bs-btn-active-border-color: hsl(var(--bm-teal), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #333;
+  --bs-btn-disabled-bg:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-teal), var(--l));
+}
+
+.btn-primary-teal {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-teal),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-teal),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-focus-shadow-rgb: 32, 201, 151;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-teal),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-teal), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg:  hsl(var(--bm-teal), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-teal), var(--l));
+}
+
+.bg-teal {
+  --l: 100%; /*the initial lightness*/
+  background-color: hsl(var(--bm-teal), var(--l)) !important;
+  border-color: hsl(var(--bm-teal), var(--l)) !important;
+}
+
+.border-teal {
+  --l: 100%; /*the initial lightness*/
+  --bs-border-opacity: 1;
+  border-color:  hsl(var(--bm-teal), var(--l));
+}
+
+.card-footer-teal{
+  --l: 100%; /*the initial lightness*/
+  background-color: hsl(var(--bm-teal),calc(var(--l) - 70%));
+  border-top:0px solid hsl(var(--bm-teal), var(--l));
+}
+
 
