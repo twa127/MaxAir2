@@ -257,8 +257,8 @@ $persist = $row['persist'];
         		        		<input class="form-control" type="password" class="form-control" placeholder="Confirm New Password" value="" id="con_pass" name="con_pass" data-bs-error="Confirm New Password is Required" autocomplete="off" <?php echo $req; ?>>
                 				<div class="help-block with-errors"></div>
 					</div>
-					<a href="home.php"><button type="button" class="btn btn-primary btn-sm"><?php echo $lang['cancel']; ?></button></a>
-	        	        	<input type="submit" name="submit" value="<?php echo $lang['save']; ?>" class="btn btn-default btn-sm">
+					<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
+	        	        	<input type="submit" name="submit" value="<?php echo $lang['save']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm">
 
         	        		</form>
 	        	   	</div>
