@@ -327,7 +327,7 @@ function GetModal_OpenWeather($conn){
             </form>';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
             <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" onclick="update_openweather()">
         </div>';      //close class="modal-footer">
 
@@ -408,7 +408,7 @@ function GetModal_System($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     return;
 }
@@ -444,7 +444,7 @@ function GetModal_MQTT($conn)
     $results = $conn->query($query);
     echo '<div class="list-group">';
     echo '<span class="list-group-item text-end" style="height:40px;">&nbsp;';
-    echo '<span class="text-muted small"><button type="button" class="btn btn-primary btn-sm" 
+    echo '<span class="text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" 
              data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTAdd" onclick="mqtt_AddEdit(this);">'.$lang['add'].'</button></span>';
     echo '</span>';
     while ($row = mysqli_fetch_assoc($results)) {
@@ -489,7 +489,7 @@ function GetModal_MQTT($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         mqtt_AddEdit=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -564,7 +564,7 @@ function GetModal_MQTTAddEdit($conn)
     echo '<div class="modal-footer" id="ajaxModalFooter">' . ($IsAdd ?
             '<button type="button" class="btn btn-warning btn-sm" data-bs-dismiss="modal" onclick="mqtt_add()">'.$lang['add_conn'].'</button>'
             : '<button type="button" class="btn btn-warning btn-sm" data-bs-dismiss="modal" onclick="mqtt_edit()">'.$lang['edit_conn'].'</button>') . '
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         mqtt_add=function(){
@@ -670,7 +670,7 @@ function GetModal_Services($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -821,7 +821,7 @@ Refer to: <a href="www.freedesktop.org/software/systemd/man/journald.conf.html">
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -886,7 +886,7 @@ function GetModal_Uptime($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     return;
 }
@@ -1017,7 +1017,7 @@ function GetModal_Sensor_Graph($conn)
 		<div id="myChart" style="width:100%"></div>
     	</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
+            <button class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
             <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">
@@ -1076,7 +1076,7 @@ function GetModal_Sensors($conn)
 		echo '</div>'; //close class=\"list-group\">
     	echo '</div>';      //close class="modal-body">
     	echo '<div class="modal-footer" id="ajaxModalFooter">
-		<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+		<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     	echo '<script language="javascript" type="text/javascript">
         	sensors_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -1132,7 +1132,7 @@ function GetModal_SensorsInfo($conn)
 		}
     	echo '</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     	echo '<script language="javascript" type="text/javascript">
         	services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -1226,7 +1226,7 @@ function GetModal_SystemController($conn)
 		}
         echo '</div>
         <div class="modal-footer" id="ajaxModalFooter">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         return;
 }
@@ -1477,7 +1477,7 @@ function GetModal_Schedule_List($conn)
 		}
     	echo '</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
+            <button class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
             <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">

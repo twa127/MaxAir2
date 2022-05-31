@@ -476,6 +476,24 @@ color:#2196F3 !important;
   --bs-btn-disabled-border-color:  hsl(var(--bm-purple), var(--l));
 }
 
+.btn-primary-violet {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-purple),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-purple), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-purple),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-purple), var(--l));
+  --bs-btn-focus-shadow-rgb: 111, 66, 193;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-purple),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-purple), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg:  hsl(var(--bm-purple), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-purple), var(--l));
+}
+
 .bg-violet {
   --l: 85%; /*the initial lightness*/
   background-color: hsl(var(--bm-purple), var(--l)) !important;
@@ -508,6 +526,24 @@ color:#2196F3 !important;
   --bs-btn-active-border-color: hsl(var(--bm-orange), var(--l));
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #333;
+  --bs-btn-disabled-bg:  hsl(var(--bm-orange), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-orange), var(--l));
+}
+
+.btn-primary-orange {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-orange),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-orange), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-orange),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-orange), var(--l));
+  --bs-btn-focus-shadow-rgb: 253, 0, 0;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-orange),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-orange), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg:  hsl(var(--bm-orange), var(--l));
   --bs-btn-disabled-border-color:  hsl(var(--bm-orange), var(--l));
 }
@@ -548,6 +584,24 @@ color:#2196F3 !important;
   --bs-btn-disabled-border-color:  hsl(var(--bm-red), var(--l));
 }
 
+.btn-primary-red {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-red),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-red), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-red),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-red), var(--l));
+  --bs-btn-focus-shadow-rgb: 253, 0, 0;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-red),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-red), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg:  hsl(var(--bm-red), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-red), var(--l));
+}
+
 .bg-red {
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-red), var(--l)) !important;
@@ -584,6 +638,24 @@ color:#2196F3 !important;
   --bs-btn-disabled-border-color:  hsl(var(--bm-blue), var(--l));
 }
 
+.btn-primary-blue {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-blue),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-blue), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-blue),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-blue), var(--l));
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-blue),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-blue), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg:  hsl(var(--bm-blue), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-blue), var(--l));
+}
+
 .bg-blue {
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-blue), var(--l)) !important;
@@ -616,6 +688,24 @@ color:#2196F3 !important;
   --bs-btn-active-border-color: hsl(var(--bm-amber), var(--l));
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #333;
+  --bs-btn-disabled-bg:  hsl(var(--bm-amber), var(--l));
+  --bs-btn-disabled-border-color:  hsl(var(--bm-amber), var(--l));
+}
+
+.btn-primary-amber {
+  --l: 85%; /*the initial lightness*/
+  --bs-btn-color: #fff;
+  --bs-btn-bg: hsl(var(--bm-amber),calc(var(--l) - 10%));
+  --bs-btn-border-color:  hsl(var(--bm-amber), var(--l));
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:  hsl(var(--bm-amber),calc(var(--l) - 20%));
+  --bs-btn-hover-border-color:  hsl(var(--bm-amber), var(--l));
+  --bs-btn-focus-shadow-rgb: 255, 193, 7;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  hsl(var(--bm-amber),calc(var(--l) - 20%));
+  --bs-btn-active-border-color: hsl(var(--bm-amber), var(--l));
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg:  hsl(var(--bm-amber), var(--l));
   --bs-btn-disabled-border-color:  hsl(var(--bm-amber), var(--l));
 }

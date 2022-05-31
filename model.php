@@ -70,7 +70,7 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
                 echo '</table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@ echo '
                                 echo '<textarea id="job_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%"><pre>'.$row['output'].'</pre></textarea>
                         </div>
                         <div class="modal-footer" id="ajaxModalFooter_1">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">Close</button>
                         </div>
                 </div>
         </div>
@@ -133,7 +133,7 @@ echo '<div class="modal" id="last_sw_install" tabindex="-1">
         echo '<textarea id="install_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%">'.$output.'</textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -161,7 +161,7 @@ echo '<div class="modal" id="documentation" tabindex="-1">
         echo '</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -195,7 +195,7 @@ echo '
 				</div>
            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -271,7 +271,7 @@ echo '
                                 echo '</table>
                         </div>
                         <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         </div>
                 </div>
         </div>
@@ -335,7 +335,7 @@ echo '
 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -404,7 +404,7 @@ echo '
 				</div>
            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -435,7 +435,7 @@ echo '
 ';
 echo '</div></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -469,7 +469,7 @@ echo '<div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labell
 		</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_theme()">
             </div>
         </div>
@@ -500,7 +500,7 @@ echo '<div class="modal fade" id="set_repository" tabindex="-1" role="dialog" ar
                 </div>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         <input type="button" name="submit" value="'.$lang['set_default'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_default()">
                         <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_repository()">
             </div>
@@ -530,7 +530,7 @@ echo '
             echo '</div>
             <div class="modal-footer">
                 <input type="button" name="submit" value="'.$lang['update_check'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="check_updates()">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -565,7 +565,7 @@ echo '
                         </form>';
 echo '     </div>
             <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         <button class="btn warning '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="backup_email_update()" data-confirm="'.$lang['update_email_address'].'">'.$lang['save'].'</button>
                         <a href="javascript:db_backup()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['backup_start'].'</a>
             </div>
@@ -614,7 +614,7 @@ echo '
 			</div>
             		<div class="modal-footer">
                 		<a href="user_accounts.php?uid=0"><button class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['add_user'].'</button></a>
-                		<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                		<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             		</div>
         	</div>
     	</div>
@@ -724,7 +724,7 @@ echo '
                         </div>
                         <!-- /.modal-body -->
                         <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -782,7 +782,7 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
                 echo '</table>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_db_cleanup()">
             </div>
         </div>
@@ -812,7 +812,7 @@ echo '<div class="modal fade" id="max_cpu_temp" tabindex="-1" role="dialog" aria
                 </div>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_max_cpu_temp()">
             </div>
         </div>
@@ -833,7 +833,7 @@ echo '<div class="modal" id="add_install">
         echo '<textarea id="install_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-sm" onclick="sw_install_close()">'.$lang['close'].'</button>
+        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" onclick="sw_install_close()">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -862,7 +862,7 @@ echo '<div class="modal fade" id="change_refresh" tabindex="-1" role="dialog" ar
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_refresh()">
             </div>
         </div>
@@ -917,7 +917,7 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_system_mode()">
             </div>
         </div>
@@ -948,7 +948,7 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_units()">
             </div>
         </div>
@@ -977,7 +977,7 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_lang()">
             </div>
         </div>
@@ -1020,7 +1020,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 echo '
 </table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_graph()">
             </div>
         </div>
@@ -1064,7 +1064,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row["min"].'</td>
             <td>'.$row["max"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$enabled.'</td>
-            <td><a href="sensor_limits.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp
+            <td><a href="sensor_limits.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp
                 <button class="btn warning btn-danger btn-xs" onclick="delete_sensor_limits('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
 	    </td>
         </tr>';
@@ -1072,7 +1072,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 echo '
 </table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
 		<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="sensor_limits.php">'.$lang['sensor_limits_add'].'</a>
             </div>
         </div>
@@ -1167,7 +1167,7 @@ echo '
         </div>
         <!-- /.modal-body -->
             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_network()">
             </div>
             <!-- /.modal-footer -->
@@ -1269,7 +1269,7 @@ echo '
 
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
 				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_email()">
             </div>
         </div>
@@ -1415,7 +1415,7 @@ echo'
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_timezone()">
             </div>
         </div>
@@ -1476,7 +1476,7 @@ echo '</table></div>
             <div class="modal-footer">
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_job">'.$lang['add_job'].'</button>
                 <input type="button" name="submit" value="'.$lang['apply'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="schedule_jobs()">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -1517,7 +1517,7 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
         </div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
 				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_job()">
             </div>
         </div>
@@ -1548,7 +1548,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
 				if ($row["page"] == 1) { $button_text = $lang['home_page']; } else { $button_text = $lang['onetouch_page']; }
                                 echo '<tr>
                                         <td>'.$row["name"].'</td>
-					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn-primary d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
+					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn '.theme($conn, $theme, 'btn_primary').' d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
            		                <td><input id="index'.$row["id"].'" type="text" class="float-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
 					<input type="hidden" id="page_type'.$row["id"].'" name="page_type" value="'.$row["page"].'">
         			</tr>';
@@ -1556,7 +1556,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
             	echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 	<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_buttons()">
             </div>
         </div>
@@ -1597,7 +1597,7 @@ echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" ar
                 echo '</table>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="enable_graphs()">
             </div>
         </div>
@@ -1676,14 +1676,14 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[2].'</td>';
                                         $style = explode('-', $row["btn_style"]);
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[1].'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
             </div>
         </div>
@@ -1893,7 +1893,7 @@ echo '
 			echo '</div>
 			<!-- /.modal-body -->
         	   	<div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
 				if ($ncount > 0) { echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="system_controller_settings('.(settings($conn, 'mode') & 0b1).')">'; }
 
             		echo '</div>
@@ -2022,7 +2022,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_boost()">
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_boost">'.$lang['add_boost'].'</button>
             </div>
@@ -2137,7 +2137,7 @@ echo '<p class="text-muted">'.$info_text.'</p>
 	}
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
 				if ((settings($conn, 'mode') & 0b1) == 0) {
 					echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_boost(0)">';
 				} else {
@@ -2206,7 +2206,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</div></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -2328,7 +2328,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_node">'.$lang['node_add'].'</button>
             </div>
         </div>
@@ -2381,7 +2381,7 @@ echo '<p class="text-muted">'.$lang['node_add_info_text'].'</p>
 	</div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
 				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_node()">
             </div>
         </div>
@@ -2438,7 +2438,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_zone_type">'.$lang['zone_type_add'].'</button>
             </div>
         </div>
@@ -2471,7 +2471,7 @@ echo '<p class="text-muted">'.$lang['zone_type_add_info_text'].'</p>
     <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_zone_type()">
             </div>
         </div>
@@ -2555,7 +2555,7 @@ echo '
 		echo '</div>
 	    </div>
 	    <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="zone.php">'.$lang['zone_add'].'</a>
             </div>
         </div>
@@ -2735,7 +2735,7 @@ echo '
 				<a href="javascript:resetgw('.$grow['pid'].')" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm btn-edit">Reset GW</a>
 				<a href="javascript:find_gw()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm btn-edit">Search GW</a>
 				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_gateway()">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             		</div>
 			<!-- /.modal-footer -->
         	</div>
@@ -2791,7 +2791,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="node_alerts()">
             </div>
         </div>
@@ -2937,7 +2937,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				<td>'.$row["node_id"].'</td>
             				<td>'.$row["relay_child_id"].'</td>
                                         <td>'.$trigger.'</td>
-            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
 echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><i class="bi bi-trash-fill black"></i></button></td>';
 	    				} else {
@@ -2948,7 +2948,7 @@ echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" ti
 		echo '</table>
 	    </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="relay.php">'.$lang['relay_add'].'</a>
             </div>
         </div>
@@ -3036,7 +3036,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
                 				<input type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
-	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
 						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
@@ -3047,7 +3047,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 	<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="show_sensors()">
                 	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="sensor.php">'.$lang['sensor_add'].'</a>
             </div>
@@ -3103,7 +3103,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_sensor_type">'.$lang['sensor_type_add'].'</button>
             </div>
         </div>
@@ -3130,7 +3130,7 @@ echo '<p class="text-muted">'.$lang['sensor_type_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_sensor_type()">
             </div>
         </div>
@@ -3194,7 +3194,7 @@ if ($zcount + $ncount > 0) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
                 if ($zcount > 0) {
 			echo '<button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#zone_add_http_msg">'.$lang['zone_add_http_msg'].'</button>';
                 }
@@ -3239,7 +3239,7 @@ echo '<p class="text-muted">'.$lang['add_on_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_zone_http_msg()">
             </div>
         </div>
@@ -3279,7 +3279,7 @@ echo '<p class="text-muted">'.$lang['add_on_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_node_http_msg()">
             </div>
         </div>
@@ -3328,14 +3328,14 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                                         <td><small>'.$row["on_payload"].'</small></td>
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
-	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn btn-primary btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
+	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
 					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="mqtt_device.php">'.$lang['mqtt_add_device'].'</a>
             </div>
         </div>
@@ -3357,7 +3357,7 @@ echo '
                         ';
 echo '            </div>
             <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                         <a href="javascript:reboot()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['yes'].'</a>
             </div>
         </div>
@@ -3378,7 +3378,7 @@ echo '
                         ';
 echo '            </div>
             <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                         <a href="javascript:shutdown()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['yes'].'</a>
             </div>
         </div>
@@ -3474,7 +3474,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_offset()">
                 <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_offset">'.$lang['add_schedule_offset'].'</button>
             </div>
@@ -3652,7 +3652,7 @@ echo '<p class="text-muted">'.$lang['offset_info_text'].'</p>
 	    <div class="help-block with-errors"></div></div>';
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                                 <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_offset()">
             </div>
         </div>
