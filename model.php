@@ -1653,13 +1653,14 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-lg-2" style="text-align:center;"><small>'.$lang['name'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['name'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['background_color'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['border_color'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_primary'].'</small></th>
                                 <th class="col-lg-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
@@ -1675,7 +1676,9 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         $color = explode('-', $row["footer_color"]);
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[2].'</td>';
                                         $style = explode('-', $row["btn_style"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[2].'</td>
+                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[2].'</td>';
+                                        $primary_style = explode('-', $row["btn_primary"]);
+                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$primary_style[2].'</td>
 	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
