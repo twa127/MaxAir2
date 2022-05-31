@@ -918,4 +918,5 @@ $lang['toggle_days'] = "Toggle Days";
 $lang['battery'] = "Battery";
 $lang['savings'] = "Savings";
 $lang['bs_ver'] = "Bootstrap Version";
+$lang['button_primary'] = "Primary Button Style";
 ?>
