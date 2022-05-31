@@ -617,64 +617,68 @@ function GetModal_Services($conn)
 	global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
-            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
-            <h5 class="modal-title" id="ajaxModalLabel">'.$lang['services'].'</h5>
+    	echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+            	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
+            	<h5 class="modal-title" id="ajaxModalLabel">'.$lang['services'].'</h5>
         </div>
         <div class="modal-body" id="ajaxModalBody">';
-    $SArr=[['name'=>'Apache','service'=>'apache2.service'],
-           ['name'=>'MySQL','service'=>'mysql.service'],
-           ['name'=>'MariaDB','service'=>'mariadb.service'],
-           ['name'=>'PiHome JOBS','service'=>'pihome_jobs_schedule.service'],
-           ['name'=>'HomeAssistant Integration','service'=>'HA_integration.service'],
-	   ['name'=>'Amazon Echo','service'=>'pihome_amazon_echo.service'],
-           ['name'=>'Homebridge','service'=>'homebridge.service'],
-           ['name'=>'Autohotspot','service'=>'autohotspot.service']];
-    echo '<div class="list-group">';
-    foreach($SArr as $SArrKey=>$SArrVal) {
-        echo '<span class="list-group-item">';
-        echo $SArrVal['name'];
-        $rval=my_exec("/bin/systemctl status " . $SArrVal['service']);
-        echo '<span class="float-right text-muted small">';
-        if($rval['stdout']=='') {
-            echo 'Error: ' . $rval['stderr'];
-        } else {
-            $stat='Status: Unknown';
-            $rval['stdout']=explode(PHP_EOL,$rval['stdout']);
-            foreach($rval['stdout'] as $line) {
-                if(strstr($line,'Loaded:')) {
-                    if(strstr($line,'disabled;')) {
-                        $stat='Status: Disabled';
-                        break;
-                    }
-                }
-                if(strstr($line,'Active:')) {
-                    if(strstr($line,'active (running)')) {
-                        $stat=trim($line);
-                        break;
-                    } else if(strstr($line,'(dead)')) {
-                        $stat='Status: Dead';
-                        break;
-                    }
-                }
-            }
-            echo $stat;
-        }
-        echo '</span>';
-        echo '<br/>&nbsp;<span class="float-right text-muted small" style="width:200px;text-align:right;">';
-        echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
-            <span class="ionicons ion-ios-information-outline"></span></button>';
-        echo '</span>';
-        echo '</span>';
-    }
-    echo '</div>';      //close class="list-group">';
-    echo '</div>';      //close class="modal-body">
-    echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+    		$SArr=[['name'=>'Apache','service'=>'apache2.service'],
+           		['name'=>'MySQL','service'=>'mysql.service'],
+           		['name'=>'MariaDB','service'=>'mariadb.service'],
+           		['name'=>'PiHome JOBS','service'=>'pihome_jobs_schedule.service'],
+           		['name'=>'HomeAssistant Integration','service'=>'HA_integration.service'],
+	   		['name'=>'Amazon Echo','service'=>'pihome_amazon_echo.service'],
+           		['name'=>'Homebridge','service'=>'homebridge.service'],
+           		['name'=>'Autohotspot','service'=>'autohotspot.service']];
+    		echo '<div class="list-group">';
+    			foreach($SArr as $SArrKey=>$SArrVal) {
+        			echo '<span class="list-group-item">
+					<div class="d-flex justify-content-start">';
+        					echo $SArrVal['name'];
+					echo '</div>';
+        				$rval=my_exec("/bin/systemctl status " . $SArrVal['service']);
+					echo '<div class="d-flex justify-content-between">
+        					<span class="text-muted small">';
+			        			if($rval['stdout']=='') {
+            							echo 'Error: ' . $rval['stderr'];
+        						} else {
+            							$stat='Status: Unknown';
+            							$rval['stdout']=explode(PHP_EOL,$rval['stdout']);
+            							foreach($rval['stdout'] as $line) {
+                							if(strstr($line,'Loaded:')) {
+                    								if(strstr($line,'disabled;')) {
+                        								$stat='Status: Disabled';
+                       				 					break;
+                    								}
+                							}
+                							if(strstr($line,'Active:')) {
+                    								if(strstr($line,'active (running)')) {
+                        								$stat=trim($line);
+                        								break;
+                    								} else if(strstr($line,'(dead)')) {
+                        								$stat='Status: Dead';
+                        								break;
+                    								}
+                							}
+            							}
+            							echo $stat;
+        						}
+        					echo '</span>
+        					<span class="text-muted small" style="width:200px;text-align:right;">
+        						<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
+            						<span class="ionicons ion-ios-information-outline"></span></button>';
+        					echo '</span>
+        				</div>
+				</span>';
+    			}
+    		echo '</div>';      //close class="list-group">';
+    	echo '</div>';      //close class="modal-body">
+    	echo '<div class="modal-footer" id="ajaxModalFooter">
+        	<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
-    echo '<script language="javascript" type="text/javascript">
-        services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
-    </script>';
+    	echo '<script language="javascript" type="text/javascript">
+        	services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
+    	</script>';
     return;
 }
 if($_GET['Ajax']=='GetModal_Services')
