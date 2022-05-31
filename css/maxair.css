@@ -532,7 +532,7 @@ color:#2196F3 !important;
 }
 
 .btn-primary-orange {
-  --l: 85%; /*the initial lightness*/
+  --l: 100%; /*the initial lightness*/
   --bs-btn-color: #fff;
   --bs-btn-bg: hsl(var(--bm-orange),calc(var(--l) - 10%));
   --bs-btn-border-color:  hsl(var(--bm-orange), var(--l));
@@ -586,7 +586,7 @@ color:#2196F3 !important;
 }
 
 .btn-primary-red {
-  --l: 85%; /*the initial lightness*/
+  --l: 100%; /*the initial lightness*/
   --bs-btn-color: #fff;
   --bs-btn-bg: hsl(var(--bm-red),calc(var(--l) - 10%));
   --bs-btn-border-color:  hsl(var(--bm-red), var(--l));
@@ -640,7 +640,7 @@ color:#2196F3 !important;
 }
 
 .btn-primary-blue {
-  --l: 85%; /*the initial lightness*/
+  --l: 100%; /*the initial lightness*/
   --bs-btn-color: #fff;
   --bs-btn-bg: hsl(var(--bm-blue),calc(var(--l) - 10%));
   --bs-btn-border-color:  hsl(var(--bm-blue), var(--l));
@@ -694,7 +694,7 @@ color:#2196F3 !important;
 }
 
 .btn-primary-amber {
-  --l: 85%; /*the initial lightness*/
+  --l: 100%; /*the initial lightness*/
   --bs-btn-color: #fff;
   --bs-btn-bg: hsl(var(--bm-amber),calc(var(--l) - 10%));
   --bs-btn-border-color:  hsl(var(--bm-amber), var(--l));
@@ -748,7 +748,7 @@ color:#2196F3 !important;
 }
 
 .btn-primary-teal {
-  --l: 85%; /*the initial lightness*/
+  --l: 100%; /*the initial lightness*/
   --bs-btn-color: #fff;
   --bs-btn-bg: hsl(var(--bm-teal),calc(var(--l) - 10%));
   --bs-btn-border-color:  hsl(var(--bm-teal), var(--l));
