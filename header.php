@@ -277,7 +277,7 @@ $rval = getDir('/var/www/code_updates');
                                 <?php if (!scan_dir('/var/www/database_updates')) {
 	                                echo '<button type="button" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm" data-bs-toggle="modal" data-bs-target="#confirm_update_Modal">'.$lang['update_code'].'</button>';
 				} ?>
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
+                                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary') ?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -299,7 +299,7 @@ $rval = getDir('/var/www/code_updates');
                         <!-- /.modal-body -->
                         <div class="modal-footer">
                                 <input type="button" name="submit" value="<?php echo $lang['yes'] ?>" class="btn btn-danger btn-sm" onclick="code_update()">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal"><?php echo $lang['no']; ?></button>
+                                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary')?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['no']; ?></button>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -329,7 +329,7 @@ $rval = getDir('/var/www/code_updates');
                         <!-- /.modal-body -->
                         <div class="modal-footer">
                                 <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style')?> btn-sm" data-bs-toggle="modal" data-bs-target="#confirm_db_update_Modal"><?php echo $lang['db_update_install']; ?></button>
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
+                                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary')?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -351,7 +351,7 @@ $rval = getDir('/var/www/code_updates');
                         <!-- /.modal-body -->
                         <div class="modal-footer">
                                 <input type="button" name="submit" value="<?php echo $lang['yes'] ?>" class="btn btn-danger btn-sm" onclick="database_update()">
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal"><?php echo $lang['no']; ?></button></span></p>
+                                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary')?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['no']; ?></button></span></p>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -423,7 +423,7 @@ else
 							</div>
 						<?php } //end of filesize if ?>
 						<a href="weather.php" button type="button" class="btn <?php echo theme($conn, settings($conn, 'theme'), 'btn_style'); ?> login btn-sm btn-edit"><?php echo $lang['weather_3_hour']; ?></a>
-						<button type="button" class="btn <?php echo theme($conn, settings($conn, 'theme'), 'btn_style'); ?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
+						<button type="button" class="btn <?php echo theme($conn, settings($conn, 'theme'), 'btn_primary'); ?> btn-sm" data-bs-dismiss="modal"><?php echo $lang['close']; ?></button>
         				</div>
 				</div>
 			</div>
