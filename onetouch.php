@@ -167,7 +167,7 @@ $theme = settings($conn, 'theme');
                                                                 		echo '<h4><br><p>Heating Zone '.$current_mode.' Temperature Control</p></h4><br>
 		                                                                <input type="text" value="'.DispSensor($conn, $set_temp, 1).'" class="dial" id="livetemp_c" name="live_temp">
                 		                                                <div style="float:right;">
-                                		                                        <textarea id="load_temp" class="temperature-box" readonly="readonly" row="0" col="0" ></textarea>
+                                		                                        <textarea id="load_temp" class="temperature-box '.theme($conn, settings($conn, 'theme'), 'footer_color').'" readonly="readonly" row="0" col="0" ></textarea>
                                                 		                </div>
 			                                                        <div class="form-check" style="'.$check_visible.'">
 										     	<input class="form-check-input" type="checkbox" value="0" id="checkbox" name="status" checked Enabled>
