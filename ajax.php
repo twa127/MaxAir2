@@ -443,7 +443,7 @@ function GetModal_MQTT($conn)
     $query = "SELECT * FROM `mqtt` ORDER BY `name`;";
     $results = $conn->query($query);
     echo '<div class="list-group">';
-    echo '<span class="list-group-item text-end" style="height:40px;">&nbsp;';
+    echo '<span class="list-group-item text-end" style="height:50px;">';
     echo '<span class="text-muted small"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" 
              data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTAdd" onclick="mqtt_AddEdit(this);">'.$lang['add'].'</button></span>';
     echo '</span>';
@@ -562,8 +562,8 @@ function GetModal_MQTTAddEdit($conn)
             </form>';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">' . ($IsAdd ?
-            '<button type="button" class="btn btn-warning btn-sm" data-bs-dismiss="modal" onclick="mqtt_add()">'.$lang['add_conn'].'</button>'
-            : '<button type="button" class="btn btn-warning btn-sm" data-bs-dismiss="modal" onclick="mqtt_edit()">'.$lang['edit_conn'].'</button>') . '
+            '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_add()">'.$lang['add_conn'].'</button>'
+            : '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_edit()">'.$lang['edit_conn'].'</button>') . '
             <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
