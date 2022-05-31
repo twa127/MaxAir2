@@ -42,7 +42,7 @@ $theme = settings($conn, 'theme');
 				<?php
 				//Mode 0 is EU Boiler Mode, Mode 1 is US HVAC Mode
 				$system_controller_mode = settings($conn, 'mode') & 0b1;
-				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=homelist`)">
+				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=homelist`)">
                                 <h3 class="buttontop"><small>'.$lang['one_touch'].'</small></h3>
                                 <h3 class="degre" style="margin-top:0px;"><i class="bi bi-bullseye" style="font-size: 2rem;"></i></h3>
                                 <h3 class="status"></h3>
@@ -55,7 +55,7 @@ $theme = settings($conn, 'theme');
 				$result = $conn->query($query);
 				$lt_status=mysqli_num_rows($result);
 				if ($lt_status==1) {$lt_status='red';}else{$lt_status='blueinfo';}
-				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
+				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
 				<h3 class="buttontop"><small>'.$lang['live_temp'].'</small></h3>
 				<h3 class="degre" style="margin-top:5px;"><img src="images/'.$icon.'" border="0"></h3>
 				<h3 class="status"><small class="statuscircle"><i class="bi bi-circle-fill '.$lt_status.'" style="font-size: 0.55rem;"></i></small></h3>
@@ -75,31 +75,31 @@ $theme = settings($conn, 'theme');
 		                }
 
                 		if($_SESSION['admin'] == 1) {
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`theme.php`)">
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`theme.php`)">
                                         <h3 class="buttontop"><small>'.$lang['add_theme'].'</small></h3>
                                         <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill icon-2x orange"></i></h3>
                                         <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                                         </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`relay.php`)">
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`relay.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['relay_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill red icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`sensor.php`)">
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`sensor.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['sensor_add'].'</small></h3>
                 		        <h3 class="degre"  style="margin-top: 10px;"><i class="bi bi-plus-square-fill green icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`mqtt_device.php`)">
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`mqtt_device.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['mqtt_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill blue icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`zone.php`)">
+					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`zone.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['zone_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>

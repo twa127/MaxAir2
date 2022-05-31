@@ -898,7 +898,7 @@ function boost($conn,$button) {
         $result = $conn->query($query);
         $boost_status=mysqli_num_rows($result);
         if ($boost_status ==1) {$boost_status='red';} else {$boost_status='blueinfo';}
-        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn" onclick="relocate_page(`boost.php`)">
+        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="relocate_page(`boost.php`)">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><img src="images/rocket.svg" width="25" height="25" alt=""></h3>
         <h3 class="status"><small class="statuscircle" id="bs1_1"><i class="bi bi-circle-fill '.$rval['status'].'" style="font-size: 0.55rem"></i></small>
@@ -913,7 +913,7 @@ function override($conn,$button) {
         $result = $conn->query($query);
         $override_status=mysqli_num_rows($result);
         if ($override_status==1) {$override_status='red';}else{$override_status='blueinfo';}
-        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn" onclick="relocate_page(`override.php`)">
+        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="relocate_page(`override.php`)">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><i class="bi bi-arrow-repeat"  style="font-size: 1.4rem; color: black"></i></h3>
         <h3 class="status"><small class="statuscircle" id="bs1_2"><i class="bi bi-circle-fill '.$override_status.'" style="font-size: 0.55rem;"></i></small>
@@ -979,7 +979,7 @@ function offset($conn,$button) {
 		}
 	}
 	echo '<div style="font-style: normal;"
-	<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#offset_setup" data-bs-backdrop="static" data-bs-keyboard="false">
+	<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#offset_setup" data-bs-backdrop="static" data-bs-keyboard="false">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><i class="bi bi-clock"  style="font-size: 1.4rem; color: black"></i></h3>
         <h3 class="status"><small class="statuscircle" id="bs1_3"><i class="bi bi-circle-fill '.$offset_status.'" style="font-size: 0.55rem;"></i></small><small class="statuszoon" id=bs2_3">'.$start_time_temp_offset.'&nbsp</small>
@@ -993,7 +993,7 @@ function night_climate($conn,$button) {
         $results = $conn->query($query);
         $row = mysqli_fetch_assoc($results);
         if ($row['status'] == 1) {$night_status='red';}else{$night_status='blueinfo';}
-        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn" onclick="relocate_page(`scheduling.php?nid=0`)">
+        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="relocate_page(`scheduling.php?nid=0`)">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><i class="bi bi-moon-fill" style="font-size: 1.4rem; color: black"></i></h3>
         <h3 class="status"><small class="statuscircle" id="bs1_4"><i class="bi bi-circle-fill '.$night_status.'" style="font-size: 0.55rem;"></i></small>
@@ -1013,9 +1013,9 @@ function away($conn,$button) {
         $away = mysqli_fetch_array($result);
         if ($away['status']=='1') { $awaystatus="red"; } elseif ( $away['status']=='0' || $sc_mode == 0) { $awaystatus="blueinfo"; }
         if ($sc_mode != 0 ) {
-	        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn" onclick="active_away()">';
+	        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="active_away()">';
 	} else {
-                echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn">';
+                echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn">';
 	}
         echo '<h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><i class="bi bi-box-arrow-right" style="font-size: 1.4rem; color: black"></i></h3>
@@ -1030,7 +1030,7 @@ function holidays($conn,$button) {
         $result = $conn->query($query);
         $holidays_status=mysqli_num_rows($result);
         if ($holidays_status=='1'){$holidaystatus="red";}elseif ($holidays_status=='0'){$holidaystatus="blueinfo";}
-        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle '.$button_style.' mainbtn" onclick="relocate_page(`holidays.php`)">
+        echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="relocate_page(`holidays.php`)">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
         <h3 class="degre"><i class="bi bi-send-fill" style="font-size: 1.4rem; color: black"></i></h3>
         <h3 class="status"><small class="statuscircle" style="color:#048afd;" id="bs1_6"><i class="bi bi-circle-fill '.$holidaystatus.'" style="font-size: 0.55rem;"></i></small>
