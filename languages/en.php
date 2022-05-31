@@ -919,4 +919,5 @@ $lang['battery'] = "Battery";
 $lang['savings'] = "Savings";
 $lang['bs_ver'] = "Bootstrap Version";
 $lang['button_primary'] = "Primary Button Style";
+$lang['pending_database_updates'] = "Database Updates are Pending, Please Apply these Before Code Updates.";
 ?>
