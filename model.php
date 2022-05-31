@@ -1675,7 +1675,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         $color = explode('-', $row["footer_color"]);
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[2].'</td>';
                                         $style = explode('-', $row["btn_style"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[1].'</td>
+                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[2].'</td>
 	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
