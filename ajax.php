@@ -1017,8 +1017,8 @@ function GetModal_Sensor_Graph($conn)
 		<div id="myChart" style="width:100%"></div>
     	</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
+            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">
                 sensors_Graph=function(gthis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(gthis)); })};
@@ -1477,8 +1477,8 @@ function GetModal_Schedule_List($conn)
 		}
     	echo '</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
+            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">
                graph_sensor=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); })};
