@@ -35,8 +35,7 @@ require_once(__DIR__.'/st_inc/functions.php');
 
 $theme = settings($conn, 'theme');
 $theme_name = explode(' ',theme($conn, $theme, 'name'))[0];
-if(strcasecmp($theme_name, 'Blue') == 0) { $logo = "maxair_logo_blue.png"; } else { $logo = "maxair_logo.png"; }
-
+$logo = "maxair_logo_".explode('-', theme($conn, $theme, 'background_color'))[1].".png";
 //$lang = settings($conn, 'language');
 //setcookie("PiHomeLanguage", $lang, time()+(3600*24*90));
 //require_once (__DIR__.'/languages/'.$_COOKIE['PiHomeLanguage'].'.php');
@@ -338,20 +337,21 @@ if (isset($_POST['submit'])) {
         <title>Bootstrap 5 Login Form Example</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="fonts/bootstrap-icons-1.8.1/bootstrap-icons.css" rel="stylesheet" type="text/css">
+        <link href="css/maxair.css" rel="stylesheet">
     </head>
 
     <body>
         <div class="container-fluid vh-100" style="margin-top:50px">
-	    <div class="d-flex justify-content-center"><img src="images/<?php echo $logo; ?>" height="40"></div>
+	    <div class="d-flex justify-content-center"><img src="images/<?php echo $logo; ?>" height="80"></div>
             <div class="" style="margin-top:40px">
                 <div class="rounded d-flex justify-content-center">
                     <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
                         <div class="text-center">
                             <?php
                             if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1) {
-                                echo '<h3 class="text-primary">'.$lang['sign_in'].'</h3>';
+                                echo '<h3 class="text-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'">'.$lang['sign_in'].'</h3>';
                             } else {
-                                echo '<h3 class="text-primary">'.$lang['wifi_connect'].'</h3>';
+                                echo '<h3 class="text-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'">'.$lang['wifi_connect'].'</h3>';
                             }
                         echo '</div>
                         <form method="post" action="'.$_SERVER['PHP_SELF'].'" role="form">';
@@ -359,7 +359,7 @@ if (isset($_POST['submit'])) {
                             echo '<div class="p-4">';
 				if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
                                     echo '<div class="input-group mb-3">
-                                        <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
+                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'"><i class="bi bi-person-plus-fill text-white"></i></span>
                                         <input type="text" class="form-control" placeholder="Username" name="username" value="';
 				        if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; }
 				        echo '">
@@ -390,7 +390,7 @@ if (isset($_POST['submit'])) {
                                 }
                                 echo '<div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-primary" id="basic-addon1"><i class="bi bi-key-fill text-white"></i></span>
+                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'" id="basic-addon1"><i class="bi bi-key-fill text-white"></i></span>
                                     </div>
                                     <input name="password" type="password" value="" class="input form-control" id="password" placeholder="password" required="true" aria-label="password" aria-describedby="basic-addon1" />
                                     <div class="input-group-append">
@@ -408,7 +408,7 @@ if (isset($_POST['submit'])) {
                                             Remember Me
                                         </label>
                                     </div>
-				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn btn-primary text-center mt-2"/>';
+				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn '.theme($conn, $theme, 'btn_primary').' text-center mt-2"/>';
                                 } else {
                                     echo '<div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="1" name="ap_mode">
