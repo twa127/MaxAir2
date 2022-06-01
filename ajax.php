@@ -755,7 +755,7 @@ function GetModal_ServicesInfo($conn)
     echo '</span>';
 
     if(substr($_GET['id'],0,7)=='pihome.' or substr($_GET['id'],0,7)=='pihome_' or substr($_GET['id'],0,10)=='homebridge' or substr($_GET['id'],0,11)=='autohotspot' or substr($_GET['id'],0,14)=='HA_integration') {
-        echo '<span class="list-group-item" style="height:40px;">&nbsp;';
+        echo '<span class="list-group-item" style="height:55px;">&nbsp;';
         echo '<span class="float-right text-muted small">
               <button class="btn btn-warning btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $_GET['id'] . '&Action=start" onclick="services_Info(this);">
                 Start</button>
