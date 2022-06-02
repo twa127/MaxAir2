@@ -518,6 +518,12 @@ color:#2196F3 !important;
   border-top:0px solid hsl(var(--bm-purple), var(--l));
 }
 
+.form-check-input-violet:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-purple), var(--l)) !important;
+  border-color:  hsl(var(--bm-purple), var(--l)) !important;
+}
+
 .btn-bm-orange {
   --l: 100%; /*the initial lightness*/
   --bs-btn-color: #333;
@@ -575,6 +581,12 @@ color:#2196F3 !important;
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-orange),calc(var(--l) - 70%));
   border-top:0px solid hsl(var(--bm-orange), var(--l));
+}
+
+.form-check-input-orange:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-orange), var(--l)) !important;
+  border-color:  hsl(var(--bm-orange), var(--l)) !important;
 }
 
 .btn-bm-red {
@@ -636,6 +648,12 @@ color:#2196F3 !important;
   border-top:0px solid hsl(var(--bm-red), var(--l));
 }
 
+.form-check-input-red:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-red), var(--l)) !important;
+  border-color:  hsl(var(--bm-red), var(--l)) !important;
+}
+
 .btn-bm-blue {
   --l: 100%; /*the initial lightness*/
   --bs-btn-color: #333;
@@ -693,6 +711,12 @@ color:#2196F3 !important;
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-blue),calc(var(--l) - 70%));
   border-top:0px solid hsl(var(--bm-blue), var(--l));
+}
+
+.form-check-input-blue:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-blue), var(--l)) !important;
+  border-color:  hsl(var(--bm-blue), var(--l)) !important;
 }
 
 .btn-bm-amber {
@@ -754,6 +778,12 @@ color:#2196F3 !important;
   border-top:0px solid hsl(var(--bm-amber), var(--l));
 }
 
+.form-check-input-amber:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-amber), var(--l)) !important;
+  border-color:  hsl(var(--bm-amber), var(--l)) !important;
+}
+
 .btn-bm-teal {
   --l: 100%; /*the initial lightness*/
   --bs-btn-color: #333;
@@ -807,12 +837,19 @@ color:#2196F3 !important;
   border-color:  hsl(var(--bm-teal), var(--l));
 }
 
-.card-footer-teal{
+.card-footer-teal {
   --l: 100%; /*the initial lightness*/
   background-color: hsl(var(--bm-teal),calc(var(--l) - 70%));
   border-top:0px solid hsl(var(--bm-teal), var(--l));
 }
 
+.form-check-input-teal:checked {
+   --l: 85%; /*the initial lightness*/
+  background-color: hsl(var(--bm-teal), var(--l)) !important;
+  border-color:  hsl(var(--bm-teal), var(--l)) !important;
+}
+
 .no-shadow {
   --bs-btn-focus-box-shadow: none;
 }
+

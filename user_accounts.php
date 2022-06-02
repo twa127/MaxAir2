@@ -206,21 +206,21 @@ $persist = $row['persist'];
         	                        	<div class="row">
                 	                		<div class="col-3">
                         	                		<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="account_enable" <?php if($aenable == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($id == $_SESSION['user_id']) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox0" name="account_enable" <?php if($aenable == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($id == $_SESSION['user_id']) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox0"> <?php echo $lang['account_enable']; ?> </label> <br><small class="text-muted"><?php echo $lang['account_enable_info'];?></small>
                                                 			<div class="help-block with-errors"></div>
                                         			</div>
 							</div>
 							<div class="col-3">
                 	                        		<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="admin_account" <?php if($aaccount == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox1" name="admin_account" <?php if($aaccount == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox1"> <?php echo $lang['admin_account']; ?> </label> <br><small class="text-muted"><?php echo $lang['admin_account_info'];?></small>
                                         	        		<div class="help-block with-errors"></div>
                                         			</div>
 							</div>
 							<div class="col-3">
                 	                        		<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="persist" <?php if($persist == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox2" name="persist" <?php if($persist == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox2"> <?php echo $lang['persist']; ?> </label> <br><small class="text-muted"><?php echo $lang['persist_info'];?></small>
                                         	        		<div class="help-block with-errors"></div>
                                         			</div>

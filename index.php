@@ -402,7 +402,7 @@ if (isset($_POST['submit'])) {
                                 </div>';
                                 if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
                                     echo '<div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="1" name="remember" ';
+                                        <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" name="remember" ';
 				        if(isset($_COOKIE["user_login"])) { echo 'checked >'; } else {  echo '>'; }
                                         echo '<label class="form-check-label" for="remember">
                                             Remember Me
@@ -411,12 +411,12 @@ if (isset($_POST['submit'])) {
 				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn '.theme($conn, $theme, 'btn_primary').' text-center mt-2"/>';
                                 } else {
                                     echo '<div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="1" name="ap_mode">
+                                        <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" name="ap_mode">
                                         <label class="form-check-label" for="ap_mode">
                                             AP Mode
                                         </label>
                                     </div>
-                                    <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn btn-primary text-center mt-2"/>';
+                                    <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn '.theme($conn, $theme, 'btn_primary').' text-center mt-2"/>';
                                 }
                             echo '</div>
                         </form>

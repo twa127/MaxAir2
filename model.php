@@ -1238,9 +1238,9 @@ echo '
 	<div class="form-group" class="control-label">
 		<div class="form-check">';
 			if ($erow['status'] == '1'){
-  				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox3" name="status" checked>';
+  				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox3" name="status" checked>';
 			} else {
-        	                echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox3" name="status">';
+        	                echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox3" name="status">';
 			}
 	  		echo '<label class="form-check-label" for="checkbox3">'.$lang['email_enable'].'</label>
 		</div>
@@ -1461,10 +1461,10 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td><input id="jobs_name'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["job_name"].'" placeholder="Job Name"></td>
             <td><input id="jobs_script'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["script"].'" placeholder="Job Script"></td>
             <td style="text-align:center; vertical-align:middle;">
-               <input type="checkbox" id="checkbox_enabled'.$row["id"].'" name="enabled" value="1" '.$enabled_check.'>
+               <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_enabled'.$row["id"].'" name="enabled" value="1" '.$enabled_check.'>
             </td>
             <td style="text-align:center; vertical-align:middle;">
-               <input type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
+               <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
             </td>
             <td><input id="jobs_time'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["time"].'" placeholder="Run Job Every"></td>
             <td><button class="btn warning btn-danger btn-xs" onclick="delete_job('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
@@ -1496,7 +1496,7 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
       	<div class="form-group" class="control-label">
              <div class="form-check">
-                 <input class="form-check-input" id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
                  <label class="form-check-label" for="checkbox_enabled"> '.$lang['enabled'].'</label>
              </div>
         </div>
@@ -1511,7 +1511,7 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
         <div class="form-group" class="control-label">
              <div class="form-check">
-                 <input class="form-check-input" id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
                  <label class="form-check-label" for="checkbox_logit"> '.$lang['jobs_log'].'</label>
              </div>
         </div>
@@ -1589,7 +1589,7 @@ echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" ar
                                 echo '<tr>
                                         <td>'.$myArr[$x].'</td>
             				<td style="text-align:center; vertical-align:middle;">
-               					<input type="checkbox" id="checkbox_graph'.$x.'" name="enabled" value="1" '.$enabled_check.'>
+               					<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_graph'.$x.'" name="enabled" value="1" '.$enabled_check.'>
             				</td>
                                 </tr>';
 				$m = $m << 1;
@@ -1729,12 +1729,12 @@ echo '
 				                <div class="form-check">';
 							if ($bcount > 0) {
 					                        if ($bresult and $brow['status'] == '1'){
-        	                        				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="status" checked Disabled>';
+        	                        				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox2" name="status" checked Disabled>';
 					                        } else {
-                        	        				echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox2" name="status" Disabled>';
+                        	        				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox2" name="status" Disabled>';
 					                        }
 							} else {
-								echo '<input class="form-check-input" type="checkbox" value="0" id="checkbox2" name="status" Enabled>';
+								echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="0" id="checkbox2" name="status" Enabled>';
 							}
 				                        echo '<label class="form-check-label" for="checkbox2">'.$lang['system_controller_enable'].'</label>
 				                </div>
@@ -2618,9 +2618,9 @@ echo '
 				<div class="form-group" class="control-label">
                                 	<div class="form-check">';
                                         	if ($grow['status'] == '1'){
-                                                	echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="status" checked>';
+                                                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox1" name="status" checked>';
                                                 } else {
-                                                	echo '<input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="status">';
+                                                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox1" name="status">';
                                                 }
                                                         echo '<label class="form-check-label" for="checkbox1">'.$lang['smart_home_gateway_enable'].'</label>
 					</div>
@@ -2629,9 +2629,9 @@ echo '
                                 <div class="form-group" class="control-label">
                                         <div class="form-check">';
                                                 if ($grow['enable_outgoing'] == '1'){
-                                                        echo '<input class="form-check-input" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
+                                                        echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
                                                 }else {
-                                                        echo '<input class="form-check-input" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
+                                                        echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
                                                 }
                                                 echo '
                                                 <label class="form-check-label" for="checkbox4"> '.$lang['enable_outgoing'].'</label>
@@ -3032,11 +3032,11 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
             				<td style="text-align:center; vertical-align:middle;">'.$zone_name.'</td>';
             				if (empty($row['zone_id'])) {
 						echo '<td style="text-align:center; vertical-align:middle;">
-                				<input type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.'>
+                				<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.'>
             					</td>';
 	    				} else {
                 				echo '<td style="text-align:center; vertical-align:middle;">
-                				<input type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
+                				<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
 	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
@@ -3520,7 +3520,7 @@ echo '<p class="text-muted">'.$lang['offset_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
         <div class="form-group" class="control-label">
         	<div class="form-check">';
-                	echo '<input class="form-check-input" id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
+                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
                         echo '<label class="form-check-label" for="checkbox5"> '.$lang['offset_enable'].'</label>
                	</div>
         </div>
