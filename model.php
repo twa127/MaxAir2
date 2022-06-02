@@ -3331,7 +3331,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                                         <td><small>'.$row["on_payload"].'</small></td>
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
-	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
+	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
 					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
