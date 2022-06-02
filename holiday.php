@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
 
 						<!-- Enable Holiday -->
 				                <div class="form-check">
-                                			<input class="form-check-input" type="checkbox" value="1" id="checkbox0" name="holidays_enable" <?php $check = ($holidays_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+                                			<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox0" name="holidays_enable" <?php $check = ($holidays_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
 				                        <label class="form-check-label" for="checkbox0"><?php echo $lang['holidays_enable']; ?></label> </small>
 							<div class="help-block with-errors"></div>
 						</div>
