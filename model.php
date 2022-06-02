@@ -2719,8 +2719,8 @@ echo '
 				<br><h4 class="info"><i class="bi bi-heart-pulse-fill red" style="font-size:1.2rem;"></i> '.$lang['smart_home_gateway_scr_info'].'</h4>
 				<div class="list-group">';
 					echo '
-					<a href="#" class="list-group-item"> PID <span class="float-right text-muted small"><em> '.$grow['pid'].'</em></span></a>
-					<a href="#" class="list-group-item"> '.$lang['smart_home_gateway_pid'].': <span class="float-right text-muted small"><em>'.$grow['pid_running_since'].'</em></span></a>';
+					<a href="#" class="list-group-item d-flex justify-content-between"><span>PID</span><span class="text-muted small"><em> '.$grow['pid'].'</em></span></a>
+					<a href="#" class="list-group-item d-flex justify-content-between"><span>'.$lang['smart_home_gateway_pid'].':</span><span class="text-muted small"><em>'.$grow['pid_running_since'].'</em></span></a>';
 
 					$query = "select * FROM gateway_logs WHERE pid_datetime >= NOW() - INTERVAL 5 MINUTE;";
 					$result = $conn->query($query);
@@ -2729,7 +2729,7 @@ echo '
 					} else {
 						$gw_restarted = '0';
 					}
-					echo '<a href="#" class="list-group-item"> '.$lang['smart_home_gateway_scr'].': <span class="float-right text-muted small"><em>'.$gw_restarted.'</em></span></a>';
+					echo '<a href="#" class="list-group-item d-flex justify-content-between"><span>'.$lang['smart_home_gateway_scr'].':</span><span class="text-muted small"><em>'.$gw_restarted.'</em></span></a>';
 				echo '</div>
                                 <!-- /.list-group -->
 			</div>
