@@ -33,7 +33,7 @@ $theme = settings($conn, 'theme');
         			<i class="bi bi-clock icon-fw"></i> <?php echo $lang['schedule']; ?>
 			</div>
 			<div class="dropdown">
-				<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+				<a class="" data-bs-toggle="dropdown" href="#">
 					<i class="bi bi-file-earmark-pdf text-white"></i>
 				</a>
                         	<ul class="dropdown-menu">
