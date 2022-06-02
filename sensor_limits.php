@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
 					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Enabled -->
 						<div class="form-check">
-							<input class="form-check-input" id="checkbox0" class="styled" type="checkbox" name="status" value="1" <?php $check = ($rowlimits['status'] == 1) ? 'checked' : ''; echo $check; ?>>
+							<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" id="checkbox0" class="styled" type="checkbox" name="status" value="1" <?php $check = ($rowlimits['status'] == 1) ? 'checked' : ''; echo $check; ?>>
 							<label class="form-check-label" for="checkbox0"> <?php echo $lang['enabled']; ?> </label> <small class="text-muted"><?php echo $lang['sensor_limits_info'];?></small>
 							<div class="help-block with-errors"></div>
 						</div>
