@@ -359,7 +359,7 @@ if (isset($_POST['submit'])) {
                             echo '<div class="p-4">';
 				if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
                                     echo '<div class="input-group mb-3">
-                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'"><i class="bi bi-person-plus-fill text-white"></i></span>
+                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'"><i class="bi bi-person-fill text-white"></i></span>
                                         <input type="text" class="form-control" placeholder="Username" name="username" value="';
 				        if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; }
 				        echo '">
