@@ -597,7 +597,7 @@ if ($type <= 5 || $type == 8) {
                 	$sch_time_index = $sch_time_index + 1;
 	        }
 	} //end of schedule time while loop
-	echo ' <i class="ionicons ion-ios-clock-outline"></i> All Schedule:&nbsp' .secondsToWords((array_sum($schedule_time) * 60));
+	echo ' <i class="ionicons ion-ios-clock-outline"></i>&nbspAll Schedule:&nbsp' .secondsToWords((array_sum($schedule_time) * 60));
 } elseif ($type == 18 || $type == 19) {
         //------------------------------------------------------
         //return the schedule status and temp for schedule by id
