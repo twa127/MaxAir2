@@ -489,7 +489,7 @@ if ($settings_id <= 3) {
 			        </div>
                 		<div class="btn-group">
 		       			<?php
-                			echo '<i class="ionicons ion-ios-clock-outline"></i> All Schedule: ' . secondsToWords((array_sum($schedule_time) * 60));
+                			echo '<i class="ionicons ion-ios-clock-outline"></i>&nbspAll Schedule:&nbsp' . secondsToWords((array_sum($schedule_time) * 60));
 		       			?>
                 		</div>
 		         </div>
