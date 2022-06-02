@@ -2940,7 +2940,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				<td>'.$row["node_id"].'</td>
             				<td>'.$row["relay_child_id"].'</td>
                                         <td>'.$trigger.'</td>
-            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
 echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><i class="bi bi-trash-fill black"></i></button></td>';
 	    				} else {
@@ -3039,7 +3039,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
                 				<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
-	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
 						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
