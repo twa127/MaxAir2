@@ -343,7 +343,7 @@ if(!isset($_GET['nid'])) {
 
                                         <div class="row">
 	                                        <!-- Enable Schedule -->
-                                                <div class="col-2">
+                                                <div class="col-5">
 							<div class="form-check"">
 								<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" style="accent-color: #ff8839;" type="checkbox" value="1" id="checkbox0" name="sc_en" <?php $check = ($time_row['status'] == 1) ? 'checked' : ''; echo $check; ?>>
 								<label class="form-check-label" for="checkbox0"> <?php echo $lang['schedule_enable']; ?></label>
@@ -351,7 +351,7 @@ if(!isset($_GET['nid'])) {
 						</div>
 
 	                                        <!-- Enable Away Schedule -->
-                                                <div class="col-2">
+                                                <div class="col-7">
 		                                        <div class="form-check">
 								<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox1" name="aw_en" <?php $check = ($time_row['type'] == 1) ? 'checked' : ''; echo $check. " ".$away_disabled ; ?>>
                                 		                <label class="form-check-label" for="checkbox1"> <?php echo $lang['away_enable']; ?></label>
