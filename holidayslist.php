@@ -91,8 +91,8 @@ $theme = settings($conn, 'theme');
 					</div>
 					<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_holidays('.$hol_row["id"].');" data-confirm="ARE YOU SURE?"><span class="bi bi-trash-fill"></span></button>&nbsp;&nbsp;
-						<a href="holiday.php?id='.$hol_row["id"].'" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>&nbsp;&nbsp;
-		        			<a href="scheduling.php?hol_id='.$hol_row["id"].'" class="btn btn-default btn-sm login"><span class="bi bi-clock"></span></a>&nbsp;&nbsp;
+						<a href="holiday.php?id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="ionicons ion-edit"></span></a>&nbsp;&nbsp;
+		        			<a href="scheduling.php?hol_id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-clock"></span></a>&nbsp;&nbsp;
 					</div>
 				</li>';
 			//following variable set to 0 on start for array index. 
