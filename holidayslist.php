@@ -237,7 +237,7 @@ $theme = settings($conn, 'theme');
                         </div>
                         <div class="btn-group">
                                 <?php
-                                echo '<i class="ionicons ion-ios-clock-outline"></i>&nbspHoliday Schedule:&nbsp' . secondsToWords((array_sum($schedule_time) * 60));
+                                echo '<i class="bi bi-clock"></i>&nbspHoliday Schedule:&nbsp' . secondsToWords((array_sum($schedule_time) * 60));
                                 ?>
                         </div>
                 </div>

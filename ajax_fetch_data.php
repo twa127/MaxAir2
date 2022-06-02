@@ -525,7 +525,7 @@ if ($type <= 5 || $type == 8) {
        	$system_controller_time_total = $system_controller_time['total_minuts'];
         $system_controller_time_on = $system_controller_time['on_minuts'];
         $system_controller_time_save = $system_controller_time['save_minuts'];
-        if($system_controller_time_on >0){      echo ' <i class="ionicons ion-ios-clock-outline"></i>&nbsp'.secondsToWords(($system_controller_time_on)*60);}
+        if($system_controller_time_on >0){      echo ' <i class="bi bi-clock"></i>&nbsp'.secondsToWords(($system_controller_time_on)*60);}
 } elseif ($type == 16) {
 	//----------------------
 	//process sensors by id
@@ -597,7 +597,7 @@ if ($type <= 5 || $type == 8) {
                 	$sch_time_index = $sch_time_index + 1;
 	        }
 	} //end of schedule time while loop
-	echo ' <i class="ionicons ion-ios-clock-outline"></i>&nbspAll Schedule:&nbsp' .secondsToWords((array_sum($schedule_time) * 60));
+	echo ' <i class="bi bi-clock"></i>&nbspAll Schedule:&nbsp' .secondsToWords((array_sum($schedule_time) * 60));
 } elseif ($type == 18 || $type == 19) {
         //------------------------------------------------------
         //return the schedule status and temp for schedule by id
