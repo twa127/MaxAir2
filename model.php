@@ -2323,7 +2323,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td>'.$row["max_child_id"].'</td>
             <td>'.$row["name"].'</td>';
 	    if($zcount != 0) {
-		echo '<td><button class="btn btn-danger btn-xs disabled" data-toggle="tooltip" title="'.$content_msg_z.'"><span class="bi bi-trash-fill black"></span></button> </td>';
+		echo '<td><div class="tooltip-wrapper" data-bs-toggle="tooltip" title="'.$content_msg_z.'"><button class="btn btn-danger btn-xs disabled"><span class="bi bi-trash-fill black"></span></button> </div></td>';
 	    } else {
 		echo '<td><button class="btn warning btn-danger btn-xs" onclick="delete_node('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </td>';
 	    }
@@ -2942,7 +2942,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
                                         <td>'.$trigger.'</td>
             				<td><a href="relay.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
-echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><i class="bi bi-trash-fill black"></i></button></td>';
+						echo '<span class="tooltip-wrapper" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><button class="btn btn-danger btn-xs disabled"><i class="bi bi-trash-fill black"></i></button></span></td>';
 	    				} else {
                 				echo '<button class="btn warning btn-danger btn-xs" onclick="delete_relay('.$row["id"].');" data-confirm="'.$lang['confirm_del_relay_1'].'"><span class="bi bi-trash-fill black"></span></button> </td>';
             				}
@@ -3043,7 +3043,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 	    				if (empty($row['zone_id'])) {
 						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
-						echo '<button class="btn btn-danger btn-xs disabled" data-bs-toggle="tooltip" title="'.$lang['confirm_del_sensor_5'].$zone_name.'"><span class="bi bi-trash-fill black"></span></button></td>';
+						echo '<span class="tooltip-wrapper" data-bs-toggle="tooltip" title="'.$lang['confirm_del_sensor_5'].$zone_name.'"><button class="btn btn-danger btn-xs disabled"><i class="bi bi-trash-fill black"></i></button></span></td>';
 	    				}
         			echo '</tr>';
 			}
@@ -3670,6 +3670,7 @@ $(document).ready(function(){
   //load() method fetch data from fetch.php page
  }, 1000);
   $('[data-bs-toggle="popover"]').popover();
+  $('[data-bs-toggle="tooltip"]').tooltip();
 
   $("#maxair_versions").on('show.bs.modal', function () {
     document.getElementById("bs_local").innerHTML=$.fn.popover.Constructor.VERSION;

@@ -920,4 +920,6 @@ $lang['savings'] = "Savings";
 $lang['bs_ver'] = "Bootstrap Version";
 $lang['button_primary'] = "Primary Button Style";
 $lang['pending_database_updates'] = "Database Updates are Pending, Please Apply these Before Code Updates.";
+$lang['add_controller'] = "Add an Additional Controller to be attached to this Zone. ";
+$lang['remove_controller'] = "Remove this Controller from this Zone. ";
 ?>

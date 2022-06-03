@@ -77,11 +77,11 @@ $(document).ready(function() {
 					</select>
 					<div class="help-block with-errors"></div>
 					<div class="input-group-append">
-						<span class="btn btn-outline" type="button">
+						<span class="input-group-btn">
                                                 	<?php if ($i == 0) {
-                                                        	echo '<a href="javascript:void(0);" class="add_button" title="Add field"><img src="./images/add-icon.png"/></a>';
+                                                        	echo '<a href="javascript:void(0);" class="add_button"><button class="btn btn-outline" data-bs-toggle="tooltip" title="'.$lang['add_controller'].'"><img src="./images/add-icon.png"/></a>';
                                                 	} else {
-                                                        	echo '<a href="javascript:void(0);" class="remove_button"><img src="./images/remove-icon.png"/></a>';
+                                                        	echo '<a href="javascript:void(0);" class="remove_button"><button class="btn btn-outline" data-bs-toggle="tooltip" title="'.$lang['remove_controller'].'"><img src="./images/remove-icon.png"/></a>';
                                                 	} ?>
 						</span>
 					</div>
@@ -100,6 +100,13 @@ $(document).ready(function() {
             $(wrapper).append(temp_HTML); //Add field html
             x++; //Increment field counter
 	    document.getElementById("controller_count").value = x;
+            //enable a tooltip for this addition
+            $('[data-bs-toggle="tooltip"]').tooltip({
+                trigger : 'hover'
+            });
+            $('[data-bs-toggle="tooltip"]').on('click', function () {
+                $(this).tooltip('hide')
+            });
         }
     });
 

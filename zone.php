@@ -889,13 +889,13 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 											</select>
 											<div class="help-block with-errors"></div>
 											<div class="input-group-append">
-												<span class="btn btn-outline" type="button">
-                                                							<?php if ($i == 0) {
-						                                                        	echo '<a href="javascript:void(0);" class="add_button" title="Add field"><img src="./images/add-icon.png"/></i></a>';
-                                                								} else {
-							                                                        	echo '<a href="javascript:void(0);" class="remove_button"><img src="./images/remove-icon.png"/></a>';
-							                                                	} ?>
-												</span>
+							                                        <span class="input-group-btn">
+							                                                <?php if ($i == 0) {
+														echo '<a href="javascript:void(0);" class="add_button"><button class="btn btn-outline" data-bs-toggle="tooltip" title="'.$lang['add_controller'].'"><img src="./images/add-icon.png"/></a>';
+							                                                } else {
+														echo '<a href="javascript:void(0);" class="remove_button"><button class="btn btn-outline" data-bs-toggle="tooltip" title="'.$lang['remove_controller'].'"><img src="./images/remove-icon.png"/></a>';
+							                                                } ?>
+                                        							</span>
 											</div>
 										</div>
     									</div>
@@ -996,3 +996,13 @@ while($rowsensors = mysqli_fetch_assoc($result)) {
 <?php }  ?>
 <?php include("footer.php");  ?>
 
+<script>
+$(document).ready(function(){
+    $('[data-bs-toggle="tooltip"]').tooltip({
+      trigger : 'hover'
+    });
+    $('[data-bs-toggle="tooltip"]').on('click', function () {
+      $(this).tooltip('hide')
+    });
+});
+</script>
