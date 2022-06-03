@@ -1,6 +1,6 @@
 # MaxAir - Smart Thermostat
 
-### Note: Now at Version 1.80.
+### Note: Now at Version 2.01.
 
 The previous version, PiHome, was centered around the creation of zones, this version is more centered around devices.
 
@@ -28,6 +28,8 @@ Version 1.7 Introduces a revised Settings Menu option, to improve performance.
 Version 1.71 Introduces an option to display a graph when either a Zone or Standalone Sensor tile is clicked. In the case of a Zone tile, buttons on the popup dialogue allow the selection of eithera 24hour or 1hour period graph display, in the case of a standalone sensor, a 24hour period graph will be displayed. The graph popup has buttons to allow swapping between 1hour and 24hour displays.
 
 Version 1.80 Introduces a revised Home screen, which no longer auto-refreshes. The data and indicator fields on the screen are updated individually once every second. The result is that now any pop-up windows that are opened, will remain displayed until closed by the user. 
+
+Version 2.01 Major update that introduces 'Colour Themes' and a new look based around the use of Bootstrap Version 5.2. Six different colour themes are available, Amber, Blue, Orange, Red, Teal and Violet.
 
 ## Setup:
 
