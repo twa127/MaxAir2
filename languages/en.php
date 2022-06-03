@@ -16,7 +16,7 @@
 * WHAT YOU ARE DOING                                                    *"
 *************************************************************************"
 */
-//English Language File 
+//English Language File
 
 $lang['title'] = "MaxAir - Smart Thermostat";
 $lang['copyright'] = "BrainMax 2020. All Rights Reserved";
@@ -878,7 +878,7 @@ $lang['onchange'] = "On-Change";
 $lang['correct_factor'] = "Correct Factor";
 $lang['res'] = "Res +/-";
 $lang['sensor_resolution'] = "Sensor Resolution";
-$lang['sensor_resolution_info'] = "Resolution between +/- 0.0 to 1.0"; 
+$lang['sensor_resolution_info'] = "Resolution between +/- 0.0 to 1.0";
 $lang['persist'] = "Persistent Session";
 $lang['persist_info'] = "Session does not timeout after 24 minutes.";
 $lang['theme'] = "Theme";
