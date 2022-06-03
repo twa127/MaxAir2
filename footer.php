@@ -214,7 +214,7 @@ if ($_SERVER['SCRIPT_NAME'] == '/scheduling.php'){
 </script>
 
 <script>
-<?php if (($_SERVER['SCRIPT_NAME'] == '/scheduling.php') OR ($_SERVER['SCRIPT_NAME'] == '/schedule.php')){ ?>
+<?php if (($_SERVER['SCRIPT_NAME'] == '/scheduling.php') OR ($_SERVER['SCRIPT_NAME'] == '/schedule.php') OR ($_SERVER['SCRIPT_NAME'] == '/holidays.php')){ ?>
       // popover
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
