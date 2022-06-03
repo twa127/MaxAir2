@@ -95,9 +95,8 @@ The core requirements for the SBC are as stated above, MaxAir has been successfu
 
 ## Secial Thanks to
 
-* [SB Admin 2 Template](http://startbootstrap.com/template-overviews/sb-admin-2 "SB Admin 2 Template ")
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap ")
 * [Pretty Checkbox](http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css "Pretty Checkbox ")
-* [Font-Awesome](https://fortawesome.github.io/Font-Awesome "Font-Awesome")
 * [Ionicons](http://ionicons.com "Ionicons ")
 * [Box Shadow CSS](http://www.cssmatic.com/box-shadow "Box Shadow CSS")
 * [AnimateCSS](https://daneden.github.io/animate.css "Animate.css ")
