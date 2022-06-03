@@ -76,13 +76,15 @@ $(document).ready(function() {
 						} ?>
 					</select>
 					<div class="help-block with-errors"></div>
-					<span class="input-group-btn">
-                                                <?php if ($i == 0) {
-                                                        echo '<a href="javascript:void(0);" class="add_button" title="Add field"><img src="./images/add-icon.png"/></a>';
-                                                } else {
-                                                        echo '<a href="javascript:void(0);" class="remove_button"><img src="./images/remove-icon.png"/></a>';
-                                                } ?>
-					</span>
+					<div class="input-group-append">
+						<span class="btn btn-outline" type="button">
+                                                	<?php if ($i == 0) {
+                                                        	echo '<a href="javascript:void(0);" class="add_button" title="Add field"><img src="./images/add-icon.png"/></a>';
+                                                	} else {
+                                                        	echo '<a href="javascript:void(0);" class="remove_button"><img src="./images/remove-icon.png"/></a>';
+                                                	} ?>
+						</span>
+					</div>
 				</div>
     			</div>
 		</div>
