@@ -211,7 +211,7 @@ $theme = settings($conn, 'theme');
 						echo '<div class="row mt-2"></div>
 						<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_schedule(' . $row["time_id"] . ');"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
-						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>
+						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="ionicons ion-edit"></span></a>
 						</div>
 					</div>
 					<!-- /.collapse -->
