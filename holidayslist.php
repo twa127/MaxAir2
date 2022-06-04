@@ -178,7 +178,7 @@ $theme = settings($conn, 'theme');
 								$status_color = "orangefa";
 							}
 							if ($datarw["coop"] == "1") {
-								$coop = '<i class="ionicons ion-leaf green" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="' . $lang['schedule_coop_help'] . '"></i>';
+								$coop = '<i class="bi bi-tree-fill green" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="' . $lang['schedule_coop_help'] . '"></i>';
 							} else {
 								$coop = '';
 							}
