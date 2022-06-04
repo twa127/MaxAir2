@@ -900,7 +900,7 @@ function boost($conn,$button) {
         if ($boost_status ==1) {$boost_status='red';} else {$boost_status='blueinfo';}
         echo '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="relocate_page(`boost.php`)">
         <h3 class="buttontop"><small>'.$button.'</small></h3>
-        <h3 class="degre"><img src="images/rocket.svg" width="25" height="25" alt=""></h3>
+        <h3 class="degre"><img src="images/rocket.svg" style="margin-top: -5px;" width="25" height="25" alt=""></h3>
         <h3 class="status"><small class="statuscircle" id="bs1_1"><i class="bi bi-circle-fill '.$rval['status'].'" style="font-size: 0.55rem"></i></small>
         </h3></button>';
 
