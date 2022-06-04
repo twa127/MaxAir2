@@ -250,7 +250,7 @@ if ($settings_id <= 3) {
 
 				                <button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="edit_gpio.php" data-bs-toggle="modal" data-bs-target="#time_zone">
 	        			        <h3 class="buttontop"><small><?php echo $lang['time_zone']; ?></small></h3>
-				        	<h3 class="degre" ><i class="ionicons ion-earth green"></i></h3>
+				        	<h3 class="degre" ><i class="bi bi-globe green" style="font-size: 1.5rem;"></i></h3>
 	       			                <h3 class="status"></small></h3>
         			         	</button>
 
