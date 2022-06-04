@@ -1661,6 +1661,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
                                 <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_primary'].'</small></th>
+                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_size'].'</small></th>
                                 <th class="col-lg-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
@@ -1678,16 +1679,18 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         $style = explode('-', $row["btn_style"]);
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[2].'</td>';
                                         $primary_style = explode('-', $row["btn_primary"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$primary_style[2].'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
+                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$primary_style[2].'</td>';
+					if ($row["btn_size"] == 0) { $btn_size = explode(' ', $lang['standard_button'])[0]; } else { $btn_size = explode(' ', $lang['wide_button'])[0]; }
+					echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$btn_size.'</td>
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
+                	<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<a class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
             </div>
         </div>
     </div>

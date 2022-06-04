@@ -24,9 +24,11 @@ confirm_logged_in();
 require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
 
-if(settings($conn, 'language') == "sk" || settings($conn, 'language') == "de") { $button_style = "btn-xxl-wide"; } else { $button_style = "btn-xxl"; }
-$page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
+$btn_size = theme($conn, $theme, 'btn_size');
+
+if($btn_size == 1 || settings($conn, 'language') == "sk" || settings($conn, 'language') == "de") { $button_style = "btn-xxl-wide"; } else { $button_style = "btn-xxl"; }
+$page_refresh = page_refresh($conn);
 ?>
 <script language='javascript' type='text/javascript'>
 	$('#ajaxModal').on('show.bs.modal', function(e) {

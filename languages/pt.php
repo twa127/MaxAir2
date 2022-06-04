@@ -936,4 +936,8 @@ $lang['button_primary'] = "Primary Button Style";
 $lang['pending_database_updates'] = "Database Updates are Pending, Please Apply these Before Code Updates.";
 $lang['add_controller'] = "Add an Additional Controller to be attached to this Zone. ";
 $lang['remove_controller'] = "Remove this Controller from this Zone. ";
+$lang['button_size'] = "Button Size";
+$lang['button_size_info'] = "Select Standard or Wide Button Style";
+$lang['standard_button'] = "Standard Button";
+$lang['wide_button'] = "Wide Button";
 ?>
