@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
         $purge= '0';
 
 	//Add or Edit
-	$query = "INSERT INTO `theme` (`id`, `sync`, `purge`, `name`, `row_justification`, `background_color`, `text_color`, `border_color`, `footer_color`, `btn_style`, `btn_primary`, `btn_size`) VALUES ('{$id}', '{$sync}', '{$purge}', '{$name}', '{$justification}', '{$background_color}', '{$text_color}', '{$border_color}', '{$footer_color}', '{$btn_style}', '{$btn_primary}', '{$btn_size}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), name=VALUES(name), row_justification='{$justification}', background_color='{$background_color}', text_color='{$text_color}', border_color='{$border_color}', footer_color='{$footer_color}', btn_style='{$btn_style}', btn_primary='{$btn_primmary}', btn_size='{$btn_size}';";
+	$query = "INSERT INTO `theme` (`id`, `sync`, `purge`, `name`, `row_justification`, `background_color`, `text_color`, `border_color`, `footer_color`, `btn_style`, `btn_primary`, `btn_size`) VALUES ('{$id}', '{$sync}', '{$purge}', '{$name}', '{$justification}', '{$background_color}', '{$text_color}', '{$border_color}', '{$footer_color}', '{$btn_style}', '{$btn_primary}', '{$btn_size}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), name=VALUES(name), row_justification='{$justification}', background_color='{$background_color}', text_color='{$text_color}', border_color='{$border_color}', footer_color='{$footer_color}', btn_style='{$btn_style}', btn_primary='{$btn_primary}', btn_size='{$btn_size}';";
 	$result = $conn->query($query);
         $temp_id = mysqli_insert_id($conn);
 	if ($result) {
@@ -173,11 +173,11 @@ if (isset($_POST['submit'])) {
                                                 <!-- Button Primary -->
                                                 <div class="form-group" class="control-label" id="btn_primary_label" style="display:block"><label class="fs-6"><?php echo $lang['button_primary']; ?></label> <small class="text-muted"><?php echo $lang['button_primary_info'];?></small>
                                                         <select class="form-select" type="text" id="btn_primary" name="btn_primary" >
-								<?php echo'<option value="btn-primary-red" ' . ($row['btn_style']=="btn-primary-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-orange" ' . ($row['btn_style']=="btn-primary-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-amber" ' . ($row['btn_style']=="btn-primary-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-blue" ' . ($row['btn_style']=="btn-primary-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-violet" ' . ($row['btn_style']=="btn-primary-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
+								<?php echo'<option value="btn-primary-red" ' . ($row['btn_primary']=="btn-primary-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
+								<?php echo'<option value="btn-primary-orange" ' . ($row['btn_primary']=="btn-primary-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
+								<?php echo'<option value="btn-primary-amber" ' . ($row['btn_primary']=="btn-primary-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
+								<?php echo'<option value="btn-primary-blue" ' . ($row['btn_primary']=="btn-primary-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+								<?php echo'<option value="btn-primary-violet" ' . ($row['btn_primary']=="btn-primary-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
