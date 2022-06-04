@@ -51,7 +51,7 @@ $theme = settings($conn, 'theme');
         		<div class="row <?php echo theme($conn, $theme, 'row_justification'); ?>">
 					<?php
 					echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle black-background no-shadow '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=onetouch`)">
-					<h3 class="buttontop"><small>'.$lang['one_touch'].'</small></h3>
+					<h3 class="text-nowrap buttontop"><small>'.$lang['one_touch'].'</small></h3>
 			                <h3 class="degre" style="margin-top:0px;"><i class="bi bi-bullseye" style="font-size: 2rem;"></i></h3>
 			                <h3 class="status"></h3>
 			                </button>';
@@ -173,7 +173,7 @@ $theme = settings($conn, 'theme');
 
 					if ($mode_select == 0 ) {
                                                 echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="active_sc_mode()">
-		        	        	<h3 class="buttontop"><small>'.$lang['mode'].'</small></h3>
+		        	        	<h3 class="text-nowrap buttontop"><small>'.$lang['mode'].'</small></h3>
 	        			        <h3 class="degre" >'.$current_sc_mode.'</h3>';
 		                        	if ($system_controller_mode == 1) {
                 		                	switch ($sc_mode) {
@@ -195,7 +195,7 @@ $theme = settings($conn, 'theme');
                 			        echo '</button>';
 			                } else {
 						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=mode`)">
-                			        <h3 class="buttontop"><small>'.$current_sc_mode.'</small></h3>
+                			        <h3 class="text-nowrap buttontop"><small>'.$current_sc_mode.'</small></h3>
 		                	        <h3 class="degre" >'.$lang['mode'].'</h3>';
                 		        	if ($system_controller_mode == 1) {
                                 			switch ($sc_mode) {
@@ -311,7 +311,7 @@ $theme = settings($conn, 'theme');
 						7 - fan running*/
 
  						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-href="#" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_Schedule_List,'.$zone_id.'">
-						<h3 class="buttontop"><small>'.$zone_name.'</small></h3>';
+						<h3 class="text-nowrap buttontop"><small>'.$zone_name.'</small></h3>';
 						if ($sensor_type_id == 3) {
 							if ($zone_c == 0) { echo '<h3 class="degre" id="zd_'.$zone_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="zd_'.$zone_id.'">ON</h3>'; }
 						} else {
@@ -365,7 +365,7 @@ $theme = settings($conn, 'theme');
 	                		        $sensor_c = $sensor['payload'];
 			                        $ajax_modal = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor_id.",0";
                 			        echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
-		        	                <h3 class="buttontop"><small>'.$sensor_name.'</small></h3>';
+		        	                <h3 class="text-nowrap buttontop"><small>'.$sensor_name.'</small></h3>';
                 			        if ($sensor_type_id == 3) {
                                 			if ($sensor_c == 0) { echo '<h3 class="degre" id="sd_'.$sensor_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="sd_'.$sensor_id.'">ON</h3>'; }
 						} else {
@@ -398,7 +398,7 @@ $theme = settings($conn, 'theme');
 						}
 
 						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SystemController">
-						<h3 class="buttontop"><small>'.$system_controller_name.'</small></h3>';
+						<h3 class="text-nowrap buttontop"><small>'.$system_controller_name.'</small></h3>';
 						if ($system_controller_mode == 1) {
                                 			switch ($sc_mode) {
 		                        	                case 0:
@@ -501,7 +501,7 @@ $theme = settings($conn, 'theme');
 		        	                $sensor_c = $sensor['payload'];
                 			        $ajax_modal = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor_id.",0";
 		   				echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
-	                		        <h3 class="buttontop"><small>'.$sensor_name.'</small></h3>';
+	                		        <h3 class="text-nowrap buttontop"><small>'.$sensor_name.'</small></h3>';
 			                        if ($sensor_type_id == 3) {
                 			                if ($sensor_c == 0) { echo '<h3 class="degre" id="sd_'.$sensor_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="sd_'.$sensor_id.'">ON</h3>'; }
 						} else {
@@ -564,7 +564,7 @@ $theme = settings($conn, 'theme');
 						} else {
 	   						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#'.$zone_type.''.$zone_id.'" data-bs-backdrop="static" data-bs-keyboard="false">';
 						}
-        	        		        echo '<h3 class="buttontop"><small>'.$row['name'].'</small></h3>';
+        	        		        echo '<h3 class="text-nowrap buttontop"><small>'.$row['name'].'</small></h3>';
 			                        if (($zone_category == 1 && $sensor_type_id != 3)) {
                 			                $unit = SensorUnits($conn,$sensor_type_id);
                                 			echo '<h3 class="degre" id="zd_'.$zone_id.'">'.number_format(DispSensor($conn,$zone_c,$sensor_type_id),1).$unit.'</h3>';
