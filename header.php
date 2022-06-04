@@ -131,7 +131,7 @@ $theme = settings($conn, 'theme');
 
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="modal" href="#weather" data-bs-backdrop="static" data-bs-keyboard="false">
-                        <i class="bi bi-sun <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
+                        <i class="bi bi-cloud-sun-fill <?php echo theme($conn, settings($conn, 'theme'), 'text_color'); ?>" style="font-size: 1.2rem;"></i>
                     </a>
                 </li>
 
