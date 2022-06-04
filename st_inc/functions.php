@@ -619,7 +619,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
                 	}
                 	//if coop start waiting for the system_controller
                 	else{
-                        	$shactive='ion-leaf';
+                        	$shactive='bi bi-tree-fill';
                         	$shcolor='green';
                 	}
 		}
