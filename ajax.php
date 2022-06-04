@@ -478,7 +478,7 @@ function GetModal_MQTT($conn)
 			<div>
         			<span class="text-muted small" style="width:200px;text-align:right;">
         				<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
-            					<span class="ionicons ion-edit"></span>
+            					<span class="bi bi-pencil"></span>
 					</button>&nbsp;&nbsp;
 					<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="bi bi-trash-fill"></span></button>
         			</span>
@@ -666,7 +666,7 @@ function GetModal_Services($conn)
         					echo '</span>
         					<span class="text-muted small" style="width:200px;text-align:right;">
         						<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
-            						<span class="ionicons ion-ios-information-outline"></span></button>';
+            						<span class="bi bi-info-circle"></span></button>';
         					echo '</span>
         				</div>
 				</span>';
@@ -1071,7 +1071,7 @@ function GetModal_Sensors($conn)
 					echo '</div>
 					<div class="form-group row">
 						<div class="d-flex justify-content-between">';
-							if ($mcount > 0) { echo '<span class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i> - '.$mrow['payload'].$unit.'</span>'; } else { echo '<span class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="ionicons ion-thermometer red"></i></span>'; }
+							if ($mcount > 0) { echo '<span class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="bi bi-thermometer-half red"></i> - '.$mrow['payload'].$unit.'</span>'; } else { echo '<span class="text" id="sensor_temp_'.$row['id'].'">&nbsp&nbsp<i class="bi bi-thermometer-half red"></i></span>'; }
         	                                        echo '<span class="text-muted small"><button type="button"  data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SensorsInfo&id=' . $row['id'] . '" onclick="sensors_Info(this);"><em>'.$nrow['last_seen'].'&nbsp</em></button>&nbsp</span>
 						</div>
 					</div>

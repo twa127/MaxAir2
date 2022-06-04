@@ -547,7 +547,7 @@ if ($type <= 5 || $type == 8) {
 	$sensor_c = $row['payload'];
 	$unit = SensorUnits($conn,$sensor_type_id);
 	//echo number_format(DispSensor($conn,$sensor_c,$sensor_type_id),1).$unit;
-	echo '&nbsp&nbsp<i class="ionicons ion-thermometer red"></i> - '.number_format(DispSensor($conn,$sensor_c,$sensor_type_id),1).$unit;
+	echo '&nbsp&nbsp<i class="bi bi-thermometer-half red"></i> - '.number_format(DispSensor($conn,$sensor_c,$sensor_type_id),1).$unit;
 } elseif ($type == 17) {
         //---------------------------------------
         //process running time for All Schedules
