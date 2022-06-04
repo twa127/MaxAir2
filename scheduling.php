@@ -594,7 +594,7 @@ if(!isset($_GET['nid'])) {
 										       	if($time_id != 0){ $check = ($row['coop'] == 1) ? 'checked' : ''; }
 										        echo '<div class="form-check">
 												<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="coop'.$row["tz_id"].'" name="coop['.$row["tz_id"].']" '.$check.'>
-											        <label class="form-check-label" for="coop'.$row["tz_id"].'">Coop Start</label> <i class="ionicons ion-leaf green"></i>
+											        <label class="form-check-label" for="coop'.$row["tz_id"].'">Coop Start</label> <i class="bi bi-tree-fill green" style="font-size: 1.2rem;"></i>
 											        <i class="bi bi-info-circle icon-lg text-info" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="'.$lang['schedule_coop_help'].'"></i>
 												<div class="help-block with-errors"></div>
 											</div>';
