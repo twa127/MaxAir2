@@ -364,7 +364,7 @@ echo '
 				<a href="#" class="list-group-item">
 				        <div class="d-flex justify-content-between">
                 				<span>
-							<i class="ionicons ion-network green"></i>'.$lang['status'].':
+							<i class="bi bi-diagram-2-fill green"></i>&nbsp'.$lang['status'].':
 						</span>
 						<span>'.$nicactive.'</span>
 					</div>
@@ -372,7 +372,7 @@ echo '
 				<a href="#" class="list-group-item">
                                         <div class="d-flex justify-content-between">
                                                 <span>
-							<i class="ionicons ion-network green"></i>'.$lang['speed'].':
+							<i class="bi bi-diagram-2-fill green"></i>&nbsp'.$lang['speed'].':
 						</span>
 						<span>'.$nicpeed.'Mb</span>
 					</div>
@@ -380,7 +380,7 @@ echo '
 				<a href="#" class="list-group-item">
                                         <div class="d-flex justify-content-between">
                                                 <span>
-							<i class="ionicons ion-network green"></i>'.$lang['mac'].':
+							<i class="bi bi-diagram-2-fill green"></i>&nbsp'.$lang['mac'].':
 						</span>
 						<span>'.$nicmac.'</span>
 					</div>
@@ -388,7 +388,7 @@ echo '
 				<a href="#" class="list-group-item">
                                         <div class="d-flex justify-content-between">
                                                 <span>
-							<i class="ionicons ion-network green"></i>'.$lang['download'].':
+							<i class="bi bi-diagram-2-fill green"></i>&nbsp'.$lang['download'].':
 						</span>
 						<span>'.number_format($rxdata,0).' MB</span>
 					</div>
@@ -396,7 +396,7 @@ echo '
 				<a href="#" class="list-group-item">
                                         <div class="d-flex justify-content-between">
                                                 <span>
-							<i class="ionicons ion-network green"></i>'.$lang['upload'].':
+							<i class="bi bi-diagram-2-fill green"></i>&nbsp'.$lang['upload'].':
 						</span>
 						<span>'.number_format($txdata,0).' MB</span>
 					</div>
@@ -424,14 +424,14 @@ echo '
 echo '	<div class="list-group">';
 echo '
 
-<a href="https://blog.getbootstrap.com/" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Bootstrap <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Pretty Checkbox <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="http://ionicons.com" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Ionicons <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="http://www.cssmatic.com/box-shadow" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Box Shadow CSS <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="https://daneden.github.io/animate.css" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> Animate.css <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="https://www.mysensors.org" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> MySensors <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="http://www.pihome.eu" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> All others if forget them... <span class="float-right text-muted small"><em>...</em></span></a>
-<a href="http://pihome.harkemedia.de" class="list-group-item"><i class="ionicons ion-help-buoy blueinfo"></i> RaspberryPi Home Automation <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="https://blog.getbootstrap.com/" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Bootstrap <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Pretty Checkbox <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://ionicons.com" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Ionicons <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.cssmatic.com/box-shadow" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Box Shadow CSS <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="https://daneden.github.io/animate.css" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Animate.css <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="https://www.mysensors.org" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> MySensors <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://www.pihome.eu" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> All others if forget them... <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://pihome.harkemedia.de" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> RaspberryPi Home Automation <span class="float-right text-muted small"><em>...</em></span></a>
 ';
 echo '</div></div>
             <div class="modal-footer">
@@ -598,9 +598,9 @@ echo '
 					        }
 						echo '<li class="list-group-item">
 							<div class="d-flex justify-content-between">
-        							<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="ionicons ion-person blue"></i> '.$username.'</div>
+        							<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="bi bi-person-fill blue" style="font-size: 1.2rem;"></i> '.$username.'</div>
                 						<div class="text-muted small">
-									<a href="user_accounts.php?uid='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="ionicons ion-edit"></span></button>&nbsp</a>';
+									<a href="user_accounts.php?uid='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil"></span></button>&nbsp</a>';
                 								if ($_SESSION['user_id'] != $row['id']) {
                         								echo '<button class="first btn btn-danger btn-xs" onclick="del_user('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button></a>';
                 								} else {

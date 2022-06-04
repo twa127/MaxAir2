@@ -127,7 +127,7 @@ if ($settings_id <= 3) {
 
 				                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-bs-target="#eth_setup">
         	        		        <h3 class="buttontop"><small><?php echo $lang['ethernet']; ?></small></h3>
-				        	<h3 class="degre" ><i class="ionicons ion-network orange"></i></h3>
+				        	<h3 class="degre" ><i class="bi bi-diagram-2-fill orange" style="font-size: 1.5rem;"></i></h3>
 		        		        <h3 class="status"></small></h3>
 			        	        </button>
 
@@ -225,7 +225,7 @@ if ($settings_id <= 3) {
 
 						<button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#network_setting">
                                                 <h3 class="buttontop"><small><?php echo $lang['network']; ?></small></h3>
-                                                <h3 class="degre" ><i class="ionicons ion-network blue"></i></h3>
+                                                <h3 class="degre" ><i class="bi bi-diagram-3 blue" style="font-size: 1.5rem;"></i></h3>
                                                 <h3 class="status"></small></h3>
                                                 </button>
 
