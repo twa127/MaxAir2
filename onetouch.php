@@ -211,7 +211,7 @@ $theme = settings($conn, 'theme');
 					$system_controller_time_total = $system_controller_time['total_minuts'];
 					$system_controller_time_on = $system_controller_time['on_minuts'];
 					$system_controller_time_save = $system_controller_time['save_minuts'];
-					if($system_controller_time_on >0){	echo ' <i class="ionicons ion-ios-clock-outline"></i> '.secondsToWords(($system_controller_time_on)*60);}
+					if($system_controller_time_on >0){	echo ' <i class="bi bi-clock"></i>&nbsp'.secondsToWords(($system_controller_time_on)*60);}
 					?>
 	                        </div>
         	        </div>
