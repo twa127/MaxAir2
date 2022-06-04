@@ -133,7 +133,7 @@ if ($settings_id <= 3) {
 
 			                        <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-bs-target="#status_job">
                         			<h3 class="buttontop"><small><?php echo $lang['job_status']; ?></small></h3>
-				        	<h3 class="degre" ><i class="ionicons ion-ios-timer-outline blue"></i></h3>
+				        	<h3 class="degre" ><i class="bi bi-clock-history blue" style="font-size: 1.5rem;"></i></h3>
 	        			       	<h3 class="status"></small></h3>
 				                </button>
 
@@ -145,7 +145,7 @@ if ($settings_id <= 3) {
 
 			        	       	<button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_Uptime">
 	        				<h3 class="buttontop"><small><?php echo $lang['update_etc']; ?></small></h3>
-						<h3 class="degre" ><i class="ionicons ion-clock red"></i></h3>
+						<h3 class="degre" ><i class="bi bi-clock red" style="font-size: 1.5rem;"></i></h3>
 	       					<h3 class="status"></small></h3>
 			        	       	</button>
 
@@ -213,7 +213,7 @@ if ($settings_id <= 3) {
 
 						<button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="edit_gpio.php" data-bs-toggle="modal" data-bs-target="#jobs_schedule">
                 		                <h3 class="buttontop"><small><?php echo $lang['jobs']; ?></small></h3>
-		       		        	<h3 class="degre" ><i class="ionicons ion-ios-timer-outline blue"></i></h3>
+		       		        	<h3 class="degre" ><i class="bi bi-clock-history blue" style="font-size=1.5rem;"></i></h3>
         				        <h3 class="status"></small></h3>
 		               		        </button>
 
@@ -410,7 +410,7 @@ if ($settings_id <= 3) {
 					<?php if ($settings_id == 6) { ?>
 	                                     	<button class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#relay_setup">
         			                <h3 class="buttontop"><small><?php echo $lang['relays']; ?></small></h3>
-	                                        <h3 class="degre" ><i class="ionicons ion-shuffle"></i></h3>
+	                                        <h3 class="degre" ><i class="bi bi-shuffle" style="font-size:1.5rem;"></i></h3>
        				                <h3 class="status"></small></h3>
                 	                        </button>
 
