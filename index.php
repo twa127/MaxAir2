@@ -334,7 +334,7 @@ if (isset($_POST['submit'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bootstrap 5 Login Form Example</title>
+        <title><?php  echo settings($conn, 'name') ;?></title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="fonts/bootstrap-icons-1.8.1/bootstrap-icons.css" rel="stylesheet" type="text/css">
         <link href="css/maxair.css" rel="stylesheet">
