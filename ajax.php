@@ -1462,7 +1462,7 @@ function GetModal_Schedule_List($conn)
 						$end_time = strtotime($srow['end']);
 						if ($time >$start_time && $time <$end_time){$shactive="redsch_list";}
                                                 if ($srow['coop'] == "1") {
-							$coop = '<i class="ionicons ion-leaf green" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="' . $lang['schedule_coop_help'] . '"></i>';
+							$coop = '<i class="bi bi-tree-fill green" data-container="body" data-bs-toggle="popover" data-placement="right" data-content="' . $lang['schedule_coop_help'] . '"></i>';
                                                 } else {
                                                         $coop = '';
                                                 }
