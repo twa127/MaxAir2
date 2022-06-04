@@ -199,7 +199,7 @@ if ($type <= 5 || $type == 8) {
 			}
                 	break;
 	        case 5:
-        	        if($overrun == 1) { echo '<i class="ionicons ion-ios-play-outline orange icon-fw">'; }
+        	        if($overrun == 1) { echo '<i class="bi bi-play orange">'; }
                 	break;
 	        case 8:
         	        if (($zone_category == 1 && $sensor_type_id != 3)) {
