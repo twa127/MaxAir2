@@ -474,7 +474,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 		$shactive='bi-x-circle-fill';
 		$shcolor='red';
 		$target='';     //show no target temperature
-                $scactive='ionicons ion-android-cancel';
+                $scactive='bi bi-x-circle-fill';
                 $sccolor='red';
 	}
 	//frost
@@ -627,7 +627,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
         }
         //undertemperature
         else if($zone_mode_main == 130){
-                $shactive='ion-thermometer';
+                $shactive='bi-thermometer-snow';
                 $shcolor='blue';
                 $target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
         }

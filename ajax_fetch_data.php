@@ -381,7 +381,7 @@ if ($type <= 5 || $type == 8) {
 	                        echo '<i class="ionicons ion-flame icon-1x '.$system_controller_colour.'">';
 			}
 		} elseif ($type == 10) {
-			if($system_controller_fault=='1') {echo'<i class="ionicons ion-android-cancel icon-1x red">';}
+			if($system_controller_fault=='1') {echo'<i class="bi bi-x-circle-fill red">';}
 			elseif($hysteresis=='1') {echo'<i class="bi bi-hourglass icon-1x orange">';}
 			else { echo'';}
 		}

@@ -44,7 +44,7 @@ $theme = settings($conn, 'theme');
                 <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                                 <a href="holiday.php" class="d-flex justify-content-between list-group-item list-group-item-action">
-                                        <span class="circle orangesch"><i class="ionicons ion-plus"></i></span>
+                                        <span class="circle orangesch"><i class="bi bi-plus-lg" style="font-size: 1.2rem;"></i></span>
                                         <span class="header">
                                                 <strong class="primary-font"> </strong>
                                                 <small class="text-muted">
@@ -91,7 +91,7 @@ $theme = settings($conn, 'theme');
 					</div>
 					<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_holidays('.$hol_row["id"].');" data-confirm="ARE YOU SURE?"><span class="bi bi-trash-fill"></span></button>&nbsp;&nbsp;
-						<a href="holiday.php?id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="ionicons ion-edit"></span></a>&nbsp;&nbsp;
+						<a href="holiday.php?id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-pencil"></span></a>&nbsp;&nbsp;
 		        			<a href="scheduling.php?hol_id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-clock"></span></a>&nbsp;&nbsp;
 					</div>
 				</li>';
@@ -106,13 +106,13 @@ $theme = settings($conn, 'theme');
 			if ($rowcount=mysqli_num_rows($results) > 0) {
 				$hol_params = [];
 				while ($row = mysqli_fetch_assoc($results)) {
-				        if($row["WeekDays"]  & (1 << 0)){ $Sunday_status_icon="ion-checkmark-circled"; $Sunday_status_color="orangefa"; }else{ $Sunday_status_icon="ion-close-circled"; $Sunday_status_color="bluefa"; }
-				        if($row["WeekDays"]  & (1 << 1)){ $Monday_status_icon="ion-checkmark-circled"; $Monday_status_color="orangefa"; }else{ $Monday_status_icon="ion-close-circled"; $Monday_status_color="bluefa"; }
-				        if($row["WeekDays"]  & (1 << 2)){ $Tuesday_status_icon="ion-checkmark-circled"; $Tuesday_status_color="orangefa"; }else{ $Tuesday_status_icon="ion-close-circled"; $Tuesday_status_color="bluefa"; }
-				        if($row["WeekDays"]  & (1 << 3)){ $Wednesday_status_icon="ion-checkmark-circled"; $Wednesday_status_color="orangefa"; }else{ $Wednesday_status_icon="ion-close-circled"; $Wednesday_status_color="bluefa"; }
-			        	if($row["WeekDays"]  & (1 << 4)){ $Thursday_status_icon="ion-checkmark-circled"; $Thursday_status_color="orangefa"; }else{ $Thursday_status_icon="ion-close-circled"; $Thursday_status_color="bluefa"; }
-				        if($row["WeekDays"]  & (1 << 5)){ $Friday_status_icon="ion-checkmark-circled"; $Friday_status_color="orangefa"; }else{ $Friday_status_icon="ion-close-circled"; $Friday_status_color="bluefa"; }
-				        if($row["WeekDays"]  & (1 << 6)){ $Saturday_status_icon="ion-checkmark-circled"; $Saturday_status_color="orangefa"; }else{ $Saturday_status_icon="ion-close-circled"; $Saturday_status_color="bluefa"; }
+				if($row["WeekDays"]  & (1 << 0)){ $Sunday_status_icon="bi-check-circle-fill"; $Sunday_status_color="orangefa"; }else{ $Sunday_status_icon="bi-x-circle-fill"; $Sunday_status_color="bluefa"; }
+				        if($row["WeekDays"]  & (1 << 1)){ $Monday_status_icon="bi-check-circle-fill"; $Monday_status_color="orangefa"; }else{ $Monday_status_icon="bi-x-circle-fill"; $Monday_status_color="bluefa"; }
+				        if($row["WeekDays"]  & (1 << 2)){ $Tuesday_status_icon="bi-check-circle-fill"; $Tuesday_status_color="orangefa"; }else{ $Tuesday_status_icon="bi-x-circle-fill"; $Tuesday_status_color="bluefa"; }
+				        if($row["WeekDays"]  & (1 << 3)){ $Wednesday_status_icon="bi-check-circle-fill"; $Wednesday_status_color="orangefa"; }else{ $Wednesday_status_icon="bi-x-circle-fill"; $Wednesday_status_color="bluefa"; }
+			        	if($row["WeekDays"]  & (1 << 4)){ $Thursday_status_icon="bi-check-circle-fill"; $Thursday_status_color="orangefa"; }else{ $Thursday_status_icon="bi-x-circle-fill"; $Thursday_status_color="bluefa"; }
+				        if($row["WeekDays"]  & (1 << 5)){ $Friday_status_icon="bi-check-circle-fill"; $Friday_status_color="orangefa"; }else{ $Friday_status_icon="bi-x-circle-fill"; $Friday_status_color="bluefa"; }
+				        if($row["WeekDays"]  & (1 << 6)){ $Saturday_status_icon="bi-check-circle-fill"; $Saturday_status_color="orangefa"; }else{ $Saturday_status_icon="bi-x-circle-fill"; $Saturday_status_color="bluefa"; }
 
 					if($row["time_status"]=="0"){ $shactive="bluesch"; }else{ $shactive="orangesch"; }
 					$time = strtotime(date("G:i:s"));
@@ -151,13 +151,13 @@ $theme = settings($conn, 'theme');
 									<small>
 									&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;S<br>
 									&nbsp;&nbsp;&nbsp;
-									<i class="ionicons ' . $Sunday_status_icon . ' icon-lg ' . $Sunday_status_color . '"></i>
-									<i class="ionicons ' . $Monday_status_icon . ' icon-lg ' . $Monday_status_color . '"></i>
-									<i class="ionicons ' . $Tuesday_status_icon . ' icon-lg ' . $Tuesday_status_color . '"></i>
-									<i class="ionicons ' . $Wednesday_status_icon . ' icon-lg ' . $Wednesday_status_color . '"></i>
-									<i class="ionicons ' . $Thursday_status_icon . ' icon-lg ' . $Thursday_status_color . '"></i>
-									<i class="ionicons ' . $Friday_status_icon . ' icon-lg ' . $Friday_status_color . '"></i>
-									<i class="ionicons ' . $Saturday_status_icon . ' icon-lg ' . $Saturday_status_color . '"></i>
+									<i class="bi ' . $Sunday_status_icon . ' ' . $Sunday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Monday_status_icon . ' ' . $Monday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Tuesday_status_icon . ' ' . $Tuesday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Wednesday_status_icon . ' ' . $Wednesday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Thursday_status_icon . ' ' . $Thursday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Friday_status_icon . ' ' . $Friday_status_color . '" style="font-size: 0.9rem;"></i>
+									<i class="bi ' . $Saturday_status_icon . ' ' . $Saturday_status_color . '" style="font-size: 0.9rem;"></i>
 									</small>
 								</span>
 							</a>
@@ -171,10 +171,10 @@ $theme = settings($conn, 'theme');
 						$result = $conn->query($query);
 						while ($datarw = mysqli_fetch_array($result)) {
 							if ($datarw["tz_status"] == "0") {
-								$status_icon = "ion-close-circled";
+								$status_icon = "bi-x-circle-fill";
 								$status_color = "bluefa";
 							} else {
-								$status_icon = "ion-checkmark-circled";
+								$status_icon = "bi-check-circle-fill";
 								$status_color = "orangefa";
 							}
 							if ($datarw["coop"] == "1") {
@@ -189,12 +189,12 @@ $theme = settings($conn, 'theme');
 	        	                                        	        if ($datarw["category"] <> 2 && $datarw["sensor_type_id"] <> 3) {
         	        	                        				$unit = SensorUnits($conn,$datarw['sensor_type_id']);
 											echo '<span>
-												<i class="ionicons ' . $status_icon . ' icon-lg ' . $status_color . '"></i>  ' . $datarw['zone_name'] . ' ' . $coop;
+												<i class="bi ' . $status_icon . ' ' . $status_color . '"></i>  ' . $datarw['zone_name'] . ' ' . $coop;
 											echo '</span>
 											<span class="text-muted small"><em>' . number_format(DispSensor($conn, $datarw['temperature'],$datarw['sensor_type_id']), 1) . $unit .'</em></span>';
 										} else {
 											echo '<span>
-												<i class="ionicons ' . $status_icon . ' icon-lg ' . $status_color . '"></i>  ' . $datarw['zone_name'] . '
+												<i class="bi ' . $status_icon . ' ' . $status_color . '"></i>  ' . $datarw['zone_name'] . '
 											</span>';
 										}
 									echo '</div>
@@ -206,7 +206,7 @@ $theme = settings($conn, 'theme');
 						echo '<div class="row mt-2"></div>
 						<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_schedule(' . $row["time_id"] . ');"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
-						<a href="scheduling.php?id='.$row["time_id"].'&hol_id='.$hol_row["id"].'" class="btn btn-default btn-sm login"><span class="ionicons ion-edit"></span></a>
+						<a href="scheduling.php?id='.$row["time_id"].'&hol_id='.$hol_row["id"].'" class="btn btn-default btn-sm login"><span class="bi bi-pencil"></span></a>
 						</div>
 					</div>
 					<!-- /.collapse -->

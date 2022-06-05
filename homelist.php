@@ -472,7 +472,7 @@ $page_refresh = page_refresh($conn);
 		        	                        echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x '.$system_controller_colour.'"></i></h3>';
 						}
 
-						if($system_controller_fault=='1') {echo'<h3 class="status"><small class="statusdegree"></small><small style="margin-left: 70px;" class="statuszoon" id="scs"><i class="ionicons ion-android-cancel icon-1x red"></i> </small>';}
+						if($system_controller_fault=='1') {echo'<h3 class="status"><small class="statusdegree"></small><small style="margin-left: 70px;" class="statuszoon" id="scs"><i class="bi bi-x-circle-fill red"></i> </small>';}
 						elseif($hysteresis=='1') {echo'<h3 class="status"><small class="statusdegree"></small><small style="margin-left: 70px;" class="statuszoon" id="scs"><i class="bi bi-hourglass-split orange"></i> </small>';}
 						else { echo'<h3 class="status"><small class="statusdegree"></small><small style="margin-left: 48px;" class="statuszoon" id="scs"></small>';}
 						echo '</h3></button>';
