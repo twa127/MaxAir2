@@ -29,7 +29,7 @@ $page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
 ?>
 <div class="container-fluid ps-0 pe-0">
-        <div class="card">
+        <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
                 <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
 			<div class="d-flex justify-content-between">
 				<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
@@ -199,7 +199,7 @@ $theme = settings($conn, 'theme');
                                 	<?php ShowWeather($conn); ?>
                         	</div>
 
-				<div class="btn-group">
+				<div class="btn-group" id="footer_running_time">
 					<?php
 					$query="select date(start_datetime) as date,
 					sum(TIMESTAMPDIFF(MINUTE, start_datetime, expected_end_date_time)) as total_minuts,
