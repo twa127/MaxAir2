@@ -854,8 +854,8 @@ color:#2196F3 !important;
 }
 
 .colorize-red {
-   -webkit-filter: invert(20%) sepia(99%) saturate(7240%) hue-rotate(359deg) brightness(100%) contrast(116%);
-  filter: invert(20%) sepia(99%) saturate(7240%) hue-rotate(359deg) brightness(100%) contrast(116%);
+   -webkit-filter: invert(18%) sepia(92%) saturate(5732%) hue-rotate(356deg) brightness(81%) contrast(118%);
+  filter: invert(18%) sepia(92%) saturate(5732%) hue-rotate(356deg) brightness(81%) contrast(118%);
 }
 
 .colorize-blue {
