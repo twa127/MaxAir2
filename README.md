@@ -97,7 +97,6 @@ The core requirements for the SBC are as stated above, MaxAir has been successfu
 
 * [Bootstrap](https://getbootstrap.com/ "Bootstrap ")
 * [Pretty Checkbox](http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css "Pretty Checkbox ")
-* [Ionicons](http://ionicons.com "Ionicons ")
 * [Box Shadow CSS](http://www.cssmatic.com/box-shadow "Box Shadow CSS")
 * [AnimateCSS](https://daneden.github.io/animate.css "Animate.css ")
 * [MySensors](https://www.mysensors.org "MySensors")
