@@ -336,7 +336,7 @@ $page_refresh = page_refresh($conn);
 						}
 			                        //Overrun Icon
                 			        if($overrun == 1) {
-		        	                    echo '<small class="statuszoon" id="zs4_'.$zone_id.'"><i class="bi ion-ios-play-outline orange icon-fw"></i></small>';
+		        	                    echo '<small class="statuszoon" id="zs4_'.$zone_id.'"><i class="bi bi-play orange"></i></small>';
                 			        }
 		                        	echo '</h3></button>';      //close out status and button
 						$zone_params[] = array('zone_id' =>$row['id'], 'zone_name' =>$row['name'], 'zone_category' =>$row['category']);
@@ -408,11 +408,11 @@ $page_refresh = page_refresh($conn);
                                 		        	        break;
 			                                        case 1:
 									if ($active_schedule) {
-                	                		                	if ($hvac_relays_state & 0b100) { $system_controller_colour="red"; } else { $system_controller_colour="blue"; }
+                	                		                	if ($hvac_relays_state & 0b100) { $system_controller_colour="colorize-red"; } else { $system_controller_colour="colorize-blue"; }
 									} else {
 										$system_controller_colour="";
 									}
-                                			                echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x '.$system_controller_colour.'"></i></h3>';
+                                			                echo '<h3 class="degre" id="scd" ><img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
 									break;
 								case 2:
         	        		                                if ($active_schedule) {
@@ -431,7 +431,7 @@ $page_refresh = page_refresh($conn);
                                 						}
 										echo '<h3 class="degre" id="scd" ><i class="bi bi-power '.$system_controller_colour.'" style="font-size: 1.2rem;"></i></h3>';
 									} elseif ($hvac_relays_state & 0b100) {
-										echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x red"></i></h3>';
+										echo '<h3 class="degre" id="scd" ><img src="images/flame.svg" class="colorize-red" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
 									} elseif ($hvac_relays_state & 0b010) {
 										echo '<h3 class="degre" id="scd" ><i class="bi bi-snow blueinfo" style="font-size: 1.2rem;"></i></h3>';
 									}
@@ -441,7 +441,7 @@ $page_refresh = page_refresh($conn);
 		                                	                       	$system_controller_colour="green";
                 		                        	                echo '<h3 class="degre" id="scd" ><i class="bi bi-power '.$system_controller_colour.'" style="font-size: 1.2rem;"></i></h3>';
                                 		                	} elseif ($hvac_relays_state & 0b100) {
-	                                                		        echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x red"></i></h3>';
+	                                                		        echo '<h3 class="degre" id="scd" ><img src="images/flame.svg" class="colorize-red" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
 			                                                } elseif ($hvac_relays_state & 0b010) {
                 			                                        echo '<h3 class="degre" id="scd" ><i class="bi bi-snow blue" style="font-size: 1.2rem;"></i></h3>';
                         	        		                }
@@ -450,8 +450,8 @@ $page_refresh = page_refresh($conn);
                 		                                echo '<h3 class="degre" id="scd" ><img src="images/hvac_fan_30.png" border="0"></h3>';
                                 			                break;
 		                                        	case 6:
-									if ($hvac_relays_state & 0b100) { $system_controller_colour = "red"; } else { $system_controller_colour = "blue"; }
-	                                		                echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x '.$system_controller_colour.'"></i></h3>';
+									if ($hvac_relays_state & 0b100) { $system_controller_colour = "colorize-red"; } else { $system_controller_colour = "colorize-blue"; }
+	                                		                echo '<h3 class="degre" id="scd" ><img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
         	                                        		break;
 			                                        case 7:
                 			                                if ($hvac_relays_state & 0b010) { $system_controller_colour = "blueinfo"; } else { $system_controller_colour = ""; }
@@ -462,14 +462,14 @@ $page_refresh = page_refresh($conn);
 	                                		}
 						} else {
                 			        	if ($sc_active_status==1) {
-								$system_controller_colour="red";
+								$system_controller_colour="colorize-red";
 							} elseif ($sc_active_status==0) {
-								$system_controller_colour="blue";
+								$system_controller_colour="colorize-blue";
 							}
 							if ($sc_mode==0) {
         	        		                	$system_controller_colour="";
                 	                		}
-		        	                        echo '<h3 class="degre" id="scd" ><i class="ionicons ion-flame icon-1x '.$system_controller_colour.'"></i></h3>';
+		        	                        echo '<h3 class="degre" id="scd" ><img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
 						}
 
 						if($system_controller_fault=='1') {echo'<h3 class="status"><small class="statusdegree"></small><small style="margin-left: 70px;" class="statuszoon" id="scs"><i class="bi bi-x-circle-fill red"></i> </small>';}

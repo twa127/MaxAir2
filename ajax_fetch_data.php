@@ -317,11 +317,11 @@ if ($type <= 5 || $type == 8) {
                                 	        break;
 	                                case 1:
 						if ($active_schedule) {
-                	                               	if ($hvac_relays_state & 0b100) { $system_controller_colour="red"; } else { $system_controller_colour="blue"; }
+                	                               	if ($hvac_relays_state & 0b100) { $system_controller_colour="colorize-red"; } else { $system_controller_colour="colorize-blue"; }
 						} else {
 							$system_controller_colour="";
 						}
-	                                        echo '<i class="ionicons ion-flame icon-1x '.$system_controller_colour.'">';
+						echo '<img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" style="margin-top: -5px" width="25" height="25" alt="">';
 						break;
 					case 2:
                         	                if ($active_schedule) {
@@ -340,7 +340,7 @@ if ($type <= 5 || $type == 8) {
                 	                		}
 							echo '<i class="bi bi-power '.$system_controller_colour.'" style="font-size: 1.4rem;">';
 						} elseif ($hvac_relays_state & 0b100) {
-							echo '<i class="ionicons ion-flame icon-1x red">';
+							echo '<img src="images/flame.svg" class="colorize-red" style="margin-top: -5px" width="25" height="25" alt="">';
 						} elseif ($hvac_relays_state & 0b010) {
 							echo '<i class="bi bi-snow blueinfo" style="font-size: 1.4rem;">';
 						}
@@ -350,7 +350,7 @@ if ($type <= 5 || $type == 8) {
                                               		$system_controller_colour="#00C853";
 	                                                echo '<i class="bi bi-power '.$system_controller_colour.'" style="font-size: 1.4rem;">';
         	                                } elseif ($hvac_relays_state & 0b100) {
-                	                                echo '<i class="ionicons ion-flame icon-1x red">';
+                	                                echo '<img src="images/flame.svg" class="colorize-red" style="margin-top: -5px" width="25" height="25" alt="">';
                         	                } elseif ($hvac_relays_state & 0b010) {
                                 	                echo '<i class="bi bi-snow blueinfo" style="font-size: 1.4rem;">';
                                         	}
@@ -359,8 +359,8 @@ if ($type <= 5 || $type == 8) {
                 	                        echo '<img src="images/hvac_fan_30.png" border="0"></h3>';
                         	                break;
                                 	case 6:
-						if ($hvac_relays_state & 0b100) { $system_controller_colour = "red"; } else { $system_controller_colour = "blue"; }
-	                                        echo '<i class="ionicons ion-flame icon-1x '.$system_controller_colour.'">';
+						if ($hvac_relays_state & 0b100) { $system_controller_colour = "colorize-red"; } else { $system_controller_colour = "colorize-blue"; }
+						echo '<img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" width="25" height="25" alt="">';
         	                                break;
                 	                case 7:
                         	                if ($hvac_relays_state & 0b010) { $system_controller_colour = "blueinfo"; } else { $system_controller_colour = ""; }
@@ -371,14 +371,14 @@ if ($type <= 5 || $type == 8) {
                 	                }
 			} else {
         	               	if ($sc_active_status==1) {
-					$system_controller_colour="red";
+					$system_controller_colour="colorize-red";
 				} elseif ($sc_active_status==0) {
-					$system_controller_colour="blue";
+					$system_controller_colour="colorize-blue";
 				}
 				if ($sc_mode==0) {
                 	               	$system_controller_colour="";
                         	}
-	                        echo '<i class="ionicons ion-flame icon-1x '.$system_controller_colour.'">';
+	                        echo '<img src="images/flame.svg" class="'.$system_controller_colour.'" style="margin-top: -5px" width="25" height="25" alt="">';
 			}
 		} elseif ($type == 10) {
 			if($system_controller_fault=='1') {echo'<i class="bi bi-x-circle-fill red">';}

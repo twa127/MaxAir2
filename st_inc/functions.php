@@ -482,8 +482,8 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 		$shactive='bi-snow';
        		$shcolor='';
 		$target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
-                $scactive='ionicons ion-flame';
-                $sccolor='red';
+                $scactive='flame.svg';
+                $sccolor='colorize-red';
 	}
 	//overtemperature
 	else if($zone_mode_main == 30){
@@ -515,16 +515,16 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
                         $target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
                 }
                 if($zone_mode_sub == 1){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='red';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-red';
                         $status='red';
                 } elseif($zone_mode_sub == 6){
                         $scactive='bi bi-snow';
                         $sccolor='blueinfo';
                         $status='blue';
                 } elseif($zone_mode_sub == 3){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='blue';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-blue';
                         $status='blue';
                 } else {
                         $scactive='bi bi-power';
@@ -595,16 +595,16 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	//HVAC
         else if($zone_mode_main == 80 || $zone_mode_main == 120){
                 if($zone_mode_sub == 1){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='red';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-red';
                         $status='red';
                 } elseif($zone_mode_sub == 6){
                         $scactive='bi bi-snow';
                         $sccolor='blueinfo';
                         $status='blue';
                 } elseif($zone_mode_sub == 3){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='blue';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-blue';
                         $status='blue';
                 } else {
                         $scactive='bi bi-power';
@@ -634,16 +634,16 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
         //manual
         else if($zone_mode_main == 140){
                 if($zone_mode_sub == 1){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='red';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-red';
                         $status='red';
                 } elseif($zone_mode_sub == 6){
                         $scactive='bi bi-snow';
                         $sccolor='blueinfo';
                         $status='blue';
                 } elseif($zone_mode_sub == 3){
-                        $scactive='ionicons ion-flame';
-                        $sccolor='blue';
+                        $scactive='flame.svg';
+                        $sccolor='colorize-blue';
                         $status='blue';
                 } else {
                         $scactive='bi bi-power';

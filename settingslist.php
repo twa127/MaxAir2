@@ -151,7 +151,7 @@ if ($settings_id <= 3) {
 
                 				<button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-bs-target="#os_version">
         	        	        	<h3 class="buttontop"><small><?php echo $lang['os_version']; ?></small></h3>
-	       					<h3 class="degre" ><i class="ionicons ion-social-tux"></i></h3>
+	       					<h3 class="degre" ><h3 class="degre" ><img src="images/linux.svg" style="margin-top: -5px;" width="25" height="25" alt=""></h3></h3>
 		        		        <h3 class="status"></small></h3>
 	       					</button>
 

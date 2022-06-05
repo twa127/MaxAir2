@@ -190,8 +190,8 @@ echo '
             </div>
             <div class="modal-body">
 			   <div class="list-group">
-				<a href="#" class="list-group-item"><i class="ionicons ion-social-tux"></i> '.$lines[1].'</a>
-				<a href="#" class="list-group-item"><i class="ionicons ion-social-tux"></i> '.$lines[3].'</a>
+				<a href="#" class="list-group-item"><img src="images/linux.svg" width="20" height="20" alt="">&nbsp'.$lines[1].'</a>
+				<a href="#" class="list-group-item"><img src="images/linux.svg" width="20" height="20" alt="">&nbsp'.$lines[3].'</a>
 				</div>
            </div>
             <div class="modal-footer">
@@ -3359,9 +3359,9 @@ echo '
                 <h5 class="modal-title">'.$lang['reboot_system'].'</h5>
             </div>
             <div class="modal-body">
-                        <p class="text-muted"> <i class="ion-ios-refresh-outline orange"></i> '.$lang['reboot_system_text'].' </p>
-                        ';
-echo '            </div>
+                        <p class="text-muted"> <i class="bi bi-bootstrap-reboot orange" style="font-size: 1.2rem;"></i>&nbsp'.$lang['reboot_system_text'].' </p>
+
+            </div>
             <div class="modal-footer">
                         <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
                         <a href="javascript:reboot()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['yes'].'</a>
