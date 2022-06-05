@@ -650,7 +650,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
                         $sccolor='blue';
                         $status='';
                 }
-                $shactive='ion-ios-loop-strong';
+                $shactive='bi-arrow-repeat';
                 $shcolor='';
                 $target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
         }
