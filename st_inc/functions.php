@@ -479,7 +479,7 @@ function getIndicators($conn, $zone_mode, $zone_temp_target)
 	}
 	//frost
 	else if($zone_mode_main == 20){
-		$shactive='ion-ios-snowy';
+		$shactive='bi-snow';
        		$shcolor='';
 		$target=number_format(DispTemp($conn,$zone_temp_target),1) . '&deg;';
                 $scactive='ionicons ion-flame';
