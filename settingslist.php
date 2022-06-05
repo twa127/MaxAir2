@@ -205,7 +205,7 @@ if ($settings_id <= 3) {
 						if (settings($conn, 'mode') &0b1 == 1) {
 							echo '<h3 class="degre" >'.$lang['hvac'].'</h3>'; 
 						} else {
-							echo '<h3 class="degre" ><i class="ionicons ion-flame icon-1x red"></i></h3>';
+							echo '<h3 class="degre" ><img src="images/flame.svg" class="colorize-red" style="margin-top: -5px" width="25" height="25" alt=""></h3>';
 						}
 						?>
 		                                <h3 class="status"></small></h3>
