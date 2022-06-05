@@ -777,7 +777,7 @@ function GetModal_ServicesInfo($conn)
         $rval['stdout']='www-data cannot access journalctl.<br/><br/>If you would like it to be able to, run<br/><code>sudo usermod -a -G systemd-journal www-data</code><br/>and then reboot the RPi.';
     }
     echo '<span class="list-group-item" style="overflow:hidden;">&nbsp;';
-    echo 'Status: <i class="ion-ios-refresh-outline" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $_GET['id'] . '" onclick="services_Info(this);"></i><br/>';
+    echo 'Status: <i class="bi-bootstrap-reboot" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $_GET['id'] . '" onclick="services_Info(this);"></i><br/>';
     echo '<span class="text-muted small">';
     echo Convert_CRLF($rval['stdout'],'<br/>');
     echo '</span></span>';
