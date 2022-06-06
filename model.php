@@ -426,6 +426,7 @@ echo '
 
 <a href="https://blog.getbootstrap.com/" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Bootstrap <span class="float-right text-muted small"><em>...</em></span></a>
 <a href="http://www.cssscript.com/pretty-checkbox-radio-inputs-bootstrap-awesome-bootstrap-checkbox-css" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Pretty Checkbox <span class="float-right text-muted small"><em>...</em></span></a>
+<a href="http://ionicons.com" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Ionicons <span class="float-right text-muted small"><em>...</em></span></a>
 <a href="http://www.cssmatic.com/box-shadow" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Box Shadow CSS <span class="float-right text-muted small"><em>...</em></span></a>
 <a href="https://daneden.github.io/animate.css" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> Animate.css <span class="float-right text-muted small"><em>...</em></span></a>
 <a href="https://www.mysensors.org" class="list-group-item"><i class="bi bi-life-preserver blueinfo"></i> MySensors <span class="float-right text-muted small"><em>...</em></span></a>
@@ -1681,8 +1682,8 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$primary_style[2].'</td>';
 					if ($row["btn_size"] == 0) { $btn_size = explode(' ', $lang['standard_button'])[0]; } else { $btn_size = explode(' ', $lang['wide_button'])[0]; }
 					echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$btn_size.'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp';
-					echo '<a href="javascript:delete_theme('.$row["id"].');"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;&nbsp';
+					echo '<a href="javascript:delete_theme('.$row["id"].');" style="text-decoration: none;"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
 		echo '</table>
@@ -3315,14 +3316,14 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-lg-2"><small>'.$lang['node'].'</small></th>
-                                <th class="col-lg-2"><small>'.$lang['mqtt_child_id'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['node'].'</small></th>
+                                <th class="col-lg-1"><small>'.$lang['mqtt_child_id'].'</small></th>
                                 <th class="col-lg-2"><small>'.$lang['mqtt_child_name'].'</small></th>
                                 <th class="col-lg-2"><small>'.$lang['mqtt_topic'].'</small></th>
                                 <th class="col-lg-1"><small>'.$lang['mqtt_on_payload'].'</small></th>
                                 <th class="col-lg-1"><small>'.$lang['mqtt_off_payload'].'</small></th>
                                 <th class="col-lg-2"><small>'.$lang['mqtt_attribute'].'</small></th>
-                                <th class="col-lg-1"></th>
+                                <th class="col-lg-2"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
                                 echo '<tr>
@@ -3333,7 +3334,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                                         <td><small>'.$row["on_payload"].'</small></td>
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
-	    				<td><a href="mqtt_device.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp
+	    				<td><a href="mqtt_device.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp
 					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
