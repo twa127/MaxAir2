@@ -1054,17 +1054,17 @@ echo '  <table class="table table-bordered">
         <th class="col-1"><small>'.$lang['min_val'].'</small></th>
         <th class="col-1"><small>'.$lang['max_val'].'</small></th>
         <th class="col-1"><small>'.$lang['enabled'].'</small></th>
-        <th class="col-2"><small>'.$lang['edit_delete'].'</small></th>
+        <th class="col-4"><small>'.$lang['edit_delete'].'</small></th>
     </tr>';
 while ($row = mysqli_fetch_assoc($results)) {
     if ($row['status'] == 1) { $enabled = $lang['yes']; } else { $enabled = $lang['no']; }
     echo '
         <tr>
-            <td>'.$row["name"].'</td>
-            <td>'.$row["min"].'</td>
-            <td>'.$row["max"].'</td>
+            <td style="text-align:center; vertical-align:middle;">'.$row["name"].'</td>
+            <td style="text-align:center; vertical-align:middle;">'.$row["min"].'</td>
+            <td style="text-align:center; vertical-align:middle;">'.$row["max"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$enabled.'</td>
-            <td><a href="sensor_limits.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button> </a>&nbsp;&nbsp
+            <td><a href="sensor_limits.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;
                 <button class="btn warning btn-danger btn-xs" onclick="delete_sensor_limits('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
 	    </td>
         </tr>';
