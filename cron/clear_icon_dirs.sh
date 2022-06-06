@@ -23,7 +23,17 @@ if [ -d "$ICON_DIR" ];
   echo "Directory: $ICON_DIR Does Not Exist"
 fi
 
-ICON_DIR=/var/www/fonts/ionicons-font-awesome-4.7.0
+ICON_DIR=/var/www/fonts/font-awesome-4.7.0
+echo "Trying to DELETE Directory: $ICON_DIR"
+if [ -d "$ICON_DIR" ];
+ then
+     echo "DELETING Directory: $ICON_DIR"
+     rm -Rf $ICON_DIR
+ else
+  echo "Directory: $ICON_DIR Does Not Exist"
+fi
+
+ICON_DIR=/var/www/fonts/custom
 echo "Trying to DELETE Directory: $ICON_DIR"
 if [ -d "$ICON_DIR" ];
  then
