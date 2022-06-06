@@ -63,10 +63,6 @@ $theme = settings($conn, 'theme');
     	<!-- Bootstrap Font Icon CSS -->
         <link href="fonts/bootstrap-icons-1.8.1/bootstrap-icons.css" rel="stylesheet" type="text/css">
 
-	<!-- Custom Fonts ionicons-->
-	<link rel="stylesheet" type="text/css" media="screen" href="fonts/ionicons-2.0.1/css/ionicons.min.css">
-        <link href="fonts/custom/custom-icons.css" rel="stylesheet" type="text/css">
-
 	<!-- bootstrap-slider
     <link href="css/plugins/slider/bootstrap-slider.min.css" rel="stylesheet">-->
 
