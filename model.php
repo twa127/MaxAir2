@@ -600,7 +600,7 @@ echo '
 							<div class="d-flex justify-content-between">
         							<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="bi bi-person-fill blue" style="font-size: 1.2rem;"></i> '.$username.'</div>
                 						<div class="text-muted small">
-									<a href="user_accounts.php?uid='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil"></span></button>&nbsp</a>';
+									<a href="user_accounts.php?uid='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil"></span></button>&nbsp</a>';
                 								if ($_SESSION['user_id'] != $row['id']) {
                         								echo '<button class="first btn btn-danger btn-xs" onclick="del_user('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button></a>';
                 								} else {
