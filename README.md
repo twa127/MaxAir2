@@ -1,6 +1,6 @@
 # MaxAir - Smart Thermostat
 
-### Note: Now at Version 2.01.
+### Note: Now at Version 2.02.
 
 The previous version, PiHome, was centered around the creation of zones, this version is more centered around devices.
 
@@ -30,6 +30,8 @@ Version 1.71 Introduces an option to display a graph when either a Zone or Stand
 Version 1.80 Introduces a revised Home screen, which no longer auto-refreshes. The data and indicator fields on the screen are updated individually once every second. The result is that now any pop-up windows that are opened, will remain displayed until closed by the user. 
 
 Version 2.01 Major update that introduces 'Colour Themes' and a new look based around the use of Bootstrap Version 5.2. Six different colour themes are available, Amber, Blue, Orange, Red, Teal and Violet.
+
+Version 2.02 Introduces a simplified 'theme' definition, adds theme coloring to dropdown lists and adds a Dark theme.
 
 ## Setup:
 
