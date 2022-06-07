@@ -25,14 +25,14 @@ if ($model_num == 1) {
 echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['frost_protection'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=frost_protection.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_frost_protection'].'</a></li>
                          </ul>
                 </div>
@@ -70,7 +70,7 @@ echo '<div class="modal fade" id="show_frost" tabindex="-1" role="dialog" aria-l
                 echo '</table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@ echo '
 <div class="modal fade" id="status_job" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
                 <div class="modal-content">
-                        <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+                        <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                                 <h5 class="modal-title">'.$lang['jobs_status_log'].'</h5>
                         </div>
@@ -106,7 +106,7 @@ echo '
                                 echo '<textarea id="job_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%"><pre>'.$row['output'].'</pre></textarea>
                         </div>
                         <div class="modal-footer" id="ajaxModalFooter_1">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">Close</button>
                         </div>
                 </div>
         </div>
@@ -124,7 +124,7 @@ function last_job_log(value){
 echo '<div class="modal" id="last_sw_install" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+      <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
         <button type="button" class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">'.$lang['close'].'</span></button>
           <h4 class="modal-title">'.$lang['last_sw_install'].'</h4>
       </div>
@@ -133,7 +133,7 @@ echo '<div class="modal" id="last_sw_install" tabindex="-1">
         echo '<textarea id="install_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%">'.$output.'</textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@ echo '<div class="modal" id="last_sw_install" tabindex="-1">
 echo '<div class="modal" id="documentation" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+      <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
         <button type="button" class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">'.$lang['close'].'</span></button>
           <h4 class="modal-title">'.$lang['documentation'].'</h4>
       </div>
@@ -161,7 +161,7 @@ echo '<div class="modal" id="documentation" tabindex="-1">
         echo '</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -184,7 +184,7 @@ echo '
 <div class="modal fade" id="os_version" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['os_version'].'</h5>
             </div>
@@ -195,7 +195,7 @@ echo '
 				</div>
            </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -206,7 +206,7 @@ echo '
 <div class="modal fade" id="maxair_versions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
                 <div class="modal-content">
-                        <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+                        <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                                 <h5 class="modal-title">'.$lang['maxair_versions'].'</h5>
                         </div>
@@ -271,7 +271,7 @@ echo '
                                 echo '</table>
                         </div>
                         <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         </div>
                 </div>
         </div>
@@ -293,7 +293,7 @@ echo '
 <div class="modal fade" id="wifi_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['wifi_settings'].'</h5>
             </div>
@@ -335,7 +335,7 @@ echo '
 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -355,7 +355,7 @@ echo '
 <div class="modal fade" id="eth_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['ethernet_settings'].'</h5>
             </div>
@@ -404,7 +404,7 @@ echo '
 				</div>
            </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -415,7 +415,7 @@ echo '
 <div class="modal fade" id="big_thanks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['credits'].'</h5>
             </div>
@@ -435,7 +435,7 @@ echo '
 ';
 echo '</div></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -447,7 +447,7 @@ if ($model_num == 2) {
 echo '<div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['theme'].'</h5>
             </div>
@@ -469,8 +469,8 @@ echo '<div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labell
 		</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_theme()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_theme()">
             </div>
         </div>
     </div>
@@ -480,7 +480,7 @@ echo '<div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labell
 echo '<div class="modal fade" id="set_repository" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['github_repository'].'</h5>
             </div>
@@ -500,9 +500,9 @@ echo '<div class="modal fade" id="set_repository" tabindex="-1" role="dialog" ar
                 </div>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <input type="button" name="submit" value="'.$lang['set_default'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_default()">
-                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_repository()">
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <input type="button" name="submit" value="'.$lang['set_default'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_default()">
+                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_repository()">
             </div>
         </div>
     </div>
@@ -513,14 +513,14 @@ echo '
 <div class="modal fade" id="maxair_update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['maxair_update'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
 				<li><a class="dropdown-item" href="pdf_download.php?file=software_update_technical.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['software_update_technical'].'</a></li>
                         </ul>
                 </div>
@@ -529,8 +529,8 @@ echo '
                         <p class="text-muted"> '.$lang['maxair_update_text'].' </p>';
             echo '</div>
             <div class="modal-footer">
-                <input type="button" name="submit" value="'.$lang['update_check'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="check_updates()">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <input type="button" name="submit" value="'.$lang['update_check'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="check_updates()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -541,14 +541,14 @@ echo '
 <div class="modal fade" id="backup_image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['pihome_backup'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_database_backup.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_database_backup'].'</a></li>
                                 <li class="dropdown-divider"></li>
 				<li><a class="dropdown-item" href="pdf_download.php?file=setup_email_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_email_notifications'].'</a></li>
@@ -565,9 +565,9 @@ echo '
                         </form>';
 echo '     </div>
             <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <button class="btn warning '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="backup_email_update()" data-confirm="'.$lang['update_email_address'].'">'.$lang['save'].'</button>
-                        <a href="javascript:db_backup()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['backup_start'].'</a>
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <button class="btn warning btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="backup_email_update()" data-confirm="'.$lang['update_email_address'].'">'.$lang['save'].'</button>
+                        <a href="javascript:db_backup()" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm">'.$lang['backup_start'].'</a>
             </div>
         </div>
     </div>
@@ -578,7 +578,7 @@ echo '
 <div class="modal fade" id="user_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
         	<div class="modal-content">
-            		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            		<div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 			<h5 class="modal-title">'.$lang['user_accounts'].'</h5>
             		</div>
@@ -600,7 +600,7 @@ echo '
 							<div class="d-flex justify-content-between">
         							<div href="settings.php?uid='.$row['id'].'  class="list-group-item"> <i class="bi bi-person-fill blue" style="font-size: 1.2rem;"></i> '.$username.'</div>
                 						<div class="text-muted small">
-									<a href="user_accounts.php?uid='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil"></span></button>&nbsp</a>';
+									<a href="user_accounts.php?uid='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs login"><span class="bi bi-pencil"></span></button>&nbsp</a>';
                 								if ($_SESSION['user_id'] != $row['id']) {
                         								echo '<button class="first btn btn-danger btn-xs" onclick="del_user('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button></a>';
                 								} else {
@@ -613,8 +613,8 @@ echo '
 				echo '</ul>
 			</div>
             		<div class="modal-footer">
-                		<a href="user_accounts.php?uid=0"><button class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['add_user'].'</button></a>
-                		<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                		<a href="user_accounts.php?uid=0"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm">'.$lang['add_user'].'</button></a>
+                		<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             		</div>
         	</div>
     	</div>
@@ -625,14 +625,14 @@ echo '
 <div class="modal fade" id="sw_install" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
                 <div class="modal-content">
-                        <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+                        <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                                 <h5 class="modal-title">'.$lang['software_install'].'</h5>
                                 <div class="dropdown float-right">
                                         <a class="" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                 				<li><a class="dropdown-item" href="pdf_download.php?file=software_install.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['software_install'].'</a></li>
                                                 <li class="dropdown-divider"></li>
                 				<li><a class="dropdown-item" href="pdf_download.php?file=software_install_technical.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['software_install_technical'].'</a></li>
@@ -657,7 +657,7 @@ echo '
                                         			<i class="bi bi-terminal-fill green" style="font-size: 2rem;"></i> '.$installname.'
 							</div>
 							<div>
-			                                        <span class="text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
+			                                        <span class="text-muted small"><button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm"
                                         			onclick="install_software(`'.$installpath.'`)">'.$prompt.'</button></span>
 							</div>
 						</div>
@@ -706,7 +706,7 @@ echo '
 										</div>
 										<div>';
                                              			                	if ($installed == 0) {
-                                                                		        	echo '<span class="text-muted small"><button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm"
+                                                                		        	echo '<span class="text-muted small"><button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm"
 		                                                                        	onclick="install_software(`'.$installpath.'`)">'.$lang['install'].'</button></span>';
 		                                                                	} elseif ($installed == 1) {
                 		                                                        	echo '<span class="text"><p> '.$lang['already_installed'].'</p></span>';
@@ -724,7 +724,7 @@ echo '
                         </div>
                         <!-- /.modal-body -->
                         <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
                         </div>
                         <!-- /.modal-footer -->
                 </div>
@@ -739,7 +739,7 @@ echo '
 echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['db_cleanup'].'</h5>
             </div>
@@ -782,8 +782,8 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
                 echo '</table>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_db_cleanup()">
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_db_cleanup()">
             </div>
         </div>
     </div>
@@ -793,7 +793,7 @@ echo '<div class="modal fade" id="db_cleanup" tabindex="-1" role="dialog" aria-l
 echo '<div class="modal fade" id="max_cpu_temp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['max_cpu_temp'].'</h5>
             </div>
@@ -812,8 +812,8 @@ echo '<div class="modal fade" id="max_cpu_temp" tabindex="-1" role="dialog" aria
                 </div>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_max_cpu_temp()">
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_max_cpu_temp()">
             </div>
         </div>
     </div>
@@ -823,7 +823,7 @@ echo '<div class="modal fade" id="max_cpu_temp" tabindex="-1" role="dialog" aria
 echo '<div class="modal" id="add_install">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+      <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
         <button type="button" class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">'.$lang['close'].'</span></button>
           <h4 class="modal-title">'.$lang['installing_sw'].'</h4>
       </div>
@@ -833,7 +833,7 @@ echo '<div class="modal" id="add_install">
         echo '<textarea id="install_status_text" style="background-color: black;color:#fff;height: 500px; min-width: 100%"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" onclick="sw_install_close()">'.$lang['close'].'</button>
+        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" onclick="sw_install_close()">'.$lang['close'].'</button>
       </div>
     </div>
   </div>
@@ -843,7 +843,7 @@ echo '<div class="modal" id="add_install">
 echo '<div class="modal fade" id="change_refresh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['change_refresh'].'</h5>
             </div>
@@ -862,8 +862,8 @@ echo '<div class="modal fade" id="change_refresh" tabindex="-1" role="dialog" ar
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_refresh()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_refresh()">
             </div>
         </div>
     </div>
@@ -901,7 +901,7 @@ echo '
 <div class="modal fade" id="change_system_mode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['system_controller_mode'].'</h5>
             </div>
@@ -917,8 +917,8 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_system_mode()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_system_mode()">
             </div>
         </div>
     </div>
@@ -934,7 +934,7 @@ echo '
 <div class="modal fade" id="change_units" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['unit_change'].'</h5>
             </div>
@@ -948,8 +948,8 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_units()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_units()">
             </div>
         </div>
     </div>
@@ -961,7 +961,7 @@ echo '
 <div class="modal fade" id="language" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['language'].'</h5>
             </div>
@@ -977,8 +977,8 @@ echo '
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_lang()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_lang()">
             </div>
         </div>
     </div>
@@ -989,14 +989,14 @@ echo '
 <div class="modal fade" id="zone_graph" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['graph_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=displaying_temperature_sensors_graphs.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['displaying_temperature_sensors_graphs'].'</a></li>
                         </ul>
                 </div>
@@ -1020,8 +1020,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 echo '
 </table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_graph()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="setup_graph()">
             </div>
         </div>
     </div>
@@ -1032,14 +1032,14 @@ echo '
 <div class="modal fade" id="sensor_limits" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_limits_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_sensor_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_sensor_notifications'].'</a></li>
                         </ul>
                 </div>
@@ -1064,7 +1064,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td style="text-align:center; vertical-align:middle;">'.$row["min"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$row["max"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$enabled.'</td>
-            <td><a href="sensor_limits.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;
+            <td><a href="sensor_limits.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;
                 <button class="btn warning btn-danger btn-xs" onclick="delete_sensor_limits('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
 	    </td>
         </tr>';
@@ -1072,8 +1072,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 echo '
 </table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-		<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="sensor_limits.php">'.$lang['sensor_limits_add'].'</a>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+		<a class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" href="sensor_limits.php">'.$lang['sensor_limits_add'].'</a>
             </div>
         </div>
     </div>
@@ -1084,7 +1084,7 @@ echo '
 <div class="modal fade" id="network_setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['network_settings'].'</h5>
             </div>
@@ -1167,8 +1167,8 @@ echo '
         </div>
         <!-- /.modal-body -->
             <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_network()">
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="setup_network()">
             </div>
             <!-- /.modal-footer -->
         </div>
@@ -1215,14 +1215,14 @@ echo '
 <div class="modal fade" id="email_setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['email_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                         	<li><a class="dropdown-item" href="pdf_download.php?file=setup_email_notifications.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_email_notifications'].'</a></li>
                         </ul>
                 </div>
@@ -1238,9 +1238,9 @@ echo '
 	<div class="form-group" class="control-label">
 		<div class="form-check">';
 			if ($erow['status'] == '1'){
-  				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox3" name="status" checked>';
+  				echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox3" name="status" checked>';
 			} else {
-        	                echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox3" name="status">';
+        	                echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox3" name="status">';
 			}
 	  		echo '<label class="form-check-label" for="checkbox3">'.$lang['email_enable'].'</label>
 		</div>
@@ -1269,8 +1269,8 @@ echo '
 
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_email()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="setup_email()">
             </div>
         </div>
     </div>
@@ -1281,7 +1281,7 @@ echo '
 <div class="modal fade" id="time_zone" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['time_zone'].'</h5>
             </div>
@@ -1415,8 +1415,8 @@ echo'
                 <div class="help-block with-errors"></div></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_timezone()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_timezone()">
             </div>
         </div>
     </div>
@@ -1427,14 +1427,14 @@ echo '
 <div class="modal fade" id="jobs_schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['schedule_jobs'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=task_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['task_scheduling'].'</a></li>
                          </ul>
                 </div>
@@ -1461,10 +1461,10 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td><input id="jobs_name'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["job_name"].'" placeholder="Job Name"></td>
             <td><input id="jobs_script'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["script"].'" placeholder="Job Script"></td>
             <td style="text-align:center; vertical-align:middle;">
-               <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_enabled'.$row["id"].'" name="enabled" value="1" '.$enabled_check.'>
+               <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox_enabled'.$row["id"].'" name="enabled" value="1" '.$enabled_check.'>
             </td>
             <td style="text-align:center; vertical-align:middle;">
-               <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
+               <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox_log'.$row["id"].'" name="logit" value="1" '.$log_check.'>
             </td>
             <td><input id="jobs_time'.$row["id"].'" type="value" class="form-control float-right" style="border: none" value="'.$row["time"].'" placeholder="Run Job Every"></td>
             <td><button class="btn warning btn-danger btn-xs" onclick="delete_job('.$row["id"].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black"></span></button> </a></td>
@@ -1474,9 +1474,9 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_job">'.$lang['add_job'].'</button>
-                <input type="button" name="submit" value="'.$lang['apply'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="schedule_jobs()">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_job">'.$lang['add_job'].'</button>
+                <input type="button" name="submit" value="'.$lang['apply'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="schedule_jobs()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -1487,7 +1487,7 @@ echo '
 <div class="modal fade" id="add_job" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['add_new_job'].'</h5>
             </div>
@@ -1496,7 +1496,7 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
       	<div class="form-group" class="control-label">
              <div class="form-check">
-                 <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" id="checkbox_enabled" class="styled" type="checkbox" value="0" name="status" Enabled>
                  <label class="form-check-label" for="checkbox_enabled"> '.$lang['enabled'].'</label>
              </div>
         </div>
@@ -1511,14 +1511,14 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
         <div class="form-group" class="control-label">
              <div class="form-check">
-                 <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
+                 <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" id="checkbox_logit" class="styled" type="checkbox" value="0" name="status" Enabled>
                  <label class="form-check-label" for="checkbox_logit"> '.$lang['jobs_log'].'</label>
              </div>
         </div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_job()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_job()">
             </div>
         </div>
     </div>
@@ -1528,7 +1528,7 @@ echo '<p class="text-muted">'.$lang['add_new_job_info_text'].'</p>
 echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['set_buttons'].'</h5>
             </div>
@@ -1548,7 +1548,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
 				if ($row["page"] == 1) { $button_text = $lang['home_page']; } else { $button_text = $lang['onetouch_page']; }
                                 echo '<tr>
                                         <td>'.$row["name"].'</td>
-					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn '.theme($conn, $theme, 'btn_primary').' d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
+					<td><input type="button" id="page_button'.$row["id"].'" value="'.$button_text.'" class="btn btn-primary-'.theme($conn, $theme, 'color').' d-grid gap-2 col-12 mx-auto" onclick="set_button_text('.$row["id"].')"></td>
            		                <td><input id="index'.$row["id"].'" type="text" class="float-left text" style="border: none" name="index_id"  size="3" value="'.$row["index_id"].'" placeholder="Index ID" required></td>
 					<input type="hidden" id="page_type'.$row["id"].'" name="page_type" value="'.$row["page"].'">
         			</tr>';
@@ -1556,8 +1556,8 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
             	echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                	<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="set_buttons()">
+                	<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_buttons()">
             </div>
         </div>
     </div>
@@ -1567,7 +1567,7 @@ echo '<div class="modal fade" id="set_buttons" tabindex="-1" role="dialog" aria-
 echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['enable_graphs'].'</h5>
             </div>
@@ -1589,7 +1589,7 @@ echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" ar
                                 echo '<tr>
                                         <td>'.$myArr[$x].'</td>
             				<td style="text-align:center; vertical-align:middle;">
-               					<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox_graph'.$x.'" name="enabled" value="1" '.$enabled_check.'>
+               					<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox_graph'.$x.'" name="enabled" value="1" '.$enabled_check.'>
             				</td>
                                 </tr>';
 				$m = $m << 1;
@@ -1597,8 +1597,8 @@ echo '<div class="modal fade" id="display_graphs" tabindex="-1" role="dialog" ar
                 echo '</table>
             </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="enable_graphs()">
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="enable_graphs()">
             </div>
         </div>
     </div>
@@ -1621,16 +1621,16 @@ function set_button_text(id)
 <?php
 //Add Theme
 echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['theme_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
                                 <li class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="pdf_download.php?file=humidity_sensors.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['humidity_sensors'].'</a></li>
@@ -1653,44 +1653,31 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
 		$results = $conn->query($query);
 		echo '<table class="table table-bordered">
     			<tr>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['name'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['background_color'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['border_color'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['footer_color'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_style'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_primary'].'</small></th>
-                                <th class="col-lg-1" style="text-align:center;"><small>'.$lang['button_size'].'</small></th>
-                                <th class="col-lg-2"></th>
+                                <th class="col-2" style="text-align:center;"><small>'.$lang['name'].'</small></th>
+                                <th class="col-2" style="text-align:center;"><small>'.$lang['justify'].'</small></th>
+                                <th class="col-1" style="text-align:center;"><small>'.$lang['theme_color'].'</small></th>
+                                <th class="col-1" style="text-align:center;"><small>'.$lang['text_color'].'</small></th>
+                                <th class="col-2" style="text-align:center;"><small>'.$lang['tile_size'].'</small></th>
+                                <th class="col-4"></th>
     			</tr>';
 			while ($row = mysqli_fetch_assoc($results)) {
                                 echo '<tr>
                                         <td style="text-align:center; vertical-align:middle;">'.$row["name"].'</small></td>
                                         <td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$row["row_justification"].'</td>';
-					$color = explode('-', $row["background_color"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[1].'</td>';
+                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$row["color"].'</td>';
                                         $color = explode('-', $row["text_color"]);
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[1].'</td>';
-                                        $color = explode('-', $row["border_color"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[1].'</td>';
-                                        $color = explode('-', $row["footer_color"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[2].'</td>';
-                                        $style = explode('-', $row["btn_style"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$style[2].'</td>';
-                                        $primary_style = explode('-', $row["btn_primary"]);
-                                        echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$primary_style[2].'</td>';
-					if ($row["btn_size"] == 0) { $btn_size = explode(' ', $lang['standard_button'])[0]; } else { $btn_size = explode(' ', $lang['wide_button'])[0]; }
-					echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$btn_size.'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;&nbsp';
+					if ($row["tile_size"] == 0) { $tile_size = explode(' ', $lang['standard_button'])[0]; } else { $tile_size = explode(' ', $lang['wide_button'])[0]; }
+					echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$tile_size.'</td>
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');" style="text-decoration: none;"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                	<a class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
+                	<button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<a class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' login btn-sm" href="theme.php">'.$lang['add_theme'].'</a>
             </div>
         </div>
     </div>
@@ -1703,14 +1690,14 @@ echo '
 <div class="modal fade" id="system_controller" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
         	<div class="modal-content">
-            		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            		<div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 		<h5 class="modal-title">'.$lang['system_controller_settings'].'</h5>
                 		<div class="dropdown float-right">
                         		<a class="" data-bs-toggle="dropdown" href="#">
                                 		<i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         		</a>
-                        		<ul class="dropdown-menu">
+                        		<ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                         		<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_system_controller.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_system_controller'].'</a></li>
                         		</ul>
                 		</div>
@@ -1732,12 +1719,12 @@ echo '
 				                <div class="form-check">';
 							if ($bcount > 0) {
 					                        if ($bresult and $brow['status'] == '1'){
-        	                        				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox2" name="status" checked Disabled>';
+        	                      					echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox2" name="status" checked Disabled>';
 					                        } else {
-                        	        				echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox2" name="status" Disabled>';
+                        	        				echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox2" name="status" Disabled>';
 					                        }
 							} else {
-								echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="0" id="checkbox2" name="status" Enabled>';
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="0" id="checkbox2" name="status" Enabled>';
 							}
 				                        echo '<label class="form-check-label" for="checkbox2">'.$lang['system_controller_enable'].'</label>
 				                </div>
@@ -1899,8 +1886,8 @@ echo '
 			echo '</div>
 			<!-- /.modal-body -->
         	   	<div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
-				if ($ncount > 0) { echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="system_controller_settings('.(settings($conn, 'mode') & 0b1).')">'; }
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+				if ($ncount > 0) { echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="system_controller_settings('.(settings($conn, 'mode') & 0b1).')">'; }
 
             		echo '</div>
 			<!-- /.modal-footer -->
@@ -1917,7 +1904,7 @@ echo '
 <div class="modal fade" id="boost_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['boost_settings'].'</h5>
             </div>
@@ -2028,9 +2015,9 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_boost()">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_boost">'.$lang['add_boost'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_boost()">
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_boost">'.$lang['add_boost'].'</button>
             </div>
         </div>
     </div>
@@ -2042,7 +2029,7 @@ echo '
 <div class="modal fade" id="add_boost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['add_boost'].'</h5>
             </div>
@@ -2143,11 +2130,11 @@ echo '<p class="text-muted">'.$info_text.'</p>
 	}
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
 				if ((settings($conn, 'mode') & 0b1) == 0) {
-					echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_boost(0)">';
+					echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_boost(0)">';
 				} else {
-                                        echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_boost(1)">';
+                                        echo '<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_boost(1)">';
 				}
 
             echo '</div>
@@ -2160,14 +2147,14 @@ echo '
 <div class="modal fade" id="override_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['override_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_override.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_override'].'</a></li>
                         </ul>
                 </div>
@@ -2212,7 +2199,7 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</div></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             </div>
         </div>
     </div>
@@ -2225,7 +2212,7 @@ echo '
 <div class="modal fade" id="nodes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['node_setting'].'</h5>
             </div>
@@ -2334,8 +2321,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_node">'.$lang['node_add'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_node">'.$lang['node_add'].'</button>
             </div>
         </div>
     </div>
@@ -2347,7 +2334,7 @@ echo '
 <div class="modal fade" id="add_node" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['node_add'].'</h5>
             </div>
@@ -2387,8 +2374,8 @@ echo '<p class="text-muted">'.$lang['node_add_info_text'].'</p>
 	</div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_node()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_node()">
             </div>
         </div>
     </div>
@@ -2399,14 +2386,14 @@ echo '
 <div class="modal fade" id="zone_types" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_type'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=zone_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['zone_types'].'</a></li>
                                 <li class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="pdf_download.php?file=switch_zones.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['switch_zones'].'</a></li>
@@ -2444,8 +2431,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_zone_type">'.$lang['zone_type_add'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_zone_type">'.$lang['zone_type_add'].'</button>
             </div>
         </div>
     </div>
@@ -2456,7 +2443,7 @@ echo '
 <div class="modal fade" id="add_zone_type" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_type_add'].'</h5>
             </div>
@@ -2477,8 +2464,8 @@ echo '<p class="text-muted">'.$lang['zone_type_add_info_text'].'</p>
     <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_zone_type()">
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_zone_type()">
             </div>
         </div>
     </div>
@@ -2489,14 +2476,14 @@ echo '
 <div class="modal fade" id="zone_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['zone_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_zones.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_zones'].'</a></li>
                                 <li class="dropdown-divider"></li>
 	                        <li><a class="dropdown-item" href="pdf_download.php?file=setup_pump_type_relays.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_pump_type_relays'].'</a></li>
@@ -2553,7 +2540,7 @@ echo '
 						$count++;
         				}
         				echo '<span class="d-flex justify-content-end"><small>
-        					<a href="zone.php?id='.$row['id'].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-xs login"><span class="bi bi-pencil" style="font-size: 1rem;"</span></a>&nbsp;&nbsp;
+        					<a href="zone.php?id='.$row['id'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs login"><span class="bi bi-pencil" style="font-size: 1rem;"</span></a>&nbsp;&nbsp;
         					<button class="btn warning btn-danger btn-xs" onclick="delete_zone('.$row['id'].');" data-confirm="'.$content_msg.'"><span class="bi bi-trash-fill black" style="font-size: 1rem;"></span></button>
         				</small></span>
         			</div>';
@@ -2561,8 +2548,8 @@ echo '
 		echo '</div>
 	    </div>
 	    <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="zone.php">'.$lang['zone_add'].'</a>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <a class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" href="zone.php">'.$lang['zone_add'].'</a>
             </div>
         </div>
     </div>
@@ -2573,14 +2560,14 @@ echo '
 <div class="modal fade" id="sensor_gateway" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
         	<div class="modal-content">
-            		<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            		<div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                			<h5 class="modal-title">'.$lang['smart_home_gateway'].'</h5>
                                 <div class="dropdown float-right">
                                         <a class="" data-bs-toggle="dropdown" href="#">
                                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 		<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_gateway.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_gateway'].'</a></li>
                                         </ul>
                                 </div>
@@ -2621,9 +2608,9 @@ echo '
 				<div class="form-group" class="control-label">
                                 	<div class="form-check">';
                                         	if ($grow['status'] == '1'){
-                                                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox1" name="status" checked>';
+                                                	echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status" checked>';
                                                 } else {
-                                                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" id="checkbox1" name="status">';
+                                                	echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status">';
                                                 }
                                                         echo '<label class="form-check-label" for="checkbox1">'.$lang['smart_home_gateway_enable'].'</label>
 					</div>
@@ -2632,9 +2619,9 @@ echo '
                                 <div class="form-group" class="control-label">
                                         <div class="form-check">';
                                                 if ($grow['enable_outgoing'] == '1'){
-                                                        echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
+                                                        echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing" checked>';
                                                 }else {
-                                                        echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
+                                                        echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" id="checkbox4" class="styled" type="checkbox" value="1" name="enable_outgoing">';
                                                 }
                                                 echo '
                                                 <label class="form-check-label" for="checkbox4"> '.$lang['enable_outgoing'].'</label>
@@ -2738,10 +2725,10 @@ echo '
 			</div>
 			<!-- /.modal-body -->
             		<div class="modal-footer">
-				<a href="javascript:resetgw('.$grow['pid'].')" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm btn-edit">Reset GW</a>
-				<a href="javascript:find_gw()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm btn-edit">Search GW</a>
-				<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="setup_gateway()">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+				<a href="javascript:resetgw('.$grow['pid'].')" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm btn-edit">Reset GW</a>
+				<a href="javascript:find_gw()" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm btn-edit">Search GW</a>
+				<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="setup_gateway()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
             		</div>
 			<!-- /.modal-footer -->
         	</div>
@@ -2757,7 +2744,7 @@ echo '
 <div class="modal fade" id="node_alerts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['node_alerts_edit'].'</h5>
             </div>
@@ -2797,8 +2784,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="node_alerts()">
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="node_alerts()">
             </div>
         </div>
     </div>
@@ -2874,14 +2861,14 @@ if ($model_num == 6) {
 echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['relay_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=configure_relay_devices.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['configure_relay_devices'].'</a></li>
                                 <li class="dropdown-divider"></li>
 				<li><a class="dropdown-item" href="pdf_download.php?file=setup_pump_type_relays.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_pump_type_relays'].'</a></li>
@@ -2943,7 +2930,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				<td>'.$row["node_id"].'</td>
             				<td>'.$row["relay_child_id"].'</td>
                                         <td>'.$trigger.'</td>
-            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
 						echo '<span class="tooltip-wrapper" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><button class="btn btn-danger btn-xs disabled"><i class="bi bi-trash-fill black"></i></button></span></td>';
 	    				} else {
@@ -2954,8 +2941,8 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
 		echo '</table>
 	    </div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="relay.php">'.$lang['relay_add'].'</a>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <a class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" href="relay.php">'.$lang['relay_add'].'</a>
             </div>
         </div>
     </div>
@@ -2965,14 +2952,14 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
 echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
                                 <li class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="pdf_download.php?file=humidity_sensors.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['humidity_sensors'].'</a></li>
@@ -3035,14 +3022,14 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
             				<td style="text-align:center; vertical-align:middle;">'.$zone_name.'</td>';
             				if (empty($row['zone_id'])) {
 						echo '<td style="text-align:center; vertical-align:middle;">
-                				<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.'>
+                				<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.'>
             					</td>';
 	    				} else {
                 				echo '<td style="text-align:center; vertical-align:middle;">
-                				<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
+                				<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
-	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
 						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
@@ -3053,9 +3040,9 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                	<input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="show_sensors()">
-                	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="sensor.php">'.$lang['sensor_add'].'</a>
+                	<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="show_sensors()">
+                	<a class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" href="sensor.php">'.$lang['sensor_add'].'</a>
             </div>
         </div>
     </div>
@@ -3066,14 +3053,14 @@ echo '
 <div class="modal fade" id="sensor_types" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_type'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=sensor_types.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['sensor_types'].'</a></li>
                         </ul>
                 </div>
@@ -3109,8 +3096,8 @@ while ($row = mysqli_fetch_assoc($results)) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_sensor_type">'.$lang['sensor_type_add'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_sensor_type">'.$lang['sensor_type_add'].'</button>
             </div>
         </div>
     </div>
@@ -3121,7 +3108,7 @@ echo '
 <div class="modal fade" id="add_sensor_type" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['sensor_type_add'].'</h5>
             </div>
@@ -3136,8 +3123,8 @@ echo '<p class="text-muted">'.$lang['sensor_type_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_sensor_type()">
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_sensor_type()">
             </div>
         </div>
     </div>
@@ -3148,7 +3135,7 @@ echo '
 <div class="modal fade" id="add_on_http" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>';
                 $query = "SELECT `name` FROM `zone_view` WHERE `relay_type` = 'Tasmota' ORDER BY `name` ASC;";
                 $zresult = $conn->query($query);
@@ -3165,7 +3152,7 @@ echo '
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_tasmota_lamp_zone.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_add_on_device'].'</a></li>
                         </ul>
                 </div>
@@ -3200,12 +3187,12 @@ if ($zcount + $ncount > 0) {
 }
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>';
                 if ($zcount > 0) {
-			echo '<button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#zone_add_http_msg">'.$lang['zone_add_http_msg'].'</button>';
+			echo '<button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#zone_add_http_msg">'.$lang['zone_add_http_msg'].'</button>';
                 }
                 if ($ncount > 0) {
-			echo '<button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#node_add_http_msg">'.$lang['node_add_http_msg'].'</button>';
+			echo '<button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#node_add_http_msg">'.$lang['node_add_http_msg'].'</button>';
                 }
             echo '</div>
         </div>
@@ -3217,7 +3204,7 @@ echo '
 <div class="modal fade" id="zone_add_http_msg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['add_on_messages'].'</h5>
             </div>
@@ -3245,8 +3232,8 @@ echo '<p class="text-muted">'.$lang['add_on_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_zone_http_msg()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_zone_http_msg()">
             </div>
         </div>
     </div>
@@ -3257,7 +3244,7 @@ echo '
 <div class="modal fade" id="node_add_http_msg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['add_on_messages'].'</h5>
             </div>
@@ -3285,8 +3272,8 @@ echo '<p class="text-muted">'.$lang['add_on_add_info_text'].'</p>
         <div class="help-block with-errors"></div></div>
 </div>
             <div class="modal-footer">
-                                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_node_http_msg()">
+                                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_node_http_msg()">
             </div>
         </div>
     </div>
@@ -3296,14 +3283,14 @@ echo '<p class="text-muted">'.$lang['add_on_add_info_text'].'</p>
 echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 		<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['mqtt_device'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_mqtt'].'</a></li>
                                 <li class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="pdf_download.php?file=setup_zigbee2mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_zigbee2mqtt'].'</a></li>
@@ -3334,15 +3321,15 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                                         <td><small>'.$row["on_payload"].'</small></td>
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
-	    				<td><a href="mqtt_device.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn '.theme($conn, $theme, 'btn_style').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp
+	    				<td><a href="mqtt_device.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp
 					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
 		echo '</table>
 	    </div>
 		<div class="modal-footer">
-                	<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                	<a class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" href="mqtt_device.php">'.$lang['mqtt_add_device'].'</a>
+                	<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                	<a class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" href="mqtt_device.php">'.$lang['mqtt_add_device'].'</a>
             </div>
         </div>
     </div>
@@ -3354,7 +3341,7 @@ echo '
 <div class="modal fade" id="reboot_system" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['reboot_system'].'</h5>
             </div>
@@ -3363,8 +3350,8 @@ echo '
 
             </div>
             <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                        <a href="javascript:reboot()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['yes'].'</a>
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                        <a href="javascript:reboot()" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm">'.$lang['yes'].'</a>
             </div>
         </div>
     </div>
@@ -3375,7 +3362,7 @@ echo '
 <div class="modal fade" id="shutdown_system" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['shutdown_system'].'</h5>
             </div>
@@ -3384,8 +3371,8 @@ echo '
                         ';
 echo '            </div>
             <div class="modal-footer">
-                        <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-                        <a href="javascript:shutdown()" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm">'.$lang['yes'].'</a>
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+                        <a href="javascript:shutdown()" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm">'.$lang['yes'].'</a>
             </div>
         </div>
     </div>
@@ -3402,14 +3389,14 @@ echo '
 <div class="modal fade" id="offset_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
                         <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['offset_settings'].'</h5>
                 <div class="dropdown float-right">
                         <a class="" data-bs-toggle="dropdown" href="#">
                                 <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                                 <li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_start_time_offset'].'</a></li>
                          </ul>
                 </div>
@@ -3480,9 +3467,9 @@ while ($row = mysqli_fetch_assoc($results)) {
 
 echo '</table></div>
             <div class="modal-footer">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="update_offset()">
-                <button type="button" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_offset">'.$lang['add_schedule_offset'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="update_offset()">
+                <button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" data-bs-href="#" data-bs-toggle="modal" data-bs-target="#add_offset">'.$lang['add_schedule_offset'].'</button>
             </div>
         </div>
     </div>
@@ -3514,7 +3501,7 @@ echo '
 <div class="modal fade" id="add_offset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+            <div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 			<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title">'.$lang['add_offset'].'</h5>
             </div>
@@ -3523,7 +3510,7 @@ echo '<p class="text-muted">'.$lang['offset_info_text'].'</p>
 	<form data-bs-toggle="validator" role="form" method="post" action="settings.php" id="form-join">
         <div class="form-group" class="control-label">
         	<div class="form-check">';
-                	echo '<input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
+                	echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" id="checkbox5" class="styled" type="checkbox" value="1" name="offset_status" checked Enabled>';
                         echo '<label class="form-check-label" for="checkbox5"> '.$lang['offset_enable'].'</label>
                	</div>
         </div>
@@ -3658,8 +3645,8 @@ echo '<p class="text-muted">'.$lang['offset_info_text'].'</p>
 	    <div class="help-block with-errors"></div></div>';
 echo '</div>
             <div class="modal-footer">
-				<button type="button" class="btn '.theme($conn, $theme, 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
-                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, $theme, 'btn_style').' login btn-sm" onclick="add_offset()">
+				<button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                                <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="add_offset()">
             </div>
         </div>
     </div>

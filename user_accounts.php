@@ -188,8 +188,8 @@ $persist = $row['persist'];
 	<br>
 	<div class="row">
                 <div class="col-lg-12">
-		        <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-        		        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+		        <div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+        		        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
                 	        	<?php echo $title; ?>
                         	</div>
 	                        <!-- /.card-header -->
@@ -206,21 +206,21 @@ $persist = $row['persist'];
         	                        	<div class="row">
                 	                		<div class="col-3">
                         	                		<div class="form-check">
-									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox0" name="account_enable" <?php if($aenable == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($id == $_SESSION['user_id']) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo theme($conn, settings($conn, 'theme'), 'color'); ?>" type="checkbox" value="1" id="checkbox0" name="account_enable" <?php if($aenable == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($id == $_SESSION['user_id']) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox0"> <?php echo $lang['account_enable']; ?> </label> <br><small class="text-muted"><?php echo $lang['account_enable_info'];?></small>
                                                 			<div class="help-block with-errors"></div>
                                         			</div>
 							</div>
 							<div class="col-3">
                 	                        		<div class="form-check">
-									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox1" name="admin_account" <?php if($aaccount == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo theme($conn, settings($conn, 'theme'), 'color'); ?>" type="checkbox" value="1" id="checkbox1" name="admin_account" <?php if($aaccount == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox1"> <?php echo $lang['admin_account']; ?> </label> <br><small class="text-muted"><?php echo $lang['admin_account_info'];?></small>
                                         	        		<div class="help-block with-errors"></div>
                                         			</div>
 							</div>
 							<div class="col-3">
                 	                        		<div class="form-check">
-									<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox2" name="persist" <?php if($persist == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
+									<input class="form-check-input form-check-input-<?php echo theme($conn, settings($conn, 'theme'), 'color'); ?>" type="checkbox" value="1" id="checkbox2" name="persist" <?php if($persist == 1 && $mode != 2) { echo 'checked'; } ?> <?php if($_SESSION['admin'] == 0) { echo 'disabled'; } ?> >
 									<label class="form-check-label" for="checkbox2"> <?php echo $lang['persist']; ?> </label> <br><small class="text-muted"><?php echo $lang['persist_info'];?></small>
                                         	        		<div class="help-block with-errors"></div>
                                         			</div>
@@ -257,13 +257,13 @@ $persist = $row['persist'];
         		        		<input class="form-control" type="password" class="form-control" placeholder="Confirm New Password" value="" id="con_pass" name="con_pass" data-bs-error="Confirm New Password is Required" autocomplete="off" <?php echo $req; ?>>
                 				<div class="help-block with-errors"></div>
 					</div>
-					<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
-	        	        	<input type="submit" name="submit" value="<?php echo $lang['save']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm">
+					<a href="home.php"><button type="button" class="btn btn-primary-<?php echo theme($conn, $theme, 'color'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
+	        	        	<input type="submit" name="submit" value="<?php echo $lang['save']; ?>" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-sm">
 
         	        		</form>
 	        	   	</div>
         	        	<!-- /.card-body -->
-				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+				<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 					<?php
 					ShowWeather($conn);
 					?>

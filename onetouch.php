@@ -29,8 +29,8 @@ $page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
 ?>
 <div class="container-fluid ps-0 pe-0">
-        <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+        <div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 			<div class="d-flex justify-content-between">
 				<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
 				<div class="btn-group" id="onetouch_date"><?php echo date("H:i"); ?></div>
@@ -42,7 +42,7 @@ $theme = settings($conn, 'theme');
 				<?php
 				//Mode 0 is EU Boiler Mode, Mode 1 is US HVAC Mode
 				$system_controller_mode = settings($conn, 'mode') & 0b1;
-				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=homelist`)">
+				echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=homelist`)">
                                 <h3 class="buttontop"><small>'.$lang['one_touch'].'</small></h3>
                                 <h3 class="degre" style="margin-top:0px;"><i class="bi bi-bullseye" style="font-size: 2rem;"></i></h3>
                                 <h3 class="status"></h3>
@@ -55,7 +55,7 @@ $theme = settings($conn, 'theme');
 				$result = $conn->query($query);
 				$lt_status=mysqli_num_rows($result);
 				if ($lt_status==1) {$lt_status='red';}else{$lt_status='blueinfo';}
-				echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
+				echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" href="#livetemperature" data-bs-backdrop="static" data-bs-keyboard="false">
 				<h3 class="buttontop"><small>'.$lang['live_temp'].'</small></h3>
 				<h3 class="degre" style="margin-top:5px;"><img src="images/'.$icon.'" border="0"></h3>
 				<h3 class="status"><small class="statuscircle"><i class="bi bi-circle-fill '.$lt_status.'" style="font-size: 0.55rem;"></i></small></h3>
@@ -75,31 +75,31 @@ $theme = settings($conn, 'theme');
 		                }
 
                 		if($_SESSION['admin'] == 1) {
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`theme.php`)">
+					echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`theme.php`)">
                                         <h3 class="buttontop"><small>'.$lang['add_theme'].'</small></h3>
                                         <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill icon-2x orange"></i></h3>
                                         <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                                         </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`relay.php`)">
+					echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`relay.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['relay_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill red icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`sensor.php`)">
+					echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`sensor.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['sensor_add'].'</small></h3>
                 		        <h3 class="degre"  style="margin-top: 10px;"><i class="bi bi-plus-square-fill green icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`mqtt_device.php`)">
+					echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`mqtt_device.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['mqtt_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill blue icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
                 		        </h3></button>';
 
-					echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`zone.php`)">
+					echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`zone.php`)">
 		                        <h3 class="buttontop"><small>'.$lang['zone_add'].'</small></h3>
                 		        <h3 class="degre" style="margin-top: 10px;"><i class="bi bi-plus-square-fill icon-2x"></i></h3>
 		                        <h3 class="status"><small class="statuscircle" style="color:#048afd;"><i class="bi icon-fw"></i></small>
@@ -157,7 +157,7 @@ $theme = settings($conn, 'theme');
 				echo '<div class="modal fade" id="livetemperature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
-							<div class="modal-header '.theme($conn, $theme, 'text_color').' '.theme($conn, $theme, 'background_color').'">
+							<div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
 								<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
 								<h5 class="modal-title">'.$lang['live_temperature'].'</h5>
 							</div>
@@ -167,7 +167,7 @@ $theme = settings($conn, 'theme');
                                                                 		echo '<h4><br><p>Heating Zone '.$current_mode.' Temperature Control</p></h4><br>
 		                                                                <input type="text" value="'.DispSensor($conn, $set_temp, 1).'" class="dial" id="livetemp_c" name="live_temp">
                 		                                                <div style="float:right;">
-                                		                                        <textarea id="load_temp" class="temperature-box '.theme($conn, settings($conn, 'theme'), 'footer_color').'" readonly="readonly" row="0" col="0" ></textarea>
+                                		                                        <textarea id="load_temp" class="temperature-box card-footer-'.theme($conn, settings($conn, 'theme'), 'color').'" readonly="readonly" row="0" col="0" ></textarea>
                                                 		                </div>
 			                                                        <div class="form-check" style="'.$check_visible.'">
 										     	<input class="form-check-input" type="checkbox" value="0" id="checkbox" name="status" checked Enabled>
@@ -179,8 +179,8 @@ $theme = settings($conn, 'theme');
                 		                                echo '</div>
                                 		        </div>
 		                                        <!-- /.modal-body -->
-                		                        <div class="modal-footer"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>';
-                                		                if ($rowcount > 0) { echo '<input type="button" name="submit" value="'.$lang['apply'].'" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" onclick="update_livetemp()">'; }
+                		                        <div class="modal-footer"><button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>';
+                                		                if ($rowcount > 0) { echo '<input type="button" name="submit" value="'.$lang['apply'].'" class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' login btn-sm" onclick="update_livetemp()">'; }
 		                                        echo '</div>
                 					<!-- /.modal-footer -->
 						</div>
@@ -193,7 +193,7 @@ $theme = settings($conn, 'theme');
 			<!-- /.row -->
 		</div>'; ?>
 		<!-- /.card-body -->
-                <div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+                <div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 			<div class="d-flex justify-content-between">
                         	<div class="btn-group" id="footer_weather">
                                 	<?php ShowWeather($conn); ?>

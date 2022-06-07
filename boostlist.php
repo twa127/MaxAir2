@@ -28,8 +28,8 @@ $page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
 
 ?>
-<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+	<div class="card-header card-header-<?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'color'); ?>">
 		<div class="d-flex justify-content-between">
 			<div>
                             	<img src="images/rocket.svg" width="20" height="20" alt="">&nbsp&nbsp<?php echo $lang['boost']; ?>
@@ -144,7 +144,7 @@ $theme = settings($conn, 'theme');
 		</ul>
 	</div>
         <!-- /.card-body -->
-	<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+	<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 		<div class="text-start" id="footer_weather">
                 	<?php ShowWeather($conn); ?>
                 </div>

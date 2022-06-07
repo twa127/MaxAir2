@@ -26,8 +26,8 @@ require_once(__DIR__.'/st_inc/functions.php');
 $theme = settings($conn, 'theme');
 
 ?>
-<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
         	<div class="d-flex justify-content-between">
                 	<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
                         <div class="btn-group" id="mode_date"><?php echo date("H:i"); ?></div>
@@ -305,7 +305,7 @@ $theme = settings($conn, 'theme');
                 if($_SESSION['admin'] == 1) {
 			for ($x = 0; $x <=  4 + ($system_controller_mode * 3); $x++) { ?>
 	                        <a style="color: #777; cursor: pointer; text-decoration: none;" href="javascript:set_sc_mode(<?php echo $x; ?>)">
-        	                <button type="button" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-circle btn-xxl mainbtn">
+        	                <button type="button" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-circle btn-xxl mainbtn">
                 	        <h3 class="buttontop"><small><?php echo $legend[$x]; ?></small></h3>
                         	<h3 class="buttonmode" ><i class="bi <?php echo $button[$x]; ?> icon-2x <?php echo $color[$x]; ?>"></i></h3>
 	                        <?php if ($system_controller_mode == 1) {
@@ -331,7 +331,7 @@ $theme = settings($conn, 'theme');
 
 	</div>
 	<!-- /.card-body -->
-	<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+	<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
         	<div class="d-flex justify-content-between">
                 	<div class="btn-group" id="footer_weather">
                         	<?php

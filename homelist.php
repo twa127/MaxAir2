@@ -25,9 +25,9 @@ require_once(__DIR__.'/st_inc/connection.php');
 require_once(__DIR__.'/st_inc/functions.php');
 
 $theme = settings($conn, 'theme');
-$btn_size = theme($conn, $theme, 'btn_size');
+$tile_size = theme($conn, $theme, 'tile_size');
 
-if($btn_size == 1 || settings($conn, 'language') == "sk" || settings($conn, 'language') == "de") { $button_style = "btn-xxl-wide"; } else { $button_style = "btn-xxl"; }
+if($tile_size == 1 || settings($conn, 'language') == "sk" || settings($conn, 'language') == "de") { $button_style = "btn-xxl-wide"; } else { $button_style = "btn-xxl"; }
 $page_refresh = page_refresh($conn);
 ?>
 <script language='javascript' type='text/javascript'>
@@ -41,8 +41,8 @@ $page_refresh = page_refresh($conn);
 </script>
 
 <div class="container-fluid ps-0 pe-0">
-	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-		<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+	<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+		<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 			<div class="d-flex justify-content-between">
 				<div class="Light"><i class="bi bi-house-fill"></i> <?php echo $lang['home']; ?></div>
 			        <div class="btn-group" id="homelist_date"><?php echo date("H:i"); ?></div>
@@ -52,7 +52,7 @@ $page_refresh = page_refresh($conn);
 		<div class="card-body">
         		<div class="row <?php echo theme($conn, $theme, 'row_justification'); ?>">
 					<?php
-					echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle black-background no-shadow '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=onetouch`)">
+					echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle black-background no-shadow '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=onetouch`)">
 					<h3 class="text-nowrap buttontop"><small>'.$lang['one_touch'].'</small></h3>
 			                <h3 class="degre" style="margin-top:0px;"><i class="bi bi-bullseye" style="font-size: 2rem;"></i></h3>
 			                <h3 class="status"></h3>
@@ -174,7 +174,7 @@ $page_refresh = page_refresh($conn);
 	                		}
 
 					if ($mode_select == 0 ) {
-                                                echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="active_sc_mode()">
+                                                echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="active_sc_mode()">
 		        	        	<h3 class="text-nowrap buttontop"><small>'.$lang['mode'].'</small></h3>
 	        			        <h3 class="degre" >'.$current_sc_mode.'</h3>';
 		                        	if ($system_controller_mode == 1) {
@@ -196,7 +196,7 @@ $page_refresh = page_refresh($conn);
 		        	                }
                 			        echo '</button>';
 			                } else {
-						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=mode`)">
+						echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow black-background '.$button_style.' mainbtn animated fadeIn" onclick="relocate_page(`home.php?page_name=mode`)">
                 			        <h3 class="text-nowrap buttontop"><small>'.$current_sc_mode.'</small></h3>
 		                	        <h3 class="degre" >'.$lang['mode'].'</h3>';
                 		        	if ($system_controller_mode == 1) {
@@ -312,7 +312,7 @@ $page_refresh = page_refresh($conn);
 	                		        6 - cooling running 
 						7 - fan running*/
 
- 						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-href="#" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_Schedule_List,'.$zone_id.'">
+ 						echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-href="#" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_Schedule_List,'.$zone_id.'">
 						<h3 class="text-nowrap buttontop"><small>'.$zone_name.'</small></h3>';
 						if ($sensor_type_id == 3) {
 							if ($zone_c == 0) { echo '<h3 class="degre" id="zd_'.$zone_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="zd_'.$zone_id.'">ON</h3>'; }
@@ -366,7 +366,7 @@ $page_refresh = page_refresh($conn);
 		                        	$sensor = mysqli_fetch_array($result);
 	                		        $sensor_c = $sensor['payload'];
 			                        $ajax_modal = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor_id.",0";
-                			        echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
+                			        echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
 		        	                <h3 class="text-nowrap buttontop"><small>'.$sensor_name.'</small></h3>';
                 			        if ($sensor_type_id == 3) {
                                 			if ($sensor_c == 0) { echo '<h3 class="degre" id="sd_'.$sensor_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="sd_'.$sensor_id.'">ON</h3>'; }
@@ -399,7 +399,7 @@ $page_refresh = page_refresh($conn);
 							$hysteresis='0';
 						}
 
-						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SystemController">
+						echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_SystemController">
 						<h3 class="text-nowrap buttontop"><small>'.$system_controller_name.'</small></h3>';
 						if ($system_controller_mode == 1) {
                                 			switch ($sc_mode) {
@@ -502,7 +502,7 @@ $page_refresh = page_refresh($conn);
                 			        $sensor = mysqli_fetch_array($result);
 		        	                $sensor_c = $sensor['payload'];
                 			        $ajax_modal = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor_id.",0";
-		   				echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
+		   				echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-bs-toggle="modal" data-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'">
 	                		        <h3 class="text-nowrap buttontop"><small>'.$sensor_name.'</small></h3>';
 			                        if ($sensor_type_id == 3) {
                 			                if ($sensor_c == 0) { echo '<h3 class="degre" id="sd_'.$sensor_id.'">OFF</h3>'; } else { echo '<h3 class="degre" id="sd_'.$sensor_id.'">ON</h3>'; }
@@ -562,9 +562,9 @@ $page_refresh = page_refresh($conn);
 			                        if ($add_on_active == 1){$add_on_colour = "green";} elseif ($add_on_active == 0){$add_on_colour = "black";}
         	        		        if ($zone_category == 2) {
 							$link = 'update_add_on('.$row['id'].')';
-		        	                	echo '<button type="button" class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="'.$link.'">';
+		        	                	echo '<button type="button" class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn" onclick="'.$link.'">';
 						} else {
-	   						echo '<button class="btn '.theme($conn, $theme, 'btn_style').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#'.$zone_type.''.$zone_id.'" data-bs-backdrop="static" data-bs-keyboard="false">';
+	   						echo '<button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-circle no-shadow '.$button_style.' mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#'.$zone_type.''.$zone_id.'" data-bs-backdrop="static" data-bs-keyboard="false">';
 						}
         	        		        echo '<h3 class="text-nowrap buttontop"><small>'.$row['name'].'</small></h3>';
 			                        if (($zone_category == 1 && $sensor_type_id != 3)) {
@@ -619,7 +619,7 @@ $page_refresh = page_refresh($conn);
         	<div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		           <div class="modal-dialog">
                 		<div class="modal-content" id="ajaxModalContent">
-                                	<div class="modal-header <?php echo theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color'); ?>">
+                                	<div class="modal-header <?php echo theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color'); ?>">
                                         	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		                                 <h5 class="modal-title" id="ajaxModalLabel">...</h5>
                 		        </div>
@@ -633,7 +633,7 @@ $page_refresh = page_refresh($conn);
 			</div>
                 </div>
 
-		<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+		<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 			<div class="d-flex justify-content-between">
 	          		<div class="btn-group" id="footer_weather">
 			        	<?php

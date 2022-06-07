@@ -35,8 +35,8 @@ $theme = settings($conn, 'theme');
 	<br>
 	<div class="row">
         	<div class="col-lg-12">
-                    	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-                        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+                    	<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+                        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 					<div class="d-flex justify-content-between">
 						<div>
 		                            		<i class="bi bi-gear-fill"></i>   <?php echo $lang['weather_outside']; ?> <?php echo $weather['c'] ;?>&deg;
@@ -71,7 +71,7 @@ $theme = settings($conn, 'theme');
 					</div>
                         	</div>
                         	<!-- /.card-body -->
-				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+				<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
                             		<?php echo $lang['schedule_next']; ?>:
                         	</div>
                     	</div>

@@ -33,7 +33,7 @@ include("notice.php");
                 	<div id="chart" >
                                 <div class="d-flex justify-content-center" style="margin-top:10px"><?php echo $lang['please_wait_text']; ?></div>
                                 <div class="d-flex justify-content-center" style="margin-top:10px">
-                                        <div class="spinner-border text-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>"
+                                        <div class="spinner-border text-<?php echo theme($conn, settings($conn, 'theme'), 'color'); ?>"
                                                 role="status">
                                         </div>
                                 </div>

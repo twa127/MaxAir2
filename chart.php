@@ -46,8 +46,8 @@ $grow = mysqli_fetch_assoc($result);
 <?php include("header.php"); ?>
 <br>
 <div class="container-fluid">
-	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+	<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 			<div class="d-flex justify-content-between">
 				<span>
                                		<i class="bi bi-graph-up icon-fw"></i> <?php echo $lang['graph']; ?>
@@ -143,7 +143,7 @@ $grow = mysqli_fetch_assoc($result);
                         <!-- /.row -->
 		</div>
         	<!-- /.card-body -->
-		<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+		<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 			<?php
 			ShowWeather($conn);
 			?>

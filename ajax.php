@@ -38,7 +38,7 @@ function GetModal_OpenWeather($conn){
 	global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['openweather_settings'].'</h5>
         </div>
@@ -327,8 +327,8 @@ function GetModal_OpenWeather($conn){
             </form>';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
-            <input type="button" name="submit" value="'.$lang['save'].'" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' login btn-sm" onclick="update_openweather()">
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['cancel'].'</button>
+            <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' login btn-sm" onclick="update_openweather()">
         </div>';      //close class="modal-footer">
 
     echo '<script language="javascript" type="text/javascript">
@@ -386,7 +386,7 @@ function GetModal_System($conn)
         global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
     //System temperature
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['cpu_temperature'].'</h5>
         </div>
@@ -408,7 +408,7 @@ function GetModal_System($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     return;
 }
@@ -425,14 +425,14 @@ function GetModal_MQTT($conn)
         global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['mqtt_connections'].'</h5>
             <div class="dropdown float-right">
                 <a class="" data-bs-toggle="dropdown" href="#">
                         <i class="bi bi-file-earmark-pdf text-white" style="font-size: 1.2rem;"></i>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-'.theme($conn, settings($conn, 'theme'), 'color').'">
                         <li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_guide_mqtt'].'</a></li>
                         <li class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="pdf_download.php?file=setup_zigbee2mqtt.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp'.$lang['setup_zigbee2mqtt'].'</a></li>
@@ -444,7 +444,7 @@ function GetModal_MQTT($conn)
     $results = $conn->query($query);
     echo '<div class="list-group">';
     echo '<span class="list-group-item text-end" style="height:50px;">';
-    echo '<span class="text-muted small"><button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" 
+    echo '<span class="text-muted small"><button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" 
              data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTAdd" onclick="mqtt_AddEdit(this);">'.$lang['add'].'</button></span>';
     echo '</span>';
     while ($row = mysqli_fetch_assoc($results)) {
@@ -477,7 +477,7 @@ function GetModal_MQTT($conn)
 			</div>
 			<div>
         			<span class="text-muted small" style="width:200px;text-align:right;">
-        				<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
+        				<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
             					<span class="bi bi-pencil"></span>
 					</button>&nbsp;&nbsp;
 					<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="bi bi-trash-fill"></span></button>
@@ -489,7 +489,7 @@ function GetModal_MQTT($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         mqtt_AddEdit=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -514,7 +514,7 @@ function GetModal_MQTTAddEdit($conn)
         $IsAdd=false;
     }
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">' . ($IsAdd ? $lang['add_mqtt_connection'] : $lang['edit_mqtt_connection']) . '</h5>
         </div>
@@ -562,9 +562,9 @@ function GetModal_MQTTAddEdit($conn)
             </form>';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">' . ($IsAdd ?
-            '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_add()">'.$lang['add_conn'].'</button>'
-            : '<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_edit()">'.$lang['edit_conn'].'</button>') . '
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            '<button type="button" class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_add()">'.$lang['add_conn'].'</button>'
+            : '<button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal" onclick="mqtt_edit()">'.$lang['edit_conn'].'</button>') . '
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         mqtt_add=function(){
@@ -617,7 +617,7 @@ function GetModal_Services($conn)
 	global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    	echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    	echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             	<h5 class="modal-title" id="ajaxModalLabel">'.$lang['services'].'</h5>
         </div>
@@ -665,7 +665,7 @@ function GetModal_Services($conn)
         						}
         					echo '</span>
         					<span class="text-muted small" style="width:200px;text-align:right;">
-        						<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
+        						<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_ServicesInfo&id=' . $SArrVal['service'] . '" onclick="services_Info(this);">
             						<span class="bi bi-info-circle"></span></button>';
         					echo '</span>
         				</div>
@@ -674,7 +674,7 @@ function GetModal_Services($conn)
     		echo '</div>';      //close class="list-group">';
     	echo '</div>';      //close class="modal-body">
     	echo '<div class="modal-footer" id="ajaxModalFooter">
-        	<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+        	<button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     	echo '<script language="javascript" type="text/javascript">
         	services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -691,7 +691,7 @@ function GetModal_ServicesInfo($conn)
         global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['services_info'].'</h5>
         </div>
@@ -825,7 +825,7 @@ Refer to: <a href="www.freedesktop.org/software/systemd/man/journald.conf.html">
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     echo '<script language="javascript" type="text/javascript">
         services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -845,7 +845,7 @@ function GetModal_Uptime($conn)
         global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+    echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             <h5 class="modal-title" id="ajaxModalLabel">'.$lang['system_uptime'].'</h5>
         </div>
@@ -881,7 +881,7 @@ function GetModal_Uptime($conn)
         echo '<br/><span class="text-muted small">' . $row['ip'] . '&nbsp;:&nbsp;' . $row['port'] . '</span>';
 
         echo '<span class="float-right text-muted small" style="width:200px;text-align:right;">';
-        echo '<button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
+        echo '<button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="ajax.php?Ajax=GetModal_MQTTEdit&id=' . $row['id'] . '" onclick="mqtt_AddEdit(this);">
             <span class="ionicons ion-edit"></span></button>&nbsp;&nbsp;
 		<button class="btn btn-danger btn-xs" onclick="mqtt_delete(' . $row['id'] . ');"><span class="glyphicon glyphicon-trash"></span></button>';
         echo '</span>';
@@ -890,7 +890,7 @@ function GetModal_Uptime($conn)
     echo '</div>';      //close class="list-group">';
     echo '</div>';      //close class="modal-body">
     echo '<div class="modal-footer" id="ajaxModalFooter">
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     return;
 }
@@ -1013,7 +1013,7 @@ function GetModal_Sensor_Graph($conn)
         });
 	</script>
 <?php
-        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <h5 class="modal-title" id="ajaxModalLabel">'.$title.'</h5>
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
         </div>
@@ -1021,8 +1021,8 @@ function GetModal_Sensor_Graph($conn)
 		<div id="myChart" style="width:100%"></div>
     	</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal.'"  onclick="sensors_Graph(this);">'.$button_name.'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">
                 sensors_Graph=function(gthis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(gthis)); })};
@@ -1040,7 +1040,7 @@ function GetModal_Sensors($conn)
 	global $lang;
 	//foreach($_GET as $variable => $value) echo $variable . "&nbsp;=&nbsp;" . $value . "<br />\r\n";
 
-	echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+	echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
         	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
             	<h5 class="modal-title" id="ajaxModalLabel">'.$lang['temperature_sensor'].'</h5>
         </div>
@@ -1080,7 +1080,7 @@ function GetModal_Sensors($conn)
 		echo '</div>'; //close class=\"list-group\">
     	echo '</div>';      //close class="modal-body">
     	echo '<div class="modal-footer" id="ajaxModalFooter">
-		<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+		<button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     	echo '<script language="javascript" type="text/javascript">
         	sensors_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -1109,7 +1109,7 @@ function GetModal_SensorsInfo($conn)
         $results = $conn->query($query);
         $count = mysqli_num_rows($results);
 
-        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title" id="ajaxModalLabel">'.$lang['sensor_last24h'].$node_id.'&nbsp('.$sensor_child_id.')</h5>
         </div>
@@ -1136,7 +1136,7 @@ function GetModal_SensorsInfo($conn)
 		}
     	echo '</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            	<button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            	<button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
     	echo '<script language="javascript" type="text/javascript">
         	services_Info=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); }).modal("hide");};
@@ -1166,7 +1166,7 @@ function GetModal_SystemController($conn)
         $system_controller_node_id = $system_controller_node['node_id'];
         $system_controller_seen = $system_controller_node['last_seen'];
 
-        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
                 <h5 class="modal-title" id="ajaxModalLabel">'.$system_controller_name.' - '.$lang['system_controller_recent_logs'].'</h5>
         </div>
@@ -1230,7 +1230,7 @@ function GetModal_SystemController($conn)
 		}
         echo '</div>
         <div class="modal-footer" id="ajaxModalFooter">
-                <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         return;
 }
@@ -1330,7 +1330,7 @@ function GetModal_Schedule_List($conn)
         $ajax_modal_24h = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor['id'].",0";
         $ajax_modal_1h = "ajax.php?Ajax=GetModal_Sensor_Graph,".$sensor['id'].",1";
 
-        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' '.theme($conn, settings($conn, 'theme'), 'background_color').'">
+        echo '<div class="modal-header '.theme($conn, settings($conn, 'theme'), 'text_color').' bg-'.theme($conn, settings($conn, 'theme'), 'color').'">
             <h5 class="modal-title" id="ajaxModalLabel">'.$zone_name.'</h5>
             <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
         </div>
@@ -1490,8 +1490,8 @@ function GetModal_Schedule_List($conn)
 		}
     	echo '</div>
     	<div class="modal-footer" id="ajaxModalFooter">
-            <button class="btn '.theme($conn, settings($conn, 'theme'), 'btn_style').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
-            <button type="button" class="btn '.theme($conn, settings($conn, 'theme'), 'btn_primary').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+            <button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-toggle="modal" data-bs-remote="false" data-bs-target="#ajaxModal" data-ajax="'.$ajax_modal_24h.'" onclick="graph_sensor(this);">'.$lang['graph_24h'].'</button>
+            <button type="button" class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
         </div>';      //close class="modal-footer">
         echo '<script language="javascript" type="text/javascript">
                graph_sensor=function(ithis){ $("#ajaxModal").one("hidden.bs.modal", function() { $("#ajaxModal").modal("show",$(ithis)); })};

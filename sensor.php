@@ -110,8 +110,8 @@ if (isset($_POST['submit'])) {
 	<br>
 	<div class="row">
         	<div class="col-lg-12">
-                        <div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-                                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+                        <div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+                                <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 					<div class="d-flex justify-content-between">
 						<div>
 							<?php if ($id != 0) { echo $lang['sensor_edit'] . ": " . $row['name']; }else{
@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
 					<form data-bs-toggle="validator" role="form" method="post" action="<?php $_SERVER['PHP_SELF'];?>" id="form-join">
 						<!-- Before or After System Controller Icon -->
                                                 <div class="form-check">
-							<input class="form-check-input form-check-input-<?php echo explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1]; ?>" type="checkbox" value="1" id="checkbox0" name="pre_post" <?php $check = ($row['pre_post'] == 1) ? 'checked' : ''; echo $check; ?>>
+							<input class="form-check-input form-check-input-<?php echo theme($conn, settings($conn, 'theme'), 'color'); ?>" type="checkbox" value="1" id="checkbox0" name="pre_post" <?php $check = ($row['pre_post'] == 1) ? 'checked' : ''; echo $check; ?>>
 							<label class="form-check-label" for="checkbox0"> <?php echo $lang['pre_sc_tile']; ?> </label> <small class="text-muted"><?php echo $lang['pre_sc_tile_info'];?></small>
 							<div class="help-block with-errors"></div>
 						</div>
@@ -350,12 +350,12 @@ if (isset($_POST['submit'])) {
 
 						<br>
 						<!-- Buttons -->
-						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm">
-						<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
+						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-sm">
+						<a href="home.php"><button type="button" class="btn btn-primary-<?php echo theme($conn, $theme, 'color'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
 					</form>
 				</div>
                 		<!-- /.card-body -->
-				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+				<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 					<div class="text-start">
 						<?php
 						echo '<script type="text/javascript">',

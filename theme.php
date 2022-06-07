@@ -35,18 +35,14 @@ if(isset($_GET['id'])) {
 if (isset($_POST['submit'])) {
 	$name = $_POST['name'];
         $justification = $_POST['justification'];
-	$background_color = $_POST['background_color'];
+	$theme_color = $_POST['theme_color'];
         $text_color = $_POST['text_color'];
-        $border_color = $_POST['border_color'];
-        $footer_color = $_POST['footer_color'];
-        $btn_style = $_POST['btn_style'];
-        $btn_primary = $_POST['btn_primary'];
-        $btn_size = $_POST['btn_size'];
+        $tile_size = $_POST['tile_size'];
         $sync = '0';
         $purge= '0';
 
 	//Add or Edit
-	$query = "INSERT INTO `theme` (`id`, `sync`, `purge`, `name`, `row_justification`, `background_color`, `text_color`, `border_color`, `footer_color`, `btn_style`, `btn_primary`, `btn_size`) VALUES ('{$id}', '{$sync}', '{$purge}', '{$name}', '{$justification}', '{$background_color}', '{$text_color}', '{$border_color}', '{$footer_color}', '{$btn_style}', '{$btn_primary}', '{$btn_size}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), name=VALUES(name), row_justification='{$justification}', background_color='{$background_color}', text_color='{$text_color}', border_color='{$border_color}', footer_color='{$footer_color}', btn_style='{$btn_style}', btn_primary='{$btn_primary}', btn_size='{$btn_size}';";
+	$query = "INSERT INTO `theme` (`id`, `sync`, `purge`, `name`, `row_justification`, `color`, `text_color`, `tile_size`) VALUES ('{$id}', '{$sync}', '{$purge}', '{$name}', '{$justification}', '{$theme_color}', '{$text_color}', '{$tile_size}') ON DUPLICATE KEY UPDATE sync=VALUES(sync), `purge`=VALUES(`purge`), name=VALUES(name), row_justification='{$justification}', color='{$theme_color}', text_color='{$text_color}', tile_size='{$tile_size}';";
 	$result = $conn->query($query);
         $temp_id = mysqli_insert_id($conn);
 	if ($result) {
@@ -84,8 +80,8 @@ if (isset($_POST['submit'])) {
 	<br>
         <div class="row">
         	<div class="col-lg-12">
-                   	<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-                        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+                   	<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+                        	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 					<div class="d-flex justify-content-between">
 						<div>
 							<?php if ($id != 0) { echo $lang['edit_theme'] . ": " . $row['name']; }else{
@@ -113,14 +109,15 @@ if (isset($_POST['submit'])) {
 							<div class="help-block with-errors"></div>
 						</div>
 
-                                                <!-- Background Color -->
-                                                <div class="form-group" class="control-label" id="background_color_label" style="display:block"><label class="fs-6"><?php echo $lang['background_color']; ?></label> <small class="text-muted"><?php echo $lang['background_color_info'];?></small>
-                                                        <select class="form-select" type="text" id="background_color" name="background_color" >
-						    		<?php echo'<option value="bg-red" ' . ($row['background_color']=="bg-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-                                                                <?php echo'<option value="bg-orange" ' . ($row['background_color']=="bg-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-		                                                <?php echo'<option value="bg-amber" ' . ($row['background_color']=="bg-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-                               					<?php echo'<option value="bg-blue" ' . ($row['background_color']=="bg-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-		                                                <?php echo'<option value="bg-violet" ' . ($row['background_color']=="bg-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
+                                                <!-- Theme Color -->
+                                                <div class="form-group" class="control-label" id="theme_color_label" style="display:block"><label class="fs-6"><?php echo $lang['theme_color']; ?></label> <small class="text-muted"><?php echo $lang['theme_color_info'];?></small>
+                                                        <select class="form-select" type="text" id="theme_color" name="theme_color" >
+						    		<?php echo'<option value="red" ' . ($row['color']=="red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
+                                                                <?php echo'<option value="orange" ' . ($row['color']=="orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
+		                                                <?php echo'<option value="amber" ' . ($row['color']=="amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
+                               					<?php echo'<option value="blue" ' . ($row['color']=="blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
+		                                                <?php echo'<option value="black" ' . ($row['color']=="black" ? 'selected' : '') . '>'.$lang['black'].'</option>'; ?>
+                                                                <?php echo'<option value="violet" ' . ($row['color']=="violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
@@ -134,71 +131,23 @@ if (isset($_POST['submit'])) {
                                                         <div class="help-block with-errors"></div>
                                                 </div>
 
-                                                <!-- Boarder Color -->
-                                                <div class="form-group" class="control-label" id="border_color_label" style="display:block"><label class="fs-6"><?php echo $lang['border_color']; ?></label> <small class="text-muted"><?php echo $lang['border_color_info'];?></small>
-                                                        <select class="form-select" type="text" id="border_color" name="border_color" >
-				                         	<?php echo'<option value="border-red" ' . ($row['border_red']=="border-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-                                                                <?php echo'<option value="border-orange" ' . ($row['border_color']=="border-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-                                                  		<?php echo'<option value="order-amber" ' . ($row['border_color']=="border-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-								<?php echo'<option value="border-blue" ' . ($row['border_color']=="border-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-								<?php echo'<option value="border-violet" ' . ($row['border_color']=="border-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
-                                                        </select>
-                                                        <div class="help-block with-errors"></div>
-                                                </div>
-
-                                                <!-- Footer Color -->
-                                                <div class="form-group" class="control-label" id="footer_color_label" style="display:block"><label class="fs-6"><?php echo $lang['footer_color']; ?></label> <small class="text-muted"><?php echo $lang['footer_color_info'];?></small>
-                                                        <select class="form-select" type="text" id="footer_color" name="footer_color" >
-                                    				<?php echo'<option value="card-footer-red" ' . ($row['footer-red']=="card-footer-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-                                                                <?php echo'<option value="card-footer-orange" ' . ($row['footer_color']=="card-footer-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-                                                  		<?php echo'<option value="card-footer-amber" ' . ($row['footer_color']=="card-footer-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-								<?php echo'<option value="card-footer-blue" ' . ($row['footer_color']=="card-footer-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-								<?php echo'<option value="card-footer-violet" ' . ($row['footer_color']=="card-footer-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
-                                                        </select>
-                                                        <div class="help-block with-errors"></div>
-                                                </div>
-
-                                                <!-- Button Style -->
-                                                <div class="form-group" class="control-label" id="btn_style_label" style="display:block"><label class="fs-6"><?php echo $lang['button_style']; ?></label> <small class="text-muted"><?php echo $lang['button_style_info'];?></small>
-                                                        <select class="form-select" type="text" id="btn_style" name="btn_style" >
-								<?php echo'<option value="btn-bm-red" ' . ($row['btn_style']=="btn-bm-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-								<?php echo'<option value="btn-bm-orange" ' . ($row['btn_style']=="btn-bm-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-								<?php echo'<option value="btn-bm-amber" ' . ($row['btn_style']=="btn-bm-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-								<?php echo'<option value="btn-bm-blue" ' . ($row['btn_style']=="btn-bm-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-								<?php echo'<option value="btn-bm-violet" ' . ($row['btn_style']=="btn-bm-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
-                                                        </select>
-                                                        <div class="help-block with-errors"></div>
-                                                </div>
-
-                                                <!-- Button Primary -->
-                                                <div class="form-group" class="control-label" id="btn_primary_label" style="display:block"><label class="fs-6"><?php echo $lang['button_primary']; ?></label> <small class="text-muted"><?php echo $lang['button_primary_info'];?></small>
-                                                        <select class="form-select" type="text" id="btn_primary" name="btn_primary" >
-								<?php echo'<option value="btn-primary-red" ' . ($row['btn_primary']=="btn-primary-red" ? 'selected' : '') . '>'.$lang['red'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-orange" ' . ($row['btn_primary']=="btn-primary-orange" ? 'selected' : '') . '>'.$lang['orange'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-amber" ' . ($row['btn_primary']=="btn-primary-amber" ? 'selected' : '') . '>'.$lang['amber'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-blue" ' . ($row['btn_primary']=="btn-primary-blue" ? 'selected' : '') . '>'.$lang['blue'].'</option>'; ?>
-								<?php echo'<option value="btn-primary-violet" ' . ($row['btn_primary']=="btn-primary-violet" ? 'selected' : '') . '>'.$lang['violet'].'</option>'; ?>
-                                                        </select>
-                                                        <div class="help-block with-errors"></div>
-                                                </div>
-
                                                 <!-- Button Size -->
-                                                <div class="form-group" class="control-label" id="btn_size_label" style="display:block"><label class="fs-6"><?php echo $lang['button_size']; ?></label> <small class="text-muted"><?php echo $lang['button_size_info'];?></small>
-                                                        <select class="form-select" type="text" id="btn_size" name="btn_size" >
-								<?php echo'<option value=0 ' . ($row['btn_size']==0 ? 'selected' : '') . '>'.$lang['standard_button'].'</option>'; ?>
-								<?php echo'<option value=1 ' . ($row['btn_size']==1 ? 'selected' : '') . '>'.$lang['wide_button'].'</option>'; ?>
+                                                <div class="form-group" class="control-label" id="tile_size_label" style="display:block"><label class="fs-6"><?php echo $lang['button_size']; ?></label> <small class="text-muted"><?php echo $lang['button_size_info'];?></small>
+                                                        <select class="form-select" type="text" id="tile_size" name="tile_size" >
+								<?php echo'<option value=0 ' . ($row['tile_size']==0 ? 'selected' : '') . '>'.$lang['standard_button'].'</option>'; ?>
+								<?php echo'<option value=1 ' . ($row['tile_size']==1 ? 'selected' : '') . '>'.$lang['wide_button'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
 
 						<!-- Buttons -->
-						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn <?php echo theme($conn, $theme, 'btn_style'); ?> btn-sm">
-						<a href="home.php"><button type="button" class="btn <?php echo theme($conn, $theme, 'btn_primary'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
+						<input type="submit" name="submit" value="<?php echo $lang['submit']; ?>" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-sm">
+						<a href="home.php"><button type="button" class="btn btn-primary-<?php echo theme($conn, $theme, 'color'); ?> btn-sm"><?php echo $lang['cancel']; ?></button></a>
 					</form>
 					<!-- /.form -->
 				</div>
                         	<!-- /.card-body -->
-				<div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+				<div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 					<div class="text-start">
 						<?php
 						ShowWeather($conn);

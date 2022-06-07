@@ -28,8 +28,8 @@ $page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
 
 ?>
-<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+        <div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
                 <div class="d-flex justify-content-between">
                         <div>
                                 <i class="bi bi-send-fill" style="font-size: 1.2rem;"></i> <?php echo $lang['holidays']; ?>
@@ -91,8 +91,8 @@ $theme = settings($conn, 'theme');
 					</div>
 					<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_holidays('.$hol_row["id"].');" data-confirm="ARE YOU SURE?"><span class="bi bi-trash-fill"></span></button>&nbsp;&nbsp;
-						<a href="holiday.php?id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-pencil"></span></a>&nbsp;&nbsp;
-		        			<a href="scheduling.php?hol_id='.$hol_row["id"].'" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-clock"></span></a>&nbsp;&nbsp;
+						<a href="holiday.php?id='.$hol_row["id"].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-sm login"><span class="bi bi-pencil"></span></a>&nbsp;&nbsp;
+		        			<a href="scheduling.php?hol_id='.$hol_row["id"].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-sm login"><span class="bi bi-clock"></span></a>&nbsp;&nbsp;
 					</div>
 				</li>';
 			//following variable set to 0 on start for array index. 
@@ -230,7 +230,7 @@ $theme = settings($conn, 'theme');
 		</ul>
 	</div>
         <!-- /.card-body -->
-        <div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+        <div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
                 <div class="d-flex justify-content-between">
                         <div class="btn-group" id="footer_weather">
                                 <?php ShowWeather($conn); ?>

@@ -26,8 +26,8 @@ require_once(__DIR__ . '/st_inc/functions.php');
 $page_refresh = page_refresh($conn);
 $theme = settings($conn, 'theme');
 ?>
-<div class="card <?php echo theme($conn, $theme, 'border_color'); ?>">
-       	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> <?php echo theme($conn, $theme, 'background_color'); ?>">
+<div class="card border-<?php echo theme($conn, $theme, 'color'); ?>">
+       	<div class="card-header <?php echo theme($conn, $theme, 'text_color'); ?> card-header-<?php echo theme($conn, $theme, 'color'); ?>">
 		<div class="d-flex justify-content-between">
 			<div>
         			<i class="bi bi-clock icon-fw"></i> <?php echo $lang['schedule']; ?>
@@ -36,7 +36,7 @@ $theme = settings($conn, 'theme');
 				<a class="" data-bs-toggle="dropdown" href="#">
 					<i class="bi bi-file-earmark-pdf text-white"></i>
 				</a>
-                        	<ul class="dropdown-menu">
+                        	<ul class="dropdown-menu dropdown-menu-<?php echo theme($conn, $theme, 'color'); ?>">
                 			<li><a class="dropdown-item" href="pdf_download.php?file=setup_guide_scheduling.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp<?php echo $lang['setup_scheduling']; ?></a></li>
 	                                <li class="dropdown-divider"></li>
         	                	<li><a class="dropdown-item" href="pdf_download.php?file=start_time_offset.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i>&nbsp<?php echo $lang['setup_start_time_offset']; ?></a></li>
@@ -211,7 +211,7 @@ $theme = settings($conn, 'theme');
 						echo '<div class="row mt-2"></div>
 						<div class="d-flex justify-content-end">
 						<button class="btn warning btn-danger btn-sm" onclick="delete_schedule(' . $row["time_id"] . ');"><span class="bi bi-trash-fill"></span></button> </a> &nbsp;&nbsp;
-						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn '.theme($conn, $theme, 'btn_style').' btn-sm login"><span class="bi bi-pencil"></span></a>
+						<a href="scheduling.php?id=' . $row["time_id"] . '" class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-sm login"><span class="bi bi-pencil"></span></a>
 						</div>
 					</div>
 					<!-- /.collapse -->
@@ -233,7 +233,7 @@ $theme = settings($conn, 'theme');
         	</ul>
    	</div>
 	<!-- /.card-body -->
-        <div class="card-footer <?php echo theme($conn, $theme, 'footer_color'); ?>">
+        <div class="card-footer card-footer-<?php echo theme($conn, $theme, 'color'); ?>">
 		<div class="d-flex justify-content-between">
 	                <div class="btn-group" id="footer_weather">
         	                <?php ShowWeather($conn); ?>
