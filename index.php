@@ -35,7 +35,7 @@ require_once(__DIR__.'/st_inc/functions.php');
 
 $theme = settings($conn, 'theme');
 $theme_name = explode(' ',theme($conn, $theme, 'name'))[0];
-$logo = "maxair_logo_".explode('-', theme($conn, $theme, 'background_color'))[1].".png";
+$logo = "maxair_logo_".theme($conn, $theme, 'color').".png";
 //$lang = settings($conn, 'language');
 //setcookie("PiHomeLanguage", $lang, time()+(3600*24*90));
 //require_once (__DIR__.'/languages/'.$_COOKIE['PiHomeLanguage'].'.php');
@@ -334,7 +334,7 @@ if (isset($_POST['submit'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php  echo settings($conn, 'name') ;?></title>
+	<title><?php  echo settings($conn, 'name') ;?></title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="fonts/bootstrap-icons-1.8.1/bootstrap-icons.css" rel="stylesheet" type="text/css">
         <link href="css/maxair.css" rel="stylesheet">
@@ -349,9 +349,9 @@ if (isset($_POST['submit'])) {
                         <div class="text-center">
                             <?php
                             if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1) {
-                                echo '<h3 class="text-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'">'.$lang['sign_in'].'</h3>';
+                                echo '<h3 class="text-'.theme($conn, settings($conn, 'theme'), 'color').'">'.$lang['sign_in'].'</h3>';
                             } else {
-                                echo '<h3 class="text-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'">'.$lang['wifi_connect'].'</h3>';
+                                echo '<h3 class="text-'.theme($conn, settings($conn, 'theme'), 'color').'">'.$lang['wifi_connect'].'</h3>';
                             }
                         echo '</div>
                         <form method="post" action="'.$_SERVER['PHP_SELF'].'" role="form">';
@@ -359,7 +359,7 @@ if (isset($_POST['submit'])) {
                             echo '<div class="p-4">';
 				if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
                                     echo '<div class="input-group mb-3">
-                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'"><i class="bi bi-person-plus-fill text-white"></i></span>
+                                        <span class="input-group-text bg-'.theme($conn, $theme, 'color').'"><i class="bi bi-person-plus-fill text-white"></i></span>
                                         <input type="text" class="form-control" placeholder="Username" name="username" value="';
 				        if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; }
 				        echo '">
@@ -390,7 +390,7 @@ if (isset($_POST['submit'])) {
                                 }
                                 echo '<div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text '.theme($conn, $theme, 'background_color').'" id="basic-addon1"><i class="bi bi-key-fill text-white"></i></span>
+                                        <span class="input-group-text bg-'.theme($conn, $theme, 'color').'" id="basic-addon1"><i class="bi bi-key-fill text-white"></i></span>
                                     </div>
                                     <input name="password" type="password" value="" class="input form-control" id="password" placeholder="password" required="true" aria-label="password" aria-describedby="basic-addon1" />
                                     <div class="input-group-append">
@@ -402,21 +402,21 @@ if (isset($_POST['submit'])) {
                                 </div>';
                                 if ($no_ap == 0 || $wifi_connected == 1 || $eth_connected == 1 || $ap_mode == 1) {
                                     echo '<div class="form-check">
-                                        <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" name="remember" ';
+                                        <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" name="remember" ';
 				        if(isset($_COOKIE["user_login"])) { echo 'checked >'; } else {  echo '>'; }
                                         echo '<label class="form-check-label" for="remember">
                                             Remember Me
                                         </label>
                                     </div>
-				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn '.theme($conn, $theme, 'btn_primary').' text-center mt-2"/>';
+				    <input type="submit" name="submit" value="'.$lang['login'].'" class="btn btn-primary-'.theme($conn, $theme, 'color').' text-center mt-2"/>';
                                 } else {
                                     echo '<div class="form-check">
-                                        <input class="form-check-input form-check-input-'.explode('-', theme($conn, settings($conn, 'theme'), 'background_color'))[1].'" type="checkbox" value="1" name="ap_mode">
+                                        <input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" name="ap_mode">
                                         <label class="form-check-label" for="ap_mode">
                                             AP Mode
                                         </label>
                                     </div>
-                                    <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn '.theme($conn, $theme, 'btn_primary').' text-center mt-2"/>';
+                                    <input type="submit" name="submit" value="'.$lang['set_reboot'].'" class="btn btn-primary-'.theme($conn, $theme, 'color').' text-center mt-2"/>';
                                 }
                             echo '</div>
                         </form>
