@@ -1064,7 +1064,7 @@ while ($row = mysqli_fetch_assoc($results)) {
             <td style="text-align:center; vertical-align:middle;">'.$row["min"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$row["max"].'</td>
             <td style="text-align:center; vertical-align:middle;">'.$enabled.'</td>
-            <td><a href="sensor_limits.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;
+            <td><a href="sensor_limits.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil"></i></button></a>&nbsp;
                 <button class="btn warning btn-danger btn-xs" onclick="delete_sensor_limits('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_limit'].'"><span class="bi bi-trash-fill black"></span></button> </a>
 	    </td>
         </tr>';
@@ -1669,7 +1669,7 @@ echo '<div class="modal fade" id="add_theme" tabindex="-1" role="dialog" aria-la
                                         echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$color[1].'</td>';
 					if ($row["tile_size"] == 0) { $tile_size = explode(' ', $lang['standard_button'])[0]; } else { $tile_size = explode(' ', $lang['wide_button'])[0]; }
 					echo '<td class="text-capitalize" style="text-align:center; vertical-align:middle;">'.$tile_size.'</td>
-	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn btn-primary-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp;&nbsp';
+	    				<td style="text-align:center; vertical-align:middle;"><a href="theme.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, settings($conn, 'theme'), 'color').' btn-xs"><i class="bi bi-pencil"></i></button></a>&nbsp;&nbsp';
 					echo '<a href="javascript:delete_theme('.$row["id"].');" style="text-decoration: none;"><button class="btn btn-danger btn-xs" data-bs-toggle="popover" data-title="'.$lang['confirmation'].'" data-bs-content="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </a></td>'; 
         			echo '</tr>';
 			}
@@ -2930,7 +2930,7 @@ echo '<div class="modal fade" id="relay_setup" tabindex="-1" role="dialog" aria-
             				<td>'.$row["node_id"].'</td>
             				<td>'.$row["relay_child_id"].'</td>
                                         <td>'.$trigger.'</td>
-            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+            				<td><a href="relay.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil"></i></button></a>&nbsp';
             				if($row['attached'] == 1 || $row['type'] == 1) {
 						echo '<span class="tooltip-wrapper" data-bs-toggle="tooltip" title="'.$lang['confirm_del_relay_2'].$attached_to.'"><button class="btn btn-danger btn-xs disabled"><i class="bi bi-trash-fill black"></i></button></span></td>';
 	    				} else {
@@ -3029,7 +3029,7 @@ echo '<div class="modal fade" id="sensor_setup" tabindex="-1" role="dialog" aria
                 				<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" id="checkbox'.$row["id"].'" name="checkbox'.$row["id"].'" value="1" '.$check.' disabled>
                 				</td>';
 	    				}
-	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp';
+	    				echo '<td style="text-align:center; vertical-align:middle;"><a href="sensor.php?id='.$row["id"].'"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil"></i></button></a>&nbsp';
 	    				if (empty($row['zone_id'])) {
 						echo '<button class="btn warning btn-danger btn-xs" onclick="delete_sensor('.$row["id"].');" data-confirm="'.$lang['confirm_del_sensor_4'].'"><span class="bi bi-trash-fill black"></span></button> </td>'; 
 	    				} else {
@@ -3321,7 +3321,7 @@ echo '<div class="modal fade" id="mqtt_devices" tabindex="-1" role="dialog" aria
                                         <td><small>'.$row["on_payload"].'</small></td>
             				            <td><small>'.$row["off_payload"].'</small></td>
                                         <td><small>'.$row["attribute"].'</small></td>
-	    				<td><a href="mqtt_device.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil-fill"></i></button></a>&nbsp
+	    				<td><a href="mqtt_device.php?id='.$row["id"].'" style="text-decoration: none;"><button class="btn btn-bm-'.theme($conn, $theme, 'color').' btn-xs"><i class="bi bi-pencil"></i></button></a>&nbsp
 					<button class="btn warning btn-danger btn-xs" onclick="delete_mqtt_device('.$row["id"].');" data-confirm="'.$lang['confirm_del_mqtt_child'].'"><span class="bi bi-trash-fill black"></span></button> </td>
         			</tr>';
 			}
