@@ -598,7 +598,7 @@ echo '<div class="modal fade" id="auto_backup" tabindex="-1" role="dialog" aria-
 			$f = explode(' ',$row['frequency']);
                         $r = explode(' ',$row['rotation']);
 
-	                echo '<div class="form-group" class="control-label">
+	                echo '<hr></hr><div class="form-group" class="control-label">
 				<div class="row mb-3">
 					<div class="col-3">
                 				<div class="form-check">';
