@@ -329,7 +329,7 @@ if ($settings_id <= 3) {
 
                                                 <button type="button" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-bs-target="#auto_backup">
                                                 <h3 class="buttontop"><small><?php echo $lang['auto_backup']; ?></small></h3>
-                                                <h3 class="degre" ><i class="bi bi-back blue" style="font-size: 1.5rem;"></i> </h3>
+                                                <h3 class="degre" ><i class="bi bi-bootstrap-fill green" style="font-size: 1.5rem;"></i> </h3>
                                                 <h3 class="status"></small></h3>
                                                 </button>
 
