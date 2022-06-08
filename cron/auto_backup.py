@@ -240,7 +240,7 @@ if ab_result[backup_to_index['enabled']] == 1:
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Backup Not Yet Scheduled")
             print("------------------------------------------------------------------")
 
-    print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Checking for Rotation Deletions \n")
+    print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Checking for Rotation Deletions")
     print("------------------------------------------------------------------")
     for f in list_of_files:
         c_time = os.path.getctime(f)
@@ -258,7 +258,7 @@ if ab_result[backup_to_index['enabled']] == 1:
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " File - " + f + " Deleted")
             print("------------------------------------------------------------------")
 
-    print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Rotation Deletion Check Ended \n")
+    print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Rotation Deletion Check Ended")
     print("------------------------------------------------------------------")
 
     print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Database Backup Script Ended \n")
