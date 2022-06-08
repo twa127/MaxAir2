@@ -1786,5 +1786,34 @@ if($what=="theme"){
                 }
         }
 }
+
+//Auto Backup
+if($what=="auto_backup"){
+        if($opp=="update"){
+	        $frequency = $_GET['fval1']." ".$_GET['set_f'];
+        	$rotation = $_GET['rval1']." ".$_GET['set_r'];
+        	$destination = $_GET['dest'];
+                $enabled = $_GET['checkbox1'];
+                if ($enabled=='true'){$enabled = '1';} else {$enabled = '0';}
+                $email_backup = $_GET['checkbox2'];
+                if ($email_backup=='true'){$email_backup = '1';} else {$email_backup = '0';}
+                $email_confirmation = $_GET['checkbox3'];
+                if ($email_confirmation=='true'){$email_confirmation = '1';} else {$email_confirmation = '0';}
+	        $query = "UPDATE auto_backup SET enabled = {$enabled}, frequency = '{$frequency}', rotation = '{$rotation}', email_backup = {$email_backup}, email_confirmation = {$email_confirmation};";
+        	$update_error=0;
+	        if(!$conn->query($query)){
+        	        $update_error=1;
+	        }
+        	if($update_error==0){
+                	header('Content-type: application/json');
+	                echo json_encode(array('Success'=>'Success','Query'=>$query));
+        	        return;
+	        }else{
+        	        header('Content-type: application/json');
+                	echo json_encode(array('Message'=>'Database query failed.\r\nQuery=' . $query));
+	                return;
+        	}
+        }
+}
 ?>
 <?php if(isset($conn)) { $conn->close();} ?>

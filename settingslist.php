@@ -327,6 +327,12 @@ if ($settings_id <= 3) {
         					<h3 class="status"></small></h3>
 				                </button>
 
+                                                <button type="button" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-bs-toggle="modal" data-bs-target="#auto_backup">
+                                                <h3 class="buttontop"><small><?php echo $lang['auto_backup']; ?></small></h3>
+                                                <h3 class="degre" ><i class="bi bi-back blue" style="font-size: 1.5rem;"></i> </h3>
+                                                <h3 class="status"></small></h3>
+                                                </button>
+
 	        	        		<button type="button" class="btn btn-bm-<?php echo theme($conn, $theme, 'color'); ?> btn-circle <?php echo $button_style; ?> mainbtn animated fadeIn" data-href="#" data-bs-toggle="modal" data-bs-target="#user_setup">
 				                <h3 class="buttontop"><small><?php echo $lang['user_accounts']; ?></small></h3>
 						<h3 class="degre" ><i class="bi bi-person-fill blue" style="font-size: 1.5rem;"></i></h3>

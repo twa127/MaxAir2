@@ -573,6 +573,118 @@ echo '     </div>
     </div>
 </div>';
 
+//Setup Auto Backup
+echo '<div class="modal fade" id="auto_backup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+        	<div class="modal-content">
+            	<div class="modal-header '.theme($conn, $theme, 'text_color').' bg-'.theme($conn, $theme, 'color').'">
+                	<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">x</button>
+                	<h5 class="modal-title">'.$lang['auto_backup'].'</h5>
+            	</div>
+            	<div class="modal-body">
+                        <p class="text-muted">'.$lang['auto_backup_text'].'</p>';
+                        $query = "SELECT * FROM email LIMIT 1;";
+                        $result = $conn->query($query);
+			if (mysqli_num_rows($result) == 0) {
+				$disabled = "disabled";
+	                        echo '<p class="text-info"><small>'.$lang['no_email'].'</small></p>';
+			} else {
+				$disabled = "";
+			}
+
+	                $query = "SELECT * FROM auto_backup LIMIT 1;";
+        	        $result = $conn->query($query);
+                	$row = mysqli_fetch_assoc($result);
+			$f = explode(' ',$row['frequency']);
+                        $r = explode(' ',$row['rotation']);
+
+	                echo '<div class="form-group" class="control-label">
+				<div class="row mb-3">
+					<div class="col-3">
+                				<div class="form-check">';
+                					if ($row['enabled'] == '1'){
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="ab_enabled" checked>';
+                        				} else {
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="ab_enabled">';
+	                        			}
+        	                			echo '<label class="form-check-label" for="checkbox1">'.$lang['enabled'].'</label>
+						</div>
+					</div>
+                                	<div class="col-4">
+                                        	<div class="form-check">';
+                                                	if ($row['email_backup'] == '1'){
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox2" name="ab_email_database" checked '.$disabled.'>';
+	                                                } else {
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox2" name="ab_email_database" '.$disabled.'>';
+                	                                }
+                        	                        echo '<label class="form-check-label" for="checkbox2">'.$lang['email_backup'].'</label>
+                                	        </div>
+	                                </div>
+                                        <div class="col-4">
+                                                <div class="form-check">';
+                                                        if ($row['email_confirmation'] == '1'){
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox3" name="ab_email_confirmation" checked '.$disabled.'>';
+                                                        } else {
+								echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox3" name="ab_email_confirmation" '.$disabled.'>';
+                                                        }
+                                                        echo '<label class="form-check-label" for="checkbox3">'.$lang['email_confirmation'].'</label>
+                                                </div>
+                                        </div>
+        	                </div>
+             		</div>
+
+	                <div class="form-group" class="control-label"><label><h5>'.$lang['frequency'].'</h5></label><small class="text-muted">&nbsp'.$lang['frequency_info'].'</small>
+        	                <div class="row mb-3">
+                	                <div class="col-2">
+						<input class="form-control" placeholder="0" value="'.$f[0].'" id="fval1" name="fval1" autocomplete="off" required>
+                                	        <div class="help-block with-errors"></div>
+	                                </div>
+        	                        <div class="col-4">
+						<select class="form-select" type="text" id="fval2" name="fval2" onchange=set_frequency(this.options[this.selectedIndex].value)>
+        	        	                        <option value="DAY" ' . ($f[1]=='DAY' ? 'selected' : '') . '>'.$lang['DAY'].'</option>
+	                        	                <option value="WEEK" ' . ($f[1]=='WEEK' ? 'selected' : '') . '>'.$lang['WEEK'].'</option>
+						</select>
+						<input type="hidden" id="set_f" name="set_f" value="'.$f[1].'">
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+			</div>
+
+        	        <div class="form-group" class="control-label"><label><h5>'.$lang['rotation'].'</h5></label><small class="text-muted">&nbsp'.$lang['rotation_info'].'</small>
+                	        <div class="row mb-3">
+                        	        <div class="col-2">
+						<input class="form-control" placeholder="0" value="'.$r[0].'" id="rval1" name="rval1" autocomplete="off" required>
+                                        	<div class="help-block with-errors"></div>
+	                                </div>
+        	                        <div class="col-4">
+                	                        <select class="form-select" type="text" id="rval2" name="rval2" onchange=set_rotation(this.options[this.selectedIndex].value)>
+                        	                        <option value="DAY" ' . ($r[1]=='DAY' ? 'selected' : '') . '>'.$lang['DAY'].'</option>
+                                	                <option value="WEEK" ' . ($r[1]=='WEEK' ? 'selected' : '') . '>'.$lang['WEEK'].'</option>
+                                        	</select>
+                                                <input type="hidden" id="set_r" name="set_r" value="'.$r[1].'">
+		                                <div class="help-block with-errors"></div>
+        	                        </div>
+	                        </div>
+                	</div>
+
+	                <div class="form-group" class="control-label"><label><h5>'.$lang['destination'].'</h5></label><small class="text-muted">&nbsp'.$lang['destination_info'].'</small>
+        	                <div class="row mb-3">
+                	                <div class="col-12">
+                        	                <input class="form-control" placeholder="" value="'.$row['destination'].'" id="dest" name="dest" autocomplete="off" required>
+                                	        <div class="help-block with-errors"></div>
+                                	</div>
+				</div>
+			</div>
+
+            	</div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-primary-'.theme($conn, $theme, 'color').' btn-sm" data-bs-dismiss="modal">'.$lang['close'].'</button>
+                        <input type="button" name="submit" value="'.$lang['save'].'" class="btn btn-bm-'.theme($conn, $theme, 'color').' login btn-sm" onclick="set_auto_backup()">
+            </div>
+        </div>
+    </div>
+</div>';
+
 //user accounts model
 echo '
 <div class="modal fade" id="user_setup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -889,6 +1001,18 @@ function sw_install_close()
 {
         $('#sw_install').modal('hide');
         $('#add_install').modal('hide');
+}
+
+function set_frequency(f)
+{
+ document.getElementById("set_f").value = f;
+// console.log(f);
+}
+
+function set_rotation(r)
+{
+ document.getElementById("set_r").value = r;
+// console.log(r);
 }
 </script>
 <?php
@@ -2608,9 +2732,9 @@ echo '
 				<div class="form-group" class="control-label">
                                 	<div class="form-check">';
                                         	if ($grow['status'] == '1'){
-                                                	echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status" checked>';
+							echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status" checked>';
                                                 } else {
-                                                	echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status">';
+							echo '<input class="form-check-input form-check-input-'.theme($conn, settings($conn, 'theme'), 'color').'" type="checkbox" value="1" id="checkbox1" name="status">';
                                                 }
                                                         echo '<label class="form-check-label" for="checkbox1">'.$lang['smart_home_gateway_enable'].'</label>
 					</div>
