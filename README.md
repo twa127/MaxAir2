@@ -33,7 +33,7 @@ Version 2.01 Major update that introduces 'Colour Themes' and a new look based a
 
 Version 2.02 Introduces a simplified 'theme' definition, adds theme coloring to dropdown lists and adds a Dark theme.
 
-![theme_colours](https://user-images.githubusercontent.com/46624596/172361914-83990e7b-61f9-4f5f-be07-4d9f20f30402.png)
+![theme_colours](https://user-images.githubusercontent.com/46624596/172785208-723ea90c-88cd-4223-a5c2-b101647eb899.png)
 
 ## Setup:
 
