@@ -1799,7 +1799,7 @@ if($what=="auto_backup"){
                 if ($email_backup=='true'){$email_backup = '1';} else {$email_backup = '0';}
                 $email_confirmation = $_GET['checkbox3'];
                 if ($email_confirmation=='true'){$email_confirmation = '1';} else {$email_confirmation = '0';}
-	        $query = "UPDATE auto_backup SET enabled = {$enabled}, frequency = '{$frequency}', rotation = '{$rotation}', email_backup = {$email_backup}, email_confirmation = {$email_confirmation};";
+	        $query = "UPDATE auto_backup SET enabled = {$enabled}, frequency = '{$frequency}', rotation = '{$rotation}', destination = '{$destination}', email_backup = {$email_backup}, email_confirmation = {$email_confirmation};";
         	$update_error=0;
 	        if(!$conn->query($query)){
         	        $update_error=1;
