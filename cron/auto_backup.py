@@ -151,7 +151,7 @@ if ab_result[backup_to_index['enabled']] == 1:
     if not list_of_files or (elapsed_time >= freq):
         print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Creating Database Backup SQL File")
         print("------------------------------------------------------------------")
-        dumpfname = destination + dbname + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + ".sql";
+        dumpfname = dbname + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + ".sql";
         cmd = "mysqldump --ignore-table=" + dbname + ".backup --add-drop-table --host=" + dbhost +" --user=" + dbuser + " --password=" + dbpass + " " + dbname + " > " + dumpfname
         os.system(cmd)
         print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Database Backup SQL File Created")
@@ -160,14 +160,18 @@ if ab_result[backup_to_index['enabled']] == 1:
         print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Creating ZIP Archive of SQL File")
         print("------------------------------------------------------------------")
 
+        # Create a local copy of the backup
         zipfname = dumpfname + ".gz"
         cmd = "gzip " + dumpfname
+        os.system(cmd)
+        # Copy archive to destination location
+        cmd = "cp -r " + zipfname  + " " + destination
         os.system(cmd)
 
         print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - ZIP Archive Created")
         print("------------------------------------------------------------------")
 
-        # Check if sent email copy is enabled
+        # Check if sent email copy is enabled, if so use local copy as the source
         if ab_result[backup_to_index['email_backup']] == 1:
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Emailing the ZIP Archive File")
             print("------------------------------------------------------------------")
@@ -183,7 +187,7 @@ if ab_result[backup_to_index['enabled']] == 1:
             msg.preamble = 'Database Backup'
             Body = MIMEText(Body) # convert the body to a MIME compatible string
             msg.attach(Body) # attach it to your main message
-            # add zip file as an attachment
+            # add local zip file as an attachment
             with open(zipfname,'rb') as file:
                 msg.attach(MIMEApplication(file.read(), Name=zipfname))
 
@@ -236,6 +240,9 @@ if ab_result[backup_to_index['enabled']] == 1:
 
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Email Sent")
             print("------------------------------------------------------------------")
+        # Delete the local archive copy as no longer needed
+        cmd = "rm -r " + zipfname
+        os.system(cmd)
     else :
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Backup Not Yet Scheduled")
             print("------------------------------------------------------------------")
