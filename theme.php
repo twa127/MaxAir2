@@ -126,7 +126,7 @@ if (isset($_POST['submit'])) {
                                                 <div class="form-group" class="control-label" id="text_color_label" style="display:block"><label class="fs-6"><?php echo $lang['text_color']; ?></label> <small class="text-muted"><?php echo $lang['text_color_info'];?></small>
                                                         <select class="form-select" type="text" id="text_color" name="text_color" >
 								<?php echo'<option value="text-white" ' . ($row['text_color']=="text-white" ? 'selected' : '') . '>'.$lang['white'].'</option>'; ?>
-								<?php echo'<option value="text-dark" ' . ($row['background_color']=="text-dark" ? 'selected' : '') . '>'.$lang['black'].'</option>'; ?>
+								<?php echo'<option value="text-black" ' . ($row['text_color']=="text-black" ? 'selected' : '') . '>'.$lang['black'].'</option>'; ?>
                                                         </select>
                                                         <div class="help-block with-errors"></div>
                                                 </div>
