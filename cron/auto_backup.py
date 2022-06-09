@@ -164,9 +164,6 @@ if ab_result[backup_to_index['enabled']] == 1:
         zipfname = dumpfname + ".gz"
         cmd = "gzip " + dumpfname
         os.system(cmd)
-        # Copy archive to destination location
-        cmd = "cp -r " + zipfname  + " " + destination
-        os.system(cmd)
 
         print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - ZIP Archive Created")
         print("------------------------------------------------------------------")
@@ -240,8 +237,8 @@ if ab_result[backup_to_index['enabled']] == 1:
 
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Email Sent")
             print("------------------------------------------------------------------")
-        # Delete the local archive copy as no longer needed
-        cmd = "rm -r " + zipfname
+        # Move the local archive copy to the destination
+        cmd = "mv " + zipfname  + " " + destination
         os.system(cmd)
     else :
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Backup Not Yet Scheduled")
