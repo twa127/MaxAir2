@@ -25,7 +25,7 @@ print("********************************************************")
 print("*    Script Auto Backup Database to a gz file and      *")
 print("*                send as an Email message.             *")
 print("*                Build Date: 07/06/2022                *")
-print("*      Version 0.03 - Last Modified 09/06/2022         *")
+print("*      Version 0.02 - Last Modified 08/06/2022         *")
 print("*                                 Have Fun - PiHome.eu *")
 print("********************************************************")
 print(" ")
@@ -238,8 +238,12 @@ if ab_result[backup_to_index['enabled']] == 1:
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Email Sent")
             print("------------------------------------------------------------------")
         # Move the local archive copy to the destination
+        print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Move Archive File to Destination Folder")
+        print("------------------------------------------------------------------")
         cmd = "mv " + zipfname  + " " + destination
         os.system(cmd)
+        print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Moved to - " + destination)
+        print("------------------------------------------------------------------")
     else :
             print(bc.blu + (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + bc.wht + " - Backup Not Yet Scheduled")
             print("------------------------------------------------------------------")
